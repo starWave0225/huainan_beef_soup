@@ -201,13 +201,110 @@ const siteTabs = [
   { id: "sources", number: "06", label: "来源资料", note: "视频与60项档案" },
 ] as const;
 
+const essayChapterIndex = [
+  {
+    id: "intro",
+    number: "00",
+    label: "绪论",
+    title: "问题提出与研究设计",
+    purpose: "说明为什么研究、研究了什么，以及准备怎样证明。",
+    question: "地方早餐为什么值得从媒介记忆角度研究？",
+    evidence: "理论文献、事件时间线、政策文本与方法文献",
+    boundary: "公开资料能提出问题，不能代替受众调查。",
+    sections: [
+      { id: "background", label: "研究背景与意义" },
+      { id: "review", label: "国内外研究现状" },
+      { id: "methods", label: "研究方法和研究思路" },
+      { id: "innovation", label: "研究内容和创新点" },
+    ],
+  },
+  {
+    id: "chapter-2",
+    number: "02",
+    label: "第二章",
+    title: "因何记忆：媒介记忆动因",
+    purpose: "拆开“历史悠久所以容易传播”的笼统说法。",
+    question: "淮南牛肉汤到底为什么容易被记住？",
+    evidence: "地方传说、考古材料、生活经验与数字传播生态",
+    boundary: "能说明记忆资源丰富，不能证明现代配方连续两千年。",
+    sections: [
+      { id: "resources", label: "基础资源的可记忆性" },
+      { id: "digital-ecology", label: "数字传播生态" },
+      { id: "drivers", label: "媒介记忆的外部驱动力" },
+    ],
+  },
+  {
+    id: "chapter-3",
+    number: "03",
+    label: "第三章",
+    title: "如何记忆：激活与重构",
+    purpose: "追踪同一材料怎样在考古、影视、短视频和活动之间改写。",
+    question: "媒介具体怎样选择、剪辑并重新组织地方记忆？",
+    evidence: "武王墩考古、《六姊妹》、短视频与多主体话语",
+    boundary: "传播节点能说明内容变化，受众接受仍需评论和访谈验证。",
+    sections: [
+      { id: "activation", label: "记忆激活" },
+      { id: "reconstruction", label: "记忆重构" },
+      { id: "meaning", label: "意义生产" },
+    ],
+  },
+  {
+    id: "chapter-4",
+    number: "04",
+    label: "第四章",
+    title: "记忆转化：价值跃迁",
+    purpose: "说明线上关注怎样可能进入认同、到访、消费和城市品牌。",
+    question: "被看见之后，记忆如何转成现实行动与地方价值？",
+    evidence: "评论表达、客流报道、门店空间、商品与产业政策",
+    boundary: "时间上同时出现不等于因果成立，需区分曝光、到访和复购。",
+    sections: [
+      { id: "identity", label: "情感与主体重塑" },
+      { id: "practice-space", label: "实践与空间转化" },
+      { id: "city-symbol", label: "地方与符号跃升" },
+    ],
+  },
+  {
+    id: "chapter-5",
+    number: "05",
+    label: "第五章",
+    title: "记忆障碍：问题反思",
+    purpose: "把传播成功背后的选择、失真和代际问题摆到台面上。",
+    question: "什么被记住了，什么又在传播中被省略或压平？",
+    evidence: "标题与短视频叙事、标准文本、门店差异和代际经验",
+    boundary: "不能先把商业化或年轻人当作问题，必须回到具体权力与收益。",
+    sections: [
+      { id: "selective-memory", label: "传播者的选择性记忆" },
+      { id: "media-damage", label: "传播媒介的记忆损伤" },
+      { id: "generations", label: "被动接受与代际断裂" },
+    ],
+  },
+  {
+    id: "conclusion",
+    number: "06",
+    label: "结语",
+    title: "研究发现、启示与局限",
+    purpose: "收束机制链条，并把建议落实到可检查的行动。",
+    question: "这项研究最终解释了什么，还有什么没有证明？",
+    evidence: "前五章交叉证据、城市形象与非遗保护文献",
+    boundary: "结论只到公开材料能够支持的位置，反例与田野调查仍是下一步。",
+    sections: [
+      { id: "findings", label: "研究发现总结" },
+      { id: "city-image", label: "城市形象建构" },
+      { id: "heritage", label: "非遗保护与地方性" },
+      { id: "limits", label: "研究局限与展望" },
+    ],
+  },
+] as const;
+
 type SiteTab = (typeof siteTabs)[number]["id"];
+type EssayChapterId = (typeof essayChapterIndex)[number]["id"];
 
 export default function Home() {
   const [progress, setProgress] = useState(0);
   const [activeCase, setActiveCase] = useState(cases[0].id);
   const [sourceFilter, setSourceFilter] = useState("全部");
   const [activeTab, setActiveTab] = useState<SiteTab>("overview");
+  const [activeEssayChapter, setActiveEssayChapter] = useState<EssayChapterId>("intro");
 
   useEffect(() => {
     const updateProgress = () => {
@@ -221,11 +318,22 @@ export default function Home() {
 
   useEffect(() => {
     const syncTabFromHash = () => {
-      const requested = window.location.hash.slice(1);
+      const [requested, requestedChapter, requestedSection] = window.location.hash.slice(1).split("/");
       const matched = siteTabs.find((tab) => tab.id === requested);
       if (matched) {
         setActiveTab(matched.id);
-        requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
+        if (matched.id === "draft") {
+          const chapter = essayChapterIndex.find((item) => item.id === requestedChapter) ?? essayChapterIndex[0];
+          setActiveEssayChapter(chapter.id);
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            const target = requestedSection
+              ? document.getElementById(`essay-${chapter.id}-${requestedSection}`)
+              : document.getElementById("draft-reader");
+            target?.scrollIntoView({ behavior: "auto", block: "start" });
+          }));
+        } else {
+          requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
+        }
       }
     };
 
@@ -244,6 +352,10 @@ export default function Home() {
     [sourceFilter],
   );
   const selectedCase = cases.find((item) => item.id === activeCase)!;
+  const activeEssayEntry = essayChapterIndex.find((chapter) => chapter.id === activeEssayChapter)!;
+  const activeEssayChapterIndex = essayChapterIndex.findIndex((chapter) => chapter.id === activeEssayChapter);
+  const previousEssayChapter = activeEssayChapterIndex > 0 ? essayChapterIndex[activeEssayChapterIndex - 1] : null;
+  const nextEssayChapter = activeEssayChapterIndex < essayChapterIndex.length - 1 ? essayChapterIndex[activeEssayChapterIndex + 1] : null;
 
   return (
     <main id="top">
@@ -260,7 +372,7 @@ export default function Home() {
         {siteTabs.map((tab) => (
           <a
             key={tab.id}
-            href={`#${tab.id}`}
+            href={tab.id === "draft" ? `#draft/${activeEssayChapter}` : `#${tab.id}`}
             className={activeTab === tab.id ? "active" : ""}
             onClick={() => openTab(tab.id)}
             aria-current={activeTab === tab.id ? "page" : undefined}
@@ -282,7 +394,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <a className="primary-action" href="#atlas" onClick={() => openTab("atlas")}>打开牛肉汤图鉴</a>
-            <a className="text-action" href="#draft" onClick={() => openTab("draft")}>阅读中文正文 →</a>
+            <a className="text-action" href="#draft/intro" onClick={() => { openTab("draft"); setActiveEssayChapter("intro"); }}>阅读论文正文 →</a>
             <span>60项公开来源 · 7条视频 · 6张开放授权图片</span>
           </div>
         </div>
@@ -646,49 +758,93 @@ export default function Home() {
       <section className="draft-section page-section" id="draft">
         <div className="essay-shell">
           <div className="section-heading draft-heading">
-            <div><p className="section-kicker">按照原始提纲写成的论文初稿</p><h2>从绪论到研究启示，逐节回答提纲中的问题。</h2></div>
-            <p>以下正文严格对应《淮南牛肉汤的媒介记忆建构研究》的章节安排。每一节都按“提出判断—摆出材料—解释关系—交代边界”的顺序展开，既保留论文应有的概念和论证，也避免用套话代替分析。</p>
+            <div><p className="section-kicker">论文正文 · 分章阅读</p><h2>先选章节，再按本章索引阅读。</h2></div>
+            <p>六章不再连续铺在一页。每章先说明要回答的问题、主要材料和论证边界，再进入正文；章节与小节都有独立链接，便于引用、讨论和逐段修改。</p>
           </div>
 
           <aside className="draft-disclaimer">
-            <b>使用说明</b>
-            <p>这是一份建立在60项公开资料上的论文初稿，不是已经完成的学位论文。它能较可靠地说明政策、媒体和产业主体公开说了什么，却不能代替本地居民如何记忆、游客为何到访、平台用户是否接受这些说法。凡涉及受众效果和因果关系，正文都明确保留了“还需访谈、抽样或统计验证”的限定。</p>
+            <b>材料范围</b>
+            <p>正文以60项公开资料为基础，能够说明政策、媒体和产业主体公开说了什么；涉及本地居民记忆、游客动机和平台接受效果的判断，仍需访谈、抽样或统计验证。</p>
           </aside>
 
+          <div className="essay-reader" id="draft-reader">
+            <aside className="essay-toc">
+              <div className="essay-toc-head">
+                <div><span>论文目录</span><b>六章正文</b></div>
+                <p>一次只读一章。先看每章要解决的问题，再用本章索引直达具体小节。</p>
+              </div>
+              <nav aria-label="论文章节目录">
+                {essayChapterIndex.map((chapter) => (
+                  <a
+                    key={chapter.id}
+                    href={`#draft/${chapter.id}`}
+                    className={activeEssayChapter === chapter.id ? "active" : ""}
+                    aria-current={activeEssayChapter === chapter.id ? "page" : undefined}
+                    onClick={() => setActiveEssayChapter(chapter.id)}
+                  >
+                    <span>{chapter.number}</span>
+                    <div><b>{chapter.label}</b><small>{chapter.title}</small></div>
+                    <em>→</em>
+                  </a>
+                ))}
+              </nav>
+            </aside>
+
+            <div className="essay-reading-pane">
+              <div className="chapter-brief" aria-label="本章阅读提示">
+                <div><span>本章回答</span><p>{activeEssayEntry.question}</p></div>
+                <div><span>主要材料</span><p>{activeEssayEntry.evidence}</p></div>
+                <div><span>论证边界</span><p>{activeEssayEntry.boundary}</p></div>
+              </div>
+
+              <nav className="subsection-index" aria-label="本章小节索引">
+                <span>本章索引</span>
+                <div>
+                  {activeEssayEntry.sections.map((section, index) => (
+                    <a key={section.id} href={`#draft/${activeEssayEntry.id}/${section.id}`}>
+                      {String(index + 1).padStart(2, "0")} · {section.label}
+                    </a>
+                  ))}
+                </div>
+              </nav>
+
+          {activeEssayChapter === "intro" && (
           <article className="essay-chapter">
             <header><span>绪论</span><div><p>问题提出与研究设计</p><h3>从地方早餐到城市符号：为什么要研究媒介怎样组织记忆</h3></div></header>
             <div className="essay-prose">
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-intro-background">
                 <h4>一、研究背景与意义</h4>
                 <p>淮南牛肉汤原本首先是一种地方日常饮食：它同街边门店、矿区生活、清晨劳动和家庭口味相连。近年发生的变化在于，这碗汤越来越频繁地进入考古新闻、电视剧、短视频、非遗节目、产业大会和地方政策。2024年武王墩考古让淮南的楚文化进入全国公共视野<Cite id={14} /><Cite id={23} />；2025年《六姊妹》及相关短视频、见面会和万人共食活动，又把牛肉汤放进“家乡”“家庭”和“烟火气”的情感叙事<Cite id={17} /><Cite id={25} /><Cite id={47} />。与此同时，地方行动方案、集体商标和产业条例正在把它变成可以管理、授权和统计的城市公共品牌<Cite id={1} /><Cite id={2} /><Cite id={3} />。因此，研究对象已经不只是菜品本身，而是地方食物如何在多种媒介和多类主体的共同作用下成为公共记忆。</p>
                 <p>这一问题具有两层意义。理论上，它能把媒介记忆、食物记忆、城市品牌和活态非遗四组研究放进同一过程。媒介记忆研究说明媒介技术会改变过去被保存和调用的方式<Cite id={31} /><Cite id={35} />；食物记忆研究解释气味、温度和进食经验为何能连接个人身份与集体怀旧<Cite id={32} />；城市品牌研究则提醒我们，城市形象不是一句广告，而是本地认同、公共治理和外部体验之间的关系<Cite id={41} /><Cite id={42} />。现实上，这项研究可以帮助地方传播区分史实、传说和宣传口径，判断产业扩张是否真正转化为城市认同，并讨论商业开发怎样反过来支持而不是消耗非遗传承。</p>
               </section>
 
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-intro-review">
                 <h4>二、国内外研究现状</h4>
                 <p>国外媒介记忆研究已经从“媒介保存记忆”转向“媒介参与生产记忆”。van Dijck关注数字技术如何进入个人记忆实践<Cite id={31} />；Erll强调文化记忆会在文学、影视、新闻和平台之间反复改写，这一过程被称为“再媒介化”<Cite id={35} /><Cite id={39} />；Hoskins则进一步指出，数字连接既扩大参与，也让平台排序和商业控制介入哪些过去更容易被看见<Cite id={40} />。这些研究为本文提供了基本判断：牛肉汤的地方记忆并不是一个先已完成、再被媒体搬运的对象，而是在一次次选择、剪辑、表演和转发中逐渐形成的。</p>
                 <p>美食传播研究与城市传播研究提供了另外两条线索。食物能通过感官经验唤起家庭、地方和身份记忆，平台字幕、弹幕与评论又使私人味觉获得公开表达的机会<Cite id={32} /><Cite id={33} />。城市品牌研究则表明，地方食品并非只是一件商品；门店空间、食用动作、产地叙事和游客体验都在共同表达地方<Cite id={41} /><Cite id={42} />。但如果研究只讨论“美食提高城市知名度”，就容易跳过中间过程：哪些故事先被选中，谁赋予它意义，受众是否接受，线上关注又怎样进入线下空间。</p>
                 <p>现有淮南牛肉汤资料主要集中在风味工艺、产业规模、非遗宣传和地方历史叙事。风味研究能够说明汤底、香料和制作工艺的物质基础<Cite id={53} />，政策与新闻材料则提供商标、标准、企业、产值和文旅活动等公开信息<Cite id={1} /><Cite id={5} /><Cite id={18} />。不足之处在于，这些材料多从“资源丰富”“产业增长”或“城市名片”出发，较少系统解释传说、考古、影视、平台和政策如何接成一条记忆生产链，也较少比较官方、商业和民间对“正宗”的不同理解。本文试图补足的，正是这个过程层面的空缺。</p>
               </section>
 
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-intro-methods">
                 <h4>三、研究方法和研究思路</h4>
                 <p>本文采用事件型多模态内容分析、半结构访谈和场景观察相结合的方法。内容分析以一条新闻、视频或帖子为单位，记录其中调用的历史资源、核心画面、叙事标签、发言主体、情感线索和证据强度，具体操作可参照Krippendorff关于分析单位、编码规则与一致性检验的要求<Cite id={43} />。访谈将覆盖传承人、老店与普通门店、企业、政府或协会、本地不同代际居民以及外地游客，重点追问他们如何判断“正宗”、从哪里得知相关故事、平台热度是否改变实际做法；访谈材料可采用主题分析进行归纳<Cite id={44} />。场景观察则进入门店、街区、取景地和活动现场，记录屏幕中的符号是否真正成为可体验的空间。</p>
                 <p>研究按四个事件窗口组织材料：2022年至2023年作为考古和影视热点出现前的基线；2024年春夏观察武王墩考古及其二次传播；2025年春季观察《六姊妹》、短视频和线下活动之间的流动；2025年下半年至2026年观察集体商标、标准和地方条例如何进一步固定“淮南牛肉汤”的公共含义。当前网站整理的60项公开来源属于前期资料库，它们能重建重要节点和机构说法，但正式论文仍需补充系统平台样本、访谈原文和现场记录。</p>
               </section>
 
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-intro-innovation">
                 <h4>四、研究内容和创新点</h4>
                 <p>本文围绕一个核心问题展开：淮南牛肉汤如何从地方日常饮食变成集体记忆和城市符号，这一过程中又出现了哪些失真、排除和地方性损耗。第二章回答“它为什么容易被记住”，第三章回答“媒体怎样重新组织这些记忆”，第四章讨论关注怎样进入认同、到访和产业，第五章分析传播成功背后的选择性遗忘、失真和代际问题，结语再回到城市形象与非遗保护。</p>
                 <p>本文的尝试不在于再次证明牛肉汤“历史悠久”或“产业兴旺”，而在于提出并检验一条完整过程：原有资源被事件唤醒，媒体用标签和画面重新组织，不同主体围绕意义展开竞争，随后产生评论、打卡、购买、标准和统计；这些新活动又成为下一轮传播的材料。同时，本文把可核事实、机构公开口径、地方传说和研究推断分开标注，防止考古材料、产业数字和受众效果在论证中相互越界。</p>
               </section>
             </div>
           </article>
+          )}
 
+          {activeEssayChapter === "chapter-2" && (
           <article className="essay-chapter">
             <header><span>第二章</span><div><p>因何记忆</p><h3>淮南牛肉汤的媒介记忆动因</h3></div></header>
             <div className="essay-prose">
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-chapter-2-resources">
                 <h4>一、淮南牛肉汤基础资源的可记忆性</h4>
                 <p>讨论淮南牛肉汤的历史，最容易落入一个看似合理、其实解释力很弱的说法：因为它“历史悠久”，所以它自然成了城市记忆。问题在于，年代久不等于今天的人一定记得，更不等于不同的人记得的是同一件事。本节寻找的不是唯一的“第一碗”，而是传说、物证和日常经验为什么都能成为可被媒介调用的记忆资源。</p>
                 <p><b>第一，传说记忆具有可讲述性。</b>刘安炼丹、赵匡胤困寿春等故事把复杂饮食史压缩成人物、困境和转折：有名的人物来到此地，在关键时刻喝下一碗汤，于是地方、历史与食物被接成一条容易复述的线。地方政府和产业活动仍会调用这类故事<Cite id={10} /><Cite id={21} />，说明它们确有现实传播能力。但“经常被讲述”不等于“已经被证实”。论文应将其界定为地方记忆资源，而不是现代菜品起源的直接证据。</p>
@@ -696,13 +852,13 @@ export default function Home() {
                 <p><b>第三，市井记忆具有可体验性。</b>与帝王传说相比，矿区清晨、街边炉火、回民牛肉技艺以及上班前的一顿热汤，更接近许多人的生活经验。地方资料把现代牛肉汤的兴起同回民饮食技艺、矿区生活条件、市场流通和改革开放后的制度变化联系起来<Cite id={21} /><Cite id={30} />；早期制作规范又把主辅料、熬汤和烫制等做法写进技术文本<Cite id={52} />。热气、辣味、汤锅声和共同进食所留下的是身体记忆：人们未必能复述完整历史，却能凭气味、温度和吃法认出“这是家乡”。这种可以反复吃到的经验，是牛肉汤区别于抽象城市口号的重要条件<Cite id={32} /><Cite id={33} />。</p>
               </section>
 
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-chapter-2-digital-ecology">
                 <h4>二、数字传播生态作为媒介记忆的基础</h4>
                 <p><b>记忆载体首先发生了数字化迁移。</b>原先存在于地方典籍、口述传说、门店技艺和家庭经验中的材料，如今被转换成新闻画面、影视情节、短视频片段、直播话术、评论和打卡照片。数字化并不是简单换一个存放地点：文本进入视频后更依赖器物、热气、色彩和动作，长历史进入平台后更容易被压成“千年”“非遗”“正宗”等短标签。媒介形式改变了内容可见的次序，也改变了受众参与记忆的方式<Cite id={31} /><Cite id={34} />。</p>
                 <p><b>记忆主体也由少数机构扩展为多类参与者。</b>政府部门发布政策和城市叙事，媒体选择报道角度，企业和门店用产品解释“正宗”，传承人强调工艺，演员、游客和普通用户则通过短视频、评论和照片加入讲述。主体增多不意味着权力完全平等：官方账号、主流媒体和高流量内容仍拥有更强的可见度。平台内容同时呈现碎片化和情感化倾向，复杂史料较难传播，“家乡味”“烟火气”和人物故事则更容易引起表达。论文需要分析的不是参与者有没有出现，而是谁的说法被反复放大、谁只作为画面背景存在。</p>
               </section>
 
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-chapter-2-drivers">
                 <h4>三、媒介记忆的外部驱动力</h4>
                 <p><b>政策与商业共同推动记忆进入规模化传播。</b>地方行动方案把产品、网络传播和文旅消费纳入同一发展安排<Cite id={1} />；集体商标、授权名单、标准和条例又逐渐规定谁能使用名称、质量底线如何管理<Cite id={2} /><Cite id={3} /><Cite id={5} />。电商和直播则解决地方味道怎样离开淮南的问题<Cite id={8} /><Cite id={11} />。这两类力量不仅扩大销售，也在反复规定公众应该把牛肉汤理解成什么：地方特产、城市品牌、标准商品，还是可以加盟和下单的产业项目。</p>
                 <p><b>文化与社会驱动力让传播获得情感理由。</b>非遗认定和国家级节目把制作过程从门店劳动转换成值得公共展示的文化技艺<Cite id={18} /><Cite id={27} />；人口流动、返乡叙事和平台上的家乡表达，又使一碗热汤成为连接个人经历与地方身份的媒介。这里的“乡愁”不能被预设为所有人的共同反应，而应在评论和访谈中检验。但可以确认的是，牛肉汤同时拥有可讲的过去、可看的物证和可重复的感官经验，因此比单纯政策口号更容易进入个人表达。</p>
@@ -710,23 +866,25 @@ export default function Home() {
               </section>
             </div>
           </article>
+          )}
 
+          {activeEssayChapter === "chapter-3" && (
           <article className="essay-chapter">
             <header><span>第三章</span><div><p>如何记忆</p><h3>淮南牛肉汤媒介记忆的激活与重构</h3></div></header>
             <div className="essay-prose">
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-chapter-3-activation">
                 <h4>一、记忆激活：记忆资源的符号化唤醒</h4>
                 <p>记忆资源只有被事件重新调用，才会进入更大范围的公共讨论。武王墩考古是第一个重要节点。考古报道原本关心墓葬形制、器物制度、动物遗存和楚国礼制<Cite id={23} /><Cite id={24} />，但进入地方传播和平台讨论后，最容易留下的往往是“大鼎”“黄牛”“两千多年”等画面和词语。它们又同本地最知名的食物相遇，于是专业考古问题被翻译成“古人是否也喝牛肉汤”的通俗问题。这样的翻译降低了公众接近考古的门槛，却也容易借考古权威填补尚未证明的起源环节。</p>
                 <p>《六姊妹》构成另一类触发。牛肉汤在剧中不是知识讲解，而是家庭、邻里和城市日常的组成部分。主创访谈强调家庭与地方生活<Cite id={25} />，相关报道则记录剧中食物、演员短视频和游客打卡之间的联系<Cite id={17} />。考古用器物唤醒历史感，电视剧用人物关系唤醒亲近感，两者分别激活了“古老淮南”和“生活淮南”。后续新闻、短视频、线下活动和游客内容继续引用这些画面，使一次事件逐步沉淀为可重复调用的记忆材料。</p>
               </section>
 
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-chapter-3-reconstruction">
                 <h4>二、记忆重构：数字媒介生态下的再生产路径</h4>
                 <p>媒介并不是透明容器。同一个故事从考古报告进入电视，从电视剧进入短视频，再进入线下活动时，每一步都会增加新重点并省略原有语境。Erll所说的“再媒介化”，在本案例中可以具体理解为：器物被新闻解释，剧情被剪成片段，片段被活动重新表演，游客又把现场拍回平台<Cite id={35} /><Cite id={39} />。每一次传播看似在重复原来的内容，实际上都生产了一个更适合当前媒介和目的的新版本。</p>
                 <p>这种重构主要通过三种方式发生。其一，屏幕无法传递真实味道，便用红油、热气、滚汤声、入口表情和“鲜香辣”等语言制造近似的感官体验。其二，微观家庭叙事把宏大的城市历史落到一顿饭、一次返乡和几代人的关系中，使受众先产生人物情感，再认识地方。其三，数字平台把原本有时间顺序的历史切成可以独立转发的片段，楚文化、矿城生活、非遗和现代产业由此可能在几十秒内并置。所谓“重构”不是抽象判断，而是这些画面、声音、人物和时间顺序发生了变化。</p>
               </section>
 
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-chapter-3-meaning">
                 <h4>三、意义生产：多重话语下的记忆建构</h4>
                 <p>不同主体并不以同一种方式解释牛肉汤。官方话语倾向于把它放进非遗、产业和城市品牌框架，用规划、商标、标准和活动建立统一名称与公共权威<Cite id={1} /><Cite id={3} /><Cite id={5} />。商业话语更关心味道能否被加工、运输、加盟和下单，因此把“正宗”转化为质量承诺和品牌识别<Cite id={8} />。民间话语则常从“我记得的那一碗”出发，用汤色、香料、吃法、门店关系和家庭经历判断是否地道。</p>
                 <p>这三种说法分别回应治理、经营和生活经验，不能简单归为谁真谁假。但它们进入公共空间的机会并不均等。官方与企业拥有稳定发布渠道和活动资源，普通食客的经验更分散，也更容易被平台热度筛选。正式研究应比较媒体引用了谁、标准制定邀请了谁、品牌收益分配给谁，并通过访谈确认“正宗”究竟是一项得到共同认可的标准，还是一个仍在争论中的词。</p>
@@ -734,23 +892,25 @@ export default function Home() {
               </section>
             </div>
           </article>
+          )}
 
+          {activeEssayChapter === "chapter-4" && (
           <article className="essay-chapter">
             <header><span>第四章</span><div><p>记忆转化</p><h3>淮南牛肉汤媒介记忆的价值跃迁</h3></div></header>
             <div className="essay-prose">
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-chapter-4-identity">
                 <h4>一、情感与主体重塑：个体记忆到集体记忆</h4>
                 <p>一位本地人记得小时候在哪里喝汤，首先是一段私人经验；只有当这种经验通过家庭讲述、影视画面、短视频和评论被公开表达，人们发现彼此拥有相似记忆时，个体记忆才可能聚合为集体认同。食物的特殊性在于它既能被讲述，也能被重新吃到。观众看到《六姊妹》中的家庭生活后，可以在评论中讲自己的家乡早餐，也可以到店用一碗汤检验屏幕想象。已有研究说明媒介中的食物能够唤醒地方记忆<Cite id={33} />，但淮南案例究竟影响了哪些人、产生了自豪还是反感，仍需通过评论样本和访谈验证，不能仅由电视剧热播直接推出。</p>
                 <p>这里所谓“主体重塑”，并不是受众被动接受统一叙事，而是原本沉默的个人经验获得表达位置。演员、返乡者、年轻用户和外地游客都可能以自己的视角重新讲述牛肉汤。问题在于，表达机会不等于实际权力：用户可以评论和模仿，却未必能参与标准制定、活动资源和品牌收益分配。因此，论文既要观察情感共鸣，也要追问参与发生在表达层、消费层还是决策层。</p>
               </section>
 
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-chapter-4-practice-space">
                 <h4>二、实践与空间转化：从屏幕观看到消费和到访</h4>
                 <p>电视剧取景地、街区、门店和节庆活动把屏幕中的抽象“淮南”变成可以走、看、拍和品尝的空间。2025年春季，九龙岗时光小镇出现明显客流；五一报道给出的口径为日均约1.5万人次，其中市外游客超过六成<Cite id={19} />，另一份地方材料称日均游客超过1.2万人次<Cite id={6} />。地方部门还把粉丝见面会、方言互动和万人共品牛肉汤放进同一场活动<Cite id={47} />。这些材料能够说明影视热点、地方活动和到访增长在时间上相伴，却不能证明每位游客都因电视剧或牛肉汤而来。游客来源、出行动机、停留路线和消费金额仍需独立调查。</p>
                 <p>方便装、冷冻产品、电商直播和连锁门店，使牛肉汤离开本地餐桌后仍携带“淮南”名称；机场、高铁站、服务区、商圈和景区门店的奖补政策，又把它主动放进人口流动频繁的地点<Cite id={8} /><Cite id={51} />。这里发生的是双向转化：地方记忆变成可以购买和携带的商品，商品的持续流通又让“淮南”在异地被反复看见。论文需要分别测量曝光、到访、购买和复购，不能用一个“出圈”概括所有环节。</p>
               </section>
 
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-chapter-4-city-symbol">
                 <h4>三、地方与符号跃升：从一碗汤到一座城</h4>
                 <p>牛肉汤离开原来的街边门店和早餐时间后，会出现“脱域”：方便食品、电商内容和异地连锁让消费者不必身处淮南也能接触它。但包装上的产地说明、门店招牌、集体商标和短视频故事，又尝试把它重新嵌回“淮南”这一地方名称。能否成功再嵌入，不只取决于名称有没有出现，还取决于产品体验、历史讲述和公共治理是否相互一致。</p>
                 <p>产业政策为这种符号跃升提供组织条件。行动方案把产品规模、网络传播和文旅消费放进同一发展路径<Cite id={1} />；集体商标、授权名单和地方条例逐步把名称变成可管理的公共品牌<Cite id={2} /><Cite id={3} /><Cite id={4} />；计划执行报告还提供项目投资和产值增长等公开口径<Cite id={50} />。这说明政策不仅报道传播结果，也直接决定哪些主体可以使用名称、哪些场景获得资源、哪些数字成为城市成绩。</p>
@@ -758,23 +918,25 @@ export default function Home() {
               </section>
             </div>
           </article>
+          )}
 
+          {activeEssayChapter === "chapter-5" && (
           <article className="essay-chapter">
             <header><span>第五章</span><div><p>记忆障碍</p><h3>淮南牛肉汤媒介记忆的问题反思</h3></div></header>
             <div className="essay-prose">
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-chapter-5-selective-memory">
                 <h4>一、传播者的选择性记忆障碍</h4>
                 <p>媒介记忆必然包含选择。帝王、古墓和大鼎具有明确人物和强烈画面，容易进入标题；矿区工人的清晨、回民技艺的传承、普通店主的经营变化和家庭口味差异，却很难在几十秒视频中获得同样位置。问题不在于传播者进行了选择，而在于某一种选择是否长期垄断“淮南牛肉汤是什么”的答案。若古代传奇持续压过近现代生活，城市记忆就可能只有显眼的历史年代，却没有具体的人。</p>
                 <p>政治与商业逻辑还可能征用记忆。政策传播倾向于用产业规模、城市名片和发展目标证明治理成效，商业传播倾向于把“正宗”“秘方”和“千年”变成购买理由。二者都能扩大资源和市场，却也可能只保留有利于品牌统一的版本。研究者应对照宣传文本、标准条款、门店实践和从业者访谈，判断哪些记忆被公共资源放大、哪些经验因不利于统一叙事而被省略。</p>
               </section>
 
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-chapter-5-media-damage">
                 <h4>二、传播媒介的记忆损伤</h4>
                 <p>碎片化首先消解历史深度。平台内容为了争夺注意力，常把复杂关系压缩成“千年古方”“一口穿越两千年”等易于转发的表达，把考古、典籍、传说和现代菜品放进同一句话，却不说明证据之间的距离。结果不只是某个细节可能错误，更在于公众只剩几个关键词，看不见这些说法如何形成。论文必须逐层区分可核事实、地方传说、机构口径和研究解释，避免重复自己正在批评的传播方式。</p>
                 <p>标准化和舞台化也可能造成另一类损伤。食品安全、原料质量和商标信誉需要共同底线，白名单、制作规范和授权制度确实回应了市场扩张中的治理问题<Cite id={5} /><Cite id={9} /><Cite id={52} />。但如果标准继续规定所有汤色、香料比例和地方吃法，或非遗节目只留下沸腾大锅和快速动作，就可能把分布在不同街区、族群和门店中的知识压成单一版本。较稳妥的原则是统一安全和责任底线，同时保留门店解释工艺差异的空间。</p>
               </section>
 
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-chapter-5-generations">
                 <h4>三、受众的被动接受与代际断裂</h4>
                 <p>数字平台表面上扩大参与，推荐算法却会重复放大节奏快、情绪强、易模仿的内容。受众可以点赞、评论和转发，但如果接触到的始终是相似版本，这种参与仍可能建立在有限选择上。正式研究应主动寻找不接受“千年”说法、不追剧、不打卡或反对统一标准的受访者，观察他们是没有被主流传播看见，还是确实对城市叙事持不同理解。</p>
                 <p>代际差异也不能简单写成“年轻人不懂传统”。年轻人可能先从电视剧和短视频认识牛肉汤，老一辈则更多从家庭劳动、矿区生活和长期消费中理解它；两代人拥有的是不同进入路径。活态非遗并不要求下一代原样复制上一代，而强调社区在持续传递中重新创造<Cite id={37} /><Cite id={46} />。真正需要判断的是，年轻人是否有机会接触完整技艺，传承人是否愿意解释知识，新的表达能否同旧的生活经验形成对话。</p>
@@ -782,36 +944,62 @@ export default function Home() {
               </section>
             </div>
           </article>
+          )}
 
+          {activeEssayChapter === "conclusion" && (
           <article className="essay-chapter conclusion-chapter">
             <header><span>结语</span><div><p>研究发现、启示与局限</p><h3>一碗汤成为城市记忆，不靠一次“出圈”</h3></div></header>
             <div className="essay-prose">
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-conclusion-findings">
                 <h4>一、研究发现总结</h4>
                 <p>淮南牛肉汤从地方日常食物走向城市符号，并不是一家媒体、一次考古发现或一部电视剧单独造成的。它首先拥有传说、典籍、考古、技艺和生活经验等多层资源；考古与影视事件把其中一部分推到公共视野；新闻、短视频、活动和政策再用“千年”“非遗”“家乡味”“正宗”等标签重新组织；政府、企业、传承人、门店和食客继续解释这些标签。评论、共食、到访、购买、商标和标准又把记忆带入情感、空间和产业，并留下下一轮传播的新材料。</p>
               </section>
 
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-conclusion-city-image">
                 <h4>二、媒介记忆如何参与城市形象建构</h4>
                 <p>媒介记忆首先提供了一个城市形象的记忆场域：考古让淮南被看作具有楚文化历史的地方，电视剧让它被看作有家庭和工业生活温度的城市，牛肉汤则把这些抽象印象落实为可以看见、闻到和吃到的日常对象。城市形象由此不只是视觉标识，而是历史叙事、生活经验和身体感受共同构成的关系。</p>
                 <p>其次，媒介通过反复选择和组合生产城市符号。大鼎、热汤、红油、老街、家庭饭桌和“正宗”等元素并非天然代表淮南，而是在新闻、影视、平台和活动中不断同时出现，才逐渐形成稳定联想。符号能否成立，取决于它是否同真实地方生活保持联系。若传播只保留统一、好看的版本，短期识别度可能提高，长期信任却会下降。</p>
                 <p>最后，媒介记忆只有被现实条件承接，才可能转化为城市发展。线路、取景地、门店、产品、商标和公共服务把屏幕关注接到线下；居民认同、游客体验、从业者收益和透明统计则决定这种转化能否持续。城市传播的评价指标因此不应只有热搜、客流和产值，还应包括历史表述是否准确、普通门店是否受益、游客体验是否兑现、社区是否参与决策。</p>
               </section>
 
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-conclusion-heritage">
                 <h4>三、媒介记忆在非遗保护与地方性延续中的双重角色</h4>
                 <p>数字媒介为非遗提供了新的传播和学习通道。制作动作可以被记录，传承人能够进入公共表达，异地消费者也能通过视频和产品认识地方技艺。传播和商业收益如果回到从业者、学徒培养和门店经营，就可能增强继续传承的现实条件。</p>
                 <p>风险同样存在。工艺可能被压成视觉奇观，地方差异可能被统一标准削弱，传说可能借考古权威被包装成事实，社区知识也可能在没有充分参与和收益的情况下被商业使用。保护与发展不是二选一，关键在于由谁决定可以改变什么、收益如何分配、哪些差异必须保留。政策可以公开标准制定者和参与过程，产业报告可以同步说明统计口径和从业者收益，文旅项目则应记录学徒成长、社区意见和日常传承，而不只展示客流。</p>
               </section>
 
-              <section className="essay-subsection">
+              <section className="essay-subsection" id="essay-conclusion-limits">
                 <h4>四、研究局限与未来展望</h4>
                 <p>当前初稿主要建立在公开网页、报道、视频和学术文献之上，能够较可靠地重建机构叙事和重要传播节点，却不能代表全部受众经验。官方产业数字的统计边界并未完全公开，平台互动量也会随时间变化；目前还缺少系统评论样本、完整访谈和持续现场观察。因此，本文现阶段关于认同、到访动机和传承效果的判断，只能作为待验证命题。</p>
                 <p>后续研究应完成四项工作：建立事件前后可比较的平台样本；访谈不同代际居民、传承人、门店、企业、管理者和游客；在门店、取景地与活动现场记录实际行为；独立核对产值、门店、游客和网销数据的计算口径。若调查发现许多本地人不接受“千年”说法、游客并非因影视到访，或标准化没有明显改变门店实践，这些反例不是论文失败，而是帮助研究从一套顺滑故事变成经得起检验的结论。</p>
               </section>
             </div>
           </article>
+          )}
 
+              <nav className="chapter-pager" aria-label="前后章节">
+                <div>
+                  {previousEssayChapter && (
+                    <a href={`#draft/${previousEssayChapter.id}`} onClick={() => setActiveEssayChapter(previousEssayChapter.id)}>
+                      <span>← 上一章</span>
+                      <b>{previousEssayChapter.label} · {previousEssayChapter.title}</b>
+                    </a>
+                  )}
+                </div>
+                <div>
+                  {nextEssayChapter && (
+                    <a href={`#draft/${nextEssayChapter.id}`} onClick={() => setActiveEssayChapter(nextEssayChapter.id)}>
+                      <span>下一章 →</span>
+                      <b>{nextEssayChapter.label} · {nextEssayChapter.title}</b>
+                    </a>
+                  )}
+                </div>
+              </nav>
+            </div>
+          </div>
+
+          <details className="plain-writing-details">
+            <summary><span>附：论文表达修改工具</span><b>查看六组“套话改正常中文”的示范</b></summary>
           <section className="plain-writing-toolkit" aria-labelledby="plain-writing-title">
             <div className="toolkit-intro">
               <p className="section-kicker">把套话改成正常中文</p>
@@ -845,6 +1033,7 @@ export default function Home() {
               </div>
             </div>
           </section>
+          </details>
         </div>
       </section>
       </div>}

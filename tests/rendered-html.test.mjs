@@ -74,6 +74,15 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   assert.deepEqual(tabIds, ["overview", "atlas", "mechanism", "draft", "methods", "sources"]);
   assert.equal((page.match(/activeTab === "/g) ?? []).length, 6);
   assert.equal((page.match(/<article className="essay-chapter(?: conclusion-chapter)?">/g) ?? []).length, 6);
+  const essayChapterIds = [...page.matchAll(/^    id: "(intro|chapter-[2-5]|conclusion)",$/gm)].map((match) => match[1]);
+  assert.deepEqual(essayChapterIds, ["intro", "chapter-2", "chapter-3", "chapter-4", "chapter-5", "conclusion"]);
+  assert.match(page, /className="essay-toc"/);
+  assert.match(page, /className="subsection-index"/);
+  assert.match(page, /className="chapter-pager"/);
+  assert.match(page, /className="plain-writing-details"/);
+  assert.match(page, /window\.location\.hash\.slice\(1\)\.split\("\/"\)/);
+  assert.match(page, /href=\{`#draft\/\$\{activeEssayEntry\.id\}\/\$\{section\.id\}`\}/);
+  assert.equal((page.match(/id="essay-(?:intro|chapter-[2-5]|conclusion)-/g) ?? []).length, 20);
   assert.match(page, /一、研究背景与意义/);
   assert.match(page, /二、数字传播生态作为媒介记忆的基础/);
   assert.match(page, /三、意义生产：多重话语下的记忆建构/);

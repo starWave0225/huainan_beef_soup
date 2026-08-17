@@ -312,6 +312,36 @@ blockquote cite { color: rgba(243, 239, 228, .6); font: normal 11px/1.7 "Noto Sa
 .draft-disclaimer { display: grid; grid-template-columns: 160px 1fr; gap: 38px; margin: 0 auto 108px; padding: 30px 34px; border-left: 4px solid var(--red); background: var(--paper-deep); }
 .draft-disclaimer b { color: var(--red); font: 650 12px "Noto Sans SC", sans-serif; letter-spacing: .13em; }
 .draft-disclaimer p { max-width: 870px; margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 2; }
+.essay-reader { scroll-margin-top: 150px; }
+.essay-toc { margin-bottom: 88px; padding-top: 28px; border-top: 4px solid var(--ink); }
+.essay-toc-head { display: grid; grid-template-columns: 210px 1fr; gap: 34px; align-items: end; margin-bottom: 30px; }
+.essay-toc-head > div { display: flex; align-items: baseline; gap: 16px; }
+.essay-toc-head span { color: var(--red); font: 700 11px "Noto Sans SC", sans-serif; letter-spacing: .14em; }
+.essay-toc-head b { font-size: 24px; font-weight: 570; }
+.essay-toc-head p { max-width: 650px; margin: 0; color: var(--muted); font: 13px/1.8 "Noto Sans SC", sans-serif; }
+.essay-toc nav { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.essay-toc nav a { min-height: 128px; display: grid; grid-template-columns: 38px 1fr 18px; gap: 14px; align-items: start; padding: 23px 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--ink); background: var(--paper); transition: color .2s ease, background .2s ease; }
+.essay-toc nav a:hover { background: var(--paper-deep); }
+.essay-toc nav a.active { color: var(--paper); background: var(--red-dark); }
+.essay-toc nav a > span { padding-top: 2px; color: var(--red); font: 18px Georgia, serif; }
+.essay-toc nav a.active > span { color: var(--gold); }
+.essay-toc nav a div { min-width: 0; }
+.essay-toc nav a b { display: block; margin-bottom: 11px; font-size: 14px; font-weight: 650; }
+.essay-toc nav a small { display: block; color: var(--muted); font: 11px/1.65 "Noto Sans SC", sans-serif; }
+.essay-toc nav a.active small { color: rgba(243, 239, 228, .7); }
+.essay-toc nav a em { color: var(--red); font: normal 18px Georgia, serif; }
+.essay-toc nav a.active em { color: var(--gold); }
+.essay-reading-pane { max-width: 1040px; margin: 0 auto; }
+.chapter-brief { display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 31px; border: 1px solid var(--line); background: var(--paper); }
+.chapter-brief > div { min-height: 160px; padding: 24px 25px; border-right: 1px solid var(--line); }
+.chapter-brief > div:last-child { border-right: 0; background: #ede3d5; }
+.chapter-brief span { color: var(--red); font: 700 10px "Noto Sans SC", sans-serif; letter-spacing: .13em; }
+.chapter-brief p { margin: 24px 0 0; color: var(--ink-soft); font: 13px/1.85 "Noto Sans SC", sans-serif; }
+.subsection-index { display: grid; grid-template-columns: 125px 1fr; gap: 35px; align-items: start; margin-bottom: 78px; padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.subsection-index > span { padding-top: 4px; color: var(--red); font: 700 10px "Noto Sans SC", sans-serif; letter-spacing: .13em; }
+.subsection-index > div { display: flex; flex-wrap: wrap; gap: 9px 23px; }
+.subsection-index a { padding-bottom: 4px; border-bottom: 1px solid transparent; color: var(--muted); font: 11px/1.6 "Noto Sans SC", sans-serif; }
+.subsection-index a:hover { border-color: var(--red); color: var(--red); }
 .essay-chapter { max-width: 980px; margin: 0 auto; padding: 0 0 112px; }
 .essay-chapter + .essay-chapter { padding-top: 104px; border-top: 1px solid var(--line); }
 .essay-chapter > header { display: grid; grid-template-columns: 125px 1fr; gap: 35px; align-items: start; margin-bottom: 52px; }
@@ -320,6 +350,7 @@ blockquote cite { color: rgba(243, 239, 228, .6); font: normal 11px/1.7 "Noto Sa
 .essay-chapter > header h3 { max-width: 760px; margin: 0; font-size: clamp(30px, 3.7vw, 50px); line-height: 1.35; font-weight: 560; letter-spacing: -.035em; }
 .essay-prose { max-width: 820px; margin-left: 160px; }
 .essay-subsection { margin: 0 0 68px; }
+.essay-subsection[id] { scroll-margin-top: 155px; }
 .essay-subsection:last-child { margin-bottom: 0; }
 .essay-subsection h4 { margin: 0 0 30px; padding: 0 0 16px; border-bottom: 1px solid var(--line); color: var(--ink); font: 620 21px/1.65 "Noto Serif SC", "Songti SC", serif; letter-spacing: -.015em; }
 .essay-prose p { margin: 0 0 1.35em; color: #373933; font-size: 17px; line-height: 2.18; text-align: justify; text-indent: 2em; hanging-punctuation: first allow-end last; }
@@ -327,8 +358,23 @@ blockquote cite { color: rgba(243, 239, 228, .6); font: normal 11px/1.7 "Noto Sa
 .essay-subsection:first-child > p:first-of-type::first-letter { color: var(--red); font-size: 1.08em; font-weight: 650; }
 .essay-prose .cite, .paragraph-example .cite { text-indent: 0; }
 .conclusion-chapter { padding-bottom: 96px; }
+.chapter-pager { display: grid; grid-template-columns: 1fr 1fr; margin: 0 30px 96px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.chapter-pager > div { min-height: 126px; }
+.chapter-pager > div:last-child { border-left: 1px solid var(--line); text-align: right; }
+.chapter-pager a { height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 14px; padding: 25px 28px; color: var(--ink); }
+.chapter-pager a:hover { background: var(--paper-deep); }
+.chapter-pager span { color: var(--red); font: 700 10px "Noto Sans SC", sans-serif; letter-spacing: .12em; }
+.chapter-pager b { font-size: 13px; line-height: 1.65; font-weight: 560; }
 
-.plain-writing-toolkit { margin-top: 18px; padding: 86px clamp(28px, 6vw, 76px); color: var(--paper); background: var(--ink); }
+.plain-writing-details { margin-top: 12px; border-top: 1px solid var(--line); }
+.plain-writing-details > summary { display: grid; grid-template-columns: 220px 1fr; gap: 34px; padding: 27px 0; cursor: pointer; list-style: none; }
+.plain-writing-details > summary::-webkit-details-marker { display: none; }
+.plain-writing-details > summary span { color: var(--red); font: 700 10px "Noto Sans SC", sans-serif; letter-spacing: .13em; }
+.plain-writing-details > summary b { font-size: 15px; font-weight: 560; }
+.plain-writing-details > summary b::after { content: "＋"; float: right; color: var(--red); font-size: 20px; }
+.plain-writing-details[open] > summary b::after { content: "－"; }
+
+.plain-writing-toolkit { margin-top: 0; padding: 86px clamp(28px, 6vw, 76px); color: var(--paper); background: var(--ink); }
 .toolkit-intro { max-width: 850px; }
 .toolkit-intro .section-kicker { color: var(--gold); }
 .toolkit-intro h3 { margin: 0; font-size: clamp(30px, 4vw, 52px); line-height: 1.35; font-weight: 550; letter-spacing: -.035em; }
@@ -489,6 +535,7 @@ footer > a { justify-self: end; color: var(--gold); font: 11px "Noto Sans SC", s
   .interview-grid article:nth-child(even) { border-right: 0; }
   .interview-grid article:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
   .interview-grid article:nth-last-child(-n+2) { border-bottom: 0; }
+  .essay-toc nav { grid-template-columns: repeat(2, 1fr); }
   .essay-prose { margin-left: 120px; }
   .atlas-hero { grid-template-columns: 1fr; }
   .atlas-hero-figure img { height: min(70vw, 650px); }
@@ -548,6 +595,10 @@ footer > a { justify-self: end; color: var(--gold); font: 11px "Noto Sans SC", s
   .chapter-index { flex-direction: row; align-items: center; }
   .chapter-block, .chapter-boundary { grid-template-columns: 1fr; gap: 12px; }
   .draft-disclaimer, .essay-chapter > header, .rewrite-pair, .paragraph-method { grid-template-columns: 1fr; }
+  .essay-toc-head, .subsection-index, .plain-writing-details > summary { grid-template-columns: 1fr; gap: 17px; }
+  .chapter-brief { grid-template-columns: 1fr; }
+  .chapter-brief > div { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
+  .chapter-brief > div:last-child { border-bottom: 0; }
   .essay-prose { margin-left: 0; }
   .rewrite-pair > div { min-height: 0; }
   .rewrite-pair > div:first-child, .paragraph-method > div:first-child { border-right: 0; border-bottom: 1px solid rgba(243, 239, 228, .2); }
@@ -584,14 +635,23 @@ footer > a { justify-self: end; color: var(--gold); font: 11px "Noto Sans SC", s
   .media-image, .wide .media-image { height: 65vw; min-height: 260px; }
   .license-ledger { grid-template-columns: 1fr; }
   .draft-heading { padding-bottom: 24px; }
-  .draft-disclaimer { margin-bottom: 78px; padding: 25px 24px; }
+  .draft-disclaimer { margin-bottom: 64px; padding: 25px 24px; }
+  .essay-toc { margin-bottom: 64px; }
+  .essay-toc nav { grid-template-columns: 1fr; }
+  .essay-toc nav a { min-height: 105px; }
+  .subsection-index { margin-bottom: 56px; }
   .essay-chapter { padding-bottom: 78px; }
   .essay-chapter + .essay-chapter { padding-top: 72px; }
   .essay-chapter > header { margin-bottom: 34px; }
   .essay-subsection { margin-bottom: 52px; }
   .essay-subsection h4 { margin-bottom: 23px; font-size: 19px; }
   .essay-prose p { font-size: 16px; line-height: 2.05; text-align: left; }
+  .chapter-pager { grid-template-columns: 1fr; margin: 0 0 72px; }
+  .chapter-pager > div { min-height: 0; }
+  .chapter-pager > div:last-child { border-top: 1px solid var(--line); border-left: 0; }
+  .chapter-pager a { min-height: 108px; }
   .plain-writing-toolkit { margin-left: -24px; margin-right: -24px; padding: 68px 24px; }
+  .plain-writing-details > summary b::after { margin-left: 12px; }
   .rewrite-pair > div, .paragraph-method > div { padding: 27px 23px; }
 }
 
