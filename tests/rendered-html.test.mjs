@@ -36,7 +36,7 @@ test("server-renders the paginated research home and its tab bar", async () => {
   assert.match(html, /研究首页/);
   assert.match(html, /牛肉汤图鉴/);
   assert.match(html, /案例与机制/);
-  assert.match(html, /中文正文/);
+  assert.match(html, /论文正文/);
   assert.match(html, /研究方法/);
   assert.match(html, /来源资料/);
   assert.match(html, /60项公开来源/);
@@ -73,7 +73,11 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   const tabIds = [...page.matchAll(/\{ id: "(overview|atlas|mechanism|draft|methods|sources)", number:/g)].map((match) => match[1]);
   assert.deepEqual(tabIds, ["overview", "atlas", "mechanism", "draft", "methods", "sources"]);
   assert.equal((page.match(/activeTab === "/g) ?? []).length, 6);
-  assert.equal((page.match(/<article className="essay-chapter(?: conclusion-chapter)?">/g) ?? []).length, 5);
+  assert.equal((page.match(/<article className="essay-chapter(?: conclusion-chapter)?">/g) ?? []).length, 6);
+  assert.match(page, /一、研究背景与意义/);
+  assert.match(page, /二、数字传播生态作为媒介记忆的基础/);
+  assert.match(page, /三、意义生产：多重话语下的记忆建构/);
+  assert.match(page, /四、研究局限与未来展望/);
   assert.equal((page.match(/className="rewrite-pair"/g) ?? []).length, 6);
   assert.match(page, /\[22, 23, 24, 25, 26, 27, 28\]\.map/);
   assert.match(page, /window\.addEventListener\("hashchange", syncTabFromHash\)/);
