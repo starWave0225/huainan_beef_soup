@@ -174,10 +174,21 @@ const videoCodingRows = [
   { id: 28, genre: "新闻联播", frame: "科技检测 + 楚国礼乐", use: "分析检测结果怎样被转化为公共记忆；与2024报道比较同一考古事件的累积性再生产。" },
 ];
 
+const siteTabs = [
+  { id: "overview", number: "01", label: "研究首页", note: "问题与证据" },
+  { id: "mechanism", number: "02", label: "案例与机制", note: "传播与反思" },
+  { id: "draft", number: "03", label: "中文正文", note: "章节写作底稿" },
+  { id: "methods", number: "04", label: "研究方法", note: "抽样、编码与访谈" },
+  { id: "sources", number: "05", label: "来源资料", note: "视频与53项档案" },
+] as const;
+
+type SiteTab = (typeof siteTabs)[number]["id"];
+
 export default function Home() {
   const [progress, setProgress] = useState(0);
   const [activeCase, setActiveCase] = useState(cases[0].id);
   const [sourceFilter, setSourceFilter] = useState("全部");
+  const [activeTab, setActiveTab] = useState<SiteTab>("overview");
 
   useEffect(() => {
     const updateProgress = () => {
@@ -189,6 +200,26 @@ export default function Home() {
     return () => window.removeEventListener("scroll", updateProgress);
   }, []);
 
+  useEffect(() => {
+    const syncTabFromHash = () => {
+      const requested = window.location.hash.slice(1);
+      const matched = siteTabs.find((tab) => tab.id === requested);
+      if (matched) {
+        setActiveTab(matched.id);
+        requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
+      }
+    };
+
+    syncTabFromHash();
+    window.addEventListener("hashchange", syncTabFromHash);
+    return () => window.removeEventListener("hashchange", syncTabFromHash);
+  }, []);
+
+  const openTab = (tab: SiteTab) => {
+    setActiveTab(tab);
+    requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
+  };
+
   const filteredSources = useMemo(
     () => sourceFilter === "全部" ? sources : sources.filter((source) => source.type === sourceFilter),
     [sourceFilter],
@@ -199,22 +230,30 @@ export default function Home() {
     <main id="top">
       <div className="reading-progress" style={{ width: `${progress}%` }} />
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="淮南牛肉汤媒介记忆研究首页">
+        <a className="brand" href="#overview" onClick={() => openTab("overview")} aria-label="淮南牛肉汤媒介记忆研究首页">
           <span className="brand-mark">淮</span>
           <span>媒介记忆研究志</span>
         </a>
-        <nav aria-label="主导航">
-          <a href="#thesis">论文地图</a>
-          <a href="#evidence">证据</a>
-          <a href="#mechanism">机制</a>
-          <a href="#blueprint">逐章论证</a>
-          <a href="#draft">正文底稿</a>
-          <a href="#methods">方法</a>
-          <a href="#sources">53项来源</a>
-        </nav>
         <span className="edition">研究版 · 2026.08</span>
       </header>
 
+      <nav className="site-tabs" aria-label="网站分页">
+        {siteTabs.map((tab) => (
+          <a
+            key={tab.id}
+            href={`#${tab.id}`}
+            className={activeTab === tab.id ? "active" : ""}
+            onClick={() => openTab(tab.id)}
+            aria-current={activeTab === tab.id ? "page" : undefined}
+          >
+            <span>{tab.number}</span>
+            <strong>{tab.label}</strong>
+            <small>{tab.note}</small>
+          </a>
+        ))}
+      </nav>
+
+      {activeTab === "overview" && <div className="tab-page" data-page="overview">
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">HUAINAN · MEMORY ATLAS</p>
@@ -223,7 +262,7 @@ export default function Home() {
             从楚汉典籍、街巷烟火到短视频、电视剧与产业政策：这不是一道菜的“起源故事”，而是一场仍在发生的记忆建构。
           </p>
           <div className="hero-actions">
-            <a className="primary-action" href="#thesis">进入论文地图</a>
+            <a className="primary-action" href="#draft" onClick={() => openTab("draft")}>阅读中文正文</a>
             <span>53项公开来源 · 7条视频 · 6章论证施工图</span>
           </div>
         </div>
@@ -371,7 +410,9 @@ export default function Home() {
         </div>
         <p className="data-warning"><b>口径警报：</b> 2022年地方文章称全国门店“3万余家”，2025年媒体报道又称“约10万家”。两者都不是抽样方法透明的官方普查。本网站因此不绘制门店增长率，只把它们当作“规模想象”如何扩张的材料。</p>
       </section>
+      </div>}
 
+      {activeTab === "mechanism" && <div className="tab-page" data-page="mechanism">
       <section className="mechanism-section page-section" id="mechanism">
         <div className="section-heading">
           <div><p className="section-kicker">02 · HOW MEMORY WORKS</p><h2>如何记忆：一套不断回流的媒介循环。</h2></div>
@@ -469,7 +510,9 @@ export default function Home() {
           <cite>基于 UNESCO《保护非物质文化遗产公约》与传承原则的概括 <Cite id={37} /><Cite id={38} /></cite>
         </blockquote>
       </section>
+      </div>}
 
+      {activeTab === "draft" && <div className="tab-page" data-page="draft">
       <section className="research-section page-section">
         <div className="section-heading">
           <div><p className="section-kicker">06 · RESEARCH AGENDA</p><h2>从网站走回论文：四个可验证的研究命题。</h2></div>
@@ -606,7 +649,9 @@ export default function Home() {
           </section>
         </div>
       </section>
+      </div>}
 
+      {activeTab === "methods" && <div className="tab-page" data-page="methods">
       <section className="methods-lab page-section" id="methods">
         <div className="section-heading">
           <div><p className="section-kicker">METHODS YOU CAN EXECUTE</p><h2>从“搜资料”进入可复核的论文研究设计。</h2></div>
@@ -681,7 +726,9 @@ export default function Home() {
           <li><span>[8]</span><p>UNESCO. Convention for the Safeguarding of the Intangible Cultural Heritage[EB/OL]. 2003. <Cite id={37} /></p></li>
         </ol>
       </section>
+      </div>}
 
+      {activeTab === "sources" && <div className="tab-page" data-page="sources">
       <section className="video-section page-section">
         <div className="section-heading">
           <div><p className="section-kicker">WATCH THE MEMORY BEING MADE</p><h2>公开视频不是装饰，而是研究样本。</h2></div>
@@ -743,11 +790,12 @@ export default function Home() {
           <article><h3>使用时的原则</h3><p>网站中的“研究推断”可作为分析起点，不应直接当作调查结论；正式论文必须呈现样本规则、编码手册、反例与原始访谈依据。</p></article>
         </div>
       </section>
+      </div>}
 
       <footer>
         <div><span className="brand-mark">淮</span><p>淮南牛肉汤媒介记忆研究志<br /><small>公开资料型可视化研究 · 2026</small></p></div>
         <p>一碗汤会冷却，记忆仍在沸腾。</p>
-        <a href="#top">回到开头 ↑</a>
+        <a href="#overview" onClick={() => openTab("overview")}>回到首页 ↑</a>
       </footer>
     </main>
   );

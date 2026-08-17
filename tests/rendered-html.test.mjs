@@ -23,7 +23,7 @@ async function render() {
   );
 }
 
-test("server-renders the complete thesis research site", async () => {
+test("server-renders the paginated research home and its tab bar", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
@@ -31,18 +31,15 @@ test("server-renders the complete thesis research site", async () => {
   const html = await response.text();
   assert.match(html, /一碗汤，如何成为一座城的记忆/);
   assert.match(html, /核心研究问题/);
-  assert.match(html, /逐章论证施工图/);
-  assert.match(html, /正文论述底稿/);
-  assert.match(html, /“说人话”不是不学术/);
-  assert.match(html, /一段话的五步写法/);
-  assert.match(html, /内容分析编码表/);
-  assert.match(html, /半结构访谈提纲/);
+  assert.match(html, /研究首页/);
+  assert.match(html, /案例与机制/);
+  assert.match(html, /中文正文/);
+  assert.match(html, /研究方法/);
+  assert.match(html, /来源资料/);
   assert.match(html, /53项公开来源/);
-  assert.equal((html.match(/class="source-row"/g) ?? []).length, 53);
-  assert.equal((html.match(/class="chapter-body"/g) ?? []).length, 6);
-  assert.equal((html.match(/class="essay-chapter(?:\s[^"]*)?"/g) ?? []).length, 5);
-  assert.equal((html.match(/class="rewrite-pair"/g) ?? []).length, 6);
-  assert.equal((html.match(/class="video-card"/g) ?? []).length, 7);
+  assert.equal((html.match(/class="tab-page"/g) ?? []).length, 1);
+  assert.match(html, /data-page="overview"/);
+  assert.doesNotMatch(html, /正文论述底稿|内容分析编码表|class="source-row"/);
   assert.doesNotMatch(html, /Building your site|codex-preview|react-loading-skeleton/);
 });
 
@@ -69,6 +66,14 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
     const ids = match[1].split(",").map((value) => Number(value.trim())).filter(Number.isFinite);
     assert.ok(ids.every((id) => sourceIds.includes(id)));
   }
+
+  const tabIds = [...page.matchAll(/\{ id: "(overview|mechanism|draft|methods|sources)", number:/g)].map((match) => match[1]);
+  assert.deepEqual(tabIds, ["overview", "mechanism", "draft", "methods", "sources"]);
+  assert.equal((page.match(/activeTab === "/g) ?? []).length, 5);
+  assert.equal((page.match(/<article className="essay-chapter(?: conclusion-chapter)?">/g) ?? []).length, 5);
+  assert.equal((page.match(/className="rewrite-pair"/g) ?? []).length, 6);
+  assert.match(page, /\[22, 23, 24, 25, 26, 27, 28\]\.map/);
+  assert.match(page, /window\.addEventListener\("hashchange", syncTabFromHash\)/);
 
   assert.match(layout, /53项公开来源/);
   assert.match(staticIndex, /53项公开来源/);
