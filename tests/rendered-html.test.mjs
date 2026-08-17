@@ -32,11 +32,16 @@ test("server-renders the complete thesis research site", async () => {
   assert.match(html, /一碗汤，如何成为一座城的记忆/);
   assert.match(html, /核心研究问题/);
   assert.match(html, /逐章论证施工图/);
+  assert.match(html, /正文论述底稿/);
+  assert.match(html, /“说人话”不是不学术/);
+  assert.match(html, /一段话的五步写法/);
   assert.match(html, /内容分析编码表/);
   assert.match(html, /半结构访谈提纲/);
   assert.match(html, /53项公开来源/);
   assert.equal((html.match(/class="source-row"/g) ?? []).length, 53);
   assert.equal((html.match(/class="chapter-body"/g) ?? []).length, 6);
+  assert.equal((html.match(/class="essay-chapter(?:\s[^"]*)?"/g) ?? []).length, 5);
+  assert.equal((html.match(/class="rewrite-pair"/g) ?? []).length, 6);
   assert.equal((html.match(/class="video-card"/g) ?? []).length, 7);
   assert.doesNotMatch(html, /Building your site|codex-preview|react-loading-skeleton/);
 });
