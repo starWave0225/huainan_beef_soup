@@ -39,7 +39,7 @@ test("server-renders the paginated research home and its tab bar", async () => {
   assert.match(html, /论文正文/);
   assert.match(html, /研究方法/);
   assert.match(html, /来源资料/);
-  assert.match(html, /72项公开来源/);
+  assert.match(html, /83项公开来源/);
   assert.equal((html.match(/class="tab-page"/g) ?? []).length, 1);
   assert.match(html, /data-page="overview"/);
   assert.doesNotMatch(html, /正文论述底稿|内容分析编码表|class="source-row"/);
@@ -55,10 +55,10 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   ]);
 
   const sourceIds = [...page.matchAll(/\{ id: (\d+), type: /g)].map((match) => Number(match[1]));
-  assert.deepEqual(sourceIds, Array.from({ length: 72 }, (_, index) => index + 1));
+  assert.deepEqual(sourceIds, Array.from({ length: 83 }, (_, index) => index + 1));
 
   const sourceUrls = [...page.matchAll(/\{ id: \d+, type: .*? url: "([^"]+)" \}/g)].map((match) => match[1]);
-  assert.equal(sourceUrls.length, 72);
+  assert.equal(sourceUrls.length, 83);
   assert.ok(sourceUrls.every((url) => url.startsWith("https://")));
 
   const literalCitationIds = [...page.matchAll(/<Cite id=\{(\d+)\}/g)].map((match) => Number(match[1]));
@@ -88,9 +88,11 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   assert.match(page, /已深写 · 约7700字/);
   assert.match(page, /可调用资源 × 事件激活 × 组织承接 × 主体参与/);
   assert.match(page, /三、意义生产：多重话语下的记忆建构/);
+  assert.match(page, /已深写 · 约8500字/);
+  assert.match(page, /事件制造注意窗口 → 媒体提取可识别符号/);
   assert.match(page, /四、研究局限与未来展望/);
   assert.equal((page.match(/className="rewrite-pair"/g) ?? []).length, 6);
-  assert.match(page, /\[22, 23, 24, 25, 26, 27, 28\]\.map/);
+  assert.match(page, /\[22, 23, 24, 25, 26, 27, 28, 78\]\.map/);
   assert.match(page, /window\.addEventListener\("hashchange", syncTabFromHash\)/);
 
   const mediaFiles = [...page.matchAll(/src: "media\/commons\/([^"]+)"/g)].map((match) => match[1]);
@@ -99,9 +101,9 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   assert.equal((page.match(/license: "Public Domain Mark"/g) ?? []).length, 5);
   assert.equal((page.match(/license: "CC BY-SA 4\.0"/g) ?? []).length, 1);
 
-  assert.match(layout, /72项公开来源/);
-  assert.match(staticIndex, /72项公开来源/);
+  assert.match(layout, /83项公开来源/);
+  assert.match(staticIndex, /83项公开来源/);
   assert.match(packageJson, /"build:pages": "vite build --config vite\.pages\.config\.ts"/);
-  assert.doesNotMatch(page + layout + staticIndex, /38项公开来源|53项公开来源|60项公开来源|67项公开来源|codex-preview|SkeletonPreview/);
+  assert.doesNotMatch(page + layout + staticIndex, /38项公开来源|53项公开来源|60项公开来源|67项公开来源|72项公开来源|codex-preview|SkeletonPreview/);
   assert.doesNotMatch(page, /HUAINAN · MEMORY|HOW TO READ|THESIS ARCHITECTURE|LITERATURE REVIEW|WHY IT IS MEMORABLE|THE NUMBERS, WITH CAUTION|THE SOUP ITSELF|WHAT IS IN THE BOWL|FROM POT TO TABLE|OPEN MEDIA COLLECTION|VISUAL EVIDENCE|HOW MEMORY WORKS|THREE TRIGGERS|FROM MEMORY TO VALUE|WHAT GETS LOST|RESEARCH AGENDA|CHAPTER-BY-CHAPTER|READABLE CHINESE|WRITE LIKE A HUMAN|METHODS YOU CAN EXECUTE|CORE REFERENCES|WATCH THE MEMORY|SOURCE LEDGER|METHOD & LIMITS/);
 });
