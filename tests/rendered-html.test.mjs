@@ -31,6 +31,8 @@ test("server-renders the paginated research home and its tab bar", async () => {
   const html = await response.text();
   assert.match(html, /一碗汤，如何成为一座城的记忆/);
   assert.match(html, /核心研究问题/);
+  assert.match(html, /哪些历史有证据，哪些只是好听的故事/);
+  assert.match(html, /四组理论，各管一件事/);
   assert.match(html, /研究首页/);
   assert.match(html, /牛肉汤图鉴/);
   assert.match(html, /案例与机制/);
@@ -86,4 +88,5 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   assert.match(staticIndex, /60项公开来源/);
   assert.match(packageJson, /"build:pages": "vite build --config vite\.pages\.config\.ts"/);
   assert.doesNotMatch(page + layout + staticIndex, /38项公开来源|53项公开来源|codex-preview|SkeletonPreview/);
+  assert.doesNotMatch(page, /HUAINAN · MEMORY|HOW TO READ|THESIS ARCHITECTURE|LITERATURE REVIEW|WHY IT IS MEMORABLE|THE NUMBERS, WITH CAUTION|THE SOUP ITSELF|WHAT IS IN THE BOWL|FROM POT TO TABLE|OPEN MEDIA COLLECTION|VISUAL EVIDENCE|HOW MEMORY WORKS|THREE TRIGGERS|FROM MEMORY TO VALUE|WHAT GETS LOST|RESEARCH AGENDA|CHAPTER-BY-CHAPTER|READABLE CHINESE|WRITE LIKE A HUMAN|METHODS YOU CAN EXECUTE|CORE REFERENCES|WATCH THE MEMORY|SOURCE LEDGER|METHOD & LIMITS/);
 });

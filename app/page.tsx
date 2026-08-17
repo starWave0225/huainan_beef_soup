@@ -87,24 +87,24 @@ function Cite({ id }: { id: number }) {
 const cases = [
   {
     id: "archaeology",
-    eyebrow: "CASE 01 · 考古事件",
+    eyebrow: "案例一 · 武王墩考古",
     title: "一只大鼎，如何变成“千年牛肉汤”的记忆触发器？",
     body: "武王墩考古确认了战国晚期楚国高等级墓葬、青铜礼器与丰富动物遗存。后续检测显示黄牛等动物经历烹饪，这证明楚国礼制与饮食生活，却仍不足以证明今天这套牛肉汤配方已经连续存在两千年。传播中被压缩掉的，恰好是“牛骨 → 牛肉汤 → 淮南牛肉汤”之间的三次推论跳跃。",
-    insight: "考古提供可视化的物证，地方叙事提供熟悉的菜名；二者在热点新闻里接合，形成一种“有证据感的传说”。",
+    insight: "考古给出看得见的器物，地方传播又把这些器物同熟悉的牛肉汤连在一起。两者一结合，传说就显得更像有了证据。",
     sources: [14, 23, 24, 28, 29],
   },
   {
     id: "television",
-    eyebrow: "CASE 02 · 影视事件",
+    eyebrow: "案例二 · 电视剧《六姊妹》",
     title: "《六姊妹》没有介绍一道菜，而是让它反复出现在“家”里。",
     body: "剧中牛肉汤并非知识性插入，而是日常生活的布景、家庭关系的黏合剂和城市年代感的感官线索。主创访谈、演员短视频和游客打卡又把屏幕里的味觉记忆搬回街巷：2025年春季，九龙岗时光小镇官方口径为日均接待游客超1.2万人次；五一报道为日均1.5万人次，其中市外游客占65%以上。",
-    insight: "影视先完成情感编码，短视频完成可模仿扩散，取景地和门店再把观看转化为身体到场与消费。",
+    insight: "电视剧先让观众把牛肉汤同“家”联系起来，短视频让这种画面方便模仿和转发，取景地与门店再把看剧变成实地到访和消费。",
     sources: [6, 16, 17, 19, 25],
   },
   {
     id: "industry",
-    eyebrow: "CASE 03 · 产业事件",
-    title: "标准化不是记忆的终点，而是一场关于“谁有权定义正宗”的协商。",
+    eyebrow: "案例三 · 标准与集体商标",
+    title: "标准越来越多以后，谁来决定什么叫“正宗”？",
     body: "从方便食品、中央厨房到集体商标，淮南牛肉汤正在从千店千味进入可复制体系。2025年集体商标获批，2026年首批30家企业获授权；截至2026年5月，官方披露已发布17项团体标准和1项省级地方标准。统一质量有助于品牌与食品安全，却也可能把地方差异压缩成单一版本。",
     insight: "真正需要保护的不是某个永远不变的配方，而是传承人、门店、食客仍能参与定义和更新这碗汤的能力。",
     sources: [2, 3, 4, 5, 9, 36, 37, 38],
@@ -115,55 +115,55 @@ const chapterBlueprints = [
   {
     label: "绪论 / 第一章",
     question: "为什么要从媒介记忆，而不只从美食传播研究？",
-    claim: "研究对象不是一碗固定不变的汤，而是传说、技艺、身体经验、影视形象、政策文本和平台内容如何共同把它生产为城市记忆。",
-    evidence: "以文献综述厘清“媒介记忆—食物记忆—城市品牌—非遗活化”四组研究，并指出现有研究较少解释它们之间的过程关系。",
-    boundary: "绪论要提出机制问题，避免把“知名度提升”直接等同于“记忆建构完成”。",
+    claim: "研究的不是一碗永远不变的汤，而是传说、技艺、个人经验、影视、政策和平台内容怎样一起让越来越多人把它当作淮南的代表。",
+    evidence: "分别说明媒介记忆、食物记忆、城市品牌和非遗保护能回答什么，再指出现有研究很少把四者放进同一个传播过程。",
+    boundary: "知名度提高，只能说明更多人看见了；不能直接说明大家已经认同它是共同记忆。",
     sources: [31, 32, 35, 39, 40, 41, 42],
   },
   {
     label: "第二章 · 因何记忆",
-    question: "哪些资源使淮南牛肉汤具有可记忆性？",
-    claim: "可记忆性来自三种资源叠加：传说提供可讲述的时间纵深，典籍与考古提供可视化物证感，矿城早餐和制作技艺提供可体验的身体记忆。政策、市场、非遗与乡愁则把这些资源推入传播。",
-    evidence: "对传说文本、考古报道、地方标准、非遗节目和产业政策进行跨文本比较，观察同一对象如何被赋予不同时间尺度。",
+    question: "哪些材料让淮南牛肉汤容易被人记住？",
+    claim: "传说让它好讲，典籍和考古让它看起来有历史根据，矿城早餐和制作过程则让本地人能用亲身经验确认它。政策、市场、非遗和乡愁又把这些材料推到更多人面前。",
+    evidence: "比较传说、考古报道、地方标准、非遗节目和产业政策，看它们分别怎样讲这碗汤的过去。",
     boundary: "考古牛骨、古代烹牛文字与现代菜品之间不存在可直接证明的连续配方链。",
     sources: [10, 14, 21, 24, 28, 29, 30, 52, 53],
   },
   {
     label: "第三章 · 如何记忆",
-    question: "记忆如何被激活、重构并在多重话语中协商？",
-    claim: "考古、电视剧和节庆构成事件触发器；新闻、短视频、直播与线下活动进行再媒介化；“千年、非遗、烟火气、正宗”等高频符号完成压缩编码；官方、商业和民间主体再争夺解释权。",
-    evidence: "以武王墩、《六姊妹》、万人共品和集体商标为事件链，比较事件前后报道框架、镜头符号、评论主题与政策承接。",
+    question: "考古、电视剧和短视频，是怎样重新讲这碗汤的？",
+    claim: "考古、电视剧和节庆会让关注突然升温。新闻、短视频、直播和线下活动再把同一个故事改写成不同版本；“千年、非遗、烟火气、正宗”等标签把复杂内容压缩成几句话，各方也会争论这些话该怎么理解。",
+    evidence: "把武王墩、《六姊妹》、万人共品和集体商标连成一条时间线，比较事件前后媒体用了什么标题、画面和评论，地方政策又怎样接住热度。",
     boundary: "平台热度只能证明可见性变化；集体记忆还需由受众复述、认同与实践材料证明。",
     sources: [17, 23, 25, 27, 39, 40, 47, 48, 49],
   },
   {
     label: "第四章 · 记忆转化",
-    question: "记忆怎样转为情感认同、空间流量和产业价值？",
-    claim: "个人味觉通过公开叙事聚合为集体身份；影视景观通过线路、门店和活动转为身体到场；标准、商标、包装和电商则让地方记忆成为可复制、可携带的符号资本。",
-    evidence: "将游客报道、文旅活动、网销口径、政策奖补和产业数据组成转化链，而不是孤立罗列增长数字。",
+    question: "网上关注怎样变成认同、到访和消费？",
+    claim: "个人味觉被公开讲述后，可能变成一群人的共同话题；影视里的场景通过线路、门店和活动变成实地到访；标准、商标、包装和电商则让这碗汤带着“淮南”名称走向外地。",
+    evidence: "把游客报道、文旅活动、网络销售、政策奖补和产业数据按先后关系连起来，不要只罗列增长数字。",
     boundary: "游客增长、产业增长与媒介事件同期发生不等于单一因果；必须保留其他政策、季节和市场因素。",
     sources: [3, 6, 8, 18, 19, 32, 33, 41, 42, 47, 50, 51],
   },
   {
     label: "第五章 · 记忆障碍",
-    question: "谁被突出、谁被删除，哪些传播会损伤地方性？",
-    claim: "可传播逻辑偏爱帝王传说和宏大数字；标准化可能压缩门店差异；碎片化内容可能用视觉奇观代替技艺语境；年轻受众的二次创作也可能与老一代生活记忆断裂。",
-    evidence: "对同一历史主张的不同表述、标准条款与门店实践、宣传视频与传承人访谈进行反例分析。",
+    question: "传播突出谁、忽略谁，又会丢掉哪些地方经验？",
+    claim: "媒体更喜欢帝王传说和醒目的大数字；统一标准可能压缩门店差异；短视频也可能只留下好看的画面，省略技艺和普通劳动者的经历。年轻人的新表达，还可能同老一代的生活记忆接不上。",
+    evidence: "对照同一历史说法的不同版本、文件标准与门店做法、宣传视频与传承人访谈，主动寻找不符合主流说法的材料。",
     boundary: "不能预设商业化必然损害非遗；关键判断标准是社区参与、收益、公平表达和持续传承。",
     sources: [5, 9, 36, 37, 38, 45, 46, 52],
   },
   {
     label: "结语 · 研究启示",
-    question: "媒介记忆如何赋能城市，同时避免把地方性变成空壳？",
-    claim: "有效的城市符号不是政府单向设计的口号，而是地方生活、公共治理、商业网络与受众实践持续协商的结果；非遗传播的目标应从曝光量转向传承能力与社区受益。",
-    evidence: "用城市品牌理论解释身份—形象关系，用UNESCO原则提出传承人参与、数据透明和差异化保护指标。",
-    boundary: "结论应回到机制与条件，避免再次用“打造名片、促进发展”替代研究发现。",
+    question: "城市怎样借这碗汤被看见，又不把地方生活掏空？",
+    claim: "一道菜能不能长期代表一座城，不能只靠政府设计口号，还要看本地生活是否认可、商家怎样经营、公共部门怎样管理、外地人怎样实际体验。非遗传播也不能只看曝光量，还要看有没有人愿意继续学、相关社区有没有受益。",
+    evidence: "用城市品牌研究解释城市形象和本地认同的关系，再根据UNESCO原则提出传承人参与、数据公开和保留门店差异等可检查的指标。",
+    boundary: "结论要说清这些变化在什么条件下发生，不要再用“打造名片、促进发展”代替研究发现。",
     sources: [2, 36, 37, 41, 42, 45, 46],
   },
 ];
 
 const codingRows = [
-  ["记忆资源", "传说 / 考古典籍 / 市井生活 / 非遗技艺 / 工业城市", "文本把牛肉汤的过去锚定在哪里？"],
+  ["故事从哪里来", "传说 / 考古典籍 / 市井生活 / 非遗技艺 / 工业城市", "这条内容把牛肉汤的过去放在哪里？"],
   ["时间框架", "楚汉—五代 / 矿业城市 / 改革开放 / 数字当下", "是否把断裂的时期压缩成连续历史？"],
   ["核心符号", "大鼎 / 红油 / 热气 / 粉丝豆饼 / 老街矿区 / 家", "哪些视觉、听觉和味觉线索被重复？"],
   ["叙事框架", "千年历史 / 非遗 / 家乡味 / 城市名片 / 百亿产业", "内容优先让受众记住什么？"],
@@ -174,17 +174,17 @@ const codingRows = [
 ];
 
 const videoCodingRows = [
-  { id: 22, genre: "消费生活节目", frame: "地方美食 + 历史文化", use: "建立2022年的媒介基线：镜头怎样把食材、热气和历史故事组合为“地方名片”。" },
-  { id: 23, genre: "新闻联播", frame: "重大考古 + 中华文明", use: "分析国家级新闻如何制造城市历史可见度；不能把考古报道直接编码为牛肉汤起源证据。" },
+  { id: 22, genre: "消费生活节目", frame: "地方美食 + 历史文化", use: "用它了解2022年的常见讲法：镜头怎样把食材、热气和历史故事组合成一张“地方名片”。" },
+  { id: 23, genre: "新闻联播", frame: "重大考古 + 中华文明", use: "看国家级新闻怎样让淮南历史被更多人看见；不能把考古报道直接当成牛肉汤的起源证据。" },
   { id: 24, genre: "深度新闻", frame: "专家解释 + 礼制饮食", use: "记录专家如何限定黄牛遗存的解释范围，可与地方传播中的“千年同款”进行对照。" },
-  { id: 25, genre: "电视剧主创访谈", frame: "家庭记忆 + 地方生活", use: "分析“家、代际、迁徙、烟火气”怎样成为观众理解淮南的预媒介框架。" },
-  { id: 26, genre: "新华社短视频", frame: "万人共食 + 文旅动能", use: "观察影视IP、地方仪式、镜头人群和消费场景怎样共同完成事件化传播。" },
-  { id: 27, genre: "非遗文化节目", frame: "技艺展示 + 国家舞台", use: "编码选料、熬制、动作、传承人话语与舞台化效果，讨论“技艺”是否被视觉奇观遮蔽。" },
-  { id: 28, genre: "新闻联播", frame: "科技检测 + 楚国礼乐", use: "分析检测结果怎样被转化为公共记忆；与2024报道比较同一考古事件的累积性再生产。" },
+  { id: 25, genre: "电视剧主创访谈", frame: "家庭记忆 + 地方生活", use: "看“家、几代人、迁徙和烟火气”怎样影响观众理解淮南。" },
+  { id: 26, genre: "新华社短视频", frame: "万人共食 + 文旅动能", use: "观察电视剧热度、集体活动、镜头中的人群和消费场景怎样被放进同一条传播内容。" },
+  { id: 27, genre: "非遗文化节目", frame: "技艺展示 + 国家舞台", use: "记录节目拍了哪些选料、熬制和操作动作，又让谁来解释；再看好看的舞台效果有没有盖住真正的技艺。" },
+  { id: 28, genre: "新闻联播", frame: "科技检测 + 楚国礼乐", use: "看检测结果怎样进入公众记忆；再和2024年的报道对照，观察同一次考古发现后来增加了哪些新说法。" },
 ];
 
 const mediaAssets = [
-  { id: "bowl", src: "media/commons/huainan-bowl.jpg", title: "一碗汤里的视觉层次", alt: "俯拍的一碗淮南牛肉汤，能看到牛肉、香菜、葱花和清汤", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 54, note: "俯视画面把肉片、绿叶、汤面与碗沿同时纳入视野，适合编码食材可见度与颜色对比。" },
+  { id: "bowl", src: "media/commons/huainan-bowl.jpg", title: "一碗汤里的视觉层次", alt: "俯拍的一碗淮南牛肉汤，能看到牛肉、香菜、葱花和清汤", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 54, note: "俯视画面同时拍到肉片、绿叶、汤面和碗沿。分析时可以记录哪些食材最显眼、颜色怎样形成对比。" },
   { id: "onion", src: "media/commons/huainan-onion.jpg", title: "浇头让“正宗”出现差异", alt: "一碗加入洋葱和红辣椒浇头的淮南牛肉汤", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 56, note: "洋葱与辣椒让同一菜名呈现不同版本，提醒研究者不要把一张照片当作唯一标准。" },
   { id: "shortbread", src: "media/commons/huainan-shortbread.jpg", title: "汤与酥饼是一组吃法", alt: "淮南牛肉汤与一盘酥饼摆在木桌上", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 57, note: "主食搭配把研究对象从“单碗菜品”扩展为一顿早餐的组合、节奏与饱腹经验。" },
   { id: "dip", src: "media/commons/huainan-dip.jpg", title: "动作也是感官记忆", alt: "酥饼靠近汤碗，呈现蘸汤或搭配食用的场景", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 59, note: "掰、蘸、咬等身体动作很少出现在政策文本中，却是访谈和场景观察可以追问的生活知识。" },
@@ -197,7 +197,7 @@ const siteTabs = [
   { id: "atlas", number: "02", label: "牛肉汤图鉴", note: "实物、吃法与门店" },
   { id: "mechanism", number: "03", label: "案例与机制", note: "传播与反思" },
   { id: "draft", number: "04", label: "中文正文", note: "章节写作底稿" },
-  { id: "methods", number: "05", label: "研究方法", note: "抽样、编码与访谈" },
+  { id: "methods", number: "05", label: "研究方法", note: "抽样、分类与访谈" },
   { id: "sources", number: "06", label: "来源资料", note: "视频与60项档案" },
 ] as const;
 
@@ -275,10 +275,10 @@ export default function Home() {
       {activeTab === "overview" && <div className="tab-page" data-page="overview">
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">HUAINAN · MEMORY ATLAS</p>
+          <p className="eyebrow">淮南牛肉汤 · 媒介记忆研究</p>
           <h1>一碗汤，<br />如何成为一座城的记忆？</h1>
           <p className="dek">
-            从楚汉典籍、街巷烟火到短视频、电视剧与产业政策：这不是一道菜的“起源故事”，而是一场仍在发生的记忆建构。
+            有人说它传了两千年，有人记得的是矿区清晨，还有人因为《六姊妹》第一次注意到它。这个网站不急着替谁下结论，而是把故事、证据和传播过程一层层拆开。
           </p>
           <div className="hero-actions">
             <a className="primary-action" href="#atlas" onClick={() => openTab("atlas")}>打开牛肉汤图鉴</a>
@@ -289,28 +289,28 @@ export default function Home() {
 
         <div className="memory-orbit" aria-label="媒介记忆建构路径示意图">
           <div className="orbit orbit-outer"><span>城市符号</span></div>
-          <div className="orbit orbit-middle"><span>媒介再生产</span></div>
-          <div className="orbit orbit-inner"><span>身体记忆</span></div>
+          <div className="orbit orbit-middle"><span>媒体反复讲述</span></div>
+          <div className="orbit orbit-inner"><span>味道和日常</span></div>
           <div className="bowl"><span>淮南</span><strong>牛肉汤</strong></div>
-          <p className="orbit-note">记忆不是被原样保存，<br />而是在每次传播中重新生成。</p>
+          <p className="orbit-note">人们记住的不只是什么发生过，<br />也包括后来怎样被讲、被看见、被吃到。</p>
         </div>
       </section>
 
       <section className="question-strip" aria-label="研究路径">
         <span className="strip-label">研究路径</span>
         <ol>
-          <li><b>01</b> 因何可记</li>
-          <li><b>02</b> 如何被记</li>
-          <li><b>03</b> 怎样转化</li>
-          <li><b>04</b> 何处失真</li>
-          <li><b>05</b> 如何验证</li>
+          <li><b>01</b> 为什么好记</li>
+          <li><b>02</b> 媒体怎么讲</li>
+          <li><b>03</b> 热度去了哪里</li>
+          <li><b>04</b> 传播丢掉什么</li>
+          <li><b>05</b> 怎样拿材料证明</li>
         </ol>
       </section>
 
       <section className="reading-note page-section">
         <div>
-          <p className="section-kicker">HOW TO READ</p>
-          <h2>先把“事实”拆成不同强度的证据。</h2>
+          <p className="section-kicker">阅读说明</p>
+          <h2>先看清：每句话的证据有多硬。</h2>
         </div>
         <div className="evidence-legend">
           <article><span className="badge verified">可核事实</span><p>法规、名录、正式统计、考古报告能够直接支持的陈述。</p></article>
@@ -322,80 +322,80 @@ export default function Home() {
 
       <section className="thesis-section page-section" id="thesis">
         <div className="section-heading">
-          <div><p className="section-kicker">THESIS ARCHITECTURE</p><h2>先确定论文真正要解释的，不是“它有多火”。</h2></div>
-          <p>你的提纲已经具备完整过程链。下面把标题转成可以回答、可以搜集材料、也可以被反驳的研究问题。</p>
+          <div><p className="section-kicker">论文要回答什么</p><h2>这篇论文真正要解释的，不只是“它有多火”。</h2></div>
+          <p>下面五个问题分别追问：材料从哪里来、媒体怎么讲、谁在发言、热度去了哪里，以及传播丢掉了什么。</p>
         </div>
 
         <div className="central-question">
           <span>核心研究问题</span>
-          <p>在数字媒介与地方文化产业协同发展的语境中，淮南牛肉汤如何经由多主体、多媒介的选择、编码、再媒介化与实践转化，从地方日常饮食成为集体记忆和城市符号；这一过程中又发生了哪些失真、排除与地方性损耗？</p>
-          <small>可直接用于绪论“研究问题”，正文再将“如何”拆解为下列五个子问题。</small>
+          <p>淮南牛肉汤原本是当地人的日常吃食。考古新闻、电视剧、短视频、政府宣传和商业经营，怎样一步步把它讲成“淮南的代表”？不同人为什么愿意相信、转发、打卡和购买？在这个过程中，哪些历史有证据，哪些只是好听的故事，又有哪些普通人的记忆被挤到了一边？</p>
+          <small>这一段可以直接放进绪论。下面五个问题把“大问题”拆成了可查材料、可做访谈的小问题。</small>
         </div>
 
         <div className="research-question-grid">
-          <article><b>RQ1</b><h3>资源条件</h3><p>哪些传说、物证、技艺和日常经验使它具有可记忆性？哪些是历史证据，哪些只是记忆资源？</p></article>
-          <article><b>RQ2</b><h3>建构机制</h3><p>考古、影视、短视频、新闻、直播和线下活动如何激活并重构这些资源？</p></article>
-          <article><b>RQ3</b><h3>主体协商</h3><p>政府、媒体、企业、传承人、门店与食客分别生产何种“正宗”与城市想象？</p></article>
-          <article><b>RQ4</b><h3>价值转化</h3><p>个人味觉如何聚合为集体身份，线上注意力又如何进入空间到访、购买和产业链？</p></article>
-          <article><b>RQ5</b><h3>障碍与边界</h3><p>选择性记忆、碎片化、标准化和商业化在何种条件下损伤历史深度与地方性？</p></article>
+          <article><b>RQ1</b><h3>它为什么好记</h3><p>传说、考古、制作技艺和早餐经验分别起了什么作用？哪些能当历史证据，哪些只能说明人们愿意这样讲？</p></article>
+          <article><b>RQ2</b><h3>媒体怎么讲</h3><p>考古报道、电视剧、短视频、新闻、直播和线下活动，分别挑中了哪些画面和故事？</p></article>
+          <article><b>RQ3</b><h3>谁说了算</h3><p>政府、媒体、企业、传承人、门店和食客，对“正宗”有怎样不同的理解？谁的声音最容易被看见？</p></article>
+          <article><b>RQ4</b><h3>热度去了哪里</h3><p>网上关注有没有变成城市认同、游客到访、购买和产业增长？中间需要哪些线下承接？</p></article>
+          <article><b>RQ5</b><h3>传播丢掉了什么</h3><p>追求热度、统一标准和商业规模时，复杂历史、门店差异和普通人的生活记忆会不会被压扁？</p></article>
         </div>
 
         <div className="theory-heading">
-          <p className="section-kicker">LITERATURE REVIEW · FOUR LENSES</p>
-          <h3>文献综述不要四块平铺，而要让四种理论各自解释一个环节。</h3>
+          <p className="section-kicker">四组理论，各管一件事</p>
+          <h3>理论不是为了显得高深，而是帮你回答四个具体问题。</h3>
         </div>
         <div className="theory-grid">
           <article>
             <span>01 · 媒介记忆</span>
-            <h3>解释“记忆怎样被媒介生产”</h3>
-            <p>van Dijck强调媒介技术参与个人与文化记忆；Erll用“再媒介化”说明记忆在文学、影视、新闻和数字平台之间持续转写；Hoskins进一步揭示网络连接同时带来活化与控制<Cite id={31} /><Cite id={35} /><Cite id={39} /><Cite id={40} />。</p>
-            <em>放入：国内外研究现状、第三章机制分析</em>
+            <h3>媒体为什么不只是传话</h3>
+            <p>媒体会决定什么被反复看见、什么被省略。同一段故事从书本进入电视、新闻和短视频时，会被重新剪裁和解释。学术上把这种跨媒介反复改写叫“再媒介化”<Cite id={31} /><Cite id={35} /><Cite id={39} /><Cite id={40} />。</p>
+            <em>主要用于：第三章分析新闻、影视和短视频</em>
           </article>
           <article>
             <span>02 · 食物记忆</span>
-            <h3>解释“为什么味道能连接身份”</h3>
-            <p>食物同时牵动感官、身体、怀旧、族群与被发明的传统；字幕、弹幕和评论又能把私人味觉唤醒为可公开交流的地方记忆<Cite id={32} /><Cite id={33} />。</p>
-            <em>放入：第二章可记忆性、第四章情感共鸣</em>
+            <h3>为什么味道会让人想起家</h3>
+            <p>人对食物的记忆不只来自知识，还来自气味、温度、吃法和一起吃饭的人。字幕、弹幕和评论又会把“我记得的味道”变成可以公开交流的家乡记忆<Cite id={32} /><Cite id={33} />。</p>
+            <em>主要用于：第二章日常经验、第四章情感认同</em>
           </article>
           <article>
             <span>03 · 城市品牌</span>
-            <h3>解释“地方身份怎样变成城市形象”</h3>
-            <p>城市品牌不只是宣传口号，而是地方身份、公共治理和外部形象之间的协商；地方食品商店中的商品、空间、讲述和身体体验都在共同“表演”地方<Cite id={41} /><Cite id={42} />。</p>
-            <em>放入：第四章城市符号、结语现实启示</em>
+            <h3>一道菜怎样代表一座城</h3>
+            <p>城市形象不能只靠一句广告。它还要看本地人认不认、管理是否跟得上、外地人实际体验怎样。门店、商品、街区和食客的行为，都在告诉人们“这里是什么样的地方”<Cite id={41} /><Cite id={42} />。</p>
+            <em>主要用于：第四章城市形象、结语建议</em>
           </article>
           <article>
             <span>04 · 活态非遗</span>
-            <h3>解释“保护与商业化的判断标准”</h3>
-            <p>非遗应由社区持续再创造和传递。商业使用并非天然有害，关键在知情参与、公平受益、语境保存以及传承人的实际能力<Cite id={37} /><Cite id={38} /><Cite id={45} /><Cite id={46} />。</p>
-            <em>放入：第五章问题反思、非遗保护启示</em>
+            <h3>怎样保护，而不是把配方冻住</h3>
+            <p>非遗不是只能原样复制的旧物，而是仍有人在学、在做、在改的生活实践。商业化不一定有害，关键要看传承人和相关社区能不能参与决定、得到合理收益，并保留技艺原来的生活环境<Cite id={37} /><Cite id={38} /><Cite id={45} /><Cite id={46} />。</p>
+            <em>主要用于：第五章问题反思、结语保护建议</em>
           </article>
         </div>
 
         <aside className="innovation-callout">
-          <span>可形成的创新点</span>
-          <p>把“资源—事件触发—符号编码—话语协商—情感/空间/产业转化—再归档”作为一条完整机制链，并用证据等级控制地方传说、宣传口径与研究推断之间的越界。</p>
+          <span>这篇论文可以多做一步</span>
+          <p>不要只说媒体让牛肉汤更有名。把整个过程讲清楚：原来有哪些故事和日常经验，什么事件让它突然被看见，媒体挑了哪些符号，不同人怎样争论“正宗”，最后有没有带来认同、到访和消费。每一步都说明证据够不够。</p>
         </aside>
       </section>
 
       <section className="evidence-section page-section" id="evidence">
         <div className="section-heading">
-          <div><p className="section-kicker">01 · WHY IT IS MEMORABLE</p><h2>因何记忆：三层地基，不是一条起源线。</h2></div>
-          <p>“悠久”本身不能解释记忆。真正有效的是：故事便于复述、物证便于展示、日常经验便于身体确认。</p>
+          <div><p className="section-kicker">01 · 人们为什么会记住它</p><h2>人们记住它，不只因为一句“历史悠久”。</h2></div>
+          <p>故事让人愿意复述，考古让故事看起来有依据，早餐经验则让本地人能用自己的味觉确认它。</p>
         </div>
 
         <div className="memory-foundations">
           <article className="foundation-card legend-card">
             <span className="foundation-index">A</span>
             <span className="badge legend">地方传说</span>
-            <h3>可讲述：王、兵与一锅救命汤</h3>
+            <h3>好讲：名人、危机和一碗救命汤</h3>
             <p>刘安炼丹、赵匡胤困寿春等叙事，将复杂历史压缩为人物、危机与救赎。它们的传播优势来自戏剧性，不来自史料强度。</p>
-            <p className="card-conclusion">作用：为地方美食提供“很久以前就属于这里”的时间纵深。</p>
+            <p className="card-conclusion">它让人觉得：这碗汤很早就属于这里。</p>
             <a className="source-link" href={sourceById(10).url} target="_blank" rel="noreferrer">查看官方如何讲述这一故事 <span>↗</span></a>
           </article>
           <article className="foundation-card artifact-card">
             <span className="foundation-index">B</span>
             <span className="badge verified">可核事实</span>
-            <h3>可展示：典籍文字与考古器物</h3>
+            <h3>看得见：典籍中的文字和考古器物</h3>
             <p>《淮南子》确有“屠牛而烹其肉”“煎熬燎炙”<Cite id={29} />；武王墩出土鼎与黄牛等经烹饪动物遗存<Cite id={24} /><Cite id={28} />。</p>
             <p className="card-conclusion">边界：这些证据支持古代牛肉烹饪，却不能直接证明现代菜品配方。</p>
             <a className="source-link" href={sourceById(29).url} target="_blank" rel="noreferrer">阅读《淮南子》原文 <span>↗</span></a>
@@ -403,9 +403,9 @@ export default function Home() {
           <article className="foundation-card everyday-card">
             <span className="foundation-index">C</span>
             <span className="badge reported">地方研究</span>
-            <h3>可体验：矿城清晨与市井早餐</h3>
+            <h3>吃得到：矿城清晨和街边早餐</h3>
             <p>地方政府资料把现代牛肉汤的兴起与回民牛肉技艺、矿区器具条件及改革开放后的屠宰政策变化联系起来<Cite id={21} /><Cite id={30} />。</p>
-            <p className="card-conclusion">作用：热、辣、香与街巷共食，让城市记忆进入身体而非只留在文字中。</p>
+            <p className="card-conclusion">热、辣、香和一起吃早餐的经历，让城市记忆不只留在文字里。</p>
             <a className="source-link" href={sourceById(21).url} target="_blank" rel="noreferrer">查看现代兴起的地方解释 <span>↗</span></a>
           </article>
         </div>
@@ -418,8 +418,8 @@ export default function Home() {
 
       <section className="numbers-section page-section">
         <div className="section-heading light-heading">
-          <div><p className="section-kicker">THE NUMBERS, WITH CAUTION</p><h2>一条增长曲线，也可能是一种叙事。</h2></div>
-          <p>下列数字均有公开出处，但统计范围、调查方法和“全产业链”定义没有完全公开，不能简单当作同口径时间序列。</p>
+          <div><p className="section-kicker">公开数字，先看口径</p><h2>数字很大，但不一定能直接放在一起比较。</h2></div>
+          <p>这些数字都能找到出处，但各自统计了什么、怎样统计，公开信息并不完整。因此，它们不能简单连成一条增长曲线。</p>
         </div>
         <div className="metric-grid">
           <article><span>2017</span><strong>省级非遗</strong><p>淮南牛肉汤制作技艺进入安徽省第五批省级非遗代表性项目名录。</p><div className="metric-source">制度性确认 <Cite id={18} /></div></article>
@@ -428,7 +428,7 @@ export default function Home() {
           <article><span>2025 报道</span><strong>&gt; 320 亿元</strong><p>全产业链年产值；相关企业235家。与上半年数字不应直接相加。</p><div className="metric-source">公开口径 <Cite id={6} /></div></article>
           <article className="target-metric"><span>2027 目标</span><strong>&gt; 500 亿元</strong><p>这是政策目标，不是已经实现的事实。</p><div className="metric-source">规划目标 <Cite id={1} /></div></article>
         </div>
-        <p className="data-warning"><b>口径警报：</b> 2022年地方文章称全国门店“3万余家”，2025年媒体报道又称“约10万家”。两者都不是抽样方法透明的官方普查。本网站因此不绘制门店增长率，只把它们当作“规模想象”如何扩张的材料。</p>
+        <p className="data-warning"><b>先别急着画增长曲线：</b> 2022年地方文章称全国门店“3万余家”，2025年媒体报道又称“约10万家”。两者都没有公开完整的调查方法，所以不能据此计算门店增长率。它们只能说明，对产业规模的公开说法越来越大。</p>
       </section>
       </div>}
 
@@ -439,16 +439,16 @@ export default function Home() {
           <figcaption>淮南牛肉汤与酥饼 · Franklin Rainier · Public Domain Mark <Cite id={57} /></figcaption>
         </figure>
         <div className="atlas-hero-copy">
-          <p className="section-kicker">THE SOUP ITSELF · VISUAL ATLAS</p>
+          <p className="section-kicker">先认识这碗汤</p>
           <h2>先看清这碗汤，<br />再谈它怎样被记住。</h2>
           <p>前面的论文结构谈了很多媒介、城市与记忆，但研究对象不能只剩一个抽象菜名。这一页把镜头拉回碗里：汤底、肉片、粉丝、豆制品、香菜葱花、辣油和酥饼怎样共同出现；一顿早餐怎样从后厨工序走到桌面；“淮南牛肉汤”又怎样作为门店招牌进入外地街道。</p>
-          <aside><b>图片边界</b>这组开放授权照片记录了以“淮南牛肉汤”名义出现的不同消费场景，并不等于淮南本地全部门店，也不能用来确定唯一正宗配方。它们是视觉分析材料，不是田野调查的替代品。</aside>
+          <aside><b>这组图片能说明什么</b>这些开放授权照片记录了以“淮南牛肉汤”名义出现的不同消费场景，但不能代表淮南所有门店，也不能确定唯一的正宗配方。它们可以帮助观察画面怎样表现这碗汤，却不能代替到店调查。</aside>
         </div>
       </section>
 
       <section className="bowl-anatomy page-section">
         <div className="section-heading">
-          <div><p className="section-kicker">01 · WHAT IS IN THE BOWL</p><h2>一碗汤的六个层次。</h2></div>
+          <div><p className="section-kicker">01 · 碗里有什么</p><h2>先把一碗汤拆成六个部分。</h2></div>
           <p>央视网的地方小吃介绍提到牛骨汤、牛肉或牛杂、粉丝、干丝、葱段和红油等常见组成<Cite id={60} />；2009年地方制作规范则把原辅料、熬汤、烫制与卫生要求写成技术文本<Cite id={52} />。两者都只能作为观察入口，不能替代当下门店实测。</p>
         </div>
         <div className="anatomy-layout">
@@ -467,30 +467,30 @@ export default function Home() {
         </div>
 
         <div className="flavor-reading">
-          <article><b>看</b><h3>颜色结构</h3><p>浅色汤面、灰褐肉片、绿色香菜与红色辣油构成稳定的屏幕识别组合。内容分析可以记录每种颜色是否出现、占据多大画面。</p></article>
-          <article><b>听</b><h3>声音结构</h3><p>滚汤、漏勺、切肉、碗筷和门店叫单共同制造“正在营业”的现场感。公开视频编码不应只看字幕与旁白。</p></article>
-          <article><b>闻 / 尝</b><h3>语言替代</h3><p>屏幕无法传递气味和味道，只能借“鲜、香、辣、浓、不腻”等词和食客表情进行替代。研究要区分感官本身与媒介对感官的描述。</p></article>
-          <article><b>触 / 动</b><h3>身体动作</h3><p>端碗、吹热气、夹肉、掰饼、蘸汤和加辣，是食物记忆进入身体的具体路径，也是门店观察可记录的行为单位。</p></article>
+          <article><b>看</b><h3>画面里有哪些颜色</h3><p>浅色汤面、灰褐肉片、绿色香菜与红色辣油，是短视频和照片里很容易认出的组合。分析时可以记录每种颜色有没有出现、占了多大画面。</p></article>
+          <article><b>听</b><h3>哪些声音让人觉得“正在营业”</h3><p>滚汤、漏勺、切肉、碗筷和门店叫单共同制造现场感。分析视频时，不能只看字幕和旁白。</p></article>
+          <article><b>闻 / 尝</b><h3>屏幕怎样替味道说话</h3><p>屏幕传不出气味和味道，只能用“鲜、香、辣、浓、不腻”等词和食客表情来代替。研究要分清真实味觉和视频对味觉的描述。</p></article>
+          <article><b>触 / 动</b><h3>人是怎么吃的</h3><p>端碗、吹热气、夹肉、掰饼、蘸汤和加辣，都是具体的进食动作。到门店观察时，可以直接把这些动作记录下来。</p></article>
         </div>
       </section>
 
       <section className="making-section page-section">
         <div className="section-heading light-heading">
-          <div><p className="section-kicker">02 · FROM POT TO TABLE</p><h2>从后厨到桌面：五段可观察的工序。</h2></div>
+          <div><p className="section-kicker">02 · 这碗汤怎么端上桌</p><h2>从后厨到桌面，可以观察五个步骤。</h2></div>
           <p>这不是家庭复刻菜谱，而是依据公开技术规范和节目材料整理的研究观察表。2009年规范可用于理解工序怎样被文本固定，但不能当作2026年唯一现行版本<Cite id={52} />。</p>
         </div>
         <ol className="making-steps">
-          <li><span>01</span><div><h3>原料处理</h3><p>牛肉、骨与牛杂的清洗、浸泡、分拣决定汤的基础状态。观察时记录原料来源说法、可见卫生流程与店家愿意公开的程度。</p></div><em>研究词：产地、清真、鲜货 / 冻货、可追溯</em></li>
-          <li><span>02</span><div><h3>大锅熬汤</h3><p>时间、火候、骨肉比例和香料是门店知识最集中的部分。媒体爱拍沸腾大锅，因为它同时传递规模、热度与手艺感。</p></div><em>研究词：老汤、火候、秘方、可视化劳动</em></li>
-          <li><span>03</span><div><h3>熟制与切配</h3><p>肉片厚薄、牛杂种类、粉丝和豆制品的预处理影响入口质感，也体现门店追求效率还是保留手工差异。</p></div><em>研究词：刀工、份量、预制、中央厨房</em></li>
-          <li><span>04</span><div><h3>烫制与冲汤</h3><p>漏勺把粉丝、干丝等配料送入滚汤，再与肉片共同成碗。这一连续动作节奏快、声音强，是短视频最容易截取的“技艺时刻”。</p></div><em>研究词：速度、热气、声音、表演性</em></li>
-          <li><span>05</span><div><h3>桌边完成</h3><p>香菜、葱花、红油、盐度与酥饼把食客纳入制作过程。最终味道是后厨基础、门店惯例和个人选择共同形成的。</p></div><em>研究词：自助调味、共食、早餐节奏、身体记忆</em></li>
+          <li><span>01</span><div><h3>原料处理</h3><p>牛肉、骨和牛杂怎样清洗、浸泡、分拣，会影响汤的基础状态。观察时要记下店家怎样说原料来源、卫生流程能否看见、哪些信息不愿公开。</p></div><em>观察时可以记：产地、清真、鲜货 / 冻货、能否追溯</em></li>
+          <li><span>02</span><div><h3>大锅熬汤</h3><p>时间、火候、骨肉比例和香料，是门店经验最集中的部分。媒体爱拍沸腾大锅，因为它看起来既有规模，也有热度和手艺。</p></div><em>观察时可以记：老汤、火候、秘方、谁在劳动</em></li>
+          <li><span>03</span><div><h3>熟制与切配</h3><p>肉片厚薄、牛杂种类、粉丝和豆制品怎样预先处理，都会影响口感，也能看出门店更看重效率，还是更愿意保留手工差异。</p></div><em>观察时可以记：刀工、分量、预制、中央厨房</em></li>
+          <li><span>04</span><div><h3>烫制与冲汤</h3><p>漏勺把粉丝、干丝等配料送入滚汤，再和肉片一起装碗。这一串动作快、声音响，是短视频最爱拍的“手艺画面”。</p></div><em>观察时可以记：速度、热气、声音、是否专门为镜头表演</em></li>
+          <li><span>05</span><div><h3>桌边完成</h3><p>香菜、葱花、红油、盐度和酥饼，让食客也参与决定最后的味道。一碗汤最终怎么吃，是后厨做法、门店习惯和个人选择共同决定的。</p></div><em>观察时可以记：自己加料、一起吃饭、早餐节奏、进食动作</em></li>
         </ol>
       </section>
 
       <section className="media-gallery-section page-section">
         <div className="section-heading">
-          <div><p className="section-kicker">03 · OPEN MEDIA COLLECTION</p><h2>六张开放素材，六个论文观察点。</h2></div>
+          <div><p className="section-kicker">03 · 可以放心使用的图片</p><h2>六张开放素材，分别能看出什么？</h2></div>
           <p>图片已经下载到网站本地，避免外链失效。每张图保留作者、许可证和Commons原始文件页；CC BY-SA素材未修改原文件，仅由网页按卡片比例裁切显示。</p>
         </div>
         <div className="media-gallery-grid">
@@ -500,7 +500,7 @@ export default function Home() {
                 <img src={asset.src} alt={asset.alt} loading="lazy" />
                 <span>查看原始文件 ↗</span>
               </a>
-              <div className="media-copy"><small>0{index + 1} · VISUAL EVIDENCE</small><h3>{asset.title}</h3><p>{asset.note}</p><div>摄影：{asset.author} · <a href={asset.licenseUrl} target="_blank" rel="noreferrer">{asset.license}</a> · <Cite id={asset.sourceId} /></div></div>
+              <div className="media-copy"><small>0{index + 1} · 这张图能看什么</small><h3>{asset.title}</h3><p>{asset.note}</p><div>摄影：{asset.author} · <a href={asset.licenseUrl} target="_blank" rel="noreferrer">{asset.license}</a> · <Cite id={asset.sourceId} /></div></div>
             </article>
           ))}
         </div>
@@ -511,45 +511,45 @@ export default function Home() {
       {activeTab === "mechanism" && <div className="tab-page" data-page="mechanism">
       <section className="mechanism-section page-section" id="mechanism">
         <div className="section-heading">
-          <div><p className="section-kicker">02 · HOW MEMORY WORKS</p><h2>如何记忆：一套不断回流的媒介循环。</h2></div>
-          <p>媒介并非把既有记忆装进容器，而是参与选择、排序、强化和删除。数字平台又让这种过程变得持续更新<Cite id={31} /><Cite id={34} /><Cite id={35} />。</p>
+          <div><p className="section-kicker">01 · 这碗汤是怎样被越讲越大的</p><h2>媒体每讲一次，故事就会变一点。</h2></div>
+          <p>媒体不会把现成记忆原样搬过来。它会挑选、排序、强调，也会省略。一个故事从新闻进入电视剧、短视频和活动现场时，每次都会被重新讲一遍<Cite id={31} /><Cite id={34} /><Cite id={35} />。</p>
         </div>
 
         <div className="memory-loop" aria-label="媒介记忆循环的六个步骤">
-          <article><span>01</span><b>资源</b><p>典籍、传说、技艺、门店与个人乡愁</p></article>
-          <article><span>02</span><b>触发</b><p>考古发现、电视剧、节庆或平台热点</p></article>
-          <article><span>03</span><b>编码</b><p>“千年”“非遗”“烟火气”“正宗”等符号</p></article>
-          <article><span>04</span><b>协商</b><p>官方、商家、媒体与食客争夺解释权</p></article>
-          <article><span>05</span><b>转化</b><p>评论、购买、打卡、加盟与城市认同</p></article>
-          <article><span>06</span><b>再归档</b><p>新的图像、数据和体验成为下轮记忆资源</p></article>
+          <article><span>01</span><b>原有材料</b><p>传说、典籍、技艺、门店和个人回忆</p></article>
+          <article><span>02</span><b>突然升温</b><p>考古发现、电视剧、节庆或平台热点</p></article>
+          <article><span>03</span><b>贴上标签</b><p>“千年”“非遗”“烟火气”“正宗”</p></article>
+          <article><span>04</span><b>各说各话</b><p>政府、商家、媒体和食客解释不同</p></article>
+          <article><span>05</span><b>变成行动</b><p>评论、购买、打卡、加盟和认同</p></article>
+          <article><span>06</span><b>留下新素材</b><p>新的图像、数字和体验进入下一轮传播</p></article>
         </div>
 
         <div className="voice-grid">
           <article>
-            <span className="voice-number">01 / 官方话语</span>
-            <h3>把地方味道变成可治理的城市品牌</h3>
+            <span className="voice-number">01 / 政府怎么讲</span>
+            <h3>把一碗汤纳入城市规划和公共品牌</h3>
             <p>行动方案使用“规模商品、网红爆品、文旅潮品”的三段式表达<Cite id={1} />；地方条例进一步把标准、商标、非遗和文旅写入制度<Cite id={2} />。</p>
-            <div className="voice-effect">生产：权威性、统一性、公共资源</div>
+            <div className="voice-effect">带来的结果：统一名称、政策资源和管理标准</div>
           </article>
           <article>
-            <span className="voice-number">02 / 商业话语</span>
-            <h3>把记忆变成可复制、可携带、可下单的商品</h3>
+            <span className="voice-number">02 / 商家怎么讲</span>
+            <h3>让外地人也能买到、加盟和下单</h3>
             <p>方便装、冷冻款、中央厨房和直播带货解决“离开淮南还能不能喝到”的问题<Cite id={8} /><Cite id={11} />，同时也把“正宗”转化为品牌承诺。</p>
-            <div className="voice-effect">生产：可消费性、便利性、规模</div>
+            <div className="voice-effect">带来的结果：方便购买、方便复制、规模更大</div>
           </article>
           <article>
-            <span className="voice-number">03 / 民间话语</span>
-            <h3>用“我家的那一碗”抵抗单一版本</h3>
+            <span className="voice-number">03 / 普通人怎么讲</span>
+            <h3>用“我记得的那一碗”保留差异</h3>
             <p>老店、返乡者、演员Vlog与普通游客把宏大历史落回味觉、家庭和清晨<Cite id={17} />。差异化口味本身就是地方生活仍然鲜活的证据。</p>
-            <div className="voice-effect">生产：真实性、亲密感、多样性</div>
+            <div className="voice-effect">带来的结果：亲切、可信，也保留不同口味</div>
           </article>
         </div>
       </section>
 
       <section className="cases-section page-section" id="cases">
         <div className="section-heading">
-          <div><p className="section-kicker">03 · THREE TRIGGERS</p><h2>三个节点，看记忆如何突然“出圈”。</h2></div>
-          <p>选择案例查看它如何从一次事件，变成可分享、可消费、可到访的公共记忆。</p>
+          <div><p className="section-kicker">02 · 三次突然升温</p><h2>三个事件，怎样让更多人注意到这碗汤？</h2></div>
+          <p>选择一个案例，看看它怎样从一次新闻或活动，变成可以分享、购买和实地打卡的公共话题。</p>
         </div>
         <div className="case-tabs" role="tablist" aria-label="案例切换">
           {cases.map((item, index) => (
@@ -565,26 +565,26 @@ export default function Home() {
             <p>{selectedCase.body}</p>
           </div>
           <aside>
-            <span>研究推断</span>
+            <span>根据现有材料可以这样理解</span>
             <p>{selectedCase.insight}</p>
-            <div className="case-cites">证据链 {selectedCase.sources.map((id) => <Cite key={id} id={id} />)}</div>
+            <div className="case-cites">依据 {selectedCase.sources.map((id) => <Cite key={id} id={id} />)}</div>
           </aside>
         </div>
       </section>
 
       <section className="conversion-section page-section">
         <div className="section-heading">
-          <div><p className="section-kicker">04 · FROM MEMORY TO VALUE</p><h2>怎样转化：情感、空间与产业的三级跃迁。</h2></div>
-          <p>食物记忆能够连接身份、怀旧和感官经验<Cite id={32} /><Cite id={33} />，但价值转化不是自动发生的，需要媒介触发与线下承接。</p>
+          <div><p className="section-kicker">03 · 从看见，到打卡、购买和认同</p><h2>一段视频不会自动变成城市认同，更不会自动变成收入。</h2></div>
+          <p>它需要让人先产生情感，再有地方可去、有东西可买，也要有人把短期热度接成长期体验<Cite id={32} /><Cite id={33} />。</p>
         </div>
         <div className="conversion-grid">
-          <article><span>情感层</span><h3>个人味觉 → 集体身份</h3><p>“回家第一碗”“家里的味道”把私密经验公开表达；相似叙事聚合为城市共同体。</p></article>
-          <article><span>空间层</span><h3>屏幕景观 → 身体到场</h3><p>《六姊妹》取景地、非遗展馆与门店把在线观看转化为路线、打卡和共食<Cite id={17} /><Cite id={19} />。</p></article>
-          <article><span>产业层</span><h3>地方名品 → 标准商品</h3><p>集体商标、标准体系、加工技术和电商让记忆跨地域流通<Cite id={3} /><Cite id={5} /><Cite id={8} />。</p></article>
+          <article><span>先有情感</span><h3>“我家的味道”变成共同话题</h3><p>人们公开讲述“回家第一碗”“家里的味道”，原本私人的经验才可能慢慢变成一群人的共同认同。</p></article>
+          <article><span>再到现场</span><h3>看完屏幕，再去现场</h3><p>《六姊妹》取景地、非遗展馆和门店，把在线观看变成路线、打卡和一起喝汤<Cite id={17} /><Cite id={19} />。</p></article>
+          <article><span>最后进入商品</span><h3>带着“淮南”名字走向外地</h3><p>集体商标、标准、加工技术和电商，让牛肉汤可以跨地区销售，也让商品一直带着产地名称<Cite id={3} /><Cite id={5} /><Cite id={8} />。</p></article>
         </div>
         <div className="tourism-proof">
           <div><span>2025 · 春季</span><strong>12,000+</strong><p>九龙岗时光小镇官方报道的日均游客量</p></div>
-          <div className="proof-arrow">屏幕记忆 <i>→</i> 空间流量</div>
+          <div className="proof-arrow">看见淮南 <i>→</i> 真正来到淮南</div>
           <div><span>2025 · 五一</span><strong>65%</strong><p>报道中的市外游客占比</p></div>
           <p className="proof-note">这能支持“影视带来显著到访”，但尚不能单独证明牛肉汤贡献了多少旅游收入。<Cite id={6} /><Cite id={19} /></p>
         </div>
@@ -592,17 +592,17 @@ export default function Home() {
 
       <section className="reflection-section page-section" id="reflection">
         <div className="section-heading light-heading">
-          <div><p className="section-kicker">05 · WHAT GETS LOST</p><h2>何处失真：被看见的越多，被遗忘的也可能越多。</h2></div>
-          <p>媒介记忆从来具有选择性。高传播效率会放大鲜明符号，也会挤压复杂历史、地方差异与传承人的声音。</p>
+          <div><p className="section-kicker">04 · 传播中丢掉了什么</p><h2>故事越容易传播，越可能把复杂历史讲简单了。</h2></div>
+          <p>媒体总要做选择：醒目的画面更容易留下，复杂历史、门店差异和普通人的声音则可能被挤到后面。</p>
         </div>
         <div className="risk-grid">
-          <article><b>01</b><h3>传说吞没历史</h3><p>“两千年前已经喝同款牛肉汤”比“楚国存在牛肉烹饪与礼制”更易传播，却把推论包装成事实。</p><span>建议：所有起源叙事标记证据等级。</span></article>
-          <article><b>02</b><h3>标准抹平差异</h3><p>食品安全与品质底线需要标准，但清汤、红汤、香料与配料的门店差异也是地方知识。</p><span>建议：标准化底线，不标准化全部风味。</span></article>
-          <article><b>03</b><h3>流量替代传承</h3><p>节庆、直播和大屏曝光制造即时可见度，不等于技艺已被下一代掌握。</p><span>建议：公布学徒、传习活动和传承人收益。</span></article>
-          <article><b>04</b><h3>产业数字遮蔽口径</h3><p>产值、门店和就业数据频繁跃升，但统计边界与方法较少公开。</p><span>建议：建立年度可复核统计表与方法说明。</span></article>
+          <article><b>01</b><h3>大故事盖住普通人</h3><p>“两千年前已经喝同款牛肉汤”很好转发，却容易盖住矿区清晨、回民技艺和普通店主的生活经历。</p><span>建议：每个起源故事都标清证据有多强。</span></article>
+          <article><b>02</b><h3>统一标准压平门店差异</h3><p>食品安全需要共同底线，但清汤、红汤、香料和配料的门店差异，也是地方知识的一部分。</p><span>建议：统一安全底线，保留不同风味。</span></article>
+          <article><b>03</b><h3>有流量，不等于有人接着学</h3><p>节庆、直播和大屏能带来一时关注，却不能证明下一代已经掌握技艺。</p><span>建议：公布学徒人数、学习周期和传承人收益。</span></article>
+          <article><b>04</b><h3>数字很大，统计方法却没说清</h3><p>产值、门店和就业数字不断增加，但计算范围和方法很少完整公开。</p><span>建议：每年公开一张可以复核的统计表。</span></article>
         </div>
         <blockquote>
-          <p>非遗保护不是把一种做法冻结成唯一标准，而是确保知识、技能与意义仍能被社区持续传递和重新创造。</p>
+          <p>保护非遗，不是锁死一种做法，而是让相关的人还能继续学、继续做、继续决定它怎样变化。</p>
           <cite>基于 UNESCO《保护非物质文化遗产公约》与传承原则的概括 <Cite id={37} /><Cite id={38} /></cite>
         </blockquote>
       </section>
@@ -611,21 +611,21 @@ export default function Home() {
       {activeTab === "draft" && <div className="tab-page" data-page="draft">
       <section className="research-section page-section">
         <div className="section-heading">
-          <div><p className="section-kicker">06 · RESEARCH AGENDA</p><h2>从网站走回论文：四个可验证的研究命题。</h2></div>
-          <p>以下不是资料原话，而是基于公开材料形成、可继续用访谈和平台数据检验的研究假设。</p>
+          <div><p className="section-kicker">写正文前，先把判断拿出来检验</p><h2>这四句话看起来有道理，但还需要材料证明。</h2></div>
+          <p>它们不是现成结论，而是根据公开资料提出的猜想。后面还要用访谈、视频和平台样本来验证，也允许被反例推翻。</p>
         </div>
         <div className="proposition-list">
-          <article><span>P1</span><div><h3>感官锚定命题</h3><p>热、辣、香、汤锅与烧饼形成稳定的视听—味觉符号，使牛肉汤比抽象城市口号更容易被记住。</p></div><em>验证：感官民族志、食客深访、短视频画面编码</em></article>
-          <article><span>P2</span><div><h3>事件触发命题</h3><p>考古与影视不是孤立热点，而是把既有地方记忆短时间推入全国公共视野的“记忆加速器”。</p></div><em>验证：事件前后搜索指数、报道框架、评论时序</em></article>
-          <article><span>P3</span><div><h3>话语协商命题</h3><p>“正宗”并非固定属性，而是政府标准、企业品牌、传承人技艺与食客经验持续协商的结果。</p></div><em>验证：政策文本、品牌材料、门店与传承人访谈</em></article>
-          <article><span>P4</span><div><h3>线上—线下闭环命题</h3><p>媒介曝光只有被线路、场馆、门店与商品承接，才会从注意力转化为地方空间与产业价值。</p></div><em>验证：游客来源、消费路径、网销与到访的关联数据</em></article>
+          <article><span>P1</span><div><h3>味道比口号更容易记住</h3><p>热、辣、香、汤锅声和酥饼一起出现时，比抽象的城市宣传口号更容易让人留下印象。</p></div><em>怎么验证：跟店观察、访谈食客、分析视频画面</em></article>
+          <article><span>P2</span><div><h3>考古和电视剧会突然放大关注</h3><p>它们不是凭空创造记忆，而是把原来就有的地方故事，在短时间内推到更多人面前。</p></div><em>怎么验证：比较事件前后的搜索量、报道说法和评论时间</em></article>
+          <article><span>P3</span><div><h3>“正宗”是大家争出来的</h3><p>政府标准、企业品牌、传承人的做法和食客记得的味道，给出的答案可能并不一样。</p></div><em>怎么验证：对照政策、品牌材料、门店和传承人访谈</em></article>
+          <article><span>P4</span><div><h3>网上热度要有人在线下接住</h3><p>只有出现可走的路线、可看的场馆、可进入的门店和可购买的商品，网上关注才可能变成到访和收入。</p></div><em>怎么验证：调查游客从哪里来、怎样消费，再对照网销和到访数据</em></article>
         </div>
       </section>
 
       <section className="blueprint-section page-section" id="blueprint">
         <div className="section-heading light-heading">
-          <div><p className="section-kicker">CHAPTER-BY-CHAPTER ARGUMENT MAP</p><h2>逐章论证施工图：每一章都要有主张、材料与边界。</h2></div>
-          <p>这些不是替你写好的结论，而是可被资料支持、也允许反例修正的论证骨架。每章末尾的“边界”尤其重要，它能避免论文停留在宣传材料复述。</p>
+          <div><p className="section-kicker">每一章具体怎么写</p><h2>每一章都回答一个问题，也要说明证据还不够证明什么。</h2></div>
+          <p>这些不是替你写好的结论，而是写作路线。每章都先提出判断，再放材料、解释关系，最后说清不能下什么过头的结论。</p>
         </div>
         <div className="chapter-list">
           {chapterBlueprints.map((chapter, index) => (
@@ -633,10 +633,10 @@ export default function Home() {
               <div className="chapter-index"><span>{String(index + 1).padStart(2, "0")}</span><b>{chapter.label}</b></div>
               <div className="chapter-body">
                 <p className="chapter-question">{chapter.question}</p>
-                <div className="chapter-block"><span>本章核心判断</span><p>{chapter.claim}</p></div>
-                <div className="chapter-block"><span>证据组织方式</span><p>{chapter.evidence}</p></div>
-                <div className="chapter-boundary"><span>论证边界</span><p>{chapter.boundary}</p></div>
-                <div className="chapter-cites">建议证据 {chapter.sources.map((id) => <Cite key={id} id={id} />)}</div>
+                <div className="chapter-block"><span>这一章要证明什么</span><p>{chapter.claim}</p></div>
+                <div className="chapter-block"><span>准备拿什么来证明</span><p>{chapter.evidence}</p></div>
+                <div className="chapter-boundary"><span>不要说过头</span><p>{chapter.boundary}</p></div>
+                <div className="chapter-cites">可以先看这些材料 {chapter.sources.map((id) => <Cite key={id} id={id} />)}</div>
               </div>
             </article>
           ))}
@@ -646,7 +646,7 @@ export default function Home() {
       <section className="draft-section page-section" id="draft">
         <div className="essay-shell">
           <div className="section-heading draft-heading">
-            <div><p className="section-kicker">READABLE CHINESE · WORKING DRAFT</p><h2>正文论述底稿：把材料讲明白，把判断说完整。</h2></div>
+            <div><p className="section-kicker">可继续修改的正文底稿</p><h2>先把材料讲明白，再把判断说完整。</h2></div>
             <p>下面不是把网页卡片机械扩写，而是按照“提出判断—摆出材料—解释关系—交代边界—回扣问题”的顺序，示范一篇中文论文怎样既有学术分寸，又让普通读者读得懂。</p>
           </div>
 
@@ -712,8 +712,8 @@ export default function Home() {
 
           <section className="plain-writing-toolkit" aria-labelledby="plain-writing-title">
             <div className="toolkit-intro">
-              <p className="section-kicker">WRITE LIKE A HUMAN</p>
-              <h3 id="plain-writing-title">“说人话”不是不学术，而是不用套话替代分析。</h3>
+              <p className="section-kicker">把套话改成正常中文</p>
+              <h3 id="plain-writing-title">说人话不是不学术，而是不让套话代替分析。</h3>
               <p>判断一句话有没有内容，可以问三个问题：谁做了什么？材料在哪里？这件事为什么能支持你的结论？如果一句话只有“赋能、助推、打造、彰显、路径、机制、场域”，却回答不了这三个问题，就应当重写。</p>
             </div>
 
@@ -750,35 +750,35 @@ export default function Home() {
       {activeTab === "methods" && <div className="tab-page" data-page="methods">
       <section className="methods-lab page-section" id="methods">
         <div className="section-heading">
-          <div><p className="section-kicker">METHODS YOU CAN EXECUTE</p><h2>从“搜资料”进入可复核的论文研究设计。</h2></div>
-          <p>当前60项公开来源可以作为前期材料库，但不能替代你自己的样本构建。下面给出可直接写入研究方法章节、并能实际执行的方案。</p>
+          <div><p className="section-kicker">这套研究怎么真正做下去</p><h2>资料已经有了，下一步要按同一套规则采样和访谈。</h2></div>
+          <p>网站里的60项公开来源只是前期材料，不能代替你自己的调查。下面这套办法既能写进研究方法章节，也确实可以照着执行。</p>
         </div>
 
         <div className="method-lead">
-          <div><span>推荐设计</span><strong>事件型多模态内容分析<br />＋半结构访谈<br />＋场景观察</strong></div>
-          <p>内容分析回答“哪些符号和框架被反复生产”，访谈回答“不同主体如何理解和协商这些符号”，场景观察回答“屏幕记忆怎样进入门店、街区、展馆与游客身体”。三种材料相互校验，避免只依据宣传稿判断受众记忆。</p>
+          <div><span>建议这样做</span><strong>按事件收集视频和文章<br />＋访谈不同的人<br />＋去门店和街区观察</strong></div>
+          <p>先数清媒体反复用了什么画面和说法，再问不同的人怎样理解，最后到现场看这些说法是否真的进入门店、街区和游客体验。学术上分别对应内容分析、半结构访谈和场景观察。三种材料互相核对，避免只看宣传稿就替受众下结论。</p>
         </div>
 
         <div className="sample-window-heading">
-          <span>01 / 事件抽样窗口</span>
-          <p>不要抓取一个无限扩张的“所有网络内容”，而应围绕可比较的事件前后建立四个窗口。</p>
+          <span>01 / 先按四个时间段收材料</span>
+          <p>不要试图收完“网上所有内容”。围绕四次重要变化，分别收集事件前后一段时间的材料，才方便比较。</p>
         </div>
         <div className="sample-window-grid">
           <article><b>基线窗口</b><span>2022.04—2023.12</span><h3>全国性美食节目与产业叙事</h3><p>以央视《消费主张》和早期政策材料观察考古、影视爆点出现前，牛肉汤如何被描述。</p><em>起始样本 <Cite id={22} /><Cite id={1} /></em></article>
-          <article><b>考古窗口</b><span>2024.04—2024.07</span><h3>武王墩进入公共视野</h3><p>比较考古机构、央视、地方媒体与平台二次传播，重点编码“牛骨—牛肉—牛肉汤”的推论跳跃。</p><em>起始样本 <Cite id={14} /><Cite id={23} /><Cite id={24} /></em></article>
+          <article><b>考古窗口</b><span>2024.04—2024.07</span><h3>武王墩进入公共视野</h3><p>比较考古机构、央视、地方媒体和平台转载的说法，重点记录内容怎样从“牛骨”一步步跳到“牛肉汤”。</p><em>起始样本 <Cite id={14} /><Cite id={23} /><Cite id={24} /></em></article>
           <article><b>影视窗口</b><span>2025.02—2025.05</span><h3>《六姊妹》与万人共食</h3><p>追踪剧情、主创访谈、演员短视频、游客打卡、官方活动和到访口径之间的跨媒介流动。</p><em>起始样本 <Cite id={17} /><Cite id={25} /><Cite id={47} /><Cite id={48} /></em></article>
           <article><b>制度窗口</b><span>2025.08—2026.05</span><h3>商标、标准与地方条例</h3><p>观察“正宗”如何从经验判断转为授权、标准、白名单和法规，以及民间差异是否被保留。</p><em>起始样本 <Cite id={2} /><Cite id={3} /><Cite id={4} /><Cite id={5} /></em></article>
         </div>
 
         <div className="corpus-grid">
-          <article><span>A · 制度与媒体文本</span><h3>网站现有60项</h3><p>作为政策节点、事件时间线、理论概念与开放素材的基础语料。全文保存标题、日期、发布者、URL、关键段落和授权信息，避免链接后续失效。</p></article>
-          <article><span>B · 平台内容样本</span><h3>建议 240—400 条</h3><p>每个事件窗口从抖音、B站、小红书或微博选取官方、媒体、商家、普通用户四类账号；记录播放、互动和评论只是快照，不把平台指标当稳定事实。</p></article>
-          <article><span>C · 访谈与观察</span><h3>建议 30—40 人</h3><p>覆盖传承人/老店、普通门店/企业、政府/协会、本地老居民、年轻本地人、外地游客或内容创作者；以“信息饱和”而非机械人数作为停止标准。</p></article>
+          <article><span>A · 政策、新闻和研究资料</span><h3>网站现有60项</h3><p>用来整理政策节点、事件时间线、理论和图片。要保存标题、日期、发布者、网址、关键段落和授权信息，防止原链接以后失效。</p></article>
+          <article><span>B · 短视频和社交平台内容</span><h3>建议 240—400 条</h3><p>每个时间段从抖音、B站、小红书或微博选取政府、媒体、商家和普通用户四类账号。播放量、互动量和评论量都只是采集当天的快照，不能当成永远不变的事实。</p></article>
+          <article><span>C · 访谈和现场观察</span><h3>建议 30—40 人</h3><p>尽量覆盖传承人和老店、普通门店和企业、政府和协会、本地老居民、年轻本地人、外地游客或内容创作者。人数不是越多越好，当新访谈很少再带来新信息时，可以停止。</p></article>
         </div>
 
         <div className="coding-heading">
-          <div><span>02 / 内容分析编码表</span><h3>一条视频、文章或帖子为一个分析单元。</h3></div>
-          <p>先由两名编码者独立试编码约10%样本，讨论分歧并修订操作定义，再正式编码；涉及类别变量时报告一致性指标。方法依据可参照Krippendorff<Cite id={43} />。</p>
+          <div><span>02 / 给每条视频、文章或帖子填同一张表</span><h3>一条内容填一行，方便之后比较。</h3></div>
+          <p>先让两个人各自试填大约10%的样本，再对照分歧、把每个选项解释清楚，最后正式填写全部样本。论文中要报告两人的判断有多一致。具体做法可参考Krippendorff<Cite id={43} />。</p>
         </div>
         <div className="coding-table-wrap">
           <table className="coding-table">
@@ -787,7 +787,7 @@ export default function Home() {
           </table>
         </div>
 
-        <div className="interview-heading"><span>03 / 半结构访谈提纲</span><h3>让不同主体讲出“谁有权定义这碗汤”。</h3></div>
+        <div className="interview-heading"><span>03 / 分别去问不同的人</span><h3>听听谁觉得什么才算“正宗”。</h3></div>
         <div className="interview-grid">
           <article><b>传承人 / 老店</b><p>你认为什么不能被标准化？哪一种变化仍属于传承，哪一种已经改变了技艺内涵？</p></article>
           <article><b>普通门店 / 企业</b><p>“正宗”在经营中意味着配方、产地、商标还是顾客认可？平台流量改变了哪些做法？</p></article>
@@ -796,20 +796,20 @@ export default function Home() {
           <article><b>年轻本地人</b><p>你通过家庭、门店、电视剧还是短视频认识它？哪些叙事让你自豪，哪些让你觉得“太宣传”？</p></article>
           <article><b>外地游客 / 创作者</b><p>来淮南前形成了什么想象？实际体验改变了什么？你发布内容时为何选择某些画面和词语？</p></article>
         </div>
-        <p className="interview-note">分析访谈时可采用Braun与Clarke的主题分析：熟悉材料—初始编码—生成主题—审查主题—定义命名—写作，并保留反例与研究者反思备忘录<Cite id={44} />。</p>
+        <p className="interview-note">整理访谈时，可以先反复阅读原文，再标出常见说法，把相近内容归成主题，检查这些主题有没有遗漏或重叠，最后再写进论文。学术上这叫主题分析；还要保留不符合主要结论的反例，并记下研究者自己的判断过程<Cite id={44} />。</p>
 
         <div className="validity-grid">
-          <article><span>材料三角互证</span><p>同一结论至少比较制度文本、媒介内容与主体访谈，不让单一宣传来源代表全部社会记忆。</p></article>
-          <article><span>时间可比性</span><p>保存采集日期和事件窗口；平台互动量与行政统计只能在口径相同的条件下比较。</p></article>
-          <article><span>研究伦理</span><p>访谈取得知情同意；涉及传承知识与商业配方时允许匿名、撤回和限制公开，遵循社区主体原则<Cite id={45} />。</p></article>
-          <article><span>反例优先</span><p>主动寻找不认同“千年”、不追剧、不打卡或反对标准化的材料，以检验而非装饰既定结论。</p></article>
+          <article><span>同一结论看三种材料</span><p>政策文件、媒体内容和访谈至少互相核对一次，不能让一篇宣传稿代表所有人的记忆。</p></article>
+          <article><span>不同时间不要乱比</span><p>保存采集日期和对应事件；只有统计范围相同，平台互动量和行政数字才可以比较。</p></article>
+          <article><span>先保护受访者</span><p>访谈前取得同意。谈到传承知识和商业配方时，受访者可以选择匿名、撤回或不公开某些内容<Cite id={45} />。</p></article>
+          <article><span>主动找反例</span><p>专门寻找不认同“千年”、不追剧、不打卡或反对统一标准的人，看看原来的判断能不能站住。</p></article>
         </div>
       </section>
 
       <section className="reference-section page-section">
         <div className="section-heading">
-          <div><p className="section-kicker">CORE REFERENCES · GB/T 7714 DRAFT</p><h2>八条核心文献，可直接进入参考文献初稿。</h2></div>
-          <p>以下按常见GB/T 7714写法整理，提交前仍应以学校模板、数据库导出信息和你实际阅读的版本复核大小写、出版地与访问日期。</p>
+          <div><p className="section-kicker">可以先读的八条核心文献</p><h2>先整理成参考文献初稿，提交前再按学校格式核对。</h2></div>
+          <p>下面暂时按常见的GB/T 7714格式整理。正式提交前，还要对照学校模板、数据库信息和你实际阅读的版本，检查大小写、出版地和访问日期。</p>
         </div>
         <ol className="reference-list">
           <li><span>[1]</span><p>VAN DIJCK J. <i>Mediated Memories in the Digital Age</i>[M]. Stanford: Stanford University Press, 2007. <Cite id={31} /></p></li>
@@ -827,8 +827,8 @@ export default function Home() {
       {activeTab === "sources" && <div className="tab-page" data-page="sources">
       <section className="video-section page-section">
         <div className="section-heading">
-          <div><p className="section-kicker">WATCH THE MEMORY BEING MADE</p><h2>公开视频不是装饰，而是研究样本。</h2></div>
-          <p>从2022年的消费节目到2025年的非遗舞台，同一碗汤在不同节目类型中被赋予不同意义。先看编码用途，再点击进入原发布页。</p>
+          <div><p className="section-kicker">先看视频怎么讲</p><h2>这些公开视频不是装饰，而是可以分析的材料。</h2></div>
+          <p>从2022年的消费节目到2025年的非遗舞台，不同节目给同一碗汤安排了不同角色。这里先说明每条视频能看什么，再链接到原发布页。</p>
         </div>
         <div className="video-coding-matrix">
           {videoCodingRows.map((row) => {
@@ -854,7 +854,7 @@ export default function Home() {
 
       <section className="sources-section page-section" id="sources">
         <div className="section-heading">
-          <div><p className="section-kicker">SOURCE LEDGER</p><h2>来源档案：60项网页、文章、视频、图片与学术资料。</h2></div>
+          <div><p className="section-kicker">所有材料都放在这里</p><h2>60项网页、文章、视频、图片和学术资料。</h2></div>
           <p>资料复核截至2026年8月17日。来源链接均指向原始页面；“官方来源”意味着发布主体明确，并不自动消除自报口径与宣传倾向。</p>
         </div>
         <div className="source-filters" role="group" aria-label="筛选来源类型">
@@ -877,13 +877,13 @@ export default function Home() {
 
       <section className="method-section page-section">
         <div>
-          <p className="section-kicker">METHOD & LIMITS</p>
-          <h2>研究说明</h2>
+          <p className="section-kicker">网站做到了什么，还缺什么</p>
+          <h2>使用这些材料前，请先看这三点。</h2>
         </div>
         <div className="method-grid">
-          <article><h3>网站已经完成</h3><p>对60项政策、统计、新闻、视频、图片、典籍和学术资料逐条建档；开放图片同时记录作者与许可证，并为六个论文部分配置论点、材料和论证边界。</p></article>
-          <article><h3>论文仍需补做</h3><p>平台内容系统抽样、传承人/门店/食客访谈、线下场景观察，以及对全产业链产值、门店数和游客转化口径的独立核查。</p></article>
-          <article><h3>使用时的原则</h3><p>网站中的“研究推断”可作为分析起点，不应直接当作调查结论；正式论文必须呈现样本规则、编码手册、反例与原始访谈依据。</p></article>
+          <article><h3>这个网站已经做了什么</h3><p>60项政策、统计、新闻、视频、图片、典籍和学术资料都已逐条登记。开放图片记录了作者和许可证，论文各章也配好了可以使用的材料和不能说过头的地方。</p></article>
+          <article><h3>正式论文还要自己做什么</h3><p>还要按规则收集平台内容，访谈传承人、门店和食客，到现场观察，并独立核对产业产值、门店数量和游客转化等数字是怎样算出来的。</p></article>
+          <article><h3>使用这些材料时要记住</h3><p>网站中的“研究推断”只能当作分析起点，不能冒充调查结论。正式论文要交代样本怎样选、每条材料怎样分析，还要给出反例和原始访谈依据。</p></article>
         </div>
       </section>
       </div>}
