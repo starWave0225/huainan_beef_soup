@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render() {
@@ -32,11 +32,12 @@ test("server-renders the paginated research home and its tab bar", async () => {
   assert.match(html, /一碗汤，如何成为一座城的记忆/);
   assert.match(html, /核心研究问题/);
   assert.match(html, /研究首页/);
+  assert.match(html, /牛肉汤图鉴/);
   assert.match(html, /案例与机制/);
   assert.match(html, /中文正文/);
   assert.match(html, /研究方法/);
   assert.match(html, /来源资料/);
-  assert.match(html, /53项公开来源/);
+  assert.match(html, /60项公开来源/);
   assert.equal((html.match(/class="tab-page"/g) ?? []).length, 1);
   assert.match(html, /data-page="overview"/);
   assert.doesNotMatch(html, /正文论述底稿|内容分析编码表|class="source-row"/);
@@ -52,10 +53,10 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   ]);
 
   const sourceIds = [...page.matchAll(/\{ id: (\d+), type: /g)].map((match) => Number(match[1]));
-  assert.deepEqual(sourceIds, Array.from({ length: 53 }, (_, index) => index + 1));
+  assert.deepEqual(sourceIds, Array.from({ length: 60 }, (_, index) => index + 1));
 
   const sourceUrls = [...page.matchAll(/\{ id: \d+, type: .*? url: "([^"]+)" \}/g)].map((match) => match[1]);
-  assert.equal(sourceUrls.length, 53);
+  assert.equal(sourceUrls.length, 60);
   assert.ok(sourceUrls.every((url) => url.startsWith("https://")));
 
   const literalCitationIds = [...page.matchAll(/<Cite id=\{(\d+)\}/g)].map((match) => Number(match[1]));
@@ -67,16 +68,22 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
     assert.ok(ids.every((id) => sourceIds.includes(id)));
   }
 
-  const tabIds = [...page.matchAll(/\{ id: "(overview|mechanism|draft|methods|sources)", number:/g)].map((match) => match[1]);
-  assert.deepEqual(tabIds, ["overview", "mechanism", "draft", "methods", "sources"]);
-  assert.equal((page.match(/activeTab === "/g) ?? []).length, 5);
+  const tabIds = [...page.matchAll(/\{ id: "(overview|atlas|mechanism|draft|methods|sources)", number:/g)].map((match) => match[1]);
+  assert.deepEqual(tabIds, ["overview", "atlas", "mechanism", "draft", "methods", "sources"]);
+  assert.equal((page.match(/activeTab === "/g) ?? []).length, 6);
   assert.equal((page.match(/<article className="essay-chapter(?: conclusion-chapter)?">/g) ?? []).length, 5);
   assert.equal((page.match(/className="rewrite-pair"/g) ?? []).length, 6);
   assert.match(page, /\[22, 23, 24, 25, 26, 27, 28\]\.map/);
   assert.match(page, /window\.addEventListener\("hashchange", syncTabFromHash\)/);
 
-  assert.match(layout, /53项公开来源/);
-  assert.match(staticIndex, /53项公开来源/);
+  const mediaFiles = [...page.matchAll(/src: "media\/commons\/([^"]+)"/g)].map((match) => match[1]);
+  assert.equal(mediaFiles.length, 6);
+  await Promise.all(mediaFiles.map((file) => access(new URL(`../public/media/commons/${file}`, import.meta.url))));
+  assert.equal((page.match(/license: "Public Domain Mark"/g) ?? []).length, 5);
+  assert.equal((page.match(/license: "CC BY-SA 4\.0"/g) ?? []).length, 1);
+
+  assert.match(layout, /60项公开来源/);
+  assert.match(staticIndex, /60项公开来源/);
   assert.match(packageJson, /"build:pages": "vite build --config vite\.pages\.config\.ts"/);
-  assert.doesNotMatch(page + layout + staticIndex, /38项公开来源|codex-preview|SkeletonPreview/);
+  assert.doesNotMatch(page + layout + staticIndex, /38项公开来源|53项公开来源|codex-preview|SkeletonPreview/);
 });

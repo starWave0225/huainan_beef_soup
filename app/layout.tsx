@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
   const origin = `${protocol}://${host}`;
   const title = "一碗汤，如何成为一座城的记忆？";
-  const description = "淮南牛肉汤媒介记忆建构的中文论文研究网站：53项公开来源、7条视频、五章可读正文底稿、逐章论证地图、编码表与访谈提纲。";
+  const description = "淮南牛肉汤媒介记忆建构的中文论文研究网站：60项公开来源、7条视频、6张开放授权图片、牛肉汤图鉴与五章可读正文底稿。";
 
   return {
     metadataBase: new URL(origin),

@@ -1,10 +1,12 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element -- Licensed local research images use stable relative URLs in both vinext and static Vite builds. */
+
 import { useEffect, useMemo, useState } from "react";
 
 type Source = {
   id: number;
-  type: "政策/统计" | "新闻/专题" | "视频" | "学术/典籍";
+  type: "政策/统计" | "新闻/专题" | "视频" | "学术/典籍" | "图片/素材";
   date: string;
   publisher: string;
   title: string;
@@ -66,6 +68,13 @@ const sources: Source[] = [
   { id: 51, type: "政策/统计", date: "2025-05", publisher: "淮南市人民政府", title: "淮南牛肉汤产业升级政策负责人解读", note: "说明机场、高铁站、服务区、商圈和景区门店奖补，显示政策如何主动把地方食品嵌入流动空间。", url: "https://www.huainan.gov.cn/public/6596035/1260760606.html" },
   { id: 52, type: "政策/统计", date: "2009", publisher: "安徽省质量技术监督局", title: "DB34/T 929—2009 淮南牛肉汤制作技术规范", note: "早期地方标准明确主辅料、熬汤、烫制与卫生要求；适合研究“正宗”如何被技术文本固定，不宜当作2026年现行合规结论。", url: "https://www.huainan.gov.cn/download/5c78f201e4b05014fd4554c5" },
   { id: 53, type: "学术/典籍", date: "2024", publisher: "安徽省农业科学院机构知识库", title: "淮南牛肉汤风味特征研究进展", note: "汇总风味与地方性研究，同时把赵匡胤、回民起源并列为传说，恰好说明学术文本也会参与起源叙事再生产。", url: "https://ahas.agriir.cn/resources/detail/1/24CCB6E6-065A-4E88-B70A-988F3237DDE4.html?projectId=405fc0ca-2997-11e7-b5f5-3440b5b17484" },
+  { id: 54, type: "图片/素材", date: "2023-06", publisher: "Wikimedia Commons", title: "A Bowl of Huainan Beef Soup", note: "Franklin Rainier拍摄的牛肉汤俯视图；Commons标记为Public Domain，可用于观察肉片、香菜、葱花与汤色的视觉组合。", url: "https://commons.wikimedia.org/wiki/File:A_Bowl_of_Huainan_Beef_Soup.jpg" },
+  { id: 55, type: "图片/素材", date: "2023-06", publisher: "Wikimedia Commons", title: "Huainan beef soup restaurant", note: "Franklin Rainier拍摄的门店外观，Public Domain；适合研究“淮南牛肉汤”怎样通过招牌进入外地街道景观。", url: "https://commons.wikimedia.org/wiki/File:Huainan_beef_soup_restaurant.jpg" },
+  { id: 56, type: "图片/素材", date: "2023-06", publisher: "Wikimedia Commons", title: "Huainan Beef Soup with Onion Topping", note: "Franklin Rainier拍摄的加洋葱与辣椒浇头版本，Public Domain；提示实际吃法存在门店和食客差异。", url: "https://commons.wikimedia.org/wiki/File:Huainan_Beef_Soup_with_Onion_Topping.jpg" },
+  { id: 57, type: "图片/素材", date: "2023-06", publisher: "Wikimedia Commons", title: "Huainan Beef Soup with Shortbread", note: "Franklin Rainier拍摄的牛肉汤与酥饼搭配，Public Domain；可把研究单位从单碗菜品扩展到完整进食组合。", url: "https://commons.wikimedia.org/wiki/File:Huainan_Beef_Soup_with_Shortbread.jpg" },
+  { id: 58, type: "图片/素材", date: "2025-02", publisher: "Wikimedia Commons", title: "Jiangji Huainan Beef Soup", note: "Chongkian拍摄的上海黄浦区淮南牛肉汤门店，CC BY-SA 4.0；显示地方食品跨城市迁移后的街面形态。", url: "https://commons.wikimedia.org/wiki/File:Jiangji_Huainan_Beef_Soup.jpg" },
+  { id: 59, type: "图片/素材", date: "2023-06", publisher: "Wikimedia Commons", title: "Shortbread with Soup", note: "Franklin Rainier拍摄的酥饼蘸汤场景，Public Domain；将手部动作和吃法纳入感官记忆研究。", url: "https://commons.wikimedia.org/wiki/File:Shortbread_with_Soup.jpg" },
+  { id: 60, type: "新闻/专题", date: "2017-06", publisher: "央视网", title: "安徽小吃——淮南牛肉汤", note: "概述牛骨汤、牛肉/牛杂、粉丝、干丝、葱段和红油等常见组成；页面图片注明来源网络，本站只引用文字，不下载该图。", url: "https://food.cctv.com/2017/06/07/ARTILzQ7w7K65rD2SuNeHeEj170607.shtml" },
 ];
 
 const sourceById = (id: number) => sources.find((source) => source.id === id)!;
@@ -174,12 +183,22 @@ const videoCodingRows = [
   { id: 28, genre: "新闻联播", frame: "科技检测 + 楚国礼乐", use: "分析检测结果怎样被转化为公共记忆；与2024报道比较同一考古事件的累积性再生产。" },
 ];
 
+const mediaAssets = [
+  { id: "bowl", src: "media/commons/huainan-bowl.jpg", title: "一碗汤里的视觉层次", alt: "俯拍的一碗淮南牛肉汤，能看到牛肉、香菜、葱花和清汤", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 54, note: "俯视画面把肉片、绿叶、汤面与碗沿同时纳入视野，适合编码食材可见度与颜色对比。" },
+  { id: "onion", src: "media/commons/huainan-onion.jpg", title: "浇头让“正宗”出现差异", alt: "一碗加入洋葱和红辣椒浇头的淮南牛肉汤", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 56, note: "洋葱与辣椒让同一菜名呈现不同版本，提醒研究者不要把一张照片当作唯一标准。" },
+  { id: "shortbread", src: "media/commons/huainan-shortbread.jpg", title: "汤与酥饼是一组吃法", alt: "淮南牛肉汤与一盘酥饼摆在木桌上", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 57, note: "主食搭配把研究对象从“单碗菜品”扩展为一顿早餐的组合、节奏与饱腹经验。" },
+  { id: "dip", src: "media/commons/huainan-dip.jpg", title: "动作也是感官记忆", alt: "酥饼靠近汤碗，呈现蘸汤或搭配食用的场景", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 59, note: "掰、蘸、咬等身体动作很少出现在政策文本中，却是访谈和场景观察可以追问的生活知识。" },
+  { id: "restaurant", src: "media/commons/huainan-restaurant.jpg", title: "菜名成为街道招牌", alt: "写有淮南牛肉汤字样的街边门店外观", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 55, note: "门头、价格、桌椅和开放式入口共同构成消费预期，也让“淮南”在异地街道被反复看见。" },
+  { id: "jiangji", src: "media/commons/huainan-jiangji.jpg", title: "从淮南名称到上海门店", alt: "上海黄浦区蒋记淮南牛肉汤清真门店外观", author: "Chongkian", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/", sourceId: 58, note: "照片明确记录上海黄浦区门店，可用于研究地方食品迁移后怎样保留产地名称、清真标识与街坊店形态。" },
+] as const;
+
 const siteTabs = [
   { id: "overview", number: "01", label: "研究首页", note: "问题与证据" },
-  { id: "mechanism", number: "02", label: "案例与机制", note: "传播与反思" },
-  { id: "draft", number: "03", label: "中文正文", note: "章节写作底稿" },
-  { id: "methods", number: "04", label: "研究方法", note: "抽样、编码与访谈" },
-  { id: "sources", number: "05", label: "来源资料", note: "视频与53项档案" },
+  { id: "atlas", number: "02", label: "牛肉汤图鉴", note: "实物、吃法与门店" },
+  { id: "mechanism", number: "03", label: "案例与机制", note: "传播与反思" },
+  { id: "draft", number: "04", label: "中文正文", note: "章节写作底稿" },
+  { id: "methods", number: "05", label: "研究方法", note: "抽样、编码与访谈" },
+  { id: "sources", number: "06", label: "来源资料", note: "视频与60项档案" },
 ] as const;
 
 type SiteTab = (typeof siteTabs)[number]["id"];
@@ -262,8 +281,9 @@ export default function Home() {
             从楚汉典籍、街巷烟火到短视频、电视剧与产业政策：这不是一道菜的“起源故事”，而是一场仍在发生的记忆建构。
           </p>
           <div className="hero-actions">
-            <a className="primary-action" href="#draft" onClick={() => openTab("draft")}>阅读中文正文</a>
-            <span>53项公开来源 · 7条视频 · 6章论证施工图</span>
+            <a className="primary-action" href="#atlas" onClick={() => openTab("atlas")}>打开牛肉汤图鉴</a>
+            <a className="text-action" href="#draft" onClick={() => openTab("draft")}>阅读中文正文 →</a>
+            <span>60项公开来源 · 7条视频 · 6张开放授权图片</span>
           </div>
         </div>
 
@@ -409,6 +429,82 @@ export default function Home() {
           <article className="target-metric"><span>2027 目标</span><strong>&gt; 500 亿元</strong><p>这是政策目标，不是已经实现的事实。</p><div className="metric-source">规划目标 <Cite id={1} /></div></article>
         </div>
         <p className="data-warning"><b>口径警报：</b> 2022年地方文章称全国门店“3万余家”，2025年媒体报道又称“约10万家”。两者都不是抽样方法透明的官方普查。本网站因此不绘制门店增长率，只把它们当作“规模想象”如何扩张的材料。</p>
+      </section>
+      </div>}
+
+      {activeTab === "atlas" && <div className="tab-page" data-page="atlas">
+      <section className="atlas-hero page-section" id="atlas">
+        <figure className="atlas-hero-figure">
+          <img src="media/commons/huainan-shortbread.jpg" alt="淮南牛肉汤与酥饼摆在同一张木桌上" />
+          <figcaption>淮南牛肉汤与酥饼 · Franklin Rainier · Public Domain Mark <Cite id={57} /></figcaption>
+        </figure>
+        <div className="atlas-hero-copy">
+          <p className="section-kicker">THE SOUP ITSELF · VISUAL ATLAS</p>
+          <h2>先看清这碗汤，<br />再谈它怎样被记住。</h2>
+          <p>前面的论文结构谈了很多媒介、城市与记忆，但研究对象不能只剩一个抽象菜名。这一页把镜头拉回碗里：汤底、肉片、粉丝、豆制品、香菜葱花、辣油和酥饼怎样共同出现；一顿早餐怎样从后厨工序走到桌面；“淮南牛肉汤”又怎样作为门店招牌进入外地街道。</p>
+          <aside><b>图片边界</b>这组开放授权照片记录了以“淮南牛肉汤”名义出现的不同消费场景，并不等于淮南本地全部门店，也不能用来确定唯一正宗配方。它们是视觉分析材料，不是田野调查的替代品。</aside>
+        </div>
+      </section>
+
+      <section className="bowl-anatomy page-section">
+        <div className="section-heading">
+          <div><p className="section-kicker">01 · WHAT IS IN THE BOWL</p><h2>一碗汤的六个层次。</h2></div>
+          <p>央视网的地方小吃介绍提到牛骨汤、牛肉或牛杂、粉丝、干丝、葱段和红油等常见组成<Cite id={60} />；2009年地方制作规范则把原辅料、熬汤、烫制与卫生要求写成技术文本<Cite id={52} />。两者都只能作为观察入口，不能替代当下门店实测。</p>
+        </div>
+        <div className="anatomy-layout">
+          <figure>
+            <img src="media/commons/huainan-onion.jpg" alt="从上方观察加入洋葱与辣椒浇头的淮南牛肉汤" loading="lazy" />
+            <figcaption>加洋葱与辣椒的版本，直观显示同一菜名内部的变化 <Cite id={56} /></figcaption>
+          </figure>
+          <div className="anatomy-list">
+            <article><span>01</span><div><h3>汤底</h3><p>牛骨和肉类熬出的热汤承担香气、温度与口感的基础。报道常用“清”“浓”“鲜醇”描述它，但汤色深浅不能单独判断正宗。</p></div></article>
+            <article><span>02</span><div><h3>牛肉与牛杂</h3><p>薄切牛肉提供最醒目的名称对应，牛杂则增加口感层次和物尽其用的饮食逻辑。论文应区分菜单选择与固定配方。</p></div></article>
+            <article><span>03</span><div><h3>粉丝</h3><p>粉丝吸附汤汁、增加饱腹感，也让“喝汤”变成可以作为早餐或正餐的一整碗食物。</p></div></article>
+            <article><span>04</span><div><h3>干丝 / 千张</h3><p>豆制品带来与肉片不同的纤维和咀嚼感。不同资料使用“干丝”“千张丝”等称呼，访谈时应保留本地人的实际用词。</p></div></article>
+            <article><span>05</span><div><h3>香菜与葱花</h3><p>绿色点缀在俯拍照片和短视频中非常显眼，同时以新鲜香气完成出碗前的最后一层味觉。</p></div></article>
+            <article><span>06</span><div><h3>红油、浇头与桌边选择</h3><p>辣椒油、洋葱、盐度和其他浇头把最终味道交给门店与食客共同完成。“正宗”由此不是后厨单方面决定。</p></div></article>
+          </div>
+        </div>
+
+        <div className="flavor-reading">
+          <article><b>看</b><h3>颜色结构</h3><p>浅色汤面、灰褐肉片、绿色香菜与红色辣油构成稳定的屏幕识别组合。内容分析可以记录每种颜色是否出现、占据多大画面。</p></article>
+          <article><b>听</b><h3>声音结构</h3><p>滚汤、漏勺、切肉、碗筷和门店叫单共同制造“正在营业”的现场感。公开视频编码不应只看字幕与旁白。</p></article>
+          <article><b>闻 / 尝</b><h3>语言替代</h3><p>屏幕无法传递气味和味道，只能借“鲜、香、辣、浓、不腻”等词和食客表情进行替代。研究要区分感官本身与媒介对感官的描述。</p></article>
+          <article><b>触 / 动</b><h3>身体动作</h3><p>端碗、吹热气、夹肉、掰饼、蘸汤和加辣，是食物记忆进入身体的具体路径，也是门店观察可记录的行为单位。</p></article>
+        </div>
+      </section>
+
+      <section className="making-section page-section">
+        <div className="section-heading light-heading">
+          <div><p className="section-kicker">02 · FROM POT TO TABLE</p><h2>从后厨到桌面：五段可观察的工序。</h2></div>
+          <p>这不是家庭复刻菜谱，而是依据公开技术规范和节目材料整理的研究观察表。2009年规范可用于理解工序怎样被文本固定，但不能当作2026年唯一现行版本<Cite id={52} />。</p>
+        </div>
+        <ol className="making-steps">
+          <li><span>01</span><div><h3>原料处理</h3><p>牛肉、骨与牛杂的清洗、浸泡、分拣决定汤的基础状态。观察时记录原料来源说法、可见卫生流程与店家愿意公开的程度。</p></div><em>研究词：产地、清真、鲜货 / 冻货、可追溯</em></li>
+          <li><span>02</span><div><h3>大锅熬汤</h3><p>时间、火候、骨肉比例和香料是门店知识最集中的部分。媒体爱拍沸腾大锅，因为它同时传递规模、热度与手艺感。</p></div><em>研究词：老汤、火候、秘方、可视化劳动</em></li>
+          <li><span>03</span><div><h3>熟制与切配</h3><p>肉片厚薄、牛杂种类、粉丝和豆制品的预处理影响入口质感，也体现门店追求效率还是保留手工差异。</p></div><em>研究词：刀工、份量、预制、中央厨房</em></li>
+          <li><span>04</span><div><h3>烫制与冲汤</h3><p>漏勺把粉丝、干丝等配料送入滚汤，再与肉片共同成碗。这一连续动作节奏快、声音强，是短视频最容易截取的“技艺时刻”。</p></div><em>研究词：速度、热气、声音、表演性</em></li>
+          <li><span>05</span><div><h3>桌边完成</h3><p>香菜、葱花、红油、盐度与酥饼把食客纳入制作过程。最终味道是后厨基础、门店惯例和个人选择共同形成的。</p></div><em>研究词：自助调味、共食、早餐节奏、身体记忆</em></li>
+        </ol>
+      </section>
+
+      <section className="media-gallery-section page-section">
+        <div className="section-heading">
+          <div><p className="section-kicker">03 · OPEN MEDIA COLLECTION</p><h2>六张开放素材，六个论文观察点。</h2></div>
+          <p>图片已经下载到网站本地，避免外链失效。每张图保留作者、许可证和Commons原始文件页；CC BY-SA素材未修改原文件，仅由网页按卡片比例裁切显示。</p>
+        </div>
+        <div className="media-gallery-grid">
+          {mediaAssets.map((asset, index) => (
+            <article className={index === 0 || index === 5 ? "wide" : ""} key={asset.id}>
+              <a className="media-image" href={sourceById(asset.sourceId).url} target="_blank" rel="noreferrer">
+                <img src={asset.src} alt={asset.alt} loading="lazy" />
+                <span>查看原始文件 ↗</span>
+              </a>
+              <div className="media-copy"><small>0{index + 1} · VISUAL EVIDENCE</small><h3>{asset.title}</h3><p>{asset.note}</p><div>摄影：{asset.author} · <a href={asset.licenseUrl} target="_blank" rel="noreferrer">{asset.license}</a> · <Cite id={asset.sourceId} /></div></div>
+            </article>
+          ))}
+        </div>
+        <aside className="license-ledger"><b>授权账本</b><p>素材54—57、59由Franklin Rainier拍摄，Commons文件页标记为Public Domain Mark；素材58由Chongkian拍摄，采用CC BY-SA 4.0。网站对所有图片均保留署名与原始文件链接。Commons专题目前收录6个淮南牛肉汤文件<Cite id={54} /><Cite id={58} />。</p></aside>
       </section>
       </div>}
 
@@ -655,7 +751,7 @@ export default function Home() {
       <section className="methods-lab page-section" id="methods">
         <div className="section-heading">
           <div><p className="section-kicker">METHODS YOU CAN EXECUTE</p><h2>从“搜资料”进入可复核的论文研究设计。</h2></div>
-          <p>当前53项公开来源可以作为前期材料库，但不能替代你自己的样本构建。下面给出可直接写入研究方法章节、并能实际执行的方案。</p>
+          <p>当前60项公开来源可以作为前期材料库，但不能替代你自己的样本构建。下面给出可直接写入研究方法章节、并能实际执行的方案。</p>
         </div>
 
         <div className="method-lead">
@@ -675,7 +771,7 @@ export default function Home() {
         </div>
 
         <div className="corpus-grid">
-          <article><span>A · 制度与媒体文本</span><h3>网站现有53项</h3><p>作为政策节点、事件时间线和理论概念的基础语料。全文保存标题、日期、发布者、URL、关键段落和截图，避免链接后续失效。</p></article>
+          <article><span>A · 制度与媒体文本</span><h3>网站现有60项</h3><p>作为政策节点、事件时间线、理论概念与开放素材的基础语料。全文保存标题、日期、发布者、URL、关键段落和授权信息，避免链接后续失效。</p></article>
           <article><span>B · 平台内容样本</span><h3>建议 240—400 条</h3><p>每个事件窗口从抖音、B站、小红书或微博选取官方、媒体、商家、普通用户四类账号；记录播放、互动和评论只是快照，不把平台指标当稳定事实。</p></article>
           <article><span>C · 访谈与观察</span><h3>建议 30—40 人</h3><p>覆盖传承人/老店、普通门店/企业、政府/协会、本地老居民、年轻本地人、外地游客或内容创作者；以“信息饱和”而非机械人数作为停止标准。</p></article>
         </div>
@@ -758,11 +854,11 @@ export default function Home() {
 
       <section className="sources-section page-section" id="sources">
         <div className="section-heading">
-          <div><p className="section-kicker">SOURCE LEDGER</p><h2>来源档案：53项网页、文章、视频与学术资料。</h2></div>
+          <div><p className="section-kicker">SOURCE LEDGER</p><h2>来源档案：60项网页、文章、视频、图片与学术资料。</h2></div>
           <p>资料复核截至2026年8月17日。来源链接均指向原始页面；“官方来源”意味着发布主体明确，并不自动消除自报口径与宣传倾向。</p>
         </div>
         <div className="source-filters" role="group" aria-label="筛选来源类型">
-          {["全部", "政策/统计", "新闻/专题", "视频", "学术/典籍"].map((filter) => (
+          {["全部", "政策/统计", "新闻/专题", "视频", "图片/素材", "学术/典籍"].map((filter) => (
             <button key={filter} className={sourceFilter === filter ? "active" : ""} onClick={() => setSourceFilter(filter)}>
               {filter}<span>{filter === "全部" ? sources.length : sources.filter((source) => source.type === filter).length}</span>
             </button>
@@ -785,7 +881,7 @@ export default function Home() {
           <h2>研究说明</h2>
         </div>
         <div className="method-grid">
-          <article><h3>网站已经完成</h3><p>对53项政策、统计、新闻、视频、典籍和学术资料逐条建档；按证据强度分层，并为六个论文部分配置论点、材料和论证边界。</p></article>
+          <article><h3>网站已经完成</h3><p>对60项政策、统计、新闻、视频、图片、典籍和学术资料逐条建档；开放图片同时记录作者与许可证，并为六个论文部分配置论点、材料和论证边界。</p></article>
           <article><h3>论文仍需补做</h3><p>平台内容系统抽样、传承人/门店/食客访谈、线下场景观察，以及对全产业链产值、门店数和游客转化口径的独立核查。</p></article>
           <article><h3>使用时的原则</h3><p>网站中的“研究推断”可作为分析起点，不应直接当作调查结论；正式论文必须呈现样本规则、编码手册、反例与原始访谈依据。</p></article>
         </div>
