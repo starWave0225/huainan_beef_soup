@@ -320,7 +320,7 @@ blockquote cite { color: rgba(243, 239, 228, .6); font: normal 11px/1.7 "Noto Sa
 .essay-toc-head b { font-size: 24px; font-weight: 570; }
 .essay-toc-head p { max-width: 650px; margin: 0; color: var(--muted); font: 13px/1.8 "Noto Sans SC", sans-serif; }
 .essay-toc nav { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-.essay-toc nav a { min-height: 128px; display: grid; grid-template-columns: 38px 1fr 18px; gap: 14px; align-items: start; padding: 23px 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--ink); background: var(--paper); transition: color .2s ease, background .2s ease; }
+.essay-toc nav a { min-height: 148px; display: grid; grid-template-columns: 38px 1fr 18px; gap: 14px; align-items: start; padding: 23px 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--ink); background: var(--paper); transition: color .2s ease, background .2s ease; }
 .essay-toc nav a:hover { background: var(--paper-deep); }
 .essay-toc nav a.active { color: var(--paper); background: var(--red-dark); }
 .essay-toc nav a > span { padding-top: 2px; color: var(--red); font: 18px Georgia, serif; }
@@ -329,6 +329,8 @@ blockquote cite { color: rgba(243, 239, 228, .6); font: normal 11px/1.7 "Noto Sa
 .essay-toc nav a b { display: block; margin-bottom: 11px; font-size: 14px; font-weight: 650; }
 .essay-toc nav a small { display: block; color: var(--muted); font: 11px/1.65 "Noto Sans SC", sans-serif; }
 .essay-toc nav a.active small { color: rgba(243, 239, 228, .7); }
+.essay-toc nav a i { display: block; margin-top: 12px; color: var(--sage); font: normal 9px/1.5 "Noto Sans SC", sans-serif; letter-spacing: .06em; }
+.essay-toc nav a.active i { color: var(--gold); }
 .essay-toc nav a em { color: var(--red); font: normal 18px Georgia, serif; }
 .essay-toc nav a.active em { color: var(--gold); }
 .essay-reading-pane { max-width: 1040px; margin: 0 auto; }
