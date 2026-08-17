@@ -38,6 +38,7 @@ test("server-renders the paginated research home and its tab bar", async () => {
   assert.match(html, /案例与机制/);
   assert.match(html, /论文正文/);
   assert.match(html, /研究方法/);
+  assert.match(html, /参考文献/);
   assert.match(html, /来源资料/);
   assert.match(html, /104项公开来源/);
   assert.equal((html.match(/class="tab-page"/g) ?? []).length, 1);
@@ -70,9 +71,9 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
     assert.ok(ids.every((id) => sourceIds.includes(id)));
   }
 
-  const tabIds = [...page.matchAll(/\{ id: "(overview|atlas|mechanism|draft|methods|sources)", number:/g)].map((match) => match[1]);
-  assert.deepEqual(tabIds, ["overview", "atlas", "mechanism", "draft", "methods", "sources"]);
-  assert.equal((page.match(/activeTab === "/g) ?? []).length, 6);
+  const tabIds = [...page.matchAll(/\{ id: "(overview|atlas|mechanism|draft|methods|references|sources)", number:/g)].map((match) => match[1]);
+  assert.deepEqual(tabIds, ["overview", "atlas", "mechanism", "draft", "methods", "references", "sources"]);
+  assert.equal((page.match(/activeTab === "/g) ?? []).length, 7);
   assert.equal((page.match(/<article className="essay-chapter(?: conclusion-chapter)?">/g) ?? []).length, 6);
   const essayChapterIds = [...page.matchAll(/^ {4}id: "(intro|chapter-[2-5]|conclusion)",$/gm)].map((match) => match[1]);
   assert.deepEqual(essayChapterIds, ["intro", "chapter-2", "chapter-3", "chapter-4", "chapter-5", "conclusion"]);
@@ -97,6 +98,10 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   assert.match(page, /已深写 · 约1\.2万字/);
   assert.match(page, /看见—理解—参与—认同—行动—制度化/);
   assert.match(page, /四、研究局限与未来展望/);
+  assert.equal((page.match(/sourceId: \d+, group:/g) ?? []).length, 27);
+  assert.equal((page.match(/chapter: "(?:绪论|第二章|第二、三章|第三章|第四章|第四章、结语|第五章、结语|研究方法)"/g) ?? []).length, 8);
+  assert.match(page, /来源多，不等于参考文献就合格/);
+  assert.match(page, /全文第一轮统稿表/);
   assert.equal((page.match(/className="rewrite-pair"/g) ?? []).length, 6);
   assert.match(page, /\[22, 23, 24, 25, 26, 27, 28, 78\]\.map/);
   assert.match(page, /window\.addEventListener\("hashchange", syncTabFromHash\)/);

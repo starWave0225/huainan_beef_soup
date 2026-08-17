@@ -206,6 +206,74 @@ const chapterBlueprints = [
   },
 ];
 
+const coreReferences = [
+  { sourceId: 31, group: "媒介记忆", entry: "VAN DIJCK J. Mediated Memories in the Digital Age[M]. Stanford: Stanford University Press, 2007.", use: "界定媒介不是记忆的外部容器，而是参与个人经验、文化记忆与身份形成的条件。" },
+  { sourceId: 35, group: "媒介记忆", entry: "ERLL A. Media and the Dynamics of Memory: From Cultural Paradigms to Transcultural Premediation[A]//WAGONER B, ed. Handbook of Culture and Memory[M]. Oxford: Oxford University Press, 2017: 305-324.", use: "支撑再媒介化、预媒介化以及记忆在不同媒介之间持续运动的分析。" },
+  { sourceId: 40, group: "媒介记忆", entry: "HOSKINS A, ed. Digital Memory Studies: Media Pasts in Transition[M]. New York: Routledge, 2018.", use: "解释连接、平台、数字档案和记忆经济共同造成的数字记忆悖论。" },
+  { sourceId: 61, group: "媒介记忆", entry: "陈振华. 集体记忆研究的传播学取向[J]. 国际新闻界, 2016, 38(4): 109-126.", use: "用于梳理国内传播学记忆研究，并提示媒介权力、个体缺失与连续／断裂问题。" },
+  { sourceId: 62, group: "媒介记忆", entry: "胡康, 郑一卉. “记忆”之辨：新闻传播学领域记忆研究的概念辨析与方法论反思[J]. 新闻与写作, 2024(8): 62-72.", use: "帮助区分媒介记忆、数字记忆和一般的过去叙事，防止概念无限扩张。" },
+  { sourceId: 63, group: "媒介记忆", entry: "刘晗. 参与·网络·仓储：记忆实践路径下的数字记忆建构[J]. 新闻与传播评论, 2023, 76(4): 60-70.", use: "用于分析政府、媒体、门店和用户怎样通过参与、连接与数字存储共同建构记忆。" },
+  { sourceId: 73, group: "媒介记忆", entry: "谢卓潇. 春晚作为记忆实践——媒介记忆的书写、承携和消费[J]. 国际新闻界, 2020, 42(1): 154-176.", use: "说明节目文本本身不能直接等于集体记忆，仍需受众叙述、身体经验和长期实践。" },
+  { sourceId: 32, group: "食物与地方", entry: "HOLTZMAN J D. Food and Memory[J]. Annual Review of Anthropology, 2006, 35: 361-378.", use: "连接味觉、怀旧、身份、身体记忆与被发明的饮食传统。" },
+  { sourceId: 70, group: "食物与地方", entry: "于雯静, 郭永锐, 侯欣宜. 食物景观对地方社会记忆的表征和塑造——以《舌尖上的中国》为例[J]. 热带地理, 2021, 41(3): 495-504.", use: "为味道、家庭、身体实践与环境性、功能性、情感性记忆的分析提供国内经验。" },
+  { sourceId: 53, group: "食物与地方", entry: "刘雪, 叶晓煌, 刘后继, 等. 淮南牛肉汤风味特征研究进展[J]. 中国食品, 2024(12): 104-106.", use: "提供淮南牛肉汤风味与地方叙事的专门研究，同时要把文中的起源传说继续作为传说使用。" },
+  { sourceId: 87, group: "食物与地方", entry: "SIMS R. Food, place and authenticity: Local food and the sustainable tourism experience[J]. Journal of Sustainable Tourism, 2009, 17(3): 321-336.", use: "讨论地方食品、真实性、目的地文化与可持续旅游之间的关系。" },
+  { sourceId: 90, group: "食物与地方", entry: "CHANG J, OKUMUS B, LI Z W, et al. What serves as the best bridge in food consumption: experiential value or place attachment?[J]. Asia Pacific Journal of Tourism Research, 2021, 26(12): 1302-1317.", use: "提示体验价值、地方依恋与消费意向必须分开测量。" },
+  { sourceId: 41, group: "城市形象", entry: "KAVARATZIS M, ASHWORTH G J. City branding: An effective assertion of identity or a transitory marketing trick?[J]. Tijdschrift voor Economische en Sociale Geografie, 2005, 96(5): 506-514.", use: "把城市品牌从广告口号拉回地方身份、公共治理和多方关系。" },
+  { sourceId: 42, group: "城市形象", entry: "RABBIOSI C. Place branding performances in tourist local food shops[J]. Annals of Tourism Research, 2016, 60: 154-168.", use: "解释地方食品门店中的物质、话语与身体实践怎样共同表演地方品牌。" },
+  { sourceId: 65, group: "城市形象", entry: "杨莉明, 周文怡. 美食短视频中的广州城市形象建构及其传播策略研究[J]. 城市观察, 2022(1): 116-128, 163.", use: "提供美食短视频城市形象的内容分析维度，可与淮南样本进行比较。" },
+  { sourceId: 71, group: "城市形象", entry: "曾一果, 凡婷婷. 重识“地方”：网红空间与媒介地方感的形成——以短视频打卡“西安城墙”为考察中心[J]. 新闻与传播研究, 2022, 29(11): 71-89, 128.", use: "支撑人—媒介—地方关系以及远程观看、实地打卡和地方感之间的分析。" },
+  { sourceId: 88, group: "城市形象", entry: "HAY N A, CHIEN P M, RUHANEN L. Tell me your story: Branding destinations through residents’ (place) stories[J]. Journal of Vacation Marketing, 2022, 28(3): 319-334.", use: "说明居民地方故事不是宣传素材，而应当进入目的地品牌的参与式建构。" },
+  { sourceId: 86, group: "城市形象", entry: "ZHOU B, XIONG Q, LI P, et al. Celebrity involvement and film tourist loyalty: Destination image and place attachment as mediators[J]. Journal of Hospitality and Tourism Management, 2023, 54: 32-41.", use: "用于拆分明星／影视接触、目的地形象、地方依恋和游客忠诚，避免直接因果推断。" },
+  { sourceId: 103, group: "城市形象", entry: "YUAN Q, SONG H, CHEN N, et al. Roles of tourism involvement and place attachment in determining residents’ attitudes toward industrial heritage tourism in a resource-exhausted city in China[J]. Sustainability, 2019, 11(19): 5151.", use: "为淮南工业城市居民调查提供参与、认知、情感、地方依恋和支持行为的比较结构。" },
+  { sourceId: 104, group: "城市形象", entry: "REYNOLDS L, KOENIG-LEWIS N, DOERING H, et al. Competing for legitimacy in the place branding process: (Re)negotiating the stakes[J]. Tourism Management, 2022, 91: 104532.", use: "解释为什么地方品牌虽然邀请多方参与，实际影响力仍可能因知识、程序与关系资源而不平等。" },
+  { sourceId: 36, group: "非遗与治理", entry: "中华人民共和国主席令第四十二号. 中华人民共和国非物质文化遗产法[Z/OL]. (2011-02-25)[2026-08-17].", use: "确定国内非遗保护、调查、代表性项目与合理使用的法律边界。" },
+  { sourceId: 37, group: "非遗与治理", entry: "UNESCO. Convention for the Safeguarding of the Intangible Cultural Heritage[Z/OL]. (2003-10-17)[2026-08-17].", use: "界定非遗是社区持续再创造并代际传递的活态实践。" },
+  { sourceId: 45, group: "非遗与治理", entry: "UNESCO. Ethical Principles for Safeguarding Intangible Cultural Heritage[EB/OL]. (2015)[2026-08-17].", use: "支撑社区主体、持续知情同意、物质与精神收益以及避免误表征的伦理要求。" },
+  { sourceId: 101, group: "非遗与治理", entry: "UNESCO. Operational Directives for the Implementation of the Convention for the Safeguarding of the Intangible Cultural Heritage[Z/OL]. (2024)[2026-08-17].", use: "把社区参与、提高认识、生计、体面就业和旅游影响转化为保护治理条件。" },
+  { sourceId: 102, group: "非遗与治理", entry: "UNESCO. Culture|2030 Indicators[R/OL]. Paris: UNESCO, 2019[2026-08-17].", use: "为文化保护和城市发展建立兼顾生计、知识、参与和治理的多维评估框架。" },
+  { sourceId: 43, group: "研究方法", entry: "KRIPPENDORFF K. Content Analysis: An Introduction to Its Methodology[M]. 4th ed. Thousand Oaks: SAGE, 2018.", use: "用于确定分析单位、编码手册、编码员训练以及信度与效度检验。" },
+  { sourceId: 44, group: "研究方法", entry: "BRAUN V, CLARKE V. Using thematic analysis in psychology[J]. Qualitative Research in Psychology, 2006, 3(2): 77-101.", use: "为访谈材料的熟悉、编码、主题生成、修订与命名提供方法路径。" },
+] as const;
+
+const citationRoutes = [
+  { chapter: "绪论", question: "媒介记忆到底指什么？", instruction: "概念界定先引用国外基础理论，再用国内概念辨析限定研究对象。", sources: [31, 35, 40, 61, 62] },
+  { chapter: "第二章", question: "为什么食物能够唤起地方记忆？", instruction: "把人类学食物记忆、国内食物景观研究和淮南专门材料放在同一段中对话。", sources: [32, 33, 53, 70] },
+  { chapter: "第二、三章", question: "历史材料怎样进入当代叙事？", instruction: "古籍、考古事实、新闻解释和起源传说分层引用，不能让后一类替代前一类。", sources: [14, 24, 28, 29, 53, 69] },
+  { chapter: "第三章", question: "影视和平台怎样激活并重构记忆？", instruction: "剧集材料证明文本与传播节点，媒介记忆文献负责解释机制，二者不要混作同一种证据。", sources: [17, 25, 34, 39, 63, 73, 83, 92] },
+  { chapter: "第四章", question: "看见怎样转成到访、消费与认同？", instruction: "按曝光、形象、依恋、行动分层引用；客流报道只能证明同期现象。", sources: [6, 19, 42, 86, 89, 90, 91, 103] },
+  { chapter: "第四章、结语", question: "牛肉汤怎样参与城市形象建构？", instruction: "同时引用城市品牌、居民故事、地方食品门店和淮南空间承接材料。", sources: [41, 42, 65, 71, 82, 88, 104] },
+  { chapter: "第五章、结语", question: "传播、标准化与非遗保护的边界在哪里？", instruction: "法律和UNESCO材料确定规范边界，案例研究解释参与、版本与收益问题。", sources: [5, 36, 37, 45, 46, 95, 96, 99, 101, 102] },
+  { chapter: "研究方法", question: "平台、访谈和问卷怎样真正执行？", instruction: "方法教材说明程序，经验研究只用于借鉴量表和变量，不能替代淮南调查。", sources: [43, 44, 89, 91, 93, 103] },
+] as const;
+
+const revisionChecks = [
+  ["概念统一", "全文用“媒介记忆建构”指资源被选择、再媒介化、参与和制度化的过程；不要与“宣传效果”“历史文化”随意互换。"],
+  ["证据分层", "每个重要判断标明它是可核事实、机构公开口径、地方传说还是研究推断。传说可以分析，但不能写成考古结论。"],
+  ["因果降级", "“同期出现”“可能推动”“提供条件”与“直接导致”分开。没有对照、时间序列或受众调查时，不写确定因果。"],
+  ["主体说清", "把“媒体认为”“社会认同”“群众喜爱”改成具体主体：哪家媒体、哪类账号、哪些受访者或哪组样本。"],
+  ["重复删除", "每个案例只在最适合的一章完整展开，其他章节用一句回指说明其新作用，避免重复复述事件经过。"],
+  ["引文就近", "事实、数字和具体研究发现后立即放引文；一段末尾堆很多编号，会让读者不知道每条来源支持哪句话。"],
+  ["文献核读", "核心学术文献只有在阅读摘要、方法、结论及与论文有关的正文后才进入最终参考文献；搜索摘要不能冒充全文阅读。"],
+  ["格式收口", "定稿时按学校模板统一作者大小写、文献类型、卷期页码、发布日期和访问日期，并让正文序号与文后表一一对应。"],
+] as const;
+
+const referenceGroups = ["媒介记忆", "食物与地方", "城市形象", "非遗与治理", "研究方法"] as const;
+const archiveGroups: Source["type"][] = ["政策/统计", "新闻/专题", "视频", "学术/典籍", "图片/素材"];
+
+function referenceMarker(source: Source) {
+  if (source.id === 52) return "S/OL";
+  if ([2, 30, 36, 37, 101].includes(source.id)) return "Z/OL";
+  if ([31, 40, 43].includes(source.id)) return "M/OL";
+  if (source.type === "视频") return "V/OL";
+  if (source.type === "学术/典籍") return "J/OL";
+  return "EB/OL";
+}
+
+function archiveReference(source: Source) {
+  return `${source.publisher}. ${source.title}[${referenceMarker(source)}]. (${source.date})[2026-08-17]. ${source.url}.`;
+}
+
 const codingRows = [
   ["故事从哪里来", "传说 / 考古典籍 / 市井生活 / 非遗技艺 / 工业城市", "这条内容把牛肉汤的过去放在哪里？"],
   ["时间框架", "楚汉—五代 / 矿业城市 / 改革开放 / 数字当下", "是否把断裂的时期压缩成连续历史？"],
@@ -243,7 +311,8 @@ const siteTabs = [
   { id: "mechanism", number: "03", label: "案例与机制", note: "传播与反思" },
   { id: "draft", number: "04", label: "论文正文", note: "依原提纲逐节写作" },
   { id: "methods", number: "05", label: "研究方法", note: "抽样、分类与访谈" },
-  { id: "sources", number: "06", label: "来源资料", note: "视频与104项档案" },
+  { id: "references", number: "06", label: "参考文献", note: "格式、引文与统稿" },
+  { id: "sources", number: "07", label: "来源资料", note: "视频与104项档案" },
 ] as const;
 
 const essayChapterIndex = [
@@ -1434,6 +1503,91 @@ export default function Home() {
           <li><span>[7]</span><p>BRAUN V, CLARKE V. Using Thematic Analysis in Psychology[J]. <i>Qualitative Research in Psychology</i>, 2006, 3(2): 77-101. <Cite id={44} /></p></li>
           <li><span>[8]</span><p>UNESCO. Convention for the Safeguarding of the Intangible Cultural Heritage[EB/OL]. 2003. <Cite id={37} /></p></li>
         </ol>
+      </section>
+      </div>}
+
+      {activeTab === "references" && <div className="tab-page" data-page="references">
+      <section className="bibliography-hero page-section">
+        <div className="bibliography-title">
+          <div><p className="section-kicker">第八步 · 文后参考文献与全文统稿</p><h2>来源多，不等于参考文献就合格。先分清“支撑理论的文献”和“证明事件的网页”。</h2></div>
+          <p>这一页不是把104个链接机械地堆到论文末尾，而是给出三套可以直接工作的索引：27条核心学术与规范文献、8组正文命题与引文对照、104项网络材料的GB/T 7714格式草案。提交前仍需按学校模板和你实际读过的版本复核。</p>
+        </div>
+        <div className="bibliography-metrics">
+          <article><span>核心文献</span><strong>{coreReferences.length}</strong><p>已核作者、题名、年份与主要卷期页码</p></article>
+          <article><span>引文路线</span><strong>{citationRoutes.length}</strong><p>从论文问题直接定位到应引用的材料组</p></article>
+          <article><span>网络档案</span><strong>{sources.length}</strong><p>政策、新闻、视频、图片与学术网页全部保留</p></article>
+          <article><span>统一访问日</span><strong>08·17</strong><p>当前网页草案按2026年8月17日登记</p></article>
+        </div>
+        <aside className="reference-warning"><b>先记住一条</b><p>网站里的方括号编号是研究资料库编号，方便你回查来源；它不是学校最终要求的顺序编码。论文定稿时要按正文首次出现次序重新编号，并让正文序号与文后参考文献一一对应。</p></aside>
+      </section>
+
+      <section className="citation-route-section page-section">
+        <div className="section-heading">
+          <div><p className="section-kicker">观点该引哪一组文献</p><h2>先找要证明的命题，再决定引文，不要先堆作者。</h2></div>
+          <p>同一段通常需要两类材料配合：学术文献解释概念或机制，案例材料证明淮南发生了什么。下面把两者放在同一条路线中。</p>
+        </div>
+        <div className="citation-route-list">
+          {citationRoutes.map((route, index) => (
+            <article key={route.question}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div><b>{route.chapter}</b><h3>{route.question}</h3><p>{route.instruction}</p></div>
+              <aside><em>建议引文组</em><p>{route.sources.map((id) => <Cite key={id} id={id} />)}</p></aside>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="core-reference-section page-section">
+        <div className="section-heading">
+          <div><p className="section-kicker">核心参考文献 · 人工整理稿</p><h2>这27条承担理论、方法和关键比较，不只是提供一个链接。</h2></div>
+          <p>格式采用GB/T 7714—2015常见写法。英文作者暂按姓氏大写、名字首字母处理；学校若有自己的著录模板，应以学校要求为准。</p>
+        </div>
+        <nav className="reference-group-index" aria-label="参考文献分类索引">
+          {referenceGroups.map((group) => <a key={group} href={`#reference-${group}`}>{group}<span>{coreReferences.filter((item) => item.group === group).length}</span></a>)}
+        </nav>
+        {referenceGroups.map((group) => (
+          <section className="reference-group" id={`reference-${group}`} key={group}>
+            <header><span>{String(referenceGroups.indexOf(group) + 1).padStart(2, "0")}</span><h3>{group}</h3><p>{coreReferences.filter((item) => item.group === group).length}条</p></header>
+            <ol>
+              {coreReferences.filter((item) => item.group === group).map((reference) => {
+                const source = sourceById(reference.sourceId);
+                return <li key={reference.sourceId}>
+                  <span>[{String(coreReferences.indexOf(reference) + 1).padStart(2, "0")}]</span>
+                  <div><p>{reference.entry}</p><em>{reference.use}</em></div>
+                  <a href={source.url} target="_blank" rel="noreferrer">原文 {String(reference.sourceId).padStart(2, "0")} ↗</a>
+                </li>;
+              })}
+            </ol>
+          </section>
+        ))}
+      </section>
+
+      <section className="revision-check-section page-section">
+        <div className="section-heading">
+          <div><p className="section-kicker">全文第一轮统稿表</p><h2>每章写完以后，用同一把尺子检查一遍。</h2></div>
+          <p>这八项分别处理概念漂移、证据越界、因果过强、主体模糊、章节重复和引文错位。它们比单纯润色句子更能提高论文可信度。</p>
+        </div>
+        <ol className="revision-check-list">
+          {revisionChecks.map(([title, detail], index) => <li key={title}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{title}</h3><p>{detail}</p></div><b>□ 已检查</b></li>)}
+        </ol>
+      </section>
+
+      <section className="archive-reference-section page-section">
+        <div className="section-heading">
+          <div><p className="section-kicker">104项网络材料 · 格式草案</p><h2>按材料类型折叠保存，需要时再展开，不把整页变成链接瀑布。</h2></div>
+          <p>网络来源的责任者、发布日期和文献类型有时需要根据网页实际情况调整。尤其是转载稿、持续更新页和学术数据库摘要，正式提交前必须再打开原页核对。</p>
+        </div>
+        <div className="archive-reference-groups">
+          {archiveGroups.map((group, groupIndex) => {
+            const groupSources = sources.filter((source) => source.type === group);
+            return <details key={group} open={groupIndex === 0}>
+              <summary><span>{String(groupIndex + 1).padStart(2, "0")}</span><b>{group}</b><em>{groupSources.length}项</em><i>展开 / 收起</i></summary>
+              <ol>
+                {groupSources.map((source) => <li key={source.id}><span>[资料{String(source.id).padStart(3, "0")}]</span><a href={source.url} target="_blank" rel="noreferrer">{archiveReference(source)}</a></li>)}
+              </ol>
+            </details>;
+          })}
+        </div>
       </section>
       </div>}
 
