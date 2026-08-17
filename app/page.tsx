@@ -261,6 +261,50 @@ const revisionChecks = [
 const referenceGroups = ["媒介记忆", "食物与地方", "城市形象", "非遗与治理", "研究方法"] as const;
 const archiveGroups: Source["type"][] = ["政策/统计", "新闻/专题", "视频", "学术/典籍", "图片/素材"];
 
+const thesisArgumentMatrix = [
+  {
+    question: "为什么淮南牛肉汤容易成为媒介记忆对象？",
+    finding: "它同时拥有传说、典籍、考古、非遗技艺、矿区生活、家庭早餐和感官经验等多层资源。资源丰富提高了可讲性，但不同资源的证据性质并不相同。",
+    evidence: "地方史料、古籍、考古发布、非遗节目、门店与开放图片",
+    boundary: "古代烹牛和现代牛肉汤之间没有得到证明的连续配方链。",
+    chapter: "第二章",
+  },
+  {
+    question: "考古、影视和平台怎样激活并重构这些记忆？",
+    finding: "事件先打开注意窗口，新闻、电视剧、短视频、直播和线下活动再按各自形式选择符号、压缩时间并重新组织主体位置；同一材料在跨媒介流动中不断改变含义。",
+    evidence: "武王墩报道、《六姊妹》、演员视频、万人共食与传播矩阵",
+    boundary: "平台可见性上升不等于受众已经形成稳定共同记忆。",
+    chapter: "第三章",
+  },
+  {
+    question: "网上可见度怎样可能转化为认同、到访和产业价值？",
+    finding: "曝光需要经过目的地形象、情感、空间体验、门店服务和制度承接，才可能进入到访、购买、推荐与品牌；地方线路、商标、标准和政策构成了现实承接条件。",
+    evidence: "游客报道、取景地与市集、门店奖补、网销、商标和产业政策",
+    boundary: "同期增长只能说明关联，不能单独证明影视或短视频造成全部增长。",
+    chapter: "第四章",
+  },
+  {
+    question: "传播和制度化会遗漏什么，又该怎样改进？",
+    finding: "古老、统一和增长叙事更容易占据中心，普通劳动、门店差异和社区知识可能退到背景。改进关键不是拒绝媒介与商业，而是公开证据、保留版本、扩大参与、让收益回到实践和学习。",
+    evidence: "标题与视频比较、标准和授权文件、非遗伦理与参与研究",
+    boundary: "现有资料不能预先宣布居民被剥夺、青年断层或商业化必然损害传统。",
+    chapter: "第五章与结语",
+  },
+] as const;
+
+const terminologyGuide = [
+  { term: "媒介记忆", use: "与牛肉汤有关的过去，在媒介生产、流通、接受和再使用中被选择、组织并形成阶段性公共理解的过程。", avoid: "不要把任何提到过去的新闻都直接称为媒介记忆。" },
+  { term: "记忆资源", use: "尚未被当代传播完整组织，但可以被调用的传说、物证、技艺、感官和生活经验。", avoid: "不要默认资源天然带有统一意义或会自动转化为品牌。" },
+  { term: "记忆激活", use: "考古、影视、政策或节庆在特定时间集中提高某些资源的公共可见性。", avoid: "不要用“激活”直接替代受众认同和长期影响。" },
+  { term: "再媒介化／记忆重构", use: "同一材料进入新闻、影视、短视频、直播或活动时，被重新剪辑、命名和赋予主体位置。", avoid: "不要写成不同媒介对原故事的无损搬运。" },
+  { term: "记忆转化", use: "可见性经过情感、空间、消费与制度等中间环节，可能进入到访、购买、认同或治理。", avoid: "不要把热搜、客流、复购和城市认同合并成一个指标。" },
+  { term: "制度化", use: "记忆中的名称与版本被商标、标准、条例、课程、档案或常态项目相对稳定地固定。", avoid: "制度化不等于所有居民接受，也不等于地方差异已经消失。" },
+  { term: "城市形象", use: "居民与外来者对城市历史、生活、空间和情感形成的综合认知与评价。", avoid: "不要把城市形象缩成一句宣传口号或一个视觉标志。" },
+  { term: "城市品牌", use: "公共部门、企业、居民和游客围绕地方识别、承诺与治理持续协商的过程。", avoid: "不要把淮南当作可以由单一机构完全设计和控制的普通商品。" },
+  { term: "地方性", use: "食物同具体人群、环境、历史、劳动、知识和日常实践之间仍然存在的关系。", avoid: "不要只用“正宗”“古老”两个标签代替地方性。" },
+  { term: "研究推断", use: "研究者依据多项材料提出、但仍需平台样本、访谈、观察或统计进一步验证的解释。", avoid: "必须与可核事实、机构公开口径和地方传说明确区分。" },
+] as const;
+
 function referenceMarker(source: Source) {
   if (source.id === 52) return "S/OL";
   if ([2, 30, 36, 37, 101].includes(source.id)) return "Z/OL";
@@ -316,6 +360,23 @@ const siteTabs = [
 ] as const;
 
 const essayChapterIndex = [
+  {
+    id: "abstract",
+    number: "摘要",
+    label: "摘要",
+    title: "中英文摘要、关键词与全文论证总表",
+    status: "已补齐 · 中英文摘要",
+    purpose: "用最短篇幅交代研究对象、方法、发现、价值与边界，并统一全文核心概念。",
+    question: "全文最终研究了什么、发现了什么？",
+    evidence: "104项公开来源、事件链与前五章交叉证据",
+    boundary: "摘要只概括现有材料支持的发现，不把待完成的田野调查写成既有结果。",
+    sections: [
+      { id: "chinese", label: "中文摘要与关键词" },
+      { id: "english", label: "英文摘要与关键词" },
+      { id: "argument-map", label: "研究问题与核心发现" },
+      { id: "terminology", label: "全文统一术语表" },
+    ],
+  },
   {
     id: "intro",
     number: "00",
@@ -879,7 +940,7 @@ export default function Home() {
         <div className="essay-shell">
           <div className="section-heading draft-heading">
             <div><p className="section-kicker">论文正文 · 分章阅读</p><h2>先选章节，再按本章索引阅读。</h2></div>
-            <p>六章不再连续铺在一页。每章先说明要回答的问题、主要材料和论证边界，再进入正文；章节与小节都有独立链接，便于引用、讨论和逐段修改。</p>
+            <p>摘要与六章正文不再连续铺在一页。每一部分先说明要回答的问题、主要材料和论证边界，再进入正文；章节与小节都有独立链接，便于引用、讨论和逐段修改。</p>
           </div>
 
           <aside className="draft-disclaimer">
@@ -890,8 +951,8 @@ export default function Home() {
           <div className="essay-reader" id="draft-reader">
             <aside className="essay-toc">
               <div className="essay-toc-head">
-                <div><span>论文目录</span><b>六章正文</b></div>
-                <p>一次只读一章。先看每章要解决的问题，再用本章索引直达具体小节。</p>
+                <div><span>论文目录</span><b>摘要＋六章正文</b></div>
+                <p>一次只读一个部分。先用摘要核对全文结论，再看各章要解决的问题，并用本章索引直达具体小节。</p>
               </div>
               <nav aria-label="论文章节目录">
                 {essayChapterIndex.map((chapter) => (
@@ -927,6 +988,52 @@ export default function Home() {
                   ))}
                 </div>
               </nav>
+
+          {activeEssayChapter === "abstract" && (
+          <article className="essay-chapter abstract-chapter">
+            <header><span>摘要</span><div><p>中英文摘要、关键词与全文论证总表</p><h3>先把全文真正证明了什么说清楚</h3></div></header>
+            <div className="essay-prose abstract-prose">
+              <section className="essay-subsection" id="essay-abstract-chinese">
+                <h4>一、中文摘要与关键词</h4>
+                <div className="abstract-title-card"><span>论文题目</span><h3>淮南牛肉汤的媒介记忆建构研究</h3></div>
+                <p className="abstract-body"><b>摘要：</b>地方食物既是日常生活的一部分，也可能在新闻、影视、数字平台和公共政策中被重新组织为城市记忆。本文以淮南牛肉汤为案例，考察传说、典籍、考古、非遗技艺、矿区生活和个人味觉经验怎样成为可调用的记忆资源，武王墩考古、电视剧《六姊妹》及相关短视频和城市活动又怎样激活并重构这些资源，以及媒介可见度在何种条件下可能转化为地方认同、游客到访、消费行为、城市形象和产业制度。研究以媒介记忆为主要视角，结合食物记忆、城市品牌和非物质文化遗产保护研究，通过文献分析、事件链梳理与多源互证，对2022年至2026年间104项政策、统计、新闻、视频、图片、典籍和学术资料进行整理，并为后续平台内容分析、半结构访谈、现场观察与问卷调查建立研究方案。研究发现：第一，淮南牛肉汤的可记忆性来自历史叙事、地方生活和感官经验的叠加，但古代烹牛材料、地方起源传说与现代菜品之间不存在已被证明的连续配方链。第二，考古和影视事件提供注意窗口，新闻、电视剧、短视频、直播和线下活动则通过标签、画面、情感框架与主体安排持续改变记忆内容，同一材料在跨媒介流动中并非原样复制。第三，政府、媒体、企业、传承人、门店、居民和游客共同参与意义生产，但各主体掌握的传播资源与制度权力并不平等。第四，媒介曝光需要经过目的地形象、情感、空间体验、门店服务和组织承接，才可能进入到访、购买、推荐与认同；现有公开数据可以确认地方已建立活动、线路、商标、标准和政策等承接机制，却不足以证明单一媒介事件造成全部客流与产业增长。第五，记忆制度化能够稳定名称、质量和公共识别，也可能使古老、统一和增长叙事占据中心，将普通劳动、门店差异与社区知识推到背景。由此，淮南牛肉汤的媒介记忆建构应被理解为“资源调用—事件激活—跨媒介重构—主体参与—价值转化—制度化—再次传播”的循环过程。城市传播与非遗保护不应只追求曝光、客流和产值，还应公开证据边界、保留多种实践版本、扩大社区参与、说明收益分配，并以持续学习和可核数据判断传承效果。本文的贡献在于把地方食物从静态文化符号还原为持续协商的记忆过程，并为理解地方饮食、城市形象与活态遗产之间的关系提供一套可检验的分析路径。受公开资料性质所限，居民认同、游客动机、普通门店收益和代际传承效果仍需通过平台抽样、田野调查与纵向数据进一步验证。</p>
+                <p className="abstract-keywords"><b>关键词：</b><span>媒介记忆</span><span>地方食物</span><span>城市形象</span><span>非物质文化遗产</span><span>淮南牛肉汤</span><span>数字传播</span></p>
+              </section>
+
+              <section className="essay-subsection english-abstract" id="essay-abstract-english">
+                <h4>二、英文摘要与关键词</h4>
+                <div className="abstract-title-card"><span>Title</span><h3>The Construction of Mediated Memory around Huainan Beef Soup</h3><p>From Everyday Food to a City Symbol</p></div>
+                <div className="english-abstract-body">
+                  <p><b>Abstract:</b> Local food is part of everyday life, but it can also be reorganized as public memory through news, television drama, digital platforms, urban events, and policy. Taking Huainan beef soup as a case, this study examines how legends, classical texts, archaeology, intangible cultural heritage practices, industrial-city life, and personal sensory experience become mnemonic resources. It then traces how the excavation of the Wuwangdun tomb, the television drama <i>Six Sisters</i>, short videos, livestreams, and offline events activated and reconstructed these resources, and under what conditions media visibility might be converted into place identity, tourist visits, consumption, city image, and institutional arrangements.</p>
+                  <p>The study adopts mediated memory as its main perspective and brings it into dialogue with research on food and memory, place branding, and intangible cultural heritage safeguarding. Through literature analysis, event-chain reconstruction, and cross-checking of multiple sources, it organizes 104 policy documents, statistical releases, news reports, videos, photographs, classical texts, and academic publications issued or accessed mainly between 2022 and 2026. The public-source analysis is also used to formulate a subsequent empirical design involving platform content analysis, semi-structured interviews, field observation, and surveys.</p>
+                  <p>Five findings are proposed. First, the memorability of Huainan beef soup results from the overlap of historical narratives, local life, and embodied sensory experience. However, ancient evidence of cattle consumption, contemporary origin legends, and the modern dish do not constitute a verified, continuous recipe history. Second, archaeological and television events create windows of attention, while news, drama, short video, livestreaming, and public events continually alter memory through labels, images, emotional framing, and the positioning of social actors. Material is therefore transformed rather than simply copied when it moves across media. Third, local government, media organizations, businesses, heritage bearers, restaurants, residents, and tourists all participate in meaning-making, but they possess unequal communicative and institutional resources. Fourth, exposure can lead to visits, purchases, recommendations, or identification only through intermediate links such as destination image, emotion, spatial experience, service quality, and organizational support. Public records confirm the development of events, routes, trademarks, standards, and policies, but do not establish that a single media event caused all increases in tourism or industry. Fifth, institutionalization can stabilize names, quality expectations, and public recognition, while also privileging narratives of antiquity, uniformity, and growth over everyday labor, restaurant diversity, and community knowledge.</p>
+                  <p>The mediated memory of Huainan beef soup is therefore conceptualized as a recurring process of resource mobilization, event activation, cross-media reconstruction, actor participation, value conversion, institutionalization, and renewed circulation. City communication and heritage safeguarding should not be evaluated only through exposure, visitor numbers, or industrial output. They should also clarify evidential boundaries, preserve multiple versions of practice, expand community participation, disclose benefit distribution, and assess transmission through sustained learning and verifiable data. Because this study is primarily based on public sources, claims concerning resident identification, tourist motivation, ordinary restaurant income, and intergenerational transmission remain propositions to be tested through systematic sampling, fieldwork, and longitudinal evidence.</p>
+                </div>
+                <p className="abstract-keywords english-keywords"><b>Keywords:</b><span>mediated memory</span><span>local food</span><span>city image</span><span>intangible cultural heritage</span><span>Huainan beef soup</span><span>digital media</span></p>
+              </section>
+
+              <section className="essay-subsection" id="essay-abstract-argument-map">
+                <h4>三、研究问题—核心发现—证据—边界总表</h4>
+                <p className="abstract-tool-intro">这张表不是放进摘要正文的内容，而是全文统稿的“总控制表”。每一章的段落都应能回到其中一个研究问题；如果某段既不能贡献发现，也不能说明证据或边界，就要考虑删除、合并或移到研究背景。</p>
+                <div className="argument-matrix-wrap">
+                  <table className="argument-matrix">
+                    <thead><tr><th>研究问题</th><th>核心发现</th><th>主要证据</th><th>不能说过头</th><th>落在章节</th></tr></thead>
+                    <tbody>{thesisArgumentMatrix.map((item) => <tr key={item.question}><td>{item.question}</td><td>{item.finding}</td><td>{item.evidence}</td><td>{item.boundary}</td><td>{item.chapter}</td></tr>)}</tbody>
+                  </table>
+                </div>
+                <div className="thesis-loop"><span>全文总机制</span><p>记忆资源 → 事件激活 → 跨媒介重构 → 主体参与 → 价值转化 → 制度化 → 再次传播</p></div>
+              </section>
+
+              <section className="essay-subsection" id="essay-abstract-terminology">
+                <h4>四、全文统一术语表</h4>
+                <p className="abstract-tool-intro">下面十个词是后续逐章统稿的固定用法。它们不是为了让论文显得“理论化”，而是防止同一个词在不同章节随意变义。</p>
+                <div className="terminology-grid">
+                  {terminologyGuide.map((item, index) => <article key={item.term}><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.term}</h3><p>{item.use}</p><em>{item.avoid}</em></article>)}
+                </div>
+              </section>
+            </div>
+          </article>
+          )}
 
           {activeEssayChapter === "intro" && (
           <article className="essay-chapter">
