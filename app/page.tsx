@@ -674,11 +674,6 @@ export default function Home() {
           <p className="dek">
             本研究关注一道美食的前世今生、穿梭时空，研究传说、考古、日常生活、影视和数字平台怎样共同组织着淮河儿女对淮南牛肉汤的记忆。
           </p>
-          <div className="hero-actions">
-            <a className="primary-action" href="#draft/intro" onClick={() => { openTab("draft"); setActiveEssayChapter("intro"); }}>进入论文正文</a>
-            <a className="text-action" href="#sources" onClick={() => openTab("sources")}>查看来源资料 →</a>
-            <span>104项公开来源 · 8条视频 · 6张开放授权图片</span>
-          </div>
         </div>
 
         <figure className="hero-photo">
@@ -721,7 +716,6 @@ export default function Home() {
           <a href="#references" onClick={() => openTab("references")}><span>06</span><div><h3>参考文献</h3><p>核对核心学术文献、正文引文路线和全文统稿规则。</p></div><b>→</b></a>
           <a href="#sources" onClick={() => openTab("sources")}><span>07</span><div><h3>来源资料</h3><p>回查公开材料、原始网页、视频和开放授权图片。</p></div><b>→</b></a>
         </nav>
-        <aside className="overview-boundary"><b>首页不负责展开结论</b><p>理论综述放在绪论，食物与门店材料放在图鉴，传播事件放在案例页，数字与引文回到正文、参考文献和来源档案。首页只回答“这是什么研究、应该从哪里读”。</p></aside>
       </section>
       </div>}
 

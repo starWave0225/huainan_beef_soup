@@ -42,7 +42,6 @@ test("server-renders the paginated research home and its tab bar", async () => {
   assert.match(html, /淮南牛肉汤实拍/);
   assert.match(html, /A_Bowl_of_Huainan_Beef_Soup\.jpg/);
   assert.doesNotMatch(html, /class="memory-orbit"/);
-  assert.match(html, /首页不负责展开结论/);
   assert.match(html, /研究首页/);
   assert.match(html, /牛肉汤图鉴/);
   assert.match(html, /案例与机制/);
@@ -50,7 +49,8 @@ test("server-renders the paginated research home and its tab bar", async () => {
   assert.match(html, /研究方法/);
   assert.match(html, /参考文献/);
   assert.match(html, /来源资料/);
-  assert.match(html, /104项公开来源/);
+  assert.doesNotMatch(html, /进入论文正文|查看来源资料 →|104项公开来源 · 8条视频 · 6张开放授权图片/);
+  assert.doesNotMatch(html, /首页不负责展开结论|首页只回答“这是什么研究、应该从哪里读”/);
   assert.equal((html.match(/class="tab-page"/g) ?? []).length, 1);
   assert.match(html, /data-page="overview"/);
   assert.doesNotMatch(html, /核心研究问题|四组理论，各管一件事|公开数字，先看口径|class="memory-foundations"/);
