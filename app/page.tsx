@@ -157,22 +157,22 @@ const cases = [
 
 const caseImages = {
   archaeology: {
-    src: "media/commons/huainan-bowl.jpg",
-    alt: "俯拍的现代淮南牛肉汤实物照片",
-    caption: "现代牛肉汤实拍：提示考古叙事最终被指向怎样的当代食物形象；这不是武王墩出土图像。",
-    sourceId: 54,
+    src: "media/events/wuwangdun-bronze-fang.jpg",
+    alt: "武王墩墓出土的青铜钫",
+    caption: "武王墩墓出土铜钫。淮南市政府页面注明图片来自武王墩墓考古工作队。器物能够证明楚国礼制与物质生活，但不能直接证明现代牛肉汤配方。",
+    sourceId: 14,
   },
   television: {
-    src: "media/commons/huainan-shortbread.jpg",
-    alt: "淮南牛肉汤与酥饼摆在同一张木桌上",
-    caption: "牛肉汤与酥饼实拍：用来观察剧集唤起的家庭共食和早餐想象；这不是《六姊妹》剧照。",
-    sourceId: 57,
+    src: "media/events/six-sisters-mass-tasting.jpg",
+    alt: "六姊妹粉丝见面会暨万人共品淮南牛肉汤活动现场",
+    caption: "《六姊妹》粉丝见面会暨万人共品淮南牛肉汤活动现场。电视剧带来的注意力在这里被转化为集体品尝、城市活动和可拍摄的公共场景。",
+    sourceId: 47,
   },
   industry: {
-    src: "media/commons/huainan-jiangji.jpg",
-    alt: "上海黄浦区带有淮南牛肉汤名称的清真门店",
-    caption: "上海门店实拍：产地名称、清真标识和门店形态随着地方食品一起跨城传播。",
-    sourceId: 58,
+    src: "media/events/industry-packaging.jpg",
+    alt: "工人在食品企业包装淮南牛肉汤产品",
+    caption: "2024年1月，工人在淮南一家食品企业包装牛肉汤产品。门店里的现做食物进入生产线以后，配方、分量和包装都需要变得可复制。摄影：新华社记者黄博涵。",
+    sourceId: 15,
   },
 } as const;
 
@@ -823,20 +823,27 @@ export default function Home() {
           <p>媒体不会把现成记忆原样搬过来。它会挑选、排序、强调，也会省略。一个故事从新闻进入电视剧、短视频和活动现场时，每次都会被重新讲一遍<Cite id={31} /><Cite id={34} /><Cite id={35} />。</p>
         </div>
 
-        <div className="mechanism-photo-strip" aria-label="淮南牛肉汤传播场景实拍">
+        <div className="mechanism-photo-strip" aria-label="淮南牛肉汤传播事件公开图片">
           <figure>
-            <img src="media/commons/huainan-bowl.jpg" alt="俯拍的一碗淮南牛肉汤" loading="lazy" />
-            <figcaption><b>先成为可识别的画面</b><span>肉片、绿叶、汤面和大碗构成视觉入口。</span><Cite id={54} /></figcaption>
+            <a href={sourceById(14).url} target="_blank" rel="noreferrer" aria-label="查看武王墩考古图片出处">
+              <img src="media/events/wuwangdun-wooden-figurine.jpg" alt="武王墩墓出土的木俑首" loading="lazy" />
+            </a>
+            <figcaption><b>考古材料进入公共视野</b><span>武王墩墓出土木俑首；图片来自考古工作队，经淮南市政府公开发布。</span><Cite id={14} /></figcaption>
           </figure>
           <figure>
-            <img src="media/commons/huainan-dip.jpg" alt="酥饼靠近淮南牛肉汤碗的进食场景" loading="lazy" />
-            <figcaption><b>再进入身体动作</b><span>掰、蘸、夹和品尝让观看变成生活经验。</span><Cite id={59} /></figcaption>
+            <a href={sourceById(47).url} target="_blank" rel="noreferrer" aria-label="查看六姊妹万人共品活动图片出处">
+              <img src="media/events/six-sisters-giant-pot.jpg" alt="六姊妹相关活动现场的巨型牛肉汤锅" loading="lazy" />
+            </a>
+            <figcaption><b>影视热度变成线下活动</b><span>巨型汤锅把电视剧话题改写为能够围观、品尝和传播的城市事件。</span><Cite id={47} /></figcaption>
           </figure>
           <figure>
-            <img src="media/commons/huainan-restaurant.jpg" alt="写有淮南牛肉汤字样的街边门店" loading="lazy" />
-            <figcaption><b>最后进入街道空间</b><span>菜名通过门头在不同城市被反复看见。</span><Cite id={55} /></figcaption>
+            <a href={sourceById(15).url} target="_blank" rel="noreferrer" aria-label="查看淮南牛肉汤生产线图片出处">
+              <img src="media/events/industry-production-line.jpg" alt="工人在淮南牛肉汤食品生产线上作业" loading="lazy" />
+            </a>
+            <figcaption><b>地方味道进入生产体系</b><span>生产线让门店经验变成可运输、可销售、可统一管理的产品。摄影：新华社记者黄博涵。</span><Cite id={15} /></figcaption>
           </figure>
         </div>
+        <p className="mechanism-image-note">本栏图片均来自政府部门或新闻机构的公开报道，点击图片可回到原发布页面。网站仅作论文研究与材料分析使用，图片版权归原发布方或摄影者所有。</p>
 
         <div className="memory-loop" aria-label="媒介记忆循环的六个步骤">
           <article><span>01</span><b>原有材料</b><p>传说、典籍、技艺、门店和个人回忆</p></article>
@@ -883,7 +890,7 @@ export default function Home() {
         </div>
         <div className="case-panel" role="tabpanel">
           <figure className="case-figure">
-            <a href={sourceById(selectedCaseImage.sourceId).url} target="_blank" rel="noreferrer" aria-label="查看这张图片的原始文件与授权">
+            <a href={sourceById(selectedCaseImage.sourceId).url} target="_blank" rel="noreferrer" aria-label="查看这张图片的公开出处">
               <img src={selectedCaseImage.src} alt={selectedCaseImage.alt} loading="lazy" />
             </a>
             <figcaption>{selectedCaseImage.caption} <Cite id={selectedCaseImage.sourceId} /></figcaption>

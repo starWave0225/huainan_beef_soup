@@ -121,12 +121,15 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   assert.match(page, /新增了清真标识与店面形态/);
   assert.doesNotMatch(page, /这组图片能说明什么|03 · 可以放心使用的图片|这张图能看什么/);
   assert.match(page, /className="mechanism-photo-strip"/);
-  assert.match(page, /先成为可识别的画面/);
-  assert.match(page, /再进入身体动作/);
-  assert.match(page, /最后进入街道空间/);
+  assert.match(page, /考古材料进入公共视野/);
+  assert.match(page, /影视热度变成线下活动/);
+  assert.match(page, /地方味道进入生产体系/);
+  assert.match(page, /图片版权归原发布方或摄影者所有/);
+  assert.doesNotMatch(page.slice(page.indexOf('data-page="mechanism"'), page.indexOf('data-page="draft"')), /media\/commons/);
   assert.match(page, /className="case-figure"/);
   const caseImageBlock = page.slice(page.indexOf("const caseImages = {"), page.indexOf("} as const;", page.indexOf("const caseImages = {")));
   assert.equal((caseImageBlock.match(/sourceId: \d+/g) ?? []).length, 3);
+  assert.equal((caseImageBlock.match(/media\/events\//g) ?? []).length, 3);
   assert.match(page, /二、数字传播生态作为媒介记忆的基础/);
   assert.match(page, /已深写 · 约7700字/);
   assert.match(page, /可调用资源 × 事件激活 × 组织承接 × 主体参与/);
