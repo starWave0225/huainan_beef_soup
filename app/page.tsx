@@ -733,7 +733,7 @@ export default function Home() {
         <nav className="overview-directory" aria-label="研究栏目入口">
           <a href="#atlas" onClick={() => openTab("atlas")}><span>02</span><div><h3>牛肉汤图鉴</h3><p>查看淮南牛肉汤的实物、吃法、感官经验和门店空间。</p></div><b>→</b></a>
           <a href="#mechanism" onClick={() => openTab("mechanism")}><span>03</span><div><h3>媒介案例</h3><p>分析考古、影视、新闻和数字平台怎样激活并重构淮南牛肉汤记忆。</p></div><b>→</b></a>
-          <a href="#draft/abstract" onClick={() => { openTab("draft"); setActiveEssayChapter("abstract"); }}><span>04</span><div><h3>论文正文</h3><p>查看论文框架并阅读全文。</p></div><b>→</b></a>
+          <a href="#draft/abstract"><span>04</span><div><h3>论文正文</h3><p>查看论文框架并阅读全文。</p></div><b>→</b></a>
           <a href="#methods/sampling" onClick={() => { openTab("methods"); setActiveMethodTool("sampling"); }}><span>05</span><div><h3>研究方法</h3><p>查看不同研究方法与背后的数据支撑逻辑。</p></div><b>→</b></a>
           <a href="#references" onClick={() => openTab("references")}><span>06</span><div><h3>参考文献</h3><p>核对核心学术文献、正文引文路线和全文统稿规则。</p></div><b>→</b></a>
           <a href="#sources" onClick={() => openTab("sources")}><span>07</span><div><h3>来源资料</h3><p>回查公开材料、原始网页、视频和开放授权图片。</p></div><b>→</b></a>
@@ -1004,7 +1004,6 @@ export default function Home() {
                     href={`#draft/${chapter.id}`}
                     className={activeEssayChapter === chapter.id ? "active" : ""}
                     aria-current={activeEssayChapter === chapter.id ? "page" : undefined}
-                    onClick={() => setActiveEssayChapter(chapter.id)}
                   >
                     <span>{chapter.number}</span>
                     <div><b>{chapter.label}</b><small>{chapter.title}</small><i>{chapter.status}</i></div>
@@ -1521,7 +1520,7 @@ export default function Home() {
               <nav className="chapter-pager" aria-label="前后章节">
                 <div>
                   {previousEssayChapter && (
-                    <a href={`#draft/${previousEssayChapter.id}`} onClick={() => setActiveEssayChapter(previousEssayChapter.id)}>
+                    <a href={`#draft/${previousEssayChapter.id}`}>
                       <span>← 上一章</span>
                       <b>{previousEssayChapter.label} · {previousEssayChapter.title}</b>
                     </a>
@@ -1529,7 +1528,7 @@ export default function Home() {
                 </div>
                 <div>
                   {nextEssayChapter && (
-                    <a href={`#draft/${nextEssayChapter.id}`} onClick={() => setActiveEssayChapter(nextEssayChapter.id)}>
+                    <a href={`#draft/${nextEssayChapter.id}`}>
                       <span>下一章 →</span>
                       <b>{nextEssayChapter.label} · {nextEssayChapter.title}</b>
                     </a>

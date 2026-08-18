@@ -96,6 +96,12 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   assert.match(page, /className="plain-writing-details"/);
   assert.match(page, /window\.location\.hash\.slice\(1\)\.split\("\/"\)/);
   assert.match(page, /href=\{`#draft\/\$\{activeEssayEntry\.id\}\/\$\{section\.id\}`\}/);
+  const chapterPagerStart = page.indexOf('<nav className="chapter-pager"');
+  const chapterPager = page.slice(chapterPagerStart, page.indexOf("</nav>", chapterPagerStart));
+  assert.match(chapterPager, /href=\{`#draft\/\$\{previousEssayChapter\.id\}`\}/);
+  assert.match(chapterPager, /href=\{`#draft\/\$\{nextEssayChapter\.id\}`\}/);
+  assert.doesNotMatch(chapterPager, /onClick|setActiveEssayChapter/);
+  assert.equal((page.match(/setActiveEssayChapter\(/g) ?? []).length, 1);
   assert.equal((page.match(/id="essay-(?:abstract|intro|chapter-[2-5]|conclusion)-/g) ?? []).length, 24);
   assert.match(page, /淮南牛肉汤的媒介记忆建构研究/);
   assert.match(page, /The Construction of Mediated Memory around Huainan Beef Soup/);
