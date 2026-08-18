@@ -132,25 +132,25 @@ const cases = [
   {
     id: "archaeology",
     eyebrow: "案例一 · 武王墩考古",
-    title: "一只大鼎，如何变成“千年牛肉汤”的记忆触发器？",
-    body: "武王墩考古确认了战国晚期楚国高等级墓葬、青铜礼器与丰富动物遗存。后续检测显示黄牛等动物经历烹饪，这证明楚国礼制与饮食生活，却仍不足以证明今天这套牛肉汤配方已经连续存在两千年。传播中被压缩掉的，恰好是“牛骨 → 牛肉汤 → 淮南牛肉汤”之间的三次推论跳跃。",
-    insight: "考古给出看得见的器物，地方传播又把这些器物同熟悉的牛肉汤连在一起。两者一结合，传说就显得更像有了证据。",
+    title: "一只大鼎，如何触发了“千年牛肉汤”的记忆？",
+    body: <>武王墩考古确认了战国晚期楚国高等级墓葬、青铜礼器与丰富动物遗存。后续检测显示黄牛等动物曾被烹饪。这能够证明楚国礼制与饮食生活已经与牛肉相关，却仍不足以证明今天的牛肉汤配方连续存在两千年。传播中被压缩掉的，恰好是<strong>“牛骨烹饪→牛肉汤→淮南牛肉汤”</strong>之间的三次跳跃。</>,
+    insight: "考古发掘了看得见的器物，地方传播又把这些器物同熟悉的牛肉汤连在一起。两者一结合，传说就显得有了历史证据。",
     sources: [14, 23, 24, 28, 29],
   },
   {
     id: "television",
     eyebrow: "案例二 · 电视剧《六姊妹》",
-    title: "《六姊妹》没有介绍一道菜，而是让它反复出现在“家”里。",
-    body: "剧中牛肉汤并非知识性插入，而是日常生活的布景、家庭关系的黏合剂和城市年代感的感官线索。主创访谈、演员短视频和游客打卡又把屏幕里的味觉记忆搬回街巷：2025年春季，九龙岗时光小镇官方口径为日均接待游客超1.2万人次；五一报道为日均1.5万人次，其中市外游客占65%以上。",
-    insight: "电视剧先让观众把牛肉汤同“家”联系起来，短视频让这种画面方便模仿和转发，取景地与门店再把看剧变成实地到访和消费。",
+    title: "《六姊妹》没有具体介绍牛肉汤，而是让它反复出现在“家”里。",
+    body: "剧中牛肉汤并非硬性插入，而是日常生活的布景、家庭关系的黏合剂和城市年代感的感官线索。主创访谈、演员短视频和游客打卡又把屏幕里的味觉记忆搬回寻常街巷：2025年春季，九龙岗时光小镇官方统计日均接待游客超过1.2万人次；五一期间日均1.5万人次，其中市外游客占65%以上。",
+    insight: "电视剧先让观众把牛肉汤同“家”这个文化氛围联系起来，短视频让这种文化印象更方便模仿和转发，取景地与门店宣传再把文化印象变成实地到访和消费数据。",
     sources: [6, 16, 17, 19, 25],
   },
   {
     id: "industry",
-    eyebrow: "案例三 · 标准与集体商标",
-    title: "标准越来越多以后，谁来决定什么叫“正宗”？",
-    body: "从方便食品、中央厨房到集体商标，淮南牛肉汤正在从千店千味进入可复制体系。2025年集体商标获批，2026年首批30家企业获授权；截至2026年5月，官方披露已发布17项团体标准和1项省级地方标准。统一质量有助于品牌与食品安全，却也可能把地方差异压缩成单一版本。",
-    insight: "真正需要保护的不是某个永远不变的配方，而是传承人、门店、食客仍能参与定义和更新这碗汤的能力。",
+    eyebrow: "案例三 · 标准定义与集体商标",
+    title: "标准越来越多，谁来决定什么叫“正宗”？",
+    body: "从方便食品、中央厨房到集体商标，淮南牛肉汤正在从千店千味进入可复制体系。2025年集体商标获批，2026年首批30家企业获授权；截至2026年5月，官方已发布17项团体标准和1项省级地方标准。统一质量有助于品牌与食品安全，却也可能损失地方风味差异。",
+    insight: "真正需要保护的不是某个永远不变的配方，而是传承人、门店、食客仍能参与定义和更新这碗汤味道的活力。",
     sources: [2, 3, 4, 5, 9, 36, 37, 38],
   },
 ];
@@ -159,13 +159,13 @@ const caseImages = {
   archaeology: {
     src: "media/events/wuwangdun-bronze-fang.jpg",
     alt: "武王墩墓出土的青铜钫",
-    caption: "武王墩墓出土铜钫。淮南市政府页面注明图片来自武王墩墓考古工作队。器物能够证明楚国礼制与物质生活，但不能直接证明现代牛肉汤配方。",
+    caption: "武王墩墓出土铜钫。淮南市政府页面注明图片来自武王墩墓考古工作队。器物能够证明楚国礼制与物质生活，也为后来有关牛肉汤历史的联想提供了可见材料，但不能直接印证现代牛肉汤的来源。",
     sourceId: 14,
   },
   television: {
     src: "media/events/six-sisters-mass-tasting.jpg",
     alt: "六姊妹粉丝见面会暨万人共品淮南牛肉汤活动现场",
-    caption: "《六姊妹》粉丝见面会暨万人共品淮南牛肉汤活动现场。电视剧带来的注意力在这里被转化为集体品尝、城市活动和可拍摄的公共场景。",
+    caption: "《六姊妹》粉丝见面会暨万人共品淮南牛肉汤活动现场。电视剧带来的注意力在这里被转化为集体活动、城市宣传和可拍摄的公共场景。",
     sourceId: 47,
   },
   industry: {
@@ -819,8 +819,8 @@ export default function Home() {
       {activeTab === "mechanism" && <div className="tab-page" data-page="mechanism">
       <section className="mechanism-section page-section" id="mechanism">
         <div className="section-heading">
-          <div><p className="section-kicker">01 · 这碗汤是怎样被越讲越大的</p><h2>媒体每讲一次，故事就会变一点。</h2></div>
-          <p>媒体不会把现成记忆原样搬过来。它会挑选、排序、强调，也会省略。一个故事从新闻进入电视剧、短视频和活动现场时，每次都会被重新讲一遍<Cite id={31} /><Cite id={34} /><Cite id={35} />。</p>
+          <div><p className="section-kicker">01 · 这碗汤的故事</p><h2>媒体每讲一次，故事都会变一点。</h2></div>
+          <p>媒体不会把现成记忆原样搬过来。它会挑选、排序、强调，也会省略。一个故事从新闻进入电视剧、短视频和活动现场时，都会被重新讲述一遍<Cite id={31} /><Cite id={34} /><Cite id={35} />。</p>
         </div>
 
         <div className="mechanism-photo-strip" aria-label="淮南牛肉汤传播事件公开图片">
@@ -834,22 +834,22 @@ export default function Home() {
             <a href={sourceById(47).url} target="_blank" rel="noreferrer" aria-label="查看六姊妹万人共品活动图片出处">
               <img src="media/events/six-sisters-giant-pot.jpg" alt="六姊妹相关活动现场的巨型牛肉汤锅" loading="lazy" />
             </a>
-            <figcaption><b>影视热度变成线下活动</b><span>巨型汤锅把电视剧话题改写为能够围观、品尝和传播的城市事件。</span><Cite id={47} /></figcaption>
+            <figcaption><b>影视热度催生线下活动</b><span>巨型汤锅把电视剧话题改写为能够围观、品尝和传播的城市事件。</span><Cite id={47} /></figcaption>
           </figure>
           <figure>
             <a href={sourceById(15).url} target="_blank" rel="noreferrer" aria-label="查看淮南牛肉汤生产线图片出处">
               <img src="media/events/industry-production-line.jpg" alt="工人在淮南牛肉汤食品生产线上作业" loading="lazy" />
             </a>
-            <figcaption><b>地方味道进入生产体系</b><span>生产线让门店经验变成可运输、可销售、可统一管理的产品。摄影：新华社记者黄博涵。</span><Cite id={15} /></figcaption>
+            <figcaption><b>地方味道进入生产体系</b><span>生产线让淮南牛肉汤变成可运输、可销售、可统一管理的产品。摄影：新华社记者黄博涵。</span><Cite id={15} /></figcaption>
           </figure>
         </div>
         <p className="mechanism-image-note">本栏图片均来自政府部门或新闻机构的公开报道，点击图片可回到原发布页面。网站仅作论文研究与材料分析使用，图片版权归原发布方或摄影者所有。</p>
 
         <div className="memory-loop" aria-label="媒介记忆循环的六个步骤">
-          <article><span>01</span><b>原有材料</b><p>传说、典籍、技艺、门店和个人回忆</p></article>
-          <article><span>02</span><b>突然升温</b><p>考古发现、电视剧、节庆或平台热点</p></article>
-          <article><span>03</span><b>贴上标签</b><p>“千年”“非遗”“烟火气”“正宗”</p></article>
-          <article><span>04</span><b>各说各话</b><p>政府、商家、媒体和食客解释不同</p></article>
+          <article><span>01</span><b>原有材料</b><p>传说、典籍、技艺、门店和家族回忆</p></article>
+          <article><span>02</span><b>突然升温</b><p>考古发现、电视剧、节庆和平台热点</p></article>
+          <article><span>03</span><b>贴上标签</b><p>“千年”“非遗”“烟火气”“正宗地道”</p></article>
+          <article><span>04</span><b>各说各话</b><p>政府、商家、媒体和食客的不同解释</p></article>
           <article><span>05</span><b>变成行动</b><p>评论、购买、打卡、加盟和认同</p></article>
           <article><span>06</span><b>留下新素材</b><p>新的图像、数字和体验进入下一轮传播</p></article>
         </div>
@@ -864,14 +864,14 @@ export default function Home() {
           <article>
             <span className="voice-number">02 / 商家怎么讲</span>
             <h3>让外地人也能买到、加盟和下单</h3>
-            <p>方便装、冷冻款、中央厨房和直播带货解决“离开淮南还能不能喝到”的问题<Cite id={8} /><Cite id={11} />，同时也把“正宗”转化为品牌承诺。</p>
+            <p>方便装、冷冻款、中央厨房和直播带货确保“离了淮南还能喝到淮南味”<Cite id={8} /><Cite id={11} />，同时也把“正宗”转化为品牌承诺。</p>
             <div className="voice-effect">带来的结果：方便购买、方便复制、规模更大</div>
           </article>
           <article>
             <span className="voice-number">03 / 普通人怎么讲</span>
-            <h3>用“我记得的那一碗”保留差异</h3>
-            <p>老店、返乡者、演员Vlog与普通游客把宏大历史落回味觉、家庭和清晨<Cite id={17} />。差异化口味本身就是地方生活仍然鲜活的证据。</p>
-            <div className="voice-effect">带来的结果：亲切、可信，也保留不同口味</div>
+            <h3>“那一碗牛肉汤”保留着个人差异</h3>
+            <p>老店、返乡者、演员Vlog与普通游客把宏大历史落回味觉、家乡和每个平凡日子<Cite id={17} />。差异化口味本身就是地方生活仍然鲜活的证据。</p>
+            <div className="voice-effect">带来的结果：亲切、可信，保留个人口味</div>
           </article>
         </div>
       </section>
@@ -910,35 +910,35 @@ export default function Home() {
 
       <section className="conversion-section page-section">
         <div className="section-heading">
-          <div><p className="section-kicker">03 · 从看见，到打卡、购买和认同</p><h2>一段视频不会自动变成城市认同，更不会自动变成收入。</h2></div>
-          <p>它需要让人先产生情感，再有地方可去、有东西可买，也要有人把短期热度接成长期体验<Cite id={32} /><Cite id={33} />。</p>
+          <div><p className="section-kicker">03 · 从看见，到认同</p><h2>一段视频不会自动变成城市认同，更不会自动变成收入。</h2></div>
+          <p>它需要让人先产生情感，再寻找可去的地方、产生购买欲望，也要有人把短期热度续写为长期体验<Cite id={32} /><Cite id={33} />。</p>
         </div>
         <div className="conversion-grid">
-          <article><span>先有情感</span><h3>“我家的味道”变成共同话题</h3><p>人们公开讲述“回家第一碗”“家里的味道”，原本私人的经验才可能慢慢变成一群人的共同认同。</p></article>
-          <article><span>再到现场</span><h3>看完屏幕，再去现场</h3><p>《六姊妹》取景地、非遗展馆和门店，把在线观看变成路线、打卡和一起喝汤<Cite id={17} /><Cite id={19} />。</p></article>
-          <article><span>最后进入商品</span><h3>带着“淮南”名字走向外地</h3><p>集体商标、标准、加工技术和电商，让牛肉汤可以跨地区销售，也让商品一直带着产地名称<Cite id={3} /><Cite id={5} /><Cite id={8} />。</p></article>
+          <article><span>先有情感</span><h3>“咱家的味道”变成共同话题</h3><p>人们公开讲述“回家第一碗”“家里的味道”，原本私密的经验慢慢变成一群人的共同认同。</p></article>
+          <article><span>再到现场</span><h3>屏幕之外，探店现场</h3><p>《六姊妹》取景地、非遗展馆和门店，把在线关注变成导航、打卡和美食体验一条龙<Cite id={17} /><Cite id={19} />。</p></article>
+          <article><span>商业化</span><h3>带着“淮南”名字走向外地</h3><p>集体商标、标准、加工技术和电商，让牛肉汤可以跨地区销售，也让商品一直带着家乡印记<Cite id={3} /><Cite id={5} /><Cite id={8} />。</p></article>
         </div>
         <div className="tourism-proof">
           <div><span>2025 · 春季</span><strong>12,000+</strong><p>九龙岗时光小镇官方报道的日均游客量</p></div>
           <div className="proof-arrow">看见淮南 <i>→</i> 真正来到淮南</div>
           <div><span>2025 · 五一</span><strong>65%</strong><p>报道中的市外游客占比</p></div>
-          <p className="proof-note">这能支持“影视带来显著到访”，但尚不能单独证明牛肉汤贡献了多少旅游收入。<Cite id={6} /><Cite id={19} /></p>
+          <p className="proof-note">这些数据能够支持“影视带来显著到访”，也提示牛肉汤作为淮南的美食代表参与了旅游体验；但仍不能据此计算牛肉汤单独创造了多少旅游收入。<Cite id={6} /><Cite id={19} /></p>
         </div>
       </section>
 
       <section className="reflection-section page-section" id="reflection">
         <div className="section-heading light-heading">
-          <div><p className="section-kicker">04 · 传播中丢掉了什么</p><h2>故事越容易传播，越可能把复杂历史讲简单了。</h2></div>
-          <p>媒体总要做选择：醒目的画面更容易留下，复杂历史、门店差异和普通人的声音则可能被挤到后面。</p>
+          <div><p className="section-kicker">04 · 传播的选择性</p><h2>故事越被广泛传播，越可能把复杂的事讲简单了。</h2></div>
+          <p>媒体总要做选择：醒目的画面更容易留下，复杂历史、门店差异和普通人的声音则可能被剪辑掉。</p>
         </div>
         <div className="risk-grid">
-          <article><b>01</b><h3>大故事盖住普通人</h3><p>“两千年前已经喝同款牛肉汤”很好转发，却容易盖住矿区清晨、回民技艺和普通店主的生活经历。</p><span>建议：每个起源故事都标清证据有多强。</span></article>
-          <article><b>02</b><h3>统一标准压平门店差异</h3><p>食品安全需要共同底线，但清汤、红汤、香料和配料的门店差异，也是地方知识的一部分。</p><span>建议：统一安全底线，保留不同风味。</span></article>
-          <article><b>03</b><h3>有流量，不等于有人接着学</h3><p>节庆、直播和大屏能带来一时关注，却不能证明下一代已经掌握技艺。</p><span>建议：公布学徒人数、学习周期和传承人收益。</span></article>
-          <article><b>04</b><h3>数字很大，统计方法却没说清</h3><p>产值、门店和就业数字不断增加，但计算范围和方法很少完整公开。</p><span>建议：每年公开一张可以复核的统计表。</span></article>
+          <article><b>01</b><h3>大故事盖住普通人</h3><p>“两千年前喝同款牛肉汤”很好转发，却容易盖过矿区清晨、回民技艺和普通店主的生活经历。</p><span>建议：每个起源故事都标明证据、出处。</span></article>
+          <article><b>02</b><h3>统一标准压平个性化差异</h3><p>食品安全需要共同底线，但清汤、红汤、香料和配料的门店差异，也是地方知识的一部分。</p><span>建议：统一食品安全底线，保留不同的个性化风味。</span></article>
+          <article><b>03</b><h3>有流量，不等于有人传承</h3><p>节庆、直播和爆款活动宣传能带来一时关注，却不能证明美食技艺已经得到传承。</p><span>建议：鼓励加盟和教学，定期公布培训策略、学习周期和传承收益。</span></article>
+          <article><b>04</b><h3>数字规模大，统计方法却未统一</h3><p>产值、门店和就业数字不断增加，但计算范围和方法很少完整公开。</p><span>建议：政府部门按年度公开可以复核的统计表。</span></article>
         </div>
         <blockquote>
-          <p>保护非遗，不是锁死一种做法，而是让相关的人还能继续学、继续做、继续决定它怎样变化。</p>
+          <p>保护非遗，不是牢牢锁住一种做法，而是让相关的人仍有能力传承、发展和决定它怎样变化，让淮南牛肉汤的味道走得更远。</p>
           <cite>基于 UNESCO《保护非物质文化遗产公约》与传承原则的概括 <Cite id={37} /><Cite id={38} /></cite>
         </blockquote>
       </section>

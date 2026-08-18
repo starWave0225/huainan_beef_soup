@@ -61,9 +61,10 @@ test("server-renders the paginated research home and its tab bar", async () => {
 });
 
 test("keeps source IDs, citations, metadata, and static publishing aligned", async () => {
-  const [page, layout, staticIndex, packageJson] = await Promise.all([
+  const [page, layout, globalCss, staticIndex, packageJson] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../index.html", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
@@ -128,8 +129,14 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   assert.doesNotMatch(page, /这组图片能说明什么|03 · 可以放心使用的图片|这张图能看什么/);
   assert.match(page, /className="mechanism-photo-strip"/);
   assert.match(page, /考古材料进入公共视野/);
-  assert.match(page, /影视热度变成线下活动/);
+  assert.match(page, /影视热度催生线下活动/);
   assert.match(page, /地方味道进入生产体系/);
+  assert.match(page, /01 · 这碗汤的故事/);
+  assert.match(page, /“牛骨烹饪→牛肉汤→淮南牛肉汤”/);
+  assert.match(page, /不能直接印证现代牛肉汤的来源/);
+  assert.doesNotMatch(page, /或许已经连续存在两千年|贡献了客观旅游收入|统一视频商业化安全底线/);
+  assert.match(globalCss, /\.voice-effect \{[^}]*font: 600 14px\/1\.7/);
+  assert.match(globalCss, /\.case-figure figcaption \{[^}]*font: 13px\/1\.75/);
   assert.match(page, /图片版权归原发布方或摄影者所有/);
   assert.doesNotMatch(page.slice(page.indexOf('data-page="mechanism"'), page.indexOf('data-page="draft"')), /media\/commons/);
   assert.match(page, /className="case-figure"/);
