@@ -33,6 +33,8 @@ test("server-renders the paginated research home and its tab bar", async () => {
   assert.match(html, /一碗汤，一座城，/);
   assert.match(html, /百万人，共相忆/);
   assert.match(html, /一道美食的前世今生、穿梭时空/);
+  assert.match(html, /江淮儿女对淮南牛肉汤的记忆/);
+  assert.doesNotMatch(html, /淮河儿女/);
   assert.match(html, /首页阅读说明/);
   assert.match(html, /一碗汤的重量，是由品尝它的人决定的/);
   assert.match(html, /日常食物怎样成为城市记忆/);
