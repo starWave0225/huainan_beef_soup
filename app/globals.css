@@ -39,6 +39,7 @@ main {
 .section-heading { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(300px, .55fr); gap: 9vw; align-items: end; margin-bottom: 58px; }
 .section-heading h2, .reading-note h2 { max-width: 890px; margin: 0; font-size: clamp(34px, 4.6vw, 62px); line-height: 1.18; letter-spacing: -.045em; font-weight: 560; }
 .section-heading > p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.9; }
+.methods-section-heading { grid-template-columns: minmax(0, 1fr); }
 .light-heading h2 { color: var(--paper); }
 .light-heading > p { color: rgba(243, 239, 228, .68); }
 .light-heading .section-kicker { color: var(--gold); }
@@ -57,7 +58,7 @@ main {
 .brand-mark { display: grid; place-items: center; width: 32px; height: 32px; flex: none; color: var(--paper); background: var(--red); border-radius: 50%; font-family: serif; font-size: 17px; }
 .edition { justify-self: end; color: var(--muted); font-size: 10px; letter-spacing: .14em; }
 
-.site-tabs { position: sticky; z-index: 30; top: 0; display: grid; grid-template-columns: repeat(7, 1fr); min-height: 76px; color: var(--muted); background: rgba(250, 247, 239, .96); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); box-shadow: 0 7px 24px rgba(63, 47, 28, .06); backdrop-filter: blur(14px); }
+.site-tabs { position: sticky; z-index: 30; top: 0; display: grid; grid-template-columns: repeat(6, 1fr); min-height: 76px; color: var(--muted); background: rgba(250, 247, 239, .96); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); box-shadow: 0 7px 24px rgba(63, 47, 28, .06); backdrop-filter: blur(14px); }
 .site-tabs a { position: relative; display: grid; grid-template-columns: 32px 1fr; grid-template-rows: auto auto; align-content: center; column-gap: 10px; min-width: 0; padding: 14px clamp(14px, 2.2vw, 34px); border-right: 1px solid var(--line); font-family: "Noto Sans SC", "PingFang SC", sans-serif; transition: color .2s, background .2s; }
 .site-tabs a:last-child { border-right: 0; }
 .site-tabs a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -1px; height: 3px; background: var(--red); transition: right .25s ease; }
@@ -635,7 +636,7 @@ blockquote cite { color: rgba(243, 239, 228, .6); font: normal 11px/1.7 "Noto Sa
 .bibliography-title { display: grid; grid-template-columns: 1.25fr .75fr; gap: 8vw; align-items: end; }
 .bibliography-title h2 { max-width: 980px; margin: 16px 0 0; font-size: clamp(36px, 5vw, 68px); line-height: 1.27; font-weight: 520; letter-spacing: -.045em; }
 .bibliography-title > p { margin: 0 0 8px; color: rgba(243, 239, 228, .66); font: 14px/2 "Noto Sans SC", sans-serif; }
-.bibliography-metrics { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 84px; border-top: 1px solid rgba(243, 239, 228, .2); border-bottom: 1px solid rgba(243, 239, 228, .2); }
+.bibliography-metrics { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 84px; border-top: 1px solid rgba(243, 239, 228, .2); border-bottom: 1px solid rgba(243, 239, 228, .2); }
 .bibliography-metrics article { min-height: 240px; padding: 27px 25px; border-right: 1px solid rgba(243, 239, 228, .18); }
 .bibliography-metrics article:last-child { border-right: 0; }
 .bibliography-metrics span { color: var(--gold); font: 10px "Noto Sans SC", sans-serif; letter-spacing: .13em; }
@@ -658,11 +659,13 @@ blockquote cite { color: rgba(243, 239, 228, .6); font: normal 11px/1.7 "Noto Sa
 
 .core-reference-section { background: var(--paper); }
 .reference-group-index { display: grid; grid-template-columns: repeat(5, 1fr); margin-bottom: 78px; border: 1px solid var(--line); }
-.reference-group-index a { display: flex; justify-content: space-between; padding: 17px 18px; border-right: 1px solid var(--line); color: var(--ink); font: 12px "Noto Sans SC", sans-serif; }
-.reference-group-index a:last-child { border-right: 0; }
-.reference-group-index a:hover { color: var(--paper); background: var(--red); }
+.reference-group-index button { appearance: none; width: 100%; border: 0; border-right: 1px solid var(--line); border-bottom: 0; padding: 17px 18px; background: transparent; color: var(--ink); font: 12px "Noto Sans SC", sans-serif; text-align: left; cursor: pointer; display: flex; justify-content: space-between; }
+.reference-group-index button:last-child { border-right: 0; }
+.reference-group-index button:hover,
+.reference-group-index button.active { color: var(--paper); background: var(--red); }
 .reference-group-index span { color: var(--red); font: 15px Georgia, serif; }
-.reference-group-index a:hover span { color: var(--gold); }
+.reference-group-index button:hover span,
+.reference-group-index button.active span { color: var(--gold); }
 .reference-group { margin-bottom: 82px; scroll-margin-top: 150px; }
 .reference-group:last-child { margin-bottom: 0; }
 .reference-group > header { display: grid; grid-template-columns: 55px 1fr auto; align-items: end; gap: 22px; padding-bottom: 18px; border-bottom: 3px solid var(--ink); }
@@ -676,42 +679,8 @@ blockquote cite { color: rgba(243, 239, 228, .6); font: normal 11px/1.7 "Noto Sa
 .reference-group li em { display: block; margin-top: 9px; color: var(--muted); font: normal 11px/1.75 "Noto Sans SC", sans-serif; }
 .reference-group li > a { color: var(--red); font: 10px/1.6 "Noto Sans SC", sans-serif; text-align: right; }
 
-.revision-check-section { color: var(--paper); background: var(--red-dark); }
-.revision-check-list { margin: 0; padding: 0; border-top: 1px solid rgba(243, 239, 228, .2); list-style: none; }
-.revision-check-list li { display: grid; grid-template-columns: 55px 1fr 100px; gap: 25px; align-items: center; padding: 28px 6px; border-bottom: 1px solid rgba(243, 239, 228, .18); }
-.revision-check-list li > span { color: var(--gold); font: 20px Georgia, serif; }
-.revision-check-list h3 { margin: 0 0 8px; font-size: 18px; font-weight: 580; }
-.revision-check-list p { margin: 0; color: rgba(243, 239, 228, .65); font: 12px/1.85 "Noto Sans SC", sans-serif; }
-.revision-check-list b { color: #edc99b; font: 11px "Noto Sans SC", sans-serif; text-align: right; }
-
-.archive-reference-section { background: var(--paper-pale); }
-.archive-reference-groups { border-top: 1px solid var(--line); }
-.archive-reference-groups details { border-bottom: 1px solid var(--line); }
-.archive-reference-groups summary { display: grid; grid-template-columns: 55px 1fr 70px 90px; gap: 18px; align-items: center; padding: 22px 7px; cursor: pointer; list-style: none; }
-.archive-reference-groups summary::-webkit-details-marker { display: none; }
-.archive-reference-groups summary > span { color: var(--red); font: 20px Georgia, serif; }
-.archive-reference-groups summary b { font-size: 17px; }
-.archive-reference-groups summary em, .archive-reference-groups summary i { color: var(--muted); font: normal 10px "Noto Sans SC", sans-serif; }
-.archive-reference-groups summary i { text-align: right; }
-.archive-reference-groups details[open] summary { color: var(--paper); background: var(--ink); }
-.archive-reference-groups details[open] summary > span { color: var(--gold); }
-.archive-reference-groups details[open] summary em, .archive-reference-groups details[open] summary i { color: rgba(243, 239, 228, .58); }
-.archive-reference-groups ol { margin: 0; padding: 15px 28px 28px; list-style: none; background: var(--paper); }
-.archive-reference-groups li { display: grid; grid-template-columns: 82px 1fr; gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--line); }
-.archive-reference-groups li:last-child { border-bottom: 0; }
-.archive-reference-groups li > span { color: var(--red); font: 11px Georgia, serif; }
-.archive-reference-groups li a { overflow-wrap: anywhere; color: var(--ink-soft); font: 11px/1.8 "Noto Sans SC", sans-serif; }
-.archive-reference-groups li a:hover { color: var(--red); }
 
 .video-section { background: var(--paper-deep); }
-.video-coding-matrix { margin-bottom: 60px; border-top: 1px solid var(--line); }
-.video-coding-matrix article { display: grid; grid-template-columns: 50px minmax(230px, .8fr) minmax(320px, 1.2fr) 80px; gap: 25px; align-items: center; padding: 24px 5px; border-bottom: 1px solid var(--line); }
-.video-coding-matrix > article > span { color: var(--red); font: 20px Georgia, serif; }
-.video-coding-matrix b { color: var(--red); font: 10px "Noto Sans SC", sans-serif; }
-.video-coding-matrix h3 { margin: 8px 0 0; font-size: 16px; line-height: 1.55; font-weight: 590; }
-.video-coding-matrix p { margin: 0; color: var(--muted); font: 12px/1.8 "Noto Sans SC", sans-serif; }
-.video-coding-matrix p em { display: block; margin-bottom: 5px; color: var(--sage); font-style: normal; font-weight: 650; }
-.video-coding-matrix a { color: var(--red); font: 10px "Noto Sans SC", sans-serif; }
 .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .video-card { display: flex; min-height: 440px; flex-direction: column; padding: 13px 13px 23px; background: var(--paper-pale); border: 1px solid rgba(29, 36, 30, .12); transition: transform .2s, box-shadow .2s; }
 .video-card:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgba(63, 47, 28, .11); }
@@ -719,6 +688,7 @@ blockquote cite { color: rgba(243, 239, 228, .6); font: normal 11px/1.7 "Noto Sa
 .video-visual::before, .video-visual::after { content: ""; position: absolute; border-radius: 50%; border: 1px solid rgba(243, 239, 228, .25); }
 .video-visual::before { width: 190px; height: 190px; }
 .video-visual::after { width: 100px; height: 100px; }
+.video-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .visual-2 { background: #783629; }
 .visual-3 { background: #59665c; }
 .visual-4 { background: #5c523e; }
@@ -736,6 +706,9 @@ blockquote cite { color: rgba(243, 239, 228, .6); font: normal 11px/1.7 "Noto Sa
 .source-filters button:hover, .source-filters button.active { color: var(--paper); background: var(--ink); border-color: var(--ink); }
 .source-list { border-top: 1px solid var(--line); }
 .source-row { display: grid; grid-template-columns: 62px 1fr 35px; gap: 20px; padding: 26px 8px; border-bottom: 1px solid var(--line); transition: background .2s; }
+.source-row--video { grid-template-columns: 62px 150px 1fr 35px; align-items: start; }
+.source-thumbnail { width: 150px; height: 84px; border: 1px solid rgba(29, 36, 30, .12); object-fit: cover; }
+.source-spacer { width: 150px; height: 84px; }
 .source-row:hover { background: rgba(199, 157, 84, .08); }
 .source-id { color: var(--red); font: 500 20px Georgia, serif; }
 .source-main > div { display: flex; align-items: center; gap: 13px; }
@@ -759,6 +732,28 @@ footer p { margin: 0; font-size: 14px; line-height: 1.65; }
 footer small { color: rgba(243, 239, 228, .5); font: 10px "Noto Sans SC", sans-serif; }
 footer > p { justify-self: center; color: rgba(243, 239, 228, .55); }
 footer > a { justify-self: end; color: var(--gold); font: 11px "Noto Sans SC", sans-serif; }
+
+.back-to-top {
+  position: fixed;
+  z-index: 80;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--paper);
+  background: var(--red-dark);
+  box-shadow: 0 10px 24px rgba(25, 14, 11, 0.24);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.back-to-top:hover { transform: translateY(-2px); }
 
 @media (max-width: 1080px) {
   .site-header { grid-template-columns: 1fr auto; }
@@ -814,8 +809,8 @@ footer > a { justify-self: end; color: var(--gold); font: 11px "Noto Sans SC", s
   .bibliography-metrics article:nth-child(2) { border-right: 0; }
   .bibliography-metrics article:nth-child(-n+2) { border-bottom: 1px solid rgba(243, 239, 228, .18); }
   .reference-group-index { grid-template-columns: repeat(3, 1fr); }
-  .reference-group-index a:nth-child(3) { border-right: 0; }
-  .reference-group-index a:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
+  .reference-group-index button:nth-child(3) { border-right: 0; }
+  .reference-group-index button:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
 }
 
 @media (max-width: 820px) {
@@ -899,19 +894,17 @@ footer > a { justify-self: end; color: var(--gold); font: 11px "Noto Sans SC", s
   .site-plan-grid article:nth-child(even), .id-convention > div:nth-child(even) { border-right: 0; }
   .site-plan-grid article:nth-last-child(-n+2), .id-convention > div:nth-last-child(-n+2) { border-bottom: 0; }
   .survey-instrument-grid { grid-template-columns: 1fr; }
-  .video-coding-matrix article { grid-template-columns: 42px 1fr; gap: 13px 18px; }
-  .video-coding-matrix article > p, .video-coding-matrix article > a { grid-column: 2; }
+  .video-grid { grid-template-columns: repeat(2, 1fr); }
   .bibliography-title { grid-template-columns: 1fr; gap: 30px; }
   .reference-warning { grid-template-columns: 1fr; gap: 13px; }
   .citation-route-list article { grid-template-columns: 42px 1fr; gap: 18px; }
   .citation-route-list aside { grid-column: 2; }
   .reference-group-index { grid-template-columns: 1fr; }
-  .reference-group-index a, .reference-group-index a:nth-child(3) { border-right: 0; border-bottom: 1px solid var(--line); }
-  .reference-group-index a:last-child { border-bottom: 0; }
+  .reference-group-index button,
+  .reference-group-index button:nth-child(3) { border-right: 0; border-bottom: 1px solid var(--line); }
+  .reference-group-index button:last-child { border-bottom: 0; }
   .reference-group li { grid-template-columns: 48px 1fr; }
   .reference-group li > a { grid-column: 2; text-align: left; }
-  .revision-check-list li { grid-template-columns: 42px 1fr; align-items: start; }
-  .revision-check-list b { grid-column: 2; text-align: left; }
   .argument-matrix-wrap { width: 100%; transform: none; }
   .thesis-loop { grid-template-columns: 1fr; gap: 10px; }
   footer { grid-template-columns: 1fr; text-align: left; }
@@ -931,6 +924,9 @@ footer > a { justify-self: end; color: var(--gold); font: 11px "Noto Sans SC", s
   .mechanism-photo-strip figure, .case-figure { min-height: 78vw; }
   .tourism-proof strong { font-size: 60px; }
   .source-row { grid-template-columns: 42px 1fr; gap: 10px; }
+  .source-row--video { grid-template-columns: 42px 1fr; }
+  .source-thumbnail,
+  .source-spacer { display: none; }
   .source-open { display: none; }
   .source-main > div { align-items: flex-start; flex-direction: column; gap: 7px; }
   .proposition-list article { grid-template-columns: 1fr; }
@@ -968,10 +964,6 @@ footer > a { justify-self: end; color: var(--gold); font: 11px "Noto Sans SC", s
   .bibliography-metrics strong { margin-top: 30px; }
   .reference-group > header { grid-template-columns: 42px 1fr; }
   .reference-group > header p { grid-column: 2; }
-  .archive-reference-groups summary { grid-template-columns: 40px 1fr 50px; }
-  .archive-reference-groups summary i { display: none; }
-  .archive-reference-groups ol { padding: 10px 18px 22px; }
-  .archive-reference-groups li { grid-template-columns: 1fr; gap: 7px; }
   .abstract-title-card { padding: 24px 22px; }
   .abstract-keywords { align-items: flex-start; }
   .terminology-grid { grid-template-columns: 1fr; }
