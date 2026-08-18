@@ -432,12 +432,12 @@ const videoCodingRows = [
 ];
 
 const mediaAssets = [
-  { id: "bowl", src: "media/commons/huainan-bowl.jpg", title: "一碗汤里的视觉层次", alt: "俯拍的一碗淮南牛肉汤，能看到牛肉、香菜、葱花和清汤", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 54, note: "俯视画面同时拍到肉片、绿叶、汤面和碗沿。分析时可以记录哪些食材最显眼、颜色怎样形成对比。" },
-  { id: "onion", src: "media/commons/huainan-onion.jpg", title: "浇头让“正宗”出现差异", alt: "一碗加入洋葱和红辣椒浇头的淮南牛肉汤", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 56, note: "洋葱与辣椒让同一菜名呈现不同版本，提醒研究者不要把一张照片当作唯一标准。" },
-  { id: "shortbread", src: "media/commons/huainan-shortbread.jpg", title: "汤与酥饼是一组吃法", alt: "淮南牛肉汤与一盘酥饼摆在木桌上", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 57, note: "主食搭配把研究对象从“单碗菜品”扩展为一顿早餐的组合、节奏与饱腹经验。" },
-  { id: "dip", src: "media/commons/huainan-dip.jpg", title: "动作也是感官记忆", alt: "酥饼靠近汤碗，呈现蘸汤或搭配食用的场景", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 59, note: "掰、蘸、咬等身体动作很少出现在政策文本中，却是访谈和场景观察可以追问的生活知识。" },
-  { id: "restaurant", src: "media/commons/huainan-restaurant.jpg", title: "菜名成为街道招牌", alt: "写有淮南牛肉汤字样的街边门店外观", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 55, note: "门头、价格、桌椅和开放式入口共同构成消费预期，也让“淮南”在异地街道被反复看见。" },
-  { id: "jiangji", src: "media/commons/huainan-jiangji.jpg", title: "从淮南名称到上海门店", alt: "上海黄浦区蒋记淮南牛肉汤清真门店外观", author: "Chongkian", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/", sourceId: 58, note: "照片明确记录上海黄浦区门店，可用于研究地方食品迁移后怎样保留产地名称、清真标识与街坊店形态。" },
+  { id: "bowl", src: "media/commons/huainan-bowl.jpg", title: "一碗汤里的视觉层次", alt: "俯拍的一碗淮南牛肉汤，能看到牛肉、香菜、葱花和清汤", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 54, note: "俯视拍到肉片、绿叶、汤面和大碗。分析时可以记录哪些食材最显眼、颜色怎样形成对比，留下强烈视觉印象。" },
+  { id: "onion", src: "media/commons/huainan-onion.jpg", title: "浇头让“正宗”出现差异", alt: "一碗加入洋葱和红辣椒浇头的淮南牛肉汤", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 56, note: "洋葱与辣椒让同一菜名呈现不同版本，提醒我们不要把正统配方当作唯一标准。" },
+  { id: "shortbread", src: "media/commons/huainan-shortbread.jpg", title: "汤与酥饼是一组吃法", alt: "淮南牛肉汤与一盘酥饼摆在木桌上", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 57, note: "主食搭配把牛肉汤从“单碗菜品”扩展为一顿正餐的组合，体现了劳动人民对于饱腹的需求。" },
+  { id: "dip", src: "media/commons/huainan-dip.jpg", title: "动作也是感官记忆", alt: "酥饼靠近汤碗，呈现蘸汤或搭配食用的场景", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 59, note: "掰、蘸、咬等身体动作很少出现在正式文本中，却是访谈和场景观察可以追问的生活经验。" },
+  { id: "restaurant", src: "media/commons/huainan-restaurant.jpg", title: "菜名成为街道招牌", alt: "写有淮南牛肉汤字样的街边门店外观", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 55, note: "门头、价格、桌椅和开放式入口共同构成了消费者的消费预期，也让“淮南”字样逐渐走向世界各处，其形式也在变化。" },
+  { id: "jiangji", src: "media/commons/huainan-jiangji.jpg", title: "从淮南名称到上海门店", alt: "上海黄浦区蒋记淮南牛肉汤清真门店外观", author: "Chongkian", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/", sourceId: 58, note: "照片明确记录于上海黄浦区门店，可用于研究地方食品迁移后怎样保留产地名称、新增了清真标识与店面形态。" },
 ] as const;
 
 const siteTabs = [

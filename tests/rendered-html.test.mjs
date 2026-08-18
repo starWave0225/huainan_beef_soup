@@ -115,6 +115,10 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   assert.doesNotMatch(page, /人是怎么吃的/);
   assert.match(page, /02 · 端上桌/);
   assert.match(page, /03 · 共品尝/);
+  assert.match(page, /留下强烈视觉印象/);
+  assert.match(page, /体现了劳动人民对于饱腹的需求/);
+  assert.match(page, /“淮南”字样逐渐走向世界各处/);
+  assert.match(page, /新增了清真标识与店面形态/);
   assert.doesNotMatch(page, /这组图片能说明什么|03 · 可以放心使用的图片|这张图能看什么/);
   assert.match(page, /二、数字传播生态作为媒介记忆的基础/);
   assert.match(page, /已深写 · 约7700字/);
