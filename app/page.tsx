@@ -12,6 +12,7 @@ type Source = {
   title: string;
   note: string;
   url: string;
+  thumbnailUrl?: string;
 };
 
 const sources: Source[] = [
@@ -36,13 +37,13 @@ const sources: Source[] = [
   { id: 19, type: "新闻/专题", date: "2025-05", publisher: "安徽日报 / 人民网", title: "五一期间九龙岗日均接待游客1.5万人次", note: "市外游客占比65%以上，为影视记忆转为空间流量提供观察窗口。", url: "https://ah.people.com.cn/BIG5/n2/2025/0506/c358428-41218087.html" },
   { id: 20, type: "新闻/专题", date: "2026-05", publisher: "淮南日报", title: "淮南牛肉汤：一锅红艳，滋味流芳", note: "地方文化长文，包含2013市级非遗、2017省级非遗等时间线；历史解释需与其他来源互证。", url: "https://hnrb.huainannet.com/content/202605/29/content_209689.html" },
   { id: 21, type: "新闻/专题", date: "2019-08", publisher: "淮南市人民政府", title: "淮南特产：淮南牛肉汤", note: "将现代牛肉汤兴起与回民技艺、矿区城市条件、改革开放后的市场联系起来。", url: "https://www.huainan.gov.cn/zjhn/hntc/1259063166.html" },
-  { id: 22, type: "视频", date: "2022-04", publisher: "央视网 · 消费主张", title: "历史文化厚重的淮南牛肉汤", note: "较早的中央电视节目片段，展示大众媒介如何包装地方美食历史。", url: "https://tv.cctv.com/2022/04/21/VIDElEViajJZ7FDhwdedfumg220421.shtml" },
-  { id: 23, type: "视频", date: "2024-05", publisher: "央视网 · 新闻联播", title: "武王墩考古获重要进展", note: "国家级新闻节点把楚墓、大鼎与淮南历史推入公共视野。", url: "https://tv.cctv.com/2024/05/18/VIDEtbnF5n4gJDHtT0WCSe7l240518.shtml" },
-  { id: 24, type: "视频", date: "2024-05", publisher: "央视网 · 焦点访谈", title: "探秘武王墩", note: "专家讨论15种动物遗存与楚国礼制；可防止把出土牛骨直接等同现代牛肉汤。", url: "https://tv.cctv.com/2024/05/21/VIDEVh649e0kY32OWAQbXEVl240521.shtml" },
-  { id: 25, type: "视频", date: "2025-02", publisher: "央视网 · 剧说很好看", title: "《六姊妹》主创访谈", note: "呈现“家”“代际”“地方生活”如何成为影视记忆的情感框架。", url: "https://tv.cctv.com/2025/02/25/VIDEvyKZNJy6V415mgtDFwew250225.shtml" },
-  { id: 26, type: "视频", date: "2025-03", publisher: "新华网", title: "安徽淮南：飘香牛肉汤 文旅新动能", note: "1分52秒新华社视频，记录万人共品活动与城市消费场景。", url: "https://www.news.cn/government/20250331/d81ea60397bc44c5bcba3eb438dc7138/c.html" },
-  { id: 27, type: "视频", date: "2025-05", publisher: "央视网 · 非遗里的中国", title: "省级非遗：淮南牛肉汤制作技艺", note: "把制作过程转化为国家级屏幕中的非遗展示。", url: "https://tv.cctv.com/2025/05/10/VIDESQT8zBU2r1wPwqem596m250510.shtml" },
-  { id: 28, type: "视频", date: "2025-12", publisher: "央视网 · 新闻联播", title: "武王墩再现楚国礼乐文明", note: "检测显示鼎内动物包括黄牛等且经历烹饪；仍不能推出具体菜谱。", url: "https://tv.cctv.com/2025/12/21/VIDElHeKJzmgFQljHx7C3zJt251221.shtml" },
+  { id: 22, type: "视频", date: "2022-04", publisher: "央视网 · 消费主张", title: "历史文化厚重的淮南牛肉汤", note: "较早的中央电视节目片段，展示大众媒介如何包装地方美食历史。", url: "https://tv.cctv.com/2022/04/21/VIDElEViajJZ7FDhwdedfumg220421.shtml", thumbnailUrl: "https://p5.img.cctvpic.com/fmspic/2022/04/21/13bead3a2b344e7d9f233b9d82e28817-1.jpg" },
+  { id: 23, type: "视频", date: "2024-05", publisher: "央视网 · 新闻联播", title: "武王墩考古获重要进展", note: "国家级新闻节点把楚墓、大鼎与淮南历史推入公共视野。", url: "https://tv.cctv.com/2024/05/18/VIDEtbnF5n4gJDHtT0WCSe7l240518.shtml", thumbnailUrl: "https://p4.img.cctvpic.com/photoAlbum/page/performance/img/2021/9/28/1632795780652_242.jpg" },
+  { id: 24, type: "视频", date: "2024-05", publisher: "央视网 · 焦点访谈", title: "探秘武王墩", note: "专家讨论15种动物遗存与楚国礼制；可防止把出土牛骨直接等同现代牛肉汤。", url: "https://tv.cctv.com/2024/05/21/VIDEVh649e0kY32OWAQbXEVl240521.shtml", thumbnailUrl: "https://p4.img.cctvpic.com/photoAlbum/page/performance/img/2021/9/28/1632795780652_242.jpg" },
+  { id: 25, type: "视频", date: "2025-02", publisher: "央视网 · 剧说很好看", title: "《六姊妹》主创访谈", note: "呈现“家”“代际”“地方生活”如何成为影视记忆的情感框架。", url: "https://tv.cctv.com/2025/02/25/VIDEvyKZNJy6V415mgtDFwew250225.shtml", thumbnailUrl: "https://p4.img.cctvpic.com/photoAlbum/page/performance/img/2021/9/28/1632795780652_242.jpg" },
+  { id: 26, type: "视频", date: "2025-03", publisher: "新华网", title: "安徽淮南：飘香牛肉汤 文旅新动能", note: "1分52秒新华社视频，记录万人共品活动与城市消费场景。", url: "https://www.news.cn/government/20250331/d81ea60397bc44c5bcba3eb438dc7138/c.html", thumbnailUrl: "https://lib.news.cn/common/sharelogo.jpg" },
+  { id: 27, type: "视频", date: "2025-05", publisher: "央视网 · 非遗里的中国", title: "省级非遗：淮南牛肉汤制作技艺", note: "把制作过程转化为国家级屏幕中的非遗展示。", url: "https://tv.cctv.com/2025/05/10/VIDESQT8zBU2r1wPwqem596m250510.shtml", thumbnailUrl: "https://p4.img.cctvpic.com/photoAlbum/page/performance/img/2021/9/28/1632795780652_242.jpg" },
+  { id: 28, type: "视频", date: "2025-12", publisher: "央视网 · 新闻联播", title: "武王墩再现楚国礼乐文明", note: "检测显示鼎内动物包括黄牛等且经历烹饪；仍不能推出具体菜谱。", url: "https://tv.cctv.com/2025/12/21/VIDElHeKJzmgFQljHx7C3zJt251221.shtml", thumbnailUrl: "https://p4.img.cctvpic.com/photoAlbum/page/performance/img/2021/9/28/1632795780652_242.jpg" },
   { id: 29, type: "学术/典籍", date: "西汉文本", publisher: "中国哲学书电子化计划", title: "《淮南子·齐俗训》原文", note: "“屠牛而烹其肉……煎熬燎炙”证明文本中的牛肉烹饪观念，不证明现代菜品连续传承。", url: "https://ctext.org/text.pl?if=gb&node=3206&show=parallel" },
   { id: 30, type: "学术/典籍", date: "1979", publisher: "中国政府网", title: "国务院关于保护耕牛和调整屠宰政策的通知", note: "现代牛肉消费制度环境变化的重要背景材料。", url: "https://www.gov.cn/zhengce/pdfFile/1979_PDF.pdf" },
   { id: 31, type: "学术/典籍", date: "2007", publisher: "Stanford University Press", title: "Mediated Memories in the Digital Age", note: "José van Dijck：媒介技术参与塑造记忆行为、私人经验与文化记忆。", url: "https://www.sup.org/books/media-studies/mediated-memories-digital-age/" },
@@ -92,7 +93,7 @@ const sources: Source[] = [
   { id: 75, type: "新闻/专题", date: "2025-03", publisher: "北京市广播电视局 / 央视网", title: "《六姊妹》研讨会：岁月长歌与家庭记忆", note: "披露中国视听大数据收视口径，并集中呈现主管部门、出品方、主创和评论者如何把该剧解释为时代记忆、家文化与情感共鸣。", url: "https://gongyi.cctv.com/2025/03/02/ARTILx4khPxF3afyyRlvTRcl250302.shtml" },
   { id: 76, type: "新闻/专题", date: "2025-03", publisher: "北京青年报 / 新华网", title: "《六姊妹》推热工业小城淮南", note: "记录九龙岗日客流过万的同期现象，并分析老物件、方言、美食和普通家庭如何共同形成工业城市的年代感；因果判断仍需同游客调查互证。", url: "https://www.news.cn/ent/20250314/5d91ef6862234c30ad5e0097dec6847a/c.html" },
   { id: 77, type: "新闻/专题", date: "2025-04", publisher: "中国社会科学院考古研究所", title: "武王墩一号墓入选2024年度全国十大考古新发现", note: "国家级评选把地方发掘转化为全国公共文化事件，评议重点仍是楚文化政治格局、礼制变迁与艺术成就，而不是现代菜品起源。", url: "https://kaogu.cssn.cn/xsqy/ryjx/202505/t20250529_5949472.shtml" },
-  { id: 78, type: "视频", date: "2025-12", publisher: "央视网 · 新闻直播间", title: "跟着影视去旅行：探访《六姊妹》拍摄地", note: "电视剧播出十个月后，总台新闻仍以取景地和老街区再利用为主题报道淮南，可用于观察影视记忆的长尾传播和空间再媒介化。", url: "https://tv.cctv.com/2025/12/20/VIDEFuve6lZR4SmvWuMOHSmB251220.shtml" },
+  { id: 78, type: "视频", date: "2025-12", publisher: "央视网 · 新闻直播间", title: "跟着影视去旅行：探访《六姊妹》拍摄地", note: "电视剧播出十个月后，总台新闻仍以取景地和老街区再利用为主题报道淮南，可用于观察影视记忆的长尾传播和空间再媒介化。", url: "https://tv.cctv.com/2025/12/20/VIDEFuve6lZR4SmvWuMOHSmB251220.shtml", thumbnailUrl: "https://p4.img.cctvpic.com/photoAlbum/page/performance/img/2021/9/28/1632795780652_242.jpg" },
   { id: 79, type: "新闻/专题", date: "2025-08", publisher: "淮南市人民政府", title: "田家庵文旅融合中的《六姊妹》传播矩阵", note: "披露定档预热、30余处实拍场地、10余条地方视频、全网阅读量超100万及小红书话题和游客二次创作，呈现地方组织如何主动延长影视热度。", url: "https://www.huainan.gov.cn/zwgk/xqdt/1260702473.html" },
   { id: 80, type: "新闻/专题", date: "2025-03", publisher: "淮南市人民政府", title: "《六姊妹》取景地名特优产品展销会", note: "地方部门把观剧、游小镇、品美食和购商品设计为连续场景，36家企业携200余种产品参展，是屏幕记忆进入消费空间的具体节点。", url: "https://www.huainan.gov.cn/zwgk/jrhn/1260555520.html" },
   { id: 81, type: "新闻/专题", date: "2025-02", publisher: "淮南市文化和旅游局", title: "看《六姊妹》寻觅淮南非遗市集", note: "电视剧播出后不到两周，地方即在取景地组织近20家非遗企业和传承人展示、互动，使剧情、工业街区与地方技艺发生现场连接。", url: "https://wlj.huainan.gov.cn/jgsz/jgks/shwhhfwzwhyck/gzqk/551795196.html" },
@@ -125,7 +126,7 @@ const sourceById = (id: number) => sources.find((source) => source.id === id)!;
 
 function Cite({ id }: { id: number }) {
   const source = sourceById(id);
-  return <a className="cite" href={source.url} target="_blank" rel="noreferrer" aria-label={`来源 ${id}：${source.title}`}>[{String(id).padStart(2, "0")}]</a>;
+  return <a className="cite" href={source.url} target="_blank" rel="noreferrer" aria-label={`来源 ${id}：${sourceDisplayTitle(source)}`}>[{String(id).padStart(2, "0")}]</a>;
 }
 
 const cases = [
@@ -259,28 +260,17 @@ const coreReferences = [
 
 const citationRoutes = [
   { chapter: "绪论", question: "媒介记忆到底指什么？", instruction: "概念界定先引用国外基础理论，再用国内概念辨析限定研究对象。", sources: [31, 35, 40, 61, 62] },
-  { chapter: "第二章", question: "为什么食物能够唤起地方记忆？", instruction: "把人类学食物记忆、国内食物景观研究和淮南专门材料放在同一段中对话。", sources: [32, 33, 53, 70] },
-  { chapter: "第二、三章", question: "历史材料怎样进入当代叙事？", instruction: "古籍、考古事实、新闻解释和起源传说分层引用，不能让后一类替代前一类。", sources: [14, 24, 28, 29, 53, 69] },
-  { chapter: "第三章", question: "影视和平台怎样激活并重构记忆？", instruction: "剧集材料证明文本与传播节点，媒介记忆文献负责解释机制，二者不要混作同一种证据。", sources: [17, 25, 34, 39, 63, 73, 83, 92] },
-  { chapter: "第四章", question: "看见怎样转成到访、消费与认同？", instruction: "按曝光、形象、依恋、行动分层引用；客流报道只能证明同期现象。", sources: [6, 19, 42, 86, 89, 90, 91, 103] },
+  { chapter: "第二章", question: "为什么食物能够唤起地方记忆？", instruction: "把人类学食物记忆、国内食物景观研究和淮南专门材料放在同一段中。", sources: [32, 33, 53, 70] },
+  { chapter: "第二、三章", question: "历史材料怎样进入当代叙事？", instruction: "古籍、考古事实、新闻解释和起源传说分层引用。", sources: [14, 24, 28, 29, 53, 69] },
+  { chapter: "第三章", question: "影视和平台怎样激活并重构记忆？", instruction: "剧集材料证明文本与传播节点，媒介记忆文献负责解释机制。", sources: [17, 25, 34, 39, 63, 73, 83, 92] },
+  { chapter: "第四章", question: "看见怎样转成认同？", instruction: "按曝光、形象、探索欲、行动分层引用。", sources: [6, 19, 42, 86, 89, 90, 91, 103] },
   { chapter: "第四章、结语", question: "牛肉汤怎样参与城市形象建构？", instruction: "同时引用城市品牌、居民故事、地方食品门店和淮南空间承接材料。", sources: [41, 42, 65, 71, 82, 88, 104] },
-  { chapter: "第五章、结语", question: "传播、标准化与非遗保护的边界在哪里？", instruction: "法律和UNESCO材料确定规范边界，案例研究解释参与、版本与收益问题。", sources: [5, 36, 37, 45, 46, 95, 96, 99, 101, 102] },
-  { chapter: "研究方法", question: "平台、访谈和问卷怎样真正执行？", instruction: "方法教材说明程序，经验研究只用于借鉴量表和变量，不能替代淮南调查。", sources: [43, 44, 89, 91, 93, 103] },
-] as const;
-
-const revisionChecks = [
-  ["概念统一", "全文用“媒介记忆建构”指资源被选择、再媒介化、参与和制度化的过程；不要与“宣传效果”“历史文化”随意互换。"],
-  ["证据分层", "每个重要判断标明它是可核事实、机构公开口径、地方传说还是研究推断。传说可以分析，但不能写成考古结论。"],
-  ["因果降级", "“同期出现”“可能推动”“提供条件”与“直接导致”分开。没有对照、时间序列或受众调查时，不写确定因果。"],
-  ["主体说清", "把“媒体认为”“社会认同”“群众喜爱”改成具体主体：哪家媒体、哪类账号、哪些受访者或哪组样本。"],
-  ["重复删除", "每个案例只在最适合的一章完整展开，其他章节用一句回指说明其新作用，避免重复复述事件经过。"],
-  ["引文就近", "事实、数字和具体研究发现后立即放引文；一段末尾堆很多编号，会让读者不知道每条来源支持哪句话。"],
-  ["文献核读", "核心学术文献只有在阅读摘要、方法、结论及与论文有关的正文后才进入最终参考文献；搜索摘要不能冒充全文阅读。"],
-  ["格式收口", "定稿时按学校模板统一作者大小写、文献类型、卷期页码、发布日期和访问日期，并让正文序号与文后表一一对应。"],
+  { chapter: "第五章、结语", question: "传播、标准化与非遗保护的边界在哪里？", instruction: "法律和约束材料确定规范边界，案例研究解释参与、版本与收益问题。", sources: [5, 36, 37, 45, 46, 95, 96, 99, 101, 102] },
+  { chapter: "研究方法", question: "研究怎样真正执行？", instruction: "方法教材说明程序，经验研究只用于借鉴量表和变量，不能替代研究者实地调查。", sources: [43, 44, 89, 91, 93, 103] },
 ] as const;
 
 const referenceGroups = ["媒介记忆", "食物与地方", "城市形象", "非遗与治理", "研究方法"] as const;
-const archiveGroups: Source["type"][] = ["政策/统计", "新闻/专题", "视频", "学术/典籍", "图片/素材"];
+type ReferenceGroup = (typeof referenceGroups)[number];
 
 const thesisArgumentMatrix = [
   {
@@ -326,26 +316,58 @@ const terminologyGuide = [
   { term: "研究推断", use: "研究者依据多项材料提出、但仍需平台样本、访谈、观察或统计进一步验证的解释。", avoid: "必须与可核事实、机构公开口径和地方传说明确区分。" },
 ] as const;
 
-function referenceMarker(source: Source) {
-  if (source.id === 52) return "S/OL";
-  if ([2, 30, 36, 37, 101].includes(source.id)) return "Z/OL";
-  if ([31, 40, 43].includes(source.id)) return "M/OL";
-  if (source.type === "视频") return "V/OL";
-  if (source.type === "学术/典籍") return "J/OL";
-  return "EB/OL";
-}
+const sourceTitleCN: Record<number, string> = {
+  15: "淮南牛肉汤，著名的地方特色美食",
+  31: "《数字时代的媒介记忆》",
+  32: "《食物与记忆》",
+  34: "互联网与社交媒体时代的记忆重构",
+  35: "《媒体与记忆动力学》",
+  38: "非物质文化遗产与生计",
+  39: "文学、电影与文化记忆的媒介性",
+  40: "《数字记忆研究：转变中的媒介过去》",
+  41: "城市品牌：有效的身份建构还是短期市场噱头？",
+  42: "地方食品店中的地方品牌表演",
+  44: "心理学中的主题分析应用",
+  45: "非物质文化遗产保护伦理原则",
+  46: "在不断演化中进行保护",
+  54: "一碗淮南牛肉汤",
+  55: "淮南牛肉汤餐馆",
+  56: "葱花淮南牛肉汤",
+  57: "酥饼配淮南牛肉汤",
+  58: "江基淮南牛肉汤",
+  59: "酥饼配汤",
+  86: "名人参与与电影旅游忠诚度",
+  87: "食物、场所与真实性",
+  88: "告诉我你的故事：通过居民（地方）叙事进行目的地品牌塑造",
+  89: "真实性、餐厅品质与地方依恋",
+  90: "什么是促成饮食消费转化的最佳桥梁？",
+  91: "基于社交媒体内容的形象建构",
+  92: "记忆的计算性显影",
+  93: "捕捉感受：遗产场所与数字媒体之间的记忆实践",
+  94: "中国非物质文化遗产公众认知特征研究",
+  95: "品味传统：烹饪记忆、家庭身份与真实性",
+  96: "传统的重定义：地理标志中的农场与工厂权衡",
+  97: "超越真实性与商品化",
+  98: "建构非物质文化遗产体验场景",
+  99: "旅游能提升土著群体的包容性吗？",
+  100: "Bilibili粤剧视频的用户参与度指标",
+  101: "2003年公约执行的操作性指引",
+  102: "文化2030指标",
+  103: "资源枯竭型城市居民对工业遗产旅游的态度",
+  104: "地方品牌建构中的合法性竞争",
+};
 
-function archiveReference(source: Source) {
-  return `${source.publisher}. ${source.title}[${referenceMarker(source)}]. (${source.date})[2026-08-17]. ${source.url}.`;
+function sourceDisplayTitle(source: Source) {
+  return sourceTitleCN[source.id] ?? source.title;
 }
 
 const methodTools = [
   { id: "sampling", number: "01", label: "平台抽样", note: "320条分层样本", output: "平台样本登记表" },
-  { id: "coding", number: "02", label: "内容编码", note: "变量、代码与信度", output: "内容编码表" },
-  { id: "interview", number: "03", label: "半结构访谈", note: "30—36人六类主体", output: "访谈提纲与登记表" },
+  { id: "coding", number: "02", label: "内容编码", note: "变量、代码与置信度", output: "内容编码表" },
+  { id: "interview", number: "03", label: "半结构访谈", note: "12—18人、六类主体", output: "访谈提纲与登记表" },
   { id: "observation", number: "04", label: "场景观察", note: "门店、街区与活动", output: "现场观察记录表" },
   { id: "survey", number: "05", label: "双问卷", note: "居民版＋游客版", output: "问卷题库" },
-  { id: "ethics", number: "06", label: "数据与伦理", note: "同意、匿名与分析", output: "数据字典与同意书" },
+  { id: "ethics", number: "06", label: "数据分析", note: "对象授权与统计分析", output: "数据字典与知情同意书" },
 ] as const;
 
 const samplingQuotas = [
@@ -356,28 +378,28 @@ const samplingQuotas = [
 ] as const;
 
 const codingRows = [
-  { variable: "sample_id", name: "样本编号", codes: "W1-G-001等；窗口—主体—序号", rule: "一条可独立观看、阅读或转发的内容为一个分析单位。合集要拆到单条。" },
-  { variable: "account_type", name: "账号主体", codes: "1政府机构；2主流媒体；3企业／门店；4普通用户", rule: "以账号认证与主页说明为准；无法判断记为9，不凭内容语气猜测。" },
-  { variable: "memory_source", name: "记忆资源（多选）", codes: "1传说；2典籍；3考古；4非遗技艺；5矿区／工业生活；6家庭日常；7感官经验；8其他", rule: "必须在文字、画面或声音中实际出现；研究者联想到但内容未呈现的不编码。" },
-  { variable: "time_frame", name: "主要时间框架", codes: "1古代；2矿业城市；3改革开放后；4数字当下；5跨期连续；9不明确", rule: "若内容把多个时期说成连续传统，选5并在证据备注中摘录原话。" },
-  { variable: "narrative_frame", name: "主叙事框架", codes: "1千年历史；2非遗技艺；3家乡／家庭；4城市名片；5产业增长；6烟火日常；7争议纠偏；8其他", rule: "只选最支配标题、开头和结尾的一项；次要框架写入secondary_frame。" },
-  { variable: "speaker", name: "获得解释权的主体", codes: "1政府；2专家；3媒体；4企业；5传承人；6普通门店；7居民；8游客／创作者；9无人发言", rule: "按直接引语、出镜解释或字幕署名判断，不把仅仅入镜的人当作发言主体。" },
-  { variable: "emotion", name: "主要情感线索", codes: "1乡愁；2家庭亲情；3自豪；4新奇；5怀旧；6愉悦食欲；7质疑争议；8中性", rule: "依据可观察的词语、配乐、表情和剪辑，不推测发布者真实心理。" },
-  { variable: "city_image", name: "指向的城市形象", codes: "1历史古城；2工业／矿区城市；3烟火生活；4美食之城；5文旅目的地；6产业新城；7不指向城市", rule: "内容必须把牛肉汤同淮南整体或具体城市空间连接起来。" },
-  { variable: "media_action", name: "要求或展示的行动", codes: "0无；1观看／了解；2评论／转发；3打卡／到访；4购买／下单；5学习／传承；6参加活动；7政策遵从", rule: "记录内容明确召唤或人物实际实施的主要行动。" },
-  { variable: "evidence_level", name: "证据强度", codes: "1可核事实；2机构公开口径；3地方传说；4研究／作者推断；5混合但未区分；9无法判断", rule: "不是评价真假，而是记录内容有没有说明材料性质与出处。" },
-  { variable: "boundary_crossing", name: "是否越过证据边界", codes: "0否；1古代烹牛＝现代配方；2相关增长＝单一事件因果；3官方授权＝居民一致认同；4标准化＝传承效果；5其他", rule: "只有出现明确等同或因果断言才编码；单纯并置另记visual_sequence。" },
-  { variable: "visual_sequence", name: "关键声画关系", codes: "大鼎→热汤；剧情→打卡；人物→产品；技艺→舞台；数据→消费；其他／无", rule: "按镜头或图片实际先后记录，并摘记发生位置；纯文字材料记NA。" },
-  { variable: "engagement_snapshot", name: "互动量快照", codes: "播放、点赞、评论、收藏、转发＋采集日期", rule: "只记页面当时可见数值；缺失留空，禁止把不同日期快照直接比较。" },
+  { variable: "样本编号", name: "每条样本的唯一编号", codes: "按“事件窗口—主体—序号”编号" },
+  { variable: "账号主体", name: "发布账号的主体类型", codes: "政府、媒体、企业／门店、普通用户" },
+  { variable: "记忆资源", name: "内容调用的过去与生活材料", codes: "传说、典籍、考古、非遗技艺、矿区生活、家庭日常、感官经验" },
+  { variable: "时间框架", name: "内容主要指向的时间", codes: "古代、矿业城市、改革开放后、数字当下、跨时期连续" },
+  { variable: "叙事框架", name: "内容组织故事的主要方式", codes: "千年历史、非遗技艺、家乡家庭、城市名片、产业增长、烟火日常、争议纠偏" },
+  { variable: "解释主体", name: "获得解释权的主体", codes: "政府、专家、媒体、企业、传承人、普通门店、居民、游客或创作者" },
+  { variable: "情感线索", name: "内容中可观察的情感表达", codes: "乡愁、家庭亲情、自豪、新奇、怀旧、愉悦食欲、质疑争议" },
+  { variable: "城市形象", name: "内容指向的淮南形象", codes: "历史古城、工业城市、烟火生活、美食之城、文旅目的地、产业新城" },
+  { variable: "行动指向", name: "内容展示或要求的行动", codes: "观看、评论、转发、打卡、到访、购买、学习、参加活动" },
+  { variable: "证据强度", name: "内容说明材料性质的程度", codes: "可核事实、机构口径、地方传说、研究推断、混合但未区分" },
+  { variable: "证据越界", name: "是否跨越证据边界", codes: "古代烹牛等于现代配方、相关增长等于单一事件因果等" },
+  { variable: "声画关系", name: "关键声音与画面的组合顺序", codes: "大鼎→热汤、剧情→打卡、人物→产品、技艺→舞台、数据→消费" },
+  { variable: "互动量快照", name: "采集时可见的平台互动数据", codes: "播放、点赞、评论、收藏、转发及采集日期" },
 ] as const;
 
 const interviewGroups = [
-  { group: "传承人／老店", quota: "5—6人", focus: "技艺边界、学徒培养、不能标准化的知识、传播中的误读" },
-  { group: "普通门店／企业", quota: "5—6人", focus: "经营变化、平台流量、商标标准、成本收益与门店差异" },
-  { group: "政府／协会／媒体", quota: "4—5人", focus: "指标口径、议题选择、授权治理、文旅转化与部门分工" },
-  { group: "本地老居民", quota: "5—6人", focus: "最早记忆、矿区与街区生活、味道变化、宣传与生活的距离" },
-  { group: "年轻本地人", quota: "5—6人", focus: "家庭传递、平台接触、地方自豪、反感或沉默的叙事" },
-  { group: "外地游客／创作者", quota: "5—6人", focus: "来访前想象、现场体验、发布选择、消费与推荐" },
+  { group: "传承人／老店", quota: "2—3人", focus: "技艺边界、学徒培养、不能标准化的知识、传播中的误读" },
+  { group: "普通门店／企业", quota: "2—3人", focus: "经营变化、平台流量、商标标准、成本收益与门店差异" },
+  { group: "政府／协会／媒体", quota: "2—3人", focus: "指标口径、议题选择、授权治理、文旅转化与部门分工" },
+  { group: "本地老居民", quota: "2—3人", focus: "最早记忆、矿区与街区生活、味道变化、宣传与生活的距离" },
+  { group: "年轻本地人", quota: "2—3人", focus: "家庭传递、平台接触、地方自豪、反感或者沉默的叙事" },
+  { group: "外地游客／创作者", quota: "2—3人", focus: "来访前想象、现场体验、发布选择、消费与推荐" },
 ] as const;
 
 const interviewModules = [
@@ -407,11 +429,11 @@ const surveyInstruments = [
     target: "在淮南连续居住1年以上、年满18周岁的居民",
     suggestion: "建议有效样本250—350份；按年龄、居住区与是否从业做配额，最终数量以预测试后的功效分析为准。",
     constructs: [
-      { name: "媒介接触", items: "过去3个月，我经常看到淮南牛肉汤相关内容；我接触过不止一种来源。" },
-      { name: "叙事识别", items: "我能区分历史事实、地方传说和宣传说法；现有传播呈现了不止一种地方经验。" },
-      { name: "地方身份", items: "牛肉汤让我想到自己与淮南的联系；它能表达我熟悉的淮南生活。" },
-      { name: "收益与公平", items: "传播带来的机会惠及普通门店／社区；从业者能参与品牌与标准决策。" },
-      { name: "发展支持", items: "我支持在保留差异的前提下推广；我愿意向外地人解释而不只是转发口号。" },
+      { name: "媒介接触", items: "过去3个月是否经常看到相关内容，是否接触过不止一种来源。" },
+      { name: "叙事识别", items: "能否区分历史事实、地方传说和宣传说法。" },
+      { name: "地方身份", items: "牛肉汤是否让受访者想到自己与淮南的联系。" },
+      { name: "收益与公平", items: "传播机会是否惠及普通门店和社区，从业者能否参与品牌与标准决策。" },
+      { name: "发展支持", items: "是否支持在保留差异的前提下推广，是否愿意向外地人解释而不只是转发口号。" },
     ],
   },
   {
@@ -421,36 +443,27 @@ const surveyInstruments = [
     suggestion: "建议有效样本250—350份；在老街、普通门店、交通节点分时段拦截，避免只在网红点采样。",
     constructs: [
       { name: "内容来源", items: "来访前接触渠道、最早知道的内容、是否看过《六姊妹》、是否主动搜索。" },
-      { name: "认知／情感形象", items: "淮南有鲜明的饮食与生活特色；我觉得这座城市亲切、有活力、值得探索。" },
-      { name: "真实性感知", items: "现场体验与我理解的地方生活相符；门店呈现不是只为游客搭建的表演。" },
-      { name: "门店品质／满意", items: "食物、卫生、服务、价格与信息说明符合预期；总体体验令我满意。" },
-      { name: "依恋／行为意向", items: "这次体验让我更想了解淮南；我愿意复访、推荐或购买相关产品。" },
+      { name: "认知与情感形象", items: "是否认为淮南具有鲜明的饮食和生活特色，是否觉得城市亲切、有活力、值得探索。" },
+      { name: "真实性感知", items: "现场体验是否符合对地方生活的理解，门店是否只是为游客搭建的表演。" },
+      { name: "门店品质与满意度", items: "食物、卫生、服务、价格和信息说明是否符合预期。" },
+      { name: "地方依恋与行为意向", items: "是否愿意进一步了解淮南、复访、推荐或者购买相关产品。" },
     ],
   },
 ] as const;
 
 const methodDownloads = [
-  { file: "00-empirical-research-toolkit.zip", label: "一键下载全部模板", forTool: "all" },
-  { file: "01-platform-sampling-register.csv", label: "平台样本登记表", forTool: "sampling" },
-  { file: "02-content-coding-sheet.csv", label: "内容编码表", forTool: "coding" },
-  { file: "03-interview-register.csv", label: "访谈登记表", forTool: "interview" },
-  { file: "04-field-observation-sheet.csv", label: "现场观察记录表", forTool: "observation" },
-  { file: "05-resident-questionnaire.csv", label: "居民问卷题库", forTool: "survey" },
-  { file: "06-visitor-questionnaire.csv", label: "游客问卷题库", forTool: "survey" },
-  { file: "07-data-dictionary.csv", label: "文件与变量字典", forTool: "ethics" },
-  { file: "08-informed-consent-template.md", label: "知情同意书模板", forTool: "ethics" },
+  { file: "00-实证研究工具包.zip", label: "一键下载全部模板", forTool: "all" },
+  { file: "01-平台样本登记表.csv", label: "平台样本登记表", forTool: "sampling" },
+  { file: "02-内容编码表.csv", label: "内容编码表", forTool: "coding" },
+  { file: "03-访谈登记表.csv", label: "访谈登记表", forTool: "interview" },
+  { file: "04-现场观察记录表.csv", label: "现场观察记录表", forTool: "observation" },
+  { file: "05-居民问卷题库.csv", label: "居民问卷题库", forTool: "survey" },
+  { file: "06-游客问卷题库.csv", label: "游客问卷题库", forTool: "survey" },
+  { file: "07-文件与变量字典.csv", label: "文件与变量字典", forTool: "ethics" },
+  { file: "08-知情同意书模板.md", label: "知情同意书模板", forTool: "ethics" },
 ] as const;
 
-const videoCodingRows = [
-  { id: 22, genre: "消费生活节目", frame: "地方美食 + 历史文化", use: "用它了解2022年的常见讲法：镜头怎样把食材、热气和历史故事组合成一张“地方名片”。" },
-  { id: 23, genre: "新闻联播", frame: "重大考古 + 中华文明", use: "看国家级新闻怎样让淮南历史被更多人看见；不能把考古报道直接当成牛肉汤的起源证据。" },
-  { id: 24, genre: "深度新闻", frame: "专家解释 + 礼制饮食", use: "记录专家如何限定黄牛遗存的解释范围，可与地方传播中的“千年同款”进行对照。" },
-  { id: 25, genre: "电视剧主创访谈", frame: "家庭记忆 + 地方生活", use: "看“家、几代人、迁徙和烟火气”怎样影响观众理解淮南。" },
-  { id: 26, genre: "新华社短视频", frame: "万人共食 + 文旅动能", use: "观察电视剧热度、集体活动、镜头中的人群和消费场景怎样被放进同一条传播内容。" },
-  { id: 27, genre: "非遗文化节目", frame: "技艺展示 + 国家舞台", use: "记录节目拍了哪些选料、熬制和操作动作，又让谁来解释；再看好看的舞台效果有没有盖住真正的技艺。" },
-  { id: 28, genre: "新闻联播", frame: "科技检测 + 楚国礼乐", use: "看检测结果怎样进入公众记忆；再和2024年的报道对照，观察同一次考古发现后来增加了哪些新说法。" },
-  { id: 78, genre: "新闻直播间", frame: "影视长尾 + 老街再利用", use: "电视剧播出十个月后再看取景地如何进入新闻，观察剧情、旅游和街区改造怎样共同延长影视记忆。" },
-];
+const downloadVersion = "20260818-zh4";
 
 const mediaAssets = [
   { id: "bowl", src: "media/commons/huainan-bowl.jpg", title: "一碗汤里的视觉层次", alt: "俯拍的一碗淮南牛肉汤，能看到牛肉、香菜、葱花和清汤", author: "Franklin Rainier", license: "Public Domain Mark", licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/", sourceId: 54, note: "俯视拍到肉片、绿叶、汤面和大碗。分析时可以记录哪些食材最显眼、颜色怎样形成对比，留下强烈视觉印象。" },
@@ -467,8 +480,7 @@ const siteTabs = [
   { id: "mechanism", number: "03", label: "案例与机制", note: "传播与反思" },
   { id: "draft", number: "04", label: "论文正文", note: "依原提纲逐节写作" },
   { id: "methods", number: "05", label: "研究方法", note: "六类实证工具" },
-  { id: "references", number: "06", label: "参考文献", note: "格式、引文与统稿" },
-  { id: "sources", number: "07", label: "来源资料", note: "视频与104项档案" },
+  { id: "references", number: "06", label: "参考资料", note: "核心文献与来源材料" },
 ] as const;
 
 const essayChapterIndex = [
@@ -600,6 +612,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<SiteTab>("overview");
   const [activeEssayChapter, setActiveEssayChapter] = useState<EssayChapterId>("intro");
   const [activeMethodTool, setActiveMethodTool] = useState<MethodToolId>("sampling");
+  const [activeReferenceGroup, setActiveReferenceGroup] = useState<ReferenceGroup>("媒介记忆");
 
   useEffect(() => {
     const updateProgress = () => {
@@ -614,24 +627,34 @@ export default function Home() {
   useEffect(() => {
     const syncTabFromHash = () => {
       const [requested, requestedChapter, requestedSection] = window.location.hash.slice(1).split("/");
-      const matched = siteTabs.find((tab) => tab.id === requested);
+      const normalizedRequested = requested === "sources" ? "references" : requested;
+      const matched = siteTabs.find((tab) => tab.id === normalizedRequested);
       if (matched) {
         setActiveTab(matched.id);
         if (matched.id === "draft") {
-          const chapter = essayChapterIndex.find((item) => item.id === requestedChapter) ?? essayChapterIndex[0];
-          setActiveEssayChapter(chapter.id);
-          requestAnimationFrame(() => requestAnimationFrame(() => {
-            const target = requestedSection
-              ? document.getElementById(`essay-${chapter.id}-${requestedSection}`)
-              : document.getElementById("draft-reader");
-            target?.scrollIntoView({ behavior: "auto", block: "start" });
-          }));
+          const chapter = essayChapterIndex.find((item) => item.id === requestedChapter);
+          if (chapter) {
+            setActiveEssayChapter(chapter.id);
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+              const reader = document.getElementById("draft-reader");
+              const target = requestedSection
+                ? document.getElementById(`essay-${chapter.id}-${requestedSection}`) ?? reader
+                : reader;
+              target?.scrollIntoView({ behavior: "auto", block: "start" });
+            }));
+          } else {
+            requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
+          }
         } else if (matched.id === "methods") {
-          const tool = methodTools.find((item) => item.id === requestedChapter) ?? methodTools[0];
-          setActiveMethodTool(tool.id);
-          requestAnimationFrame(() => requestAnimationFrame(() => {
-            document.getElementById("empirical-toolkit")?.scrollIntoView({ behavior: "auto", block: "start" });
-          }));
+          const tool = methodTools.find((item) => item.id === requestedChapter);
+          if (tool) {
+            setActiveMethodTool(tool.id);
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+              document.getElementById("empirical-toolkit")?.scrollIntoView({ behavior: "auto", block: "start" });
+            }));
+          } else {
+            requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
+          }
         } else {
           requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
         }
@@ -676,7 +699,7 @@ export default function Home() {
         {siteTabs.map((tab) => (
           <a
             key={tab.id}
-            href={tab.id === "draft" ? `#draft/${activeEssayChapter}` : tab.id === "methods" ? `#methods/${activeMethodTool}` : `#${tab.id}`}
+            href={`#${tab.id}`}
             className={activeTab === tab.id ? "active" : ""}
             onClick={() => openTab(tab.id)}
             aria-current={activeTab === tab.id ? "page" : undefined}
@@ -733,10 +756,9 @@ export default function Home() {
         <nav className="overview-directory" aria-label="研究栏目入口">
           <a href="#atlas" onClick={() => openTab("atlas")}><span>02</span><div><h3>牛肉汤图鉴</h3><p>查看淮南牛肉汤的实物、吃法、感官经验和门店空间。</p></div><b>→</b></a>
           <a href="#mechanism" onClick={() => openTab("mechanism")}><span>03</span><div><h3>媒介案例</h3><p>分析考古、影视、新闻和数字平台怎样激活并重构淮南牛肉汤记忆。</p></div><b>→</b></a>
-          <a href="#draft/abstract"><span>04</span><div><h3>论文正文</h3><p>查看论文框架并阅读全文。</p></div><b>→</b></a>
-          <a href="#methods/sampling" onClick={() => { openTab("methods"); setActiveMethodTool("sampling"); }}><span>05</span><div><h3>研究方法</h3><p>查看不同研究方法与背后的数据支撑逻辑。</p></div><b>→</b></a>
-          <a href="#references" onClick={() => openTab("references")}><span>06</span><div><h3>参考文献</h3><p>核对核心学术文献、正文引文路线和全文统稿规则。</p></div><b>→</b></a>
-          <a href="#sources" onClick={() => openTab("sources")}><span>07</span><div><h3>来源资料</h3><p>回查公开材料、原始网页、视频和开放授权图片。</p></div><b>→</b></a>
+          <a href="#draft" onClick={() => openTab("draft")}><span>04</span><div><h3>论文正文</h3><p>查看论文框架并阅读全文。</p></div><b>→</b></a>
+          <a href="#methods" onClick={() => openTab("methods")}><span>05</span><div><h3>研究方法</h3><p>查看不同研究方法与背后的数据支撑逻辑。</p></div><b>→</b></a>
+          <a href="#references" onClick={() => openTab("references")}><span>06</span><div><h3>参考资料</h3><p>核对核心文献、全文引文路线和全部来源材料（含视频）。</p></div><b>→</b></a>
         </nav>
       </section>
       </div>}
@@ -1580,21 +1602,20 @@ export default function Home() {
 
       {activeTab === "methods" && <div className="tab-page" data-page="methods">
       <section className="methods-lab page-section" id="methods">
-        <div className="section-heading">
-          <div><p className="section-kicker">实证研究工具包 · 可直接执行</p><h2>不再只写“将进行访谈”，而是把样本、问题、字段和判断规则全部定下来。</h2></div>
-          <p>公开来源只能提出命题，不能替居民、游客和普通门店回答问题。下面六套工具把平台内容、访谈、现场、问卷和数据管理接成一条证据链；正式使用前仍要经过导师审核、伦理审查和小样本预测。</p>
+        <div className="section-heading methods-section-heading">
+          <div><p className="section-kicker">实证研究工具包 · 可直接执行</p><h2>六套研究方法，呈现全面报告。</h2></div>
         </div>
 
         <div className="toolkit-overview">
-          <article><span>平台内容</span><strong>320</strong><p>4个事件窗口 × 4类主体 × 每格20条</p></article>
-          <article><span>深度访谈</span><strong>30—36</strong><p>六类主体，不用“所有受访者”掩盖差异</p></article>
-          <article><span>问卷对象</span><strong>2类</strong><p>居民与游客分开，不把身份认同和旅游满意混成一套</p></article>
+          <article><span>平台内容</span><strong>建议320条</strong><p>4个事件窗口 × 4类主体 × 每格20条</p></article>
+          <article><span>深度访谈</span><strong>12—18人</strong><p>覆盖六类主体，尊重群体差异</p></article>
+          <article><span>问卷对象</span><strong>2类</strong><p>居民与游客分开，不把身份认同和旅游满意混成一套问题</p></article>
           <article><span>现场材料</span><strong>4类</strong><p>老店、普通门店、传播空间、活动／生产现场</p></article>
         </div>
 
         <div className="method-lead">
-          <div><span>建议执行顺序</span><strong>预测试 → 正式采集<br />→ 交叉验证 → 写作</strong></div>
-          <p>先用平台样本确定常见叙事，再用访谈追问人们怎样理解，用现场观察检查传播说法怎样进入真实空间，最后用居民和游客问卷测量关系是否具有一定普遍性。方法不是越多越好，每一种都要对应研究问题，并说明它不能证明什么。</p>
+          <div><span>建议执行顺序</span><strong>预测试 → 正式采集<br />→ 交叉验证 → 成文</strong></div>
+          <p>先用平台样本确定常见叙事，内容编码数据化输出样本报告，再用访谈追问人们怎样理解，用现场观察检查传播说法怎样进入真实空间，最后用居民和游客问卷验证这些关系是否具有普遍性，数据整理寻找内部联系并得出结论。方法不是越多越好，每一种方法都要对应具体研究问题，并且说明它的局限性，相互补充形成完备报告。</p>
         </div>
 
         <nav className="method-tool-tabs" aria-label="实证研究工具分类">
@@ -1602,7 +1623,6 @@ export default function Home() {
             key={tool.id}
             href={`#methods/${tool.id}`}
             className={activeMethodTool === tool.id ? "active" : ""}
-            onClick={() => setActiveMethodTool(tool.id)}
             aria-current={activeMethodTool === tool.id ? "page" : undefined}
           ><span>{tool.number}</span><strong>{tool.label}</strong><small>{tool.note}</small></a>)}
         </nav>
@@ -1610,16 +1630,16 @@ export default function Home() {
         <section className="method-tool-panel" id="empirical-toolkit">
           <header className="method-tool-header">
             <div><span>{activeMethodEntry.number} / 当前工具</span><h3>{activeMethodEntry.label}</h3><p>{activeMethodEntry.output}</p></div>
-            <div className="tool-downloads"><b>下载空白模板</b>{activeMethodDownloads.map((item) => <a key={item.file} href={`downloads/${item.file}`} download>{item.label}<span>↓</span></a>)}</div>
+            <div className="tool-downloads"><b>下载空白模板</b>{activeMethodDownloads.map((item) => <a key={item.file} href={`downloads/${item.file}?v=${downloadVersion}`} download={item.file}>{item.label}<span>↓</span></a>)}</div>
           </header>
 
           {activeMethodTool === "sampling" && <div className="tool-body">
             <div className="tool-question"><span>它回答什么</span><p>四次关键变化中，政府、媒体、商业主体和普通用户分别选择了哪些记忆资源？同一个故事怎样从机构发布流向平台内容，又在哪些地方被改写？</p></div>
             <div className="sampling-rules">
-              <article><b>纳入</b><p>标题、正文、画面或声音明确涉及“淮南牛肉汤”，且发布时间落在窗口内；页面可访问，并能判断发布账号。</p></article>
-              <article><b>排除</b><p>完全重复转载、只有商品价格没有地方叙事、无法确认日期、搜索摘要但原页不存在、同一账号机械发布的同款内容。</p></article>
-              <article><b>去重</b><p>同一视频跨平台由原作者发布，可保留为不同平台版本但标记同源；无改动转载只保留最早或互动信息最完整的一条。</p></article>
-              <article><b>替补</b><p>先为每个配额格准备5条候补。样本失效时按同一窗口、主体和平台顺序替换，不能临时挑更符合结论的内容。</p></article>
+              <article><b>纳入</b><p>标题、正文、画面或声音明确涉及“淮南牛肉汤”，且发布时间落在研究窗口内；原始页面可以访问，并且能够判断发布账号的主体类型。</p></article>
+              <article><b>排除</b><p>完全重复转载、只有商品价格而没有地方叙事、无法确认发布日期、搜索结果中存在摘要但原始页面已经不存在，以及同一账号机械发布的营销内容。</p></article>
+              <article><b>去重</b><p>同一个视频由原作者发布到不同平台，可以保留为不同平台版本，但标记为同源内容；没有任何改动的转载，只保留发布时间最早或者互动信息最完整的一条。</p></article>
+              <article><b>替补</b><p>先为每一个样本配额格准备5条候补。原样本失效时，按照相同事件窗口、主体类型和平台顺序替换，不能主观临时选择更符合论文结论的内容。</p></article>
             </div>
             <div className="tool-table-wrap">
               <table className="tool-table quota-table"><thead><tr><th>事件窗口</th><th>时间范围</th><th>比较重点</th><th>政府</th><th>媒体</th><th>企业／门店</th><th>普通用户</th><th>合计</th></tr></thead>
@@ -1627,86 +1647,86 @@ export default function Home() {
               <tfoot><tr><td colSpan={3}>总样本</td><td>80</td><td>80</td><td>80</td><td>80</td><td>320</td></tr></tfoot></table>
             </div>
             <ol className="execution-steps">
-              <li><b>固定检索式</b><p>主词使用“淮南牛肉汤”，事件词分别加入“武王墩／楚墓”“六姊妹／万人共品”“商标／标准／条例”等；每次保存检索日期与排序方式。</p></li>
-              <li><b>先建候选池</b><p>按相关性或时间连续浏览，记录所有符合条件的候选，不先凭标题挑“好材料”。</p></li>
-              <li><b>分层抽取</b><p>在每个窗口与主体格内编号；候选过多时使用等距或随机数抽取，候选不足则如实报告并调整整体方案。</p></li>
-              <li><b>保存证据快照</b><p>记录网址、标题、账号、发布时间、抓取日期、互动数和关键画面时间点；遵守平台规则，不采集非公开个人信息。</p></li>
-              <li><b>画出样本流程图</b><p>报告候选数、去重数、排除原因、替补数和最终样本数，让读者知道320条是怎样得到的。</p></li>
+              <li><b>固定检索式</b><p>主词使用“淮南牛肉汤”，事件词分别加入“武王墩／楚墓”“六姊妹／万人共品”“商标／标准／条例”等。每次检索都要保存检索日期、关键词和排序方式。</p></li>
+              <li><b>先建立候选池</b><p>按照相关性或时间顺序连续浏览，记录所有符合条件的候选材料，不先凭标题选择所谓的“好材料”。</p></li>
+              <li><b>分层抽取</b><p>在每一个事件窗口和主体类型中分别编号。候选材料过多时，使用等距抽样或随机数抽样；候选材料不足时，如实报告并调整整体方案。</p></li>
+              <li><b>保存证据快照</b><p>记录网址、标题、账号、发布时间、抓取日期、互动量和关键画面时间点。遵守平台规则，不采集非公开个人信息。</p></li>
+              <li><b>绘制样本流程图</b><p>报告候选数量、去重数量、排除原因、替补数量和最终样本数量，让读者知道320条样本是怎样获得的。</p></li>
             </ol>
-            <aside className="method-boundary"><b>不要这样说</b><p>320条样本不能代表“整个互联网”。它代表的是明确时间窗口、检索式、平台和主体分层下可复核的内容集合。</p></aside>
+            <aside className="method-boundary"><b>结论边界</b><p>320条样本不能代表“整个互联网”。它代表的是在明确的时间窗口、检索式、平台范围和主体分层下获得的一组可复核内容。</p></aside>
           </div>}
 
           {activeMethodTool === "coding" && <div className="tool-body">
-            <div className="tool-question"><span>分析单位</span><p>一条能够独立观看、阅读或转发的帖子、视频或报道算一个单位。编码的是内容可观察特征，不是发布者的真实动机，也不是研究者对内容“好不好”的评价。</p></div>
+            <div className="tool-question"><span>分析单位</span><p>一条能够被独立观看、阅读或者转发的帖子、视频或报道，算作一个分析单位。编码的是内容中能够被观察到的特征，而不是发布者的真实动机，也不是研究者对内容好坏的主观评价。</p></div>
             <div className="coding-protocol">
-              <article><span>01</span><b>训练</b><p>两名编码者共同学习手册，再用不进入正式样本的20条材料练习。</p></article>
-              <article><span>02</span><b>试编</b><p>独立编码正式样本的10%（32条），不在过程中互相提示答案。</p></article>
-              <article><span>03</span><b>检验</b><p>名义变量报告Krippendorff&apos;s α；目标达到0.80左右，较低变量必须回到定义和例子，而不是删除分歧。</p></article>
-              <article><span>04</span><b>正式编码</b><p>修订手册后再独立完成全样本；最终表保留原始判断与协商结果。</p></article>
+              <article><span>01</span><b>训练</b><p>两名编码者共同学习编码手册，再用不进入正式样本的20条材料进行练习。</p></article>
+              <article><span>02</span><b>试编</b><p>两名编码者分别独立编码正式样本的10%，即32条材料，过程中不能互相影响。</p></article>
+              <article><span>03</span><b>检验</b><p>名义变量报告Krippendorff&apos;s α。目标达到0.80左右；一致性较低的变量必须回到定义和案例进行修改，不能为了获得高数值而直接删除分歧。</p></article>
+              <article><span>04</span><b>正式编码</b><p>修订编码手册后，再独立完成全部样本。最终数据表同时保留两名编码者的原始判断和协商后的结果。</p></article>
             </div>
             <div className="tool-table-wrap">
-              <table className="tool-table codebook-table"><thead><tr><th>变量名</th><th>中文含义</th><th>代码</th><th>操作规则</th></tr></thead><tbody>{codingRows.map((row) => <tr key={row.variable}><td><code>{row.variable}</code></td><td>{row.name}</td><td>{row.codes}</td><td>{row.rule}</td></tr>)}</tbody></table>
+              <table className="tool-table codebook-table"><thead><tr><th>变量</th><th>含义</th><th>主要代码或判断内容</th></tr></thead><tbody>{codingRows.map((row) => <tr key={row.variable}><td><b>{row.variable}</b></td><td>{row.name}</td><td>{row.codes}</td></tr>)}</tbody></table>
             </div>
             <div className="decision-cards">
-              <article><b>多选变量怎样填</b><p>记忆资源可多选，CSV中用英文分号分隔，例如“3;6;7”。没有出现填0，无法判断填9，空白只表示漏填。</p></article>
-              <article><b>分歧怎样处理</b><p>先让编码者分别说明依据，再核对手册；协商后的值写入final列，原值保存在coder_a和coder_b列。</p></article>
-              <article><b>定量之后怎样读</b><p>先做频数和交叉表，再选择典型与反常材料做细读。高频不自动等于重要，低频反例也可能改变解释。</p></article>
+              <article><b>多选变量怎样填写</b><p>记忆资源等变量可以多选，CSV中使用英文分号分隔，例如“3;6;7”。没有出现填0，无法判断填9，空白只表示漏填。</p></article>
+              <article><b>编码分歧怎样处理</b><p>先让两名编码者分别说明自己的判断依据，再核对编码手册。协商后的值写入“协商终值”列，原始值分别保存在“编码者A原值”和“编码者B原值”列。</p></article>
+              <article><b>定量之后怎样分析</b><p>先进行频数统计和交叉表分析，再选择典型材料与反常材料进行细读。高频不自动等于重要，低频反例也可能改变最终解释。</p></article>
             </div>
-            <p className="method-source-note">编码单位、可重复性与信度设计依据内容分析方法<Cite id={43} />；现有广州美食短视频研究只用于比较城市形象维度，不直接照搬结论<Cite id={65} />。</p>
+            <p className="method-source-note">编码单位、可重复性与信度设计依据内容分析方法<Cite id={43} />；广州美食短视频研究只用于比较城市形象分析维度，不能直接照搬其结论<Cite id={65} />。</p>
           </div>}
 
           {activeMethodTool === "interview" && <div className="tool-body">
-            <div className="tool-question"><span>招募原则</span><p>采用目的性抽样保证六类主体都在场，再用滚雪球寻找关键知情人；每类都要主动寻找不同意见。人数以“新访谈是否仍产生重要新主题”判断，不把30—36当作机械合格线。</p></div>
+            <div className="tool-question"><span>招募原则</span><p>采用目的性抽样，保证六类研究主体都能进入样本；再通过滚雪球方式寻找关键知情人。每一类都要主动寻找不同意见。访谈人数以“新的访谈是否仍然产生重要的新主题”为判断标准，不把人数当作机械合格线。</p></div>
             <div className="interview-sample-grid">{interviewGroups.map((item) => <article key={item.group}><span>{item.quota}</span><h4>{item.group}</h4><p>{item.focus}</p></article>)}</div>
             <div className="interview-runbook">
-              <div><span>访谈前</span><p>说明研究者身份、用途、录音、匿名、撤回方式和预计45—70分钟；先取得同意再录音。涉及配方、商业数据与家庭经历时允许跳题。</p></div>
-              <div><span>访谈中</span><p>先问具体经历，再问评价；用“能讲一个例子吗”“当时谁在场”追问，不用“你是否也认为宣传过度”诱导答案。</p></div>
-              <div><span>访谈后</span><p>24小时内写情境备忘录，转写时去除姓名、电话和具体住址；重要事实另找文件或第二位知情人核对。</p></div>
+              <div><span>访谈前</span><p>说明研究者身份、研究用途、录音方式、匿名处理、撤回方式和预计45—70分钟的访谈时长。先取得参与者同意，再开始录音。涉及配方、商业数据和家庭经历时，允许参与者拒绝回答或者跳过问题。</p></div>
+              <div><span>访谈中</span><p>先询问具体经历，再询问评价。使用“能讲一个例子吗”“当时谁在场”等问题继续追问，不使用“你是否也认为宣传过度”等具有诱导性的表达。</p></div>
+              <div><span>访谈后</span><p>24小时内完成情境备忘录。转写时删除姓名、电话号码和具体住址；重要事实需要另找文件或者第二位知情人核对。</p></div>
             </div>
             <ol className="interview-modules">{interviewModules.map((item, index) => <li key={item.step}><span>{String(index + 1).padStart(2, "0")}</span><div><b>{item.step}</b><p>{item.questions}</p></div></li>)}</ol>
             <aside className="consent-script"><b>可直接念出的开场说明</b><p>“我正在研究淮南牛肉汤怎样在媒体、城市生活和个人记忆中被理解。访谈大约60分钟，你可以拒绝任何问题，也可以随时停止。经你同意后我会录音，只用于研究整理；论文默认使用化名并删除能识别个人的信息。涉及配方或经营秘密的内容，未经再次确认不会公开。你是否理解并愿意参加？是否同意录音？”</p></aside>
-            <p className="method-source-note">转写后的材料按熟悉、初始编码、生成主题、检查主题、命名和写作的路径处理，同时保留反例与研究者备忘录<Cite id={44} />。</p>
+            <p className="method-source-note">转写后的材料按照熟悉全文、初始编码、生成主题、检查主题、命名主题和正式写作的路径处理，同时保留反例和研究者备忘录<Cite id={44} />。</p>
           </div>}
 
           {activeMethodTool === "observation" && <div className="tool-body">
-            <div className="tool-question"><span>观察不是拍照打卡</span><p>它要记录传播标签如何进入菜单、门头、制作、点单和顾客互动。每条笔记必须分开“现场看见／听见的事实”“研究者当下感受”“回去后形成的分析”。</p></div>
+            <div className="tool-question"><span>观察不是拍照打卡</span><p>场景观察要记录传播标签怎样进入菜单、门头、制作、点单和顾客互动。每一条笔记必须区分现场看见或者听见的事实、研究者当时的感受，以及离开现场后形成的分析。</p></div>
             <div className="site-plan-grid">
-              <article><span>A</span><h4>老店／传承场所</h4><p>至少2处；观察技艺、熟客与历史叙事怎样共存。</p></article>
-              <article><span>B</span><h4>普通社区门店</h4><p>至少3处；避免只看获得授权或媒体曝光的店。</p></article>
-              <article><span>C</span><h4>影视／文旅空间</h4><p>至少2处；观察游客线路、海报、打卡与实际消费。</p></article>
-              <article><span>D</span><h4>活动／生产现场</h4><p>至少1场；观察舞台展示、直播、标准与后台劳动。</p></article>
+              <article><span>A</span><h4>老店／传承场所</h4><p>至少2处。观察技艺、熟客和历史叙事怎样同时存在。</p></article>
+              <article><span>B</span><h4>普通社区门店</h4><p>至少3处。避免只观察获得品牌授权或者媒体曝光的门店。</p></article>
+              <article><span>C</span><h4>影视／文旅空间</h4><p>至少2处。观察游客路线、海报、打卡行为和实际消费。</p></article>
+              <article><span>D</span><h4>活动／生产现场</h4><p>至少1场。观察舞台展示、直播、标准和后台劳动。</p></article>
             </div>
             <div className="observation-grid">{observationDomains.map((item, index) => <article key={item.domain}><span>{String(index + 1).padStart(2, "0")}</span><div><h4>{item.domain}</h4><p>{item.items}</p></div></article>)}</div>
             <div className="observation-timing">
-              <div><b>同一地点至少两次</b><p>工作日／周末或早餐高峰／平峰各一次，每次持续60—120分钟，才能看到节奏差异。</p></div>
-              <div><b>拍摄必须有边界</b><p>先询问门店；不拍未同意的清晰人脸、付款信息和后台配方。照片编号与文字笔记分开保存。</p></div>
-              <div><b>离场立刻补笔记</b><p>记录遗漏、不确定判断和下一次要追问的问题；不要几天后靠印象补写成“现场事实”。</p></div>
+              <div><b>同一个地点至少观察两次</b><p>工作日与周末，或者早餐高峰与平峰各观察一次。每次持续60—120分钟，才能看到节奏差异。</p></div>
+              <div><b>拍摄必须有边界</b><p>先征得门店同意；不拍摄未经同意的清晰人脸、付款信息和后台配方。照片编号与文字笔记分开保存。</p></div>
+              <div><b>离场后立即补充笔记</b><p>记录遗漏、不确定判断和下一次需要追问的问题。不能几天后依靠印象补写成所谓的“现场事实”。</p></div>
             </div>
           </div>}
 
           {activeMethodTool === "survey" && <div className="tool-body">
-            <div className="tool-question"><span>先分开两类人</span><p>居民问卷测地方身份、传播参与和收益公平；游客问卷测内容接触、目的地形象、真实感、体验和行为意向。两套都采用5点同意量表，但不能把题目拼成一个总分。</p></div>
+            <div className="tool-question"><span>先分开两类人</span><p>居民问卷测量地方身份、传播参与和收益公平；游客问卷测量内容接触、目的地形象、真实感、现场体验和行为意向。两套问卷都可以采用5点同意量表，但不能把所有题目拼成一个总分。</p></div>
             <div className="survey-instrument-grid">{surveyInstruments.map((survey) => <article key={survey.id}>
               <header><span>{survey.label}</span><h4>{survey.target}</h4><p>{survey.suggestion}</p></header>
               <div>{survey.constructs.map((construct) => <section key={construct.name}><b>{construct.name}</b><p>{construct.items}</p></section>)}</div>
-              <a href={`downloads/${survey.id === "resident" ? "05-resident-questionnaire.csv" : "06-visitor-questionnaire.csv"}`} download>下载完整题库 <span>↓</span></a>
+              <a href={`downloads/${survey.id === "resident" ? "05-居民问卷题库.csv" : "06-游客问卷题库.csv"}?v=${downloadVersion}`} download={survey.id === "resident" ? "05-居民问卷题库.csv" : "06-游客问卷题库.csv"}>下载完整题库 <span>↓</span></a>
             </article>)}</div>
             <div className="survey-flow">
-              <article><span>01</span><b>认知访谈 5—8人／版</b><p>让目标对象边读边解释题意，找出“不知道怎么答”“两个问题写在一起”和地方用语不自然的题。</p></article>
-              <article><span>02</span><b>预测试 30—50份／版</b><p>检查完成时间、缺失、同一选项直线作答、天花板／地板效应与初步内部一致性。</p></article>
-              <article><span>03</span><b>正式抽样</b><p>居民按年龄与居住区配额；游客按地点、日期和时段拦截。记录拒访数，二维码转发样本单独标记。</p></article>
-              <article><span>04</span><b>分析与限定</b><p>先报告样本结构、信度和构念得分，再做相关或回归；横截面关系写“相关”，不能写成长期因果。</p></article>
+              <article><span>01</span><b>认知访谈 5—8人／版</b><p>让目标对象边阅读边解释题目，找出“不知道怎样回答”“一个句子里包含两个问题”和地方用语不自然的题项。</p></article>
+              <article><span>02</span><b>预测试 30—50份／版</b><p>检查完成时间、缺失、连续选择相同选项、天花板或地板效应，以及初步内部一致性。</p></article>
+              <article><span>03</span><b>正式抽样</b><p>居民按照年龄和居住区配额；游客按照调查地点、日期和时段进行拦截。记录拒访人数，通过二维码转发得到的样本需要单独标记。</p></article>
+              <article><span>04</span><b>分析与限定</b><p>先报告样本结构、信度和各构念得分，再进行相关分析或者回归分析。横截面关系只能写成“相关”，不能写成长期因果。</p></article>
             </div>
-            <aside className="method-boundary"><b>量表来源怎么写</b><p>目的地形象、真实感、地方依恋与行为意向参考既有研究的构念关系<Cite id={89} /><Cite id={91} /><Cite id={103} />，题项已经按本研究对象改写，必须经过访谈与预测试；不能声称它们在淮南已经“验证有效”。</p></aside>
+            <aside className="method-boundary"><b>量表来源说明</b><p>目的地形象、真实感、地方依恋和行为意向参考既有研究中的构念关系<Cite id={89} /><Cite id={91} /><Cite id={103} />。这些题项已经按照本研究对象改写，必须经过认知访谈与小样本预测试，不能声称它们已经在淮南“验证有效”。</p></aside>
           </div>}
 
           {activeMethodTool === "ethics" && <div className="tool-body">
-            <div className="tool-question"><span>先保护人，再保护结论</span><p>数据管理不是论文做完后的整理工作。编号、授权、匿名、版本与备份从采集第一天就要执行，否则既可能伤害参与者，也无法说明分析过程。</p></div>
+            <div className="tool-question"><span>先保护人，再保护结论</span><p>数据管理不是论文完成后的整理工作。编号、授权、匿名、版本和备份从采集第一天就要执行，否则既可能伤害参与者，也无法说明研究的分析过程。</p></div>
             <div className="data-pipeline">
-              <article><span>RAW</span><h4>原始区</h4><p>原始录音、导出文件、网页快照只读保存；不直接覆盖，不上传到公开仓库。</p></article>
-              <article><span>CLEAN</span><h4>去标识区</h4><p>姓名与联系方式放在独立加密对应表；转写、编码和问卷使用研究编号。</p></article>
-              <article><span>ANALYSIS</span><h4>分析区</h4><p>保存清洗规则、代码本版本、统计脚本、主题备忘录与表图生成日期。</p></article>
-              <article><span>OUTPUT</span><h4>论文输出区</h4><p>只放匿名引语、汇总表和经过授权的图片；每一项都能追溯到内部编号。</p></article>
+              <article><span>RAW</span><h4>原始区</h4><p>保存原始录音、导出文件和网页快照。文件只读保存，不直接覆盖，也不上传到公开仓库。</p></article>
+              <article><span>CLEAN</span><h4>去标识区</h4><p>姓名和联系方式放在独立加密对应表中；转写、编码和问卷统一使用研究编号。</p></article>
+              <article><span>ANALYSIS</span><h4>分析区</h4><p>保存数据清洗规则、代码本版本、统计脚本、主题备忘录和图表生成日期。</p></article>
+              <article><span>OUTPUT</span><h4>论文输出区</h4><p>只放匿名引语、汇总表和经过授权的图片，每一项都能够追溯到内部研究编号。</p></article>
             </div>
             <div className="id-convention"><div><span>平台样本</span><code>W3-U-017</code><p>影视窗口 · 普通用户 · 第17条</p></div><div><span>访谈</span><code>INT-YR-03</code><p>年轻居民 · 第3位</p></div><div><span>观察</span><code>OBS-B-02-PM</code><p>社区门店2 · 平峰</p></div><div><span>问卷</span><code>V-0248</code><p>游客有效问卷 · 第248份</p></div></div>
             <div className="ethics-grid">
@@ -1716,15 +1736,15 @@ export default function Home() {
               <article><b>反例进入论文</b><p>保留不认同“千年”、不支持品牌化或没有被影视影响的人，不因其破坏主线而删除。</p></article>
             </div>
             <div className="analysis-map">
-              <h4>材料最后写到哪里</h4>
+              <h4>数据怎样进入论文</h4>
               <div className="tool-table-wrap"><table className="tool-table"><thead><tr><th>研究问题</th><th>主要数据</th><th>分析办法</th><th>论文输出</th><th>结论边界</th></tr></thead><tbody>
-                <tr><td>哪些记忆被反复选择？</td><td>320条平台内容</td><td>频数、交叉表、典型／反例细读</td><td>第三章叙事与主体比较</td><td>只代表设定样本框</td></tr>
+                <tr><td>哪些记忆被反复选择？</td><td>320条平台内容</td><td>频数、交叉表、典型与反例细读</td><td>第三章叙事与主体比较</td><td>只代表设定的样本框</td></tr>
                 <tr><td>不同人怎样理解“正宗”？</td><td>访谈＋现场</td><td>主题分析、主体对照、负面案例</td><td>第三、五章意义协商</td><td>不声称统计代表性</td></tr>
-                <tr><td>传播如何进入空间与行动？</td><td>观察＋游客问卷</td><td>场景描述、分组比较、相关／回归</td><td>第四章转化路径</td><td>横截面不证明因果</td></tr>
+                <tr><td>传播怎样进入空间与行动？</td><td>观察＋游客问卷</td><td>场景描述、分组比较、相关或回归</td><td>第四章转化路径</td><td>横截面数据不能证明因果</td></tr>
                 <tr><td>居民是否认同且公平受益？</td><td>居民问卷＋居民／门店访谈</td><td>构念得分、群体差异、主题互证</td><td>第五章治理反思</td><td>配额样本不等于全市民意</td></tr>
               </tbody></table></div>
             </div>
-            <p className="method-source-note">涉及非遗知识时遵循社区主体、持续同意、公平受益和避免误表征的伦理原则<Cite id={45} />；最终方案还需服从所在学校的伦理审查与数据保存要求。</p>
+            <p className="method-source-note">涉及非遗知识时，遵循社区主体、持续同意、公平受益和避免错误呈现等伦理原则<Cite id={45} />。最终方案还需要服从所在学校的伦理审查和数据保存要求。</p>
           </div>}
         </section>
       </section>
@@ -1733,22 +1753,19 @@ export default function Home() {
       {activeTab === "references" && <div className="tab-page" data-page="references">
       <section className="bibliography-hero page-section">
         <div className="bibliography-title">
-          <div><p className="section-kicker">第八步 · 文后参考文献与全文统稿</p><h2>来源多，不等于参考文献就合格。先分清“支撑理论的文献”和“证明事件的网页”。</h2></div>
-          <p>这一页不是把104个链接机械地堆到论文末尾，而是给出三套可以直接工作的索引：27条核心学术与规范文献、8组正文命题与引文对照、104项网络材料的GB/T 7714格式草案。提交前仍需按学校模板和你实际读过的版本复核。</p>
+          <div><p className="section-kicker">第八步 · 参考资料整合</p><h2>核心学术与来源材料索引</h2></div>
         </div>
         <div className="bibliography-metrics">
           <article><span>核心文献</span><strong>{coreReferences.length}</strong><p>已核作者、题名、年份与主要卷期页码</p></article>
           <article><span>引文路线</span><strong>{citationRoutes.length}</strong><p>从论文问题直接定位到应引用的材料组</p></article>
-          <article><span>网络档案</span><strong>{sources.length}</strong><p>政策、新闻、视频、图片与学术网页全部保留</p></article>
-          <article><span>统一访问日</span><strong>08·17</strong><p>当前网页草案按2026年8月17日登记</p></article>
+          <article><span>来源材料</span><strong>{sources.length}</strong><p>政策、新闻、视频、图片与学术网页全部保留</p></article>
         </div>
-        <aside className="reference-warning"><b>先记住一条</b><p>网站里的方括号编号是研究资料库编号，方便你回查来源；它不是学校最终要求的顺序编码。论文定稿时要按正文首次出现次序重新编号，并让正文序号与文后参考文献一一对应。</p></aside>
       </section>
 
       <section className="citation-route-section page-section">
         <div className="section-heading">
-          <div><p className="section-kicker">观点该引哪一组文献</p><h2>先找要证明的命题，再决定引文，不要先堆作者。</h2></div>
-          <p>同一段通常需要两类材料配合：学术文献解释概念或机制，案例材料证明淮南发生了什么。下面把两者放在同一条路线中。</p>
+          <div><p className="section-kicker">快速检索</p><h2>按命题检索相关文献</h2></div>
+          <p>同一段通常需要两类材料配合：学术文献解释概念或机制，案例材料证明实际发生了什么。</p>
         </div>
         <div className="citation-route-list">
           {citationRoutes.map((route, index) => (
@@ -1763,14 +1780,25 @@ export default function Home() {
 
       <section className="core-reference-section page-section">
         <div className="section-heading">
-          <div><p className="section-kicker">核心参考文献 · 人工整理稿</p><h2>这27条承担理论、方法和关键比较，不只是提供一个链接。</h2></div>
-          <p>格式采用GB/T 7714—2015常见写法。英文作者暂按姓氏大写、名字首字母处理；学校若有自己的著录模板，应以学校要求为准。</p>
+          <div><h2>核心参考文献</h2></div>
         </div>
-        <nav className="reference-group-index" aria-label="参考文献分类索引">
-          {referenceGroups.map((group) => <a key={group} href={`#reference-${group}`}>{group}<span>{coreReferences.filter((item) => item.group === group).length}</span></a>)}
-        </nav>
-        {referenceGroups.map((group) => (
-          <section className="reference-group" id={`reference-${group}`} key={group}>
+        <div className="reference-group-index" role="tablist" aria-label="参考文献分类索引">
+          {referenceGroups.map((group) => {
+            const isActive = activeReferenceGroup === group;
+            return <button
+              key={group}
+              id={`reference-tab-${group}`}
+              type="button"
+              role="tab"
+              aria-selected={isActive}
+              aria-controls={`reference-panel-${group}`}
+              className={isActive ? "active" : ""}
+              onClick={() => setActiveReferenceGroup(group)}
+            >{group}<span>{coreReferences.filter((item) => item.group === group).length}</span></button>;
+          })}
+        </div>
+        {referenceGroups.map((group) => group === activeReferenceGroup && (
+          <section className="reference-group" id={`reference-panel-${group}`} key={group} role="tabpanel" aria-labelledby={`reference-tab-${group}`}>
             <header><span>{String(referenceGroups.indexOf(group) + 1).padStart(2, "0")}</span><h3>{group}</h3><p>{coreReferences.filter((item) => item.group === group).length}条</p></header>
             <ol>
               {coreReferences.filter((item) => item.group === group).map((reference) => {
@@ -1786,55 +1814,23 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="revision-check-section page-section">
-        <div className="section-heading">
-          <div><p className="section-kicker">全文第一轮统稿表</p><h2>每章写完以后，用同一把尺子检查一遍。</h2></div>
-          <p>这八项分别处理概念漂移、证据越界、因果过强、主体模糊、章节重复和引文错位。它们比单纯润色句子更能提高论文可信度。</p>
-        </div>
-        <ol className="revision-check-list">
-          {revisionChecks.map(([title, detail], index) => <li key={title}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{title}</h3><p>{detail}</p></div><b>□ 已检查</b></li>)}
-        </ol>
-      </section>
-
-      <section className="archive-reference-section page-section">
-        <div className="section-heading">
-          <div><p className="section-kicker">104项网络材料 · 格式草案</p><h2>按材料类型折叠保存，需要时再展开，不把整页变成链接瀑布。</h2></div>
-          <p>网络来源的责任者、发布日期和文献类型有时需要根据网页实际情况调整。尤其是转载稿、持续更新页和学术数据库摘要，正式提交前必须再打开原页核对。</p>
-        </div>
-        <div className="archive-reference-groups">
-          {archiveGroups.map((group, groupIndex) => {
-            const groupSources = sources.filter((source) => source.type === group);
-            return <details key={group} open={groupIndex === 0}>
-              <summary><span>{String(groupIndex + 1).padStart(2, "0")}</span><b>{group}</b><em>{groupSources.length}项</em><i>展开 / 收起</i></summary>
-              <ol>
-                {groupSources.map((source) => <li key={source.id}><span>[资料{String(source.id).padStart(3, "0")}]</span><a href={source.url} target="_blank" rel="noreferrer">{archiveReference(source)}</a></li>)}
-              </ol>
-            </details>;
-          })}
-        </div>
-      </section>
-      </div>}
-
-      {activeTab === "sources" && <div className="tab-page" data-page="sources">
       <section className="video-section page-section">
         <div className="section-heading">
-          <div><p className="section-kicker">先看视频怎么讲</p><h2>这些公开视频不是装饰，而是可以分析的材料。</h2></div>
-          <p>从2022年的消费节目到2025年的非遗舞台，不同节目给同一碗汤安排了不同角色。这里先说明每条视频能看什么，再链接到原发布页。</p>
-        </div>
-        <div className="video-coding-matrix">
-          {videoCodingRows.map((row) => {
-            const source = sourceById(row.id);
-            return <article key={row.id}><span>{String(row.id).padStart(2, "0")}</span><div><b>{source.date} · {row.genre}</b><h3>{source.title}</h3></div><p><em>{row.frame}</em>{row.use}</p><a href={source.url} target="_blank" rel="noreferrer">原视频 ↗</a></article>;
-          })}
+          <div><p className="section-kicker">看视频</p><h2>公开视频材料</h2></div>
         </div>
         <div className="video-grid">
-          {[22, 23, 24, 25, 26, 27, 28, 78].map((id, index) => {
+          {[22, 23, 24, 25, 26, 27, 28, 78].map((id) => {
             const source = sourceById(id);
+            const title = sourceDisplayTitle(source);
             return (
               <a className="video-card" key={id} href={source.url} target="_blank" rel="noreferrer">
-                <div className={`video-visual visual-${(index % 4) + 1}`}><span className="play">▶</span><b>{source.date.slice(0, 4)}</b></div>
+                <div className="video-visual">
+                  <img src={source.thumbnailUrl} alt={`${title} 视频封面`} loading="lazy" />
+                  <span className={`play`}>▶</span>
+                  <b>{source.date.slice(0, 4)}</b>
+                </div>
                 <span>{source.publisher}</span>
-                <h3>{source.title}</h3>
+                <h3>{title}</h3>
                 <p>{source.note}</p>
                 <em>观看原视频 ↗</em>
               </a>
@@ -1845,8 +1841,7 @@ export default function Home() {
 
       <section className="sources-section page-section" id="sources">
         <div className="section-heading">
-          <div><p className="section-kicker">所有材料都放在这里</p><h2>104项网页、文章、视频、图片和学术资料。</h2></div>
-          <p>资料复核截至2026年8月17日。来源链接均指向原始页面；“官方来源”意味着发布主体明确，并不自动消除自报口径与宣传倾向。</p>
+          <div><p className="section-kicker">参考资料列表</p><h2>网页、文章、视频、图片和学术资料。</h2></div>
         </div>
         <div className="source-filters" role="group" aria-label="筛选来源类型">
           {["全部", "政策/统计", "新闻/专题", "视频", "图片/素材", "学术/典籍"].map((filter) => (
@@ -1857,9 +1852,12 @@ export default function Home() {
         </div>
         <div className="source-list">
           {filteredSources.map((source) => (
-            <a href={source.url} target="_blank" rel="noreferrer" className="source-row" key={source.id}>
+            <a href={source.url} target="_blank" rel="noreferrer" className={`source-row${source.type === "视频" ? " source-row--video" : ""}`} key={source.id}>
               <span className="source-id">{String(source.id).padStart(2, "0")}</span>
-              <div className="source-main"><div><span className={`source-type type-${source.type.replace("/", "-")}`}>{source.type}</span><span className="source-meta">{source.date} · {source.publisher}</span></div><h3>{source.title}</h3><p>{source.note}</p></div>
+              {source.type === "视频" ? (
+                source.thumbnailUrl ? <img className="source-thumbnail" src={source.thumbnailUrl} alt={`${sourceDisplayTitle(source)} 封面`} loading="lazy" /> : <span className="source-spacer" aria-hidden="true" />
+              ) : null}
+              <div className="source-main"><div><span className={`source-type type-${source.type.replace("/", "-")}`}>{source.type}</span><span className="source-meta">{source.date} · {source.publisher}</span></div><h3>{sourceDisplayTitle(source)}</h3><p>{source.note}</p></div>
               <span className="source-open">↗</span>
             </a>
           ))}
@@ -1872,11 +1870,12 @@ export default function Home() {
           <h2>使用这些材料前，请先看这三点。</h2>
         </div>
         <div className="method-grid">
-          <article><h3>这个网站已经做了什么</h3><p>104项政策、统计、新闻、视频、图片、典籍和学术资料都已逐条登记。开放图片记录了作者和许可证，论文各章也配好了可以使用的材料和不能说过头的地方。</p></article>
-          <article><h3>正式论文还要自己做什么</h3><p>还要按规则收集平台内容，访谈传承人、门店和食客，到现场观察，并独立核对产业产值、门店数量和游客转化等数字是怎样算出来的。</p></article>
-          <article><h3>使用这些材料时要记住</h3><p>网站中的“研究推断”只能当作分析起点，不能冒充调查结论。正式论文要交代样本怎样选、每条材料怎样分析，还要给出反例和原始访谈依据。</p></article>
+          <article><h3>这个网站已经做了什么</h3><p>简单介绍了研究对象、案例分析样例、研究方法政策、研究方法，统计、新闻、视频、图片、典籍和学术资料都已逐条登记，论文各章也打好底稿。</p></article>
+          <article><h3>正式论文还要自己做什么</h3><p>还要按规则收集平台内容，进行实人访谈，到现场观察，并独立核对数字统计方法。</p></article>
+          <article><h3>使用这些材料时要记住</h3><p>网站中的“研究推断”只能当作分析起点，不能直接当做调查结论。正式论文要扩充部分内容，重点在于交代样本怎样选取、每条材料怎样分析，还要给出反例和原始访谈依据，综合得出你的结论，祝毕业顺利，论文大爆！Q</p></article>
         </div>
       </section>
+
       </div>}
 
       <footer>
@@ -1884,6 +1883,17 @@ export default function Home() {
         <p>一碗汤会冷却，记忆仍在沸腾。</p>
         <a href="#overview" onClick={() => openTab("overview")}>回到首页 ↑</a>
       </footer>
+
+      {progress > 1 && (
+        <button
+          className="back-to-top"
+          type="button"
+          aria-label="回到顶部"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          ↑
+        </button>
+      )}
     </main>
   );
 }

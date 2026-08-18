@@ -49,8 +49,7 @@ test("server-renders the paginated research home and its tab bar", async () => {
   assert.match(html, /案例与机制/);
   assert.match(html, /论文正文/);
   assert.match(html, /研究方法/);
-  assert.match(html, /参考文献/);
-  assert.match(html, /来源资料/);
+  assert.match(html, /参考资料/);
   assert.doesNotMatch(html, /进入论文正文|查看来源资料 →|104项公开来源 · 8条视频 · 6张开放授权图片/);
   assert.doesNotMatch(html, /首页不负责展开结论|首页只回答“这是什么研究、应该从哪里读”/);
   assert.equal((html.match(/class="tab-page"/g) ?? []).length, 1);
@@ -72,7 +71,7 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   const sourceIds = [...page.matchAll(/\{ id: (\d+), type: /g)].map((match) => Number(match[1]));
   assert.deepEqual(sourceIds, Array.from({ length: 104 }, (_, index) => index + 1));
 
-  const sourceUrls = [...page.matchAll(/\{ id: \d+, type: .*? url: "([^"]+)" \}/g)].map((match) => match[1]);
+  const sourceUrls = [...page.matchAll(/^\s*\{ id: \d+, type: .*?\burl: "([^"]+)"/gm)].map((match) => match[1]);
   assert.equal(sourceUrls.length, 104);
   assert.ok(sourceUrls.every((url) => url.startsWith("https://")));
 
@@ -86,8 +85,8 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   }
 
   const tabIds = [...page.matchAll(/\{ id: "(overview|atlas|mechanism|draft|methods|references|sources)", number:/g)].map((match) => match[1]);
-  assert.deepEqual(tabIds, ["overview", "atlas", "mechanism", "draft", "methods", "references", "sources"]);
-  assert.equal((page.match(/activeTab === "/g) ?? []).length, 7);
+  assert.deepEqual(tabIds, ["overview", "atlas", "mechanism", "draft", "methods", "references"]);
+  assert.equal((page.match(/activeTab === "/g) ?? []).length, 6);
   assert.equal((page.match(/<article className="essay-chapter(?: abstract-chapter| conclusion-chapter)?">/g) ?? []).length, 7);
   const essayChapterIds = [...page.matchAll(/^ {4}id: "(abstract|intro|chapter-[2-5]|conclusion)",$/gm)].map((match) => match[1]);
   assert.deepEqual(essayChapterIds, ["abstract", "intro", "chapter-2", "chapter-3", "chapter-4", "chapter-5", "conclusion"]);
@@ -96,6 +95,8 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   assert.match(page, /className="chapter-pager"/);
   assert.match(page, /className="plain-writing-details"/);
   assert.match(page, /window\.location\.hash\.slice\(1\)\.split\("\/"\)/);
+  assert.match(page, /const chapter = essayChapterIndex\.find\(\(item\) => item\.id === requestedChapter\);/);
+  assert.match(page, /<a href="#draft" onClick=\{\(\) => openTab\("draft"\)\}/);
   assert.match(page, /href=\{`#draft\/\$\{activeEssayEntry\.id\}\/\$\{section\.id\}`\}/);
   const chapterPagerStart = page.indexOf('<nav className="chapter-pager"');
   const chapterPager = page.slice(chapterPagerStart, page.indexOf("</nav>", chapterPagerStart));
@@ -162,19 +163,50 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   const methodToolBlock = page.slice(page.indexOf("const methodTools = ["), page.indexOf("] as const;", page.indexOf("const methodTools = [")));
   assert.equal((methodToolBlock.match(/id: "(?:sampling|coding|interview|observation|survey|ethics)"/g) ?? []).length, 6);
   assert.match(page, /4个事件窗口 × 4类主体 × 每格20条/);
-  assert.match(page, /30—36人六类主体/);
+  assert.match(page, /12—18人、六类主体/);
+  assert.match(page, /六套研究方法，呈现全面报告/);
+  assert.match(page, /建议320条/);
+  assert.match(page, /变量、代码与置信度/);
+  assert.match(page, /对象授权与统计分析/);
+  assert.doesNotMatch(page, /30—36人六类主体|5—6人|4—5人/);
   assert.match(page, /Krippendorff&apos;s α/);
   assert.match(page, /可直接念出的开场说明/);
   assert.match(page, /居民问卷/);
   assert.match(page, /游客问卷/);
   assert.match(page, /配额样本不等于全市民意/);
   assert.match(page, /matched\.id === "methods"/);
+  assert.match(page, /href=\{`#\$\{tab\.id\}`\}/);
+  assert.match(page, /<a href="#methods" onClick=\{\(\) => openTab\("methods"\)\}/);
+  assert.match(page, /const tool = methodTools\.find\(\(item\) => item\.id === requestedChapter\);/);
+  const methodTabsStart = page.indexOf('<nav className="method-tool-tabs"');
+  const methodTabs = page.slice(methodTabsStart, page.indexOf("</nav>", methodTabsStart));
+  assert.match(methodTabs, /href=\{`#methods\/\$\{tool\.id\}`\}/);
+  assert.doesNotMatch(methodTabs, /setActiveMethodTool/);
+  assert.equal((page.match(/setActiveMethodTool\(/g) ?? []).length, 1);
   const toolkitDownloads = [...page.matchAll(/file: "(0[1-8]-[^"]+\.(?:csv|md))"/g)].map((match) => match[1]);
   assert.equal(toolkitDownloads.length, 8);
+  assert.ok(toolkitDownloads.every((file) => !/[a-z]/.test(file.replace(/\.(?:csv|md)$/, ""))));
   await Promise.all(toolkitDownloads.map((file) => access(new URL(`../public/downloads/${file}`, import.meta.url))));
-  await access(new URL("../public/downloads/00-empirical-research-toolkit.zip", import.meta.url));
-  assert.match(page, /来源多，不等于参考文献就合格/);
-  assert.match(page, /全文第一轮统稿表/);
+  await access(new URL("../public/downloads/00-实证研究工具包.zip", import.meta.url));
+  assert.match(page, /00-实证研究工具包\.zip/);
+  assert.doesNotMatch(page, /empirical-research-toolkit|platform-sampling-register|content-coding-sheet|interview-register|field-observation-sheet|resident-questionnaire|visitor-questionnaire|data-dictionary|informed-consent-template/);
+  const csvTemplateFiles = toolkitDownloads.filter((file) => file.endsWith(".csv"));
+  const csvTemplates = await Promise.all(csvTemplateFiles.map((file) => readFile(new URL(`../public/downloads/${file}`, import.meta.url), "utf8")));
+  csvTemplates.forEach((template, index) => {
+    assert.equal(template.charCodeAt(0), 0xfeff, `${csvTemplateFiles[index]}应包含UTF-8 BOM`);
+    const header = template.slice(1).split(/\r?\n/, 1)[0];
+    assert.doesNotMatch(header, /[a-z_]/, `${csvTemplateFiles[index]}表头应全部使用中文`);
+  });
+  const codingTemplate = csvTemplates[csvTemplateFiles.indexOf("02-内容编码表.csv")];
+  const dataDictionary = csvTemplates[csvTemplateFiles.indexOf("07-文件与变量字典.csv")];
+  assert.match(codingTemplate, /^\uFEFF样本编号,编码者编号,编码轮次,事件窗口,平台,账号主体,/);
+  assert.match(codingTemplate, /编码者A原值,编码者B原值,协商终值,协商说明/);
+  assert.doesNotMatch(codingTemplate, /sample_id|coder_a_value|final_value/);
+  assert.match(dataDictionary, /^\uFEFF数据集,编号模式,字段或文件,定义,/);
+  assert.doesNotMatch(dataDictionary, /dataset|field_or_file|sample_id|engagement_snapshot/);
+  assert.match(page, /核心学术与来源材料索引/);
+  assert.match(page, /参考资料列表/);
+  assert.match(page, /网页、文章、视频、图片和学术资料/);
   assert.equal((page.match(/className="rewrite-pair"/g) ?? []).length, 6);
   assert.match(page, /\[22, 23, 24, 25, 26, 27, 28, 78\]\.map/);
   assert.match(page, /window\.addEventListener\("hashchange", syncTabFromHash\)/);
