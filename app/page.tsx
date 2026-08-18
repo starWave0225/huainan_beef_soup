@@ -715,7 +715,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">媒介记忆研究-淮南牛肉汤</p>
-          <h1>一碗汤一座城<br />百万人共相忆</h1>
+          <h1>一碗汤，一座城<br />百万人，共相忆</h1>
           <p className="dek">
             本研究关注一道美食的前世今生、穿梭时空，研究传说、考古、日常生活、影视和数字平台怎样共同组织着江淮儿女对淮南牛肉汤的记忆。
           </p>
