@@ -155,6 +155,27 @@ const cases = [
   },
 ];
 
+const caseImages = {
+  archaeology: {
+    src: "media/commons/huainan-bowl.jpg",
+    alt: "俯拍的现代淮南牛肉汤实物照片",
+    caption: "现代牛肉汤实拍：提示考古叙事最终被指向怎样的当代食物形象；这不是武王墩出土图像。",
+    sourceId: 54,
+  },
+  television: {
+    src: "media/commons/huainan-shortbread.jpg",
+    alt: "淮南牛肉汤与酥饼摆在同一张木桌上",
+    caption: "牛肉汤与酥饼实拍：用来观察剧集唤起的家庭共食和早餐想象；这不是《六姊妹》剧照。",
+    sourceId: 57,
+  },
+  industry: {
+    src: "media/commons/huainan-jiangji.jpg",
+    alt: "上海黄浦区带有淮南牛肉汤名称的清真门店",
+    caption: "上海门店实拍：产地名称、清真标识和门店形态随着地方食品一起跨城传播。",
+    sourceId: 58,
+  },
+} as const;
+
 const chapterBlueprints = [
   {
     label: "绪论",
@@ -632,6 +653,7 @@ export default function Home() {
     [sourceFilter],
   );
   const selectedCase = cases.find((item) => item.id === activeCase)!;
+  const selectedCaseImage = caseImages[activeCase as keyof typeof caseImages];
   const activeEssayEntry = essayChapterIndex.find((chapter) => chapter.id === activeEssayChapter)!;
   const activeEssayChapterIndex = essayChapterIndex.findIndex((chapter) => chapter.id === activeEssayChapter);
   const previousEssayChapter = activeEssayChapterIndex > 0 ? essayChapterIndex[activeEssayChapterIndex - 1] : null;
@@ -801,6 +823,21 @@ export default function Home() {
           <p>媒体不会把现成记忆原样搬过来。它会挑选、排序、强调，也会省略。一个故事从新闻进入电视剧、短视频和活动现场时，每次都会被重新讲一遍<Cite id={31} /><Cite id={34} /><Cite id={35} />。</p>
         </div>
 
+        <div className="mechanism-photo-strip" aria-label="淮南牛肉汤传播场景实拍">
+          <figure>
+            <img src="media/commons/huainan-bowl.jpg" alt="俯拍的一碗淮南牛肉汤" loading="lazy" />
+            <figcaption><b>先成为可识别的画面</b><span>肉片、绿叶、汤面和大碗构成视觉入口。</span><Cite id={54} /></figcaption>
+          </figure>
+          <figure>
+            <img src="media/commons/huainan-dip.jpg" alt="酥饼靠近淮南牛肉汤碗的进食场景" loading="lazy" />
+            <figcaption><b>再进入身体动作</b><span>掰、蘸、夹和品尝让观看变成生活经验。</span><Cite id={59} /></figcaption>
+          </figure>
+          <figure>
+            <img src="media/commons/huainan-restaurant.jpg" alt="写有淮南牛肉汤字样的街边门店" loading="lazy" />
+            <figcaption><b>最后进入街道空间</b><span>菜名通过门头在不同城市被反复看见。</span><Cite id={55} /></figcaption>
+          </figure>
+        </div>
+
         <div className="memory-loop" aria-label="媒介记忆循环的六个步骤">
           <article><span>01</span><b>原有材料</b><p>传说、典籍、技艺、门店和个人回忆</p></article>
           <article><span>02</span><b>突然升温</b><p>考古发现、电视剧、节庆或平台热点</p></article>
@@ -845,6 +882,12 @@ export default function Home() {
           ))}
         </div>
         <div className="case-panel" role="tabpanel">
+          <figure className="case-figure">
+            <a href={sourceById(selectedCaseImage.sourceId).url} target="_blank" rel="noreferrer" aria-label="查看这张图片的原始文件与授权">
+              <img src={selectedCaseImage.src} alt={selectedCaseImage.alt} loading="lazy" />
+            </a>
+            <figcaption>{selectedCaseImage.caption} <Cite id={selectedCaseImage.sourceId} /></figcaption>
+          </figure>
           <div className="case-copy">
             <p className="case-eyebrow">{selectedCase.eyebrow}</p>
             <h3>{selectedCase.title}</h3>
