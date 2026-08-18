@@ -645,7 +645,7 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#overview" onClick={() => openTab("overview")} aria-label="淮南牛肉汤媒介记忆研究首页">
           <span className="brand-mark">淮</span>
-          <span>媒介记忆研究志</span>
+          <span>媒介记忆研究-淮南牛肉汤</span>
         </a>
         <span className="edition">研究版 · 2026.08</span>
       </header>
