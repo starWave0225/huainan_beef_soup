@@ -104,6 +104,16 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   const terminologyGuide = page.slice(page.indexOf("const terminologyGuide = ["), page.indexOf("] as const;", page.indexOf("const terminologyGuide = [")));
   assert.equal((terminologyGuide.match(/term: "/g) ?? []).length, 10);
   assert.match(page, /一、研究背景与意义/);
+  assert.match(page, /note: "实物、吃法与门头"/);
+  assert.match(page, /初相识/);
+  assert.match(page, /先别急着看文章了/);
+  assert.match(page, /一起尝尝看吧/);
+  assert.match(page, /淮南牛肉汤能够成为文化符号，重要的是它真好吃/);
+  assert.match(page, /干丝 \/ 千张 \/ 豆饼/);
+  assert.match(page, /哪些声音让人感受到“烟火气”/);
+  assert.match(page, /02 · 端上桌/);
+  assert.match(page, /03 · 共品尝/);
+  assert.doesNotMatch(page, /这组图片能说明什么|03 · 可以放心使用的图片|这张图能看什么/);
   assert.match(page, /二、数字传播生态作为媒介记忆的基础/);
   assert.match(page, /已深写 · 约7700字/);
   assert.match(page, /可调用资源 × 事件激活 × 组织承接 × 主体参与/);

@@ -442,7 +442,7 @@ const mediaAssets = [
 
 const siteTabs = [
   { id: "overview", number: "01", label: "研究首页", note: "问题与证据" },
-  { id: "atlas", number: "02", label: "牛肉汤图鉴", note: "实物、吃法与门店" },
+  { id: "atlas", number: "02", label: "牛肉汤图鉴", note: "实物、吃法与门头" },
   { id: "mechanism", number: "03", label: "案例与机制", note: "传播与反思" },
   { id: "draft", number: "04", label: "论文正文", note: "依原提纲逐节写作" },
   { id: "methods", number: "05", label: "研究方法", note: "六类实证工具" },
@@ -726,59 +726,58 @@ export default function Home() {
           <figcaption>淮南牛肉汤与酥饼 · Franklin Rainier · Public Domain Mark <Cite id={57} /></figcaption>
         </figure>
         <div className="atlas-hero-copy">
-          <p className="section-kicker">先认识这碗汤</p>
-          <h2>先看清这碗汤，<br />再谈它怎样被记住。</h2>
-          <p>前面的论文结构谈了很多媒介、城市与记忆，但研究对象不能只剩一个抽象菜名。这一页把镜头拉回碗里：汤底、肉片、粉丝、豆制品、香菜葱花、辣油和酥饼怎样共同出现；一顿早餐怎样从后厨工序走到桌面；“淮南牛肉汤”又怎样作为门店招牌进入外地街道。</p>
-          <aside><b>这组图片能说明什么</b>这些开放授权照片记录了以“淮南牛肉汤”名义出现的不同消费场景，但不能代表淮南所有门店，也不能确定唯一的正宗配方。它们可以帮助观察画面怎样表现这碗汤，却不能代替到店调查。</aside>
+          <p className="section-kicker">初相识</p>
+          <h2>先别急着看文章了，<br />一起尝尝看吧。</h2>
+          <p>淮南牛肉汤能够成为文化符号，重要的是它真好吃。这一部分把镜头拉回冒着热气的碗里：汤底、肉片、粉丝、豆制品、香菜葱花、辣油和酥饼缺一不可；一顿美餐如何从后厨工序走到桌面；“淮南牛肉汤”又怎样作为门店招牌走向世界。</p>
         </div>
       </section>
 
       <section className="bowl-anatomy page-section">
         <div className="section-heading">
           <div><p className="section-kicker">01 · 碗里有什么</p><h2>先把一碗汤拆成六个部分。</h2></div>
-          <p>央视网的地方小吃介绍提到牛骨汤、牛肉或牛杂、粉丝、干丝、葱段和红油等常见组成<Cite id={60} />；2009年地方制作规范则把原辅料、熬汤、烫制与卫生要求写成技术文本<Cite id={52} />。两者都只能作为观察入口，不能替代当下门店实测。</p>
+          <p>央视网的地方小吃介绍：牛骨汤、牛肉或牛杂、粉丝、干丝、葱段和红油等共同组成了一碗淮南牛肉汤<Cite id={60} />；2009年地方制作规范则把原辅料、熬汤、烫制与卫生要求写成技术文本<Cite id={52} />，秘方是淮南人民的真材实料和真情实感。</p>
         </div>
         <div className="anatomy-layout">
           <figure>
             <img src="media/commons/huainan-onion.jpg" alt="从上方观察加入洋葱与辣椒浇头的淮南牛肉汤" loading="lazy" />
-            <figcaption>加洋葱与辣椒的版本，直观显示同一菜名内部的变化 <Cite id={56} /></figcaption>
+            <figcaption>加洋葱与辣椒的版本，直观显示同一菜名下，也存在诸多变化 <Cite id={56} /></figcaption>
           </figure>
           <div className="anatomy-list">
-            <article><span>01</span><div><h3>汤底</h3><p>牛骨和肉类熬出的热汤承担香气、温度与口感的基础。报道常用“清”“浓”“鲜醇”描述它，但汤色深浅不能单独判断正宗。</p></div></article>
-            <article><span>02</span><div><h3>牛肉与牛杂</h3><p>薄切牛肉提供最醒目的名称对应，牛杂则增加口感层次和物尽其用的饮食逻辑。论文应区分菜单选择与固定配方。</p></div></article>
-            <article><span>03</span><div><h3>粉丝</h3><p>粉丝吸附汤汁、增加饱腹感，也让“喝汤”变成可以作为早餐或正餐的一整碗食物。</p></div></article>
-            <article><span>04</span><div><h3>干丝 / 千张</h3><p>豆制品带来与肉片不同的纤维和咀嚼感。不同资料使用“干丝”“千张丝”等称呼，访谈时应保留本地人的实际用词。</p></div></article>
-            <article><span>05</span><div><h3>香菜与葱花</h3><p>绿色点缀在俯拍照片和短视频中非常显眼，同时以新鲜香气完成出碗前的最后一层味觉。</p></div></article>
-            <article><span>06</span><div><h3>红油、浇头与桌边选择</h3><p>辣椒油、洋葱、盐度和其他浇头把最终味道交给门店与食客共同完成。“正宗”由此不是后厨单方面决定。</p></div></article>
+            <article><span>01</span><div><h3>汤底</h3><p>牛骨和肉类熬出的热汤承担香气、温度与口感的基础。人们常用“清”“浓”“鲜醇”描述它。</p></div></article>
+            <article><span>02</span><div><h3>牛肉与牛杂</h3><p>薄切牛肉提供更纯粹的口感，与它的名字相对应，牛杂则大大增加口感层次和物尽其用的饮食逻辑。</p></div></article>
+            <article><span>03</span><div><h3>粉丝</h3><p>粉丝吸附汤汁、增加饱腹感，也让“喝汤”变成可作为正餐的选择。</p></div></article>
+            <article><span>04</span><div><h3>干丝 / 千张 / 豆饼</h3><p>来到淮南，怎么能不尝尝豆制品呢？豆制品带来与肉片不同的纤维和咀嚼感，是当地人的最爱。</p></div></article>
+            <article><span>05</span><div><h3>香菜与葱花</h3><p>绿色点缀符合中华美食色香味俱全的理念，同时以新鲜香气完成出碗前的最后一层味觉。</p></div></article>
+            <article><span>06</span><div><h3>红油、浇头与桌边选择</h3><p>辣椒油、洋葱、盐度和其他浇头把最终味道交给门店与食客共同完成。“正宗”由此不是一份秘方单方面决定，而是人民群众的共同选择。</p></div></article>
           </div>
         </div>
 
         <div className="flavor-reading">
-          <article><b>看</b><h3>画面里有哪些颜色</h3><p>浅色汤面、灰褐肉片、绿色香菜与红色辣油，是短视频和照片里很容易认出的组合。分析时可以记录每种颜色有没有出现、占了多大画面。</p></article>
-          <article><b>听</b><h3>哪些声音让人觉得“正在营业”</h3><p>滚汤、漏勺、切肉、碗筷和门店叫单共同制造现场感。分析视频时，不能只看字幕和旁白。</p></article>
+          <article><b>看</b><h3>画面里有哪些颜色</h3><p>浅色汤面、灰褐肉片、绿色香菜与红色辣油，是短视频和照片里很容易认出的组合。</p></article>
+          <article><b>听</b><h3>哪些声音让人感受到“烟火气”</h3><p>滚汤、漏勺、切肉、碗筷和门店叫单共同制造现场感。未见其汤，先闻其声，烟火人间值得。</p></article>
           <article><b>闻 / 尝</b><h3>屏幕怎样替味道说话</h3><p>屏幕传不出气味和味道，只能用“鲜、香、辣、浓、不腻”等词和食客表情来代替。研究要分清真实味觉和视频对味觉的描述。</p></article>
-          <article><b>触 / 动</b><h3>人是怎么吃的</h3><p>端碗、吹热气、夹肉、掰饼、蘸汤和加辣，都是具体的进食动作。到门店观察时，可以直接把这些动作记录下来。</p></article>
+          <article><b>动</b><h3>人是怎么吃的</h3><p>端碗、吹热气、夹肉、掰饼、蘸汤和加辣，进食动作表明人们吃食的状态。到门店观察时，可以直接把这些动作记录下来。</p></article>
         </div>
       </section>
 
       <section className="making-section page-section">
         <div className="section-heading light-heading">
-          <div><p className="section-kicker">02 · 这碗汤怎么端上桌</p><h2>从后厨到桌面，可以观察五个步骤。</h2></div>
-          <p>这不是家庭复刻菜谱，而是依据公开技术规范和节目材料整理的研究观察表。2009年规范可用于理解工序怎样被文本固定，但不能当作2026年唯一现行版本<Cite id={52} />。</p>
+          <div><p className="section-kicker">02 · 端上桌</p><h2>从后厨到桌面，观察五个步骤。</h2></div>
+          <p>这不是家庭复刻菜谱，而是依据公开技术规范和节目材料整理的研究观察表。2009年规范可用于理解传统的标准工序，但不是世界各地的唯一现行版本<Cite id={52} />。</p>
         </div>
         <ol className="making-steps">
-          <li><span>01</span><div><h3>原料处理</h3><p>牛肉、骨和牛杂怎样清洗、浸泡、分拣，会影响汤的基础状态。观察时要记下店家怎样说原料来源、卫生流程能否看见、哪些信息不愿公开。</p></div><em>观察时可以记：产地、清真、鲜货 / 冻货、能否追溯</em></li>
-          <li><span>02</span><div><h3>大锅熬汤</h3><p>时间、火候、骨肉比例和香料，是门店经验最集中的部分。媒体爱拍沸腾大锅，因为它看起来既有规模，也有热度和手艺。</p></div><em>观察时可以记：老汤、火候、秘方、谁在劳动</em></li>
-          <li><span>03</span><div><h3>熟制与切配</h3><p>肉片厚薄、牛杂种类、粉丝和豆制品怎样预先处理，都会影响口感，也能看出门店更看重效率，还是更愿意保留手工差异。</p></div><em>观察时可以记：刀工、分量、预制、中央厨房</em></li>
-          <li><span>04</span><div><h3>烫制与冲汤</h3><p>漏勺把粉丝、干丝等配料送入滚汤，再和肉片一起装碗。这一串动作快、声音响，是短视频最爱拍的“手艺画面”。</p></div><em>观察时可以记：速度、热气、声音、是否专门为镜头表演</em></li>
-          <li><span>05</span><div><h3>桌边完成</h3><p>香菜、葱花、红油、盐度和酥饼，让食客也参与决定最后的味道。一碗汤最终怎么吃，是后厨做法、门店习惯和个人选择共同决定的。</p></div><em>观察时可以记：自己加料、一起吃饭、早餐节奏、进食动作</em></li>
+          <li><span>01</span><div><h3>原料处理</h3><p>牛肉、骨和牛杂经过清洗、浸泡、分拣，每一步都会影响汤的基础状态。观察时要记下店家口述的原料来源、卫生流程，也要注意哪些信息不愿公开。</p></div><em>观察时可以记：产地、清真、鲜货 / 冻货、能否溯源</em></li>
+          <li><span>02</span><div><h3>大锅熬汤</h3><p>时间、火候、骨肉比例和香料，是门店经验最集中的部分。媒体爱拍沸腾大锅，因为它看起来有专业度，也有温度。</p></div><em>观察时可以记：老汤、火候、秘方、劳动者</em></li>
+          <li><span>03</span><div><h3>熟制与切配</h3><p>肉片厚薄、牛杂种类、粉丝和豆制品预先处理，会影响口感，也能看出门店对于手工制作和效率的取舍倾向。</p></div><em>观察时可以记：刀工、分量、预制、中央厨房</em></li>
+          <li><span>04</span><div><h3>烫制与冲汤</h3><p>漏勺把粉丝、干丝等配料送入滚汤，再和肉片一起装碗。这一串动作连贯、声音热闹，是短视频最爱拍的“手艺画面”。</p></div><em>观察时可以记：速度、热气、声音、镜头感</em></li>
+          <li><span>05</span><div><h3>桌边完成</h3><p>香菜、葱花、红油、盐度和酥饼，让食客也参与决定最后的味道。一碗汤最终怎么吃，是后厨做法、门店习惯和个人选择共同决定的。</p></div><em>观察时可以记：顾客加料、早餐节奏、进食动作</em></li>
         </ol>
       </section>
 
       <section className="media-gallery-section page-section">
         <div className="section-heading">
-          <div><p className="section-kicker">03 · 可以放心使用的图片</p><h2>六张开放素材，分别能看出什么？</h2></div>
-          <p>图片已经下载到网站本地，避免外链失效。每张图保留作者、许可证和Commons原始文件页；CC BY-SA素材未修改原文件，仅由网页按卡片比例裁切显示。</p>
+          <div><p className="section-kicker">03 · 共品尝</p><h2>六张图片素材，分别能看出什么？</h2></div>
+          <p>图片已经下载到网站本地，避免外链失效，图片保留了作者、授权许可。</p>
         </div>
         <div className="media-gallery-grid">
           {mediaAssets.map((asset, index) => (
@@ -787,7 +786,7 @@ export default function Home() {
                 <img src={asset.src} alt={asset.alt} loading="lazy" />
                 <span>查看原始文件 ↗</span>
               </a>
-              <div className="media-copy"><small>0{index + 1} · 这张图能看什么</small><h3>{asset.title}</h3><p>{asset.note}</p><div>摄影：{asset.author} · <a href={asset.licenseUrl} target="_blank" rel="noreferrer">{asset.license}</a> · <Cite id={asset.sourceId} /></div></div>
+              <div className="media-copy"><h3>{asset.title}</h3><p>{asset.note}</p><div>摄影：{asset.author} · <a href={asset.licenseUrl} target="_blank" rel="noreferrer">{asset.license}</a> · <Cite id={asset.sourceId} /></div></div>
             </article>
           ))}
         </div>

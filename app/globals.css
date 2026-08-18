@@ -182,8 +182,6 @@ h1 { margin: 0; max-width: 850px; font-size: clamp(52px, 6.35vw, 94px); line-hei
 .atlas-hero-copy .section-kicker { color: var(--gold); }
 .atlas-hero-copy h2 { max-width: 720px; margin: 0; font-size: clamp(40px, 5vw, 70px); line-height: 1.18; font-weight: 560; letter-spacing: -.045em; }
 .atlas-hero-copy > p:not(.section-kicker) { margin: 34px 0 0; color: rgba(243, 239, 228, .75); font-size: 16px; line-height: 2.05; }
-.atlas-hero-copy aside { margin-top: 35px; padding: 23px 25px; border: 1px solid rgba(243, 239, 228, .22); color: rgba(243, 239, 228, .62); font: 12px/1.9 "Noto Sans SC", sans-serif; }
-.atlas-hero-copy aside b { margin-right: 12px; color: var(--gold); }
 
 .bowl-anatomy { background: var(--paper-pale); }
 .anatomy-layout { display: grid; grid-template-columns: minmax(360px, .9fr) minmax(0, 1.1fr); gap: clamp(42px, 6vw, 90px); align-items: start; }
@@ -220,8 +218,7 @@ h1 { margin: 0; max-width: 850px; font-size: clamp(52px, 6.35vw, 94px); line-hei
 .media-image:hover img { transform: scale(1.025); }
 .media-image > span { position: absolute; right: 13px; bottom: 13px; padding: 8px 10px; color: var(--paper); background: rgba(29, 36, 30, .82); font: 10px "Noto Sans SC", sans-serif; }
 .media-copy { padding: 29px 31px 31px; }
-.media-copy > small { color: var(--red); font: 10px "Noto Sans SC", sans-serif; letter-spacing: .12em; }
-.media-copy h3 { margin: 30px 0 15px; font-size: 24px; line-height: 1.45; font-weight: 580; }
+.media-copy h3 { margin: 0 0 15px; font-size: 24px; line-height: 1.45; font-weight: 580; }
 .media-copy p { min-height: 78px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.9; }
 .media-copy > div { margin-top: 23px; padding-top: 15px; border-top: 1px solid var(--line); color: var(--muted); font: 10px/1.7 "Noto Sans SC", sans-serif; }
 .media-copy > div > a { color: var(--red); text-decoration: underline; }
