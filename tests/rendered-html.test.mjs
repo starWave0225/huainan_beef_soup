@@ -111,6 +111,8 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   assert.match(page, /淮南牛肉汤能够成为文化符号，重要的是它真好吃/);
   assert.match(page, /干丝 \/ 千张 \/ 豆饼/);
   assert.match(page, /哪些声音让人感受到“烟火气”/);
+  assert.match(page, /食客是怎么品尝的/);
+  assert.doesNotMatch(page, /人是怎么吃的/);
   assert.match(page, /02 · 端上桌/);
   assert.match(page, /03 · 共品尝/);
   assert.doesNotMatch(page, /这组图片能说明什么|03 · 可以放心使用的图片|这张图能看什么/);
