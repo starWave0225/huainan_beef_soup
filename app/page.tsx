@@ -363,11 +363,11 @@ function sourceDisplayTitle(source: Source) {
 
 const methodTools = [
   { id: "sampling", number: "01", label: "平台抽样", note: "320条分层样本", output: "平台样本登记表" },
-  { id: "coding", number: "02", label: "内容编码", note: "变量、代码与置信度", output: "内容编码表" },
+  { id: "coding", number: "02", label: "内容编码", note: "变量、代码与信度", output: "内容编码表" },
   { id: "interview", number: "03", label: "半结构访谈", note: "12—18人、六类主体", output: "访谈提纲与登记表" },
   { id: "observation", number: "04", label: "场景观察", note: "门店、街区与活动", output: "现场观察记录表" },
   { id: "survey", number: "05", label: "双问卷", note: "居民版＋游客版", output: "问卷题库" },
-  { id: "ethics", number: "06", label: "数据分析", note: "对象授权与统计分析", output: "数据字典与知情同意书" },
+  { id: "ethics", number: "06", label: "数据管理与伦理", note: "授权、匿名与分析路径", output: "数据字典与知情同意书" },
 ] as const;
 
 const samplingQuotas = [
@@ -406,9 +406,9 @@ const interviewModules = [
   { step: "开场与定位", questions: "你与淮南、牛肉汤或相关工作的关系是什么？这种关系从什么时候开始？" },
   { step: "具体记忆", questions: "请讲一次印象最深的喝汤、做汤、卖汤或传播经历。当时在哪里、和谁、有哪些感官细节？" },
   { step: "媒介接触", questions: "你看过哪些考古、电视剧、短视频或直播内容？哪一条改变了你的理解，哪一条让你觉得不准确？" },
-  { step: "正宗与变化", questions: "你判断“正宗”的依据是什么？哪些变化可以接受，哪些变化让这道食物失去地方性？" },
-  { step: "城市关系", questions: "牛肉汤代表了一个怎样的淮南？它遮住了这座城市的哪些人、地方或经历？" },
-  { step: "收益与治理", questions: "传播热度给谁带来了什么？商标、标准和活动如何影响你？你希望谁参与决定？" },
+  { step: "正宗与变化", questions: "你判断“正宗”的依据是什么？哪些变化可以接受，哪些变化让这道食物失去特色？" },
+  { step: "城市关系", questions: "牛肉汤代表了一个怎样的淮南？它概括或遗忘了这座城市的哪些人、地方或经历？" },
+  { step: "收益与治理", questions: "传播热度给谁带来了什么？商标、标准和活动如何影响你？你希望谁参与决策？" },
   { step: "反例与收束", questions: "有没有与你刚才说法相反的经历？如果只能给传播者一条建议，你会说什么？" },
 ] as const;
 
@@ -440,7 +440,7 @@ const surveyInstruments = [
     id: "visitor",
     label: "游客问卷",
     target: "非淮南常住、已在淮南实际消费牛肉汤、年满18周岁的游客",
-    suggestion: "建议有效样本250—350份；在老街、普通门店、交通节点分时段拦截，避免只在网红点采样。",
+    suggestion: "建议有效样本250—350份；在老街、普通门店、交通节点分时段采集问卷，避免只在网红点采样。",
     constructs: [
       { name: "内容来源", items: "来访前接触渠道、最早知道的内容、是否看过《六姊妹》、是否主动搜索。" },
       { name: "认知与情感形象", items: "是否认为淮南具有鲜明的饮食和生活特色，是否觉得城市亲切、有活力、值得探索。" },
@@ -1609,7 +1609,7 @@ export default function Home() {
         <div className="toolkit-overview">
           <article><span>平台内容</span><strong>建议320条</strong><p>4个事件窗口 × 4类主体 × 每格20条</p></article>
           <article><span>深度访谈</span><strong>12—18人</strong><p>覆盖六类主体，尊重群体差异</p></article>
-          <article><span>问卷对象</span><strong>2类</strong><p>居民与游客分开，不把身份认同和旅游满意混成一套问题</p></article>
+          <article><span>问卷对象</span><strong>2类</strong><p>居民与游客分开，看不同视角</p></article>
           <article><span>现场材料</span><strong>4类</strong><p>老店、普通门店、传播空间、活动／生产现场</p></article>
         </div>
 
@@ -1680,7 +1680,7 @@ export default function Home() {
             <div className="interview-sample-grid">{interviewGroups.map((item) => <article key={item.group}><span>{item.quota}</span><h4>{item.group}</h4><p>{item.focus}</p></article>)}</div>
             <div className="interview-runbook">
               <div><span>访谈前</span><p>说明研究者身份、研究用途、录音方式、匿名处理、撤回方式和预计45—70分钟的访谈时长。先取得参与者同意，再开始录音。涉及配方、商业数据和家庭经历时，允许参与者拒绝回答或者跳过问题。</p></div>
-              <div><span>访谈中</span><p>先询问具体经历，再询问评价。使用“能讲一个例子吗”“当时谁在场”等问题继续追问，不使用“你是否也认为宣传过度”等具有诱导性的表达。</p></div>
+              <div><span>访谈中</span><p>先询问具体经历，再询问评价。使用“能讲一个例子吗”“当时感受如何”等问题继续追问，不使用“你是否也认为宣传过度”等具有诱导性的表达。</p></div>
               <div><span>访谈后</span><p>24小时内完成情境备忘录。转写时删除姓名、电话号码和具体住址；重要事实需要另找文件或者第二位知情人核对。</p></div>
             </div>
             <ol className="interview-modules">{interviewModules.map((item, index) => <li key={item.step}><span>{String(index + 1).padStart(2, "0")}</span><div><b>{item.step}</b><p>{item.questions}</p></div></li>)}</ol>
@@ -1705,7 +1705,7 @@ export default function Home() {
           </div>}
 
           {activeMethodTool === "survey" && <div className="tool-body">
-            <div className="tool-question"><span>先分开两类人</span><p>居民问卷测量地方身份、传播参与和收益公平；游客问卷测量内容接触、目的地形象、真实感、现场体验和行为意向。两套问卷都可以采用5点同意量表，但不能把所有题目拼成一个总分。</p></div>
+            <div className="tool-question"><span>先分开两类人</span><p>居民问卷测量地方身份、传播参与和收益公平；游客问卷测量内容接触、目的地形象、真实感、现场体验和行为意向。两套问卷都可以采用5点同意量表，不把所有题目拼成一个总分。</p></div>
             <div className="survey-instrument-grid">{surveyInstruments.map((survey) => <article key={survey.id}>
               <header><span>{survey.label}</span><h4>{survey.target}</h4><p>{survey.suggestion}</p></header>
               <div>{survey.constructs.map((construct) => <section key={construct.name}><b>{construct.name}</b><p>{construct.items}</p></section>)}</div>
@@ -1721,7 +1721,7 @@ export default function Home() {
           </div>}
 
           {activeMethodTool === "ethics" && <div className="tool-body">
-            <div className="tool-question"><span>先保护人，再保护结论</span><p>数据管理不是论文完成后的整理工作。编号、授权、匿名、版本和备份从采集第一天就要执行，否则既可能伤害参与者，也无法说明研究的分析过程。</p></div>
+            <div className="tool-question"><span>先保护受访者权益，再得出调查结论</span><p>数据管理不是论文完成后的整理工作。编号、授权、匿名、版本和备份从采集第一天就要执行，否则既可能伤害参与者，也无法说明研究的分析过程。</p></div>
             <div className="data-pipeline">
               <article><span>RAW</span><h4>原始区</h4><p>保存原始录音、导出文件和网页快照。文件只读保存，不直接覆盖，也不上传到公开仓库。</p></article>
               <article><span>CLEAN</span><h4>去标识区</h4><p>姓名和联系方式放在独立加密对应表中；转写、编码和问卷统一使用研究编号。</p></article>

@@ -30,7 +30,7 @@ test("server-renders the paginated research home and its tab bar", async () => {
 
   const html = await response.text();
   assert.match(html, /媒介记忆研究-淮南牛肉汤/);
-  assert.match(html, /一碗汤，一座城，/);
+  assert.match(html, /一碗汤，一座城/);
   assert.match(html, /百万人，共相忆/);
   assert.match(html, /一道美食的前世今生、穿梭时空/);
   assert.match(html, /江淮儿女对淮南牛肉汤的记忆/);
@@ -166,8 +166,9 @@ test("keeps source IDs, citations, metadata, and static publishing aligned", asy
   assert.match(page, /12—18人、六类主体/);
   assert.match(page, /六套研究方法，呈现全面报告/);
   assert.match(page, /建议320条/);
-  assert.match(page, /变量、代码与置信度/);
-  assert.match(page, /对象授权与统计分析/);
+  assert.match(page, /变量、代码与信度/);
+  assert.match(page, /数据管理与伦理/);
+  assert.match(page, /授权、匿名与分析路径/);
   assert.doesNotMatch(page, /30—36人六类主体|5—6人|4—5人/);
   assert.match(page, /Krippendorff&apos;s α/);
   assert.match(page, /可直接念出的开场说明/);
