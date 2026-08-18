@@ -16,6 +16,10 @@ npm run dev
 npm run build
 ```
 
+## 线上访问
+
+- 网站演示：<https://starwave0225.github.io/huainan_beef_soup/>
+
 This starter does not use `wrangler.jsonc`.
 
 ## Included Shape
