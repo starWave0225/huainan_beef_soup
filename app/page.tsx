@@ -670,9 +670,9 @@ export default function Home() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">媒介记忆研究-淮南牛肉汤</p>
-          <h1>淮南牛肉汤，<br />如何成为一座城的记忆？</h1>
+          <h1>一碗汤，一座城，<br />百万人，共相忆</h1>
           <p className="dek">
-            本研究关注的不是“第一碗汤究竟出现在哪里”，而是传说、考古、日常生活、影视和数字平台怎样共同组织人们对淮南牛肉汤的记忆。
+            本研究关注一道美食的前世今生、穿梭时空，研究传说、考古、日常生活、影视和数字平台怎样共同组织着淮河儿女对淮南牛肉汤的记忆。
           </p>
           <div className="hero-actions">
             <a className="primary-action" href="#draft/intro" onClick={() => { openTab("draft"); setActiveEssayChapter("intro"); }}>进入论文正文</a>
@@ -681,13 +681,14 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="memory-orbit" aria-label="媒介记忆建构路径示意图">
-          <div className="orbit orbit-outer"><span>城市符号</span></div>
-          <div className="orbit orbit-middle"><span>媒体反复讲述</span></div>
-          <div className="orbit orbit-inner"><span>味道和日常</span></div>
-          <div className="bowl"><span>淮南</span><strong>牛肉汤</strong></div>
-          <p className="orbit-note">人们记住的不只是什么发生过，<br />也包括后来怎样被讲、被看见、被吃到。</p>
-        </div>
+        <figure className="hero-photo">
+          <img src="media/commons/huainan-bowl.jpg" alt="俯拍的一碗淮南牛肉汤实物，碗中可见牛肉、香菜和葱花" />
+          <figcaption>
+            <span>淮南牛肉汤实拍</span>
+            <span>Franklin Rainier · Public Domain Mark</span>
+            <a href="https://commons.wikimedia.org/wiki/File:A_Bowl_of_Huainan_Beef_Soup.jpg" target="_blank" rel="noreferrer">查看原始图片与授权 ↗</a>
+          </figcaption>
+        </figure>
       </section>
 
       <section className="question-strip" aria-label="研究路径">
@@ -703,23 +704,22 @@ export default function Home() {
 
       <section className="overview-entry page-section">
         <div className="section-heading">
-          <div><p className="section-kicker">首页只保留研究入口</p><h2>先弄清研究什么，再进入对应栏目。</h2></div>
-          <p>理论、案例、数字、方法和参考文献不再全部堆在首页。下面只交代研究对象、分析视角和总体问题，再把不同阅读任务分流到六个栏目。</p>
+          <div><p className="section-kicker">首页阅读说明</p><h2>一碗汤的重量，是由品尝它的人决定的</h2></div>
         </div>
 
         <div className="overview-scope">
-          <article><span>研究对象</span><h3>淮南牛肉汤</h3><p>研究围绕它的历史叙事、制作与消费实践、媒介形象、城市意义和制度化过程展开。</p></article>
-          <article><span>研究视角</span><h3>媒介记忆</h3><p>关注过去怎样被新闻、影视、短视频、活动和政策选择、改写、传播并再次使用。</p></article>
-          <article><span>核心问题</span><h3>日常食物怎样成为城市记忆</h3><p>追踪“记忆资源—事件激活—跨媒介重构—主体参与—价值转化—制度化”的过程。</p></article>
+          <article><span>研究对象</span><h3>淮南牛肉汤</h3><p>研究围绕淮南牛肉汤的历史叙事、制作与消费实践、媒介形象、城市意义和制度化过程展开。</p></article>
+          <article><span>研究视角</span><h3>媒介记忆</h3><p>关注有关淮南牛肉汤的过去，怎样被新闻、影视、短视频、城市活动和政策文件选择、改写、传播并再次使用。</p></article>
+          <article><span>核心问题</span><h3>日常食物怎样成为城市记忆</h3><p>研究追踪“记忆资源—事件激活—跨媒介重构—主体参与—价值转化—制度化”的完整过程。</p></article>
         </div>
 
         <nav className="overview-directory" aria-label="研究栏目入口">
-          <a href="#atlas" onClick={() => openTab("atlas")}><span>02</span><div><h3>牛肉汤图鉴</h3><p>看实物、吃法、感官和门店空间。</p></div><b>→</b></a>
-          <a href="#mechanism" onClick={() => openTab("mechanism")}><span>03</span><div><h3>案例与机制</h3><p>看考古、影视和平台怎样激活并重构记忆。</p></div><b>→</b></a>
-          <a href="#draft/abstract" onClick={() => { openTab("draft"); setActiveEssayChapter("abstract"); }}><span>04</span><div><h3>论文正文</h3><p>按摘要、绪论、章节和结语阅读全文。</p></div><b>→</b></a>
-          <a href="#methods/sampling" onClick={() => { openTab("methods"); setActiveMethodTool("sampling"); }}><span>05</span><div><h3>研究方法</h3><p>使用抽样、编码、访谈、观察和问卷工具。</p></div><b>→</b></a>
-          <a href="#references" onClick={() => openTab("references")}><span>06</span><div><h3>参考文献</h3><p>核对核心文献、引文路线和统稿规则。</p></div><b>→</b></a>
-          <a href="#sources" onClick={() => openTab("sources")}><span>07</span><div><h3>来源资料</h3><p>回查104项公开材料和原始网页。</p></div><b>→</b></a>
+          <a href="#atlas" onClick={() => openTab("atlas")}><span>02</span><div><h3>牛肉汤图鉴</h3><p>查看淮南牛肉汤的实物、吃法、感官经验和门店空间。</p></div><b>→</b></a>
+          <a href="#mechanism" onClick={() => openTab("mechanism")}><span>03</span><div><h3>媒介案例</h3><p>分析考古、影视、新闻和数字平台怎样激活并重构淮南牛肉汤记忆。</p></div><b>→</b></a>
+          <a href="#draft/abstract" onClick={() => { openTab("draft"); setActiveEssayChapter("abstract"); }}><span>04</span><div><h3>论文正文</h3><p>查看论文框架并阅读全文。</p></div><b>→</b></a>
+          <a href="#methods/sampling" onClick={() => { openTab("methods"); setActiveMethodTool("sampling"); }}><span>05</span><div><h3>研究方法</h3><p>查看不同研究方法与背后的数据支撑逻辑。</p></div><b>→</b></a>
+          <a href="#references" onClick={() => openTab("references")}><span>06</span><div><h3>参考文献</h3><p>核对核心学术文献、正文引文路线和全文统稿规则。</p></div><b>→</b></a>
+          <a href="#sources" onClick={() => openTab("sources")}><span>07</span><div><h3>来源资料</h3><p>回查公开材料、原始网页、视频和开放授权图片。</p></div><b>→</b></a>
         </nav>
         <aside className="overview-boundary"><b>首页不负责展开结论</b><p>理论综述放在绪论，食物与门店材料放在图鉴，传播事件放在案例页，数字与引文回到正文、参考文献和来源档案。首页只回答“这是什么研究、应该从哪里读”。</p></aside>
       </section>

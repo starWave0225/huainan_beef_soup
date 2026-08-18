@@ -30,10 +30,18 @@ test("server-renders the paginated research home and its tab bar", async () => {
 
   const html = await response.text();
   assert.match(html, /媒介记忆研究-淮南牛肉汤/);
-  assert.match(html, /淮南牛肉汤，/);
-  assert.match(html, /如何成为一座城的记忆/);
-  assert.match(html, /首页只保留研究入口/);
+  assert.match(html, /一碗汤，一座城，/);
+  assert.match(html, /百万人，共相忆/);
+  assert.match(html, /一道美食的前世今生、穿梭时空/);
+  assert.match(html, /首页阅读说明/);
+  assert.match(html, /一碗汤的重量，是由品尝它的人决定的/);
   assert.match(html, /日常食物怎样成为城市记忆/);
+  assert.match(html, /媒介案例/);
+  assert.match(html, /查看不同研究方法与背后的数据支撑逻辑/);
+  assert.match(html, /media\/commons\/huainan-bowl\.jpg/);
+  assert.match(html, /淮南牛肉汤实拍/);
+  assert.match(html, /A_Bowl_of_Huainan_Beef_Soup\.jpg/);
+  assert.doesNotMatch(html, /class="memory-orbit"/);
   assert.match(html, /首页不负责展开结论/);
   assert.match(html, /研究首页/);
   assert.match(html, /牛肉汤图鉴/);
