@@ -100,6 +100,29 @@ h1 { margin: 0; max-width: 850px; font-size: clamp(52px, 6.35vw, 94px); line-hei
 .question-strip li { padding: 8px 20px; border-left: 1px solid rgba(243, 239, 228, .2); font-size: 17px; }
 .question-strip b { margin-right: 10px; color: var(--gold); font: 10px "Helvetica Neue", sans-serif; }
 
+.overview-entry { background: var(--paper-pale); }
+.overview-scope { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); background: var(--paper); }
+.overview-scope article { min-height: 270px; padding: 31px 29px; border-right: 1px solid var(--line); }
+.overview-scope article:last-child { border-right: 0; }
+.overview-scope span { color: var(--red); font: 700 10px "Noto Sans SC", sans-serif; letter-spacing: .14em; }
+.overview-scope h3 { margin: 42px 0 18px; font-size: clamp(21px, 2.4vw, 31px); line-height: 1.45; font-weight: 570; }
+.overview-scope p { margin: 0; color: var(--muted); font: 12px/1.9 "Noto Sans SC", sans-serif; }
+.overview-directory { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 28px; border: 1px solid var(--line); background: var(--paper); }
+.overview-directory a { min-height: 175px; display: grid; grid-template-columns: 35px 1fr auto; gap: 16px; align-items: start; padding: 27px 25px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: color .2s, background .2s; }
+.overview-directory a:nth-child(3n) { border-right: 0; }
+.overview-directory a:nth-last-child(-n+3) { border-bottom: 0; }
+.overview-directory a:hover { color: var(--paper); background: var(--red-dark); }
+.overview-directory a > span { color: var(--red); font: 16px Georgia, serif; }
+.overview-directory a:hover > span { color: var(--gold); }
+.overview-directory h3 { margin: 0 0 13px; font-size: 17px; font-weight: 620; }
+.overview-directory p { margin: 0; color: var(--muted); font: 10px/1.75 "Noto Sans SC", sans-serif; }
+.overview-directory a:hover p { color: rgba(243, 239, 228, .65); }
+.overview-directory b { color: var(--red); font-size: 16px; }
+.overview-directory a:hover b { color: var(--gold); }
+.overview-boundary { display: grid; grid-template-columns: 180px 1fr; gap: 30px; margin-top: 28px; padding: 25px 28px; border-left: 4px solid var(--red); background: var(--paper-deep); }
+.overview-boundary b { color: var(--red); font: 700 11px "Noto Sans SC", sans-serif; }
+.overview-boundary p { margin: 0; color: var(--muted); font: 12px/1.85 "Noto Sans SC", sans-serif; }
+
 .reading-note { display: grid; grid-template-columns: .68fr 1.32fr; gap: 10vw; align-items: start; background: var(--paper-pale); border-bottom: 1px solid var(--line); }
 .evidence-legend { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 36px; }
 .evidence-legend article { padding-top: 18px; border-top: 1px solid var(--line); }
@@ -807,6 +830,14 @@ footer > a { justify-self: end; color: var(--gold); font: 11px "Noto Sans SC", s
   .question-strip { grid-template-columns: 1fr; padding: 30px 24px; }
   .question-strip ol { grid-template-columns: repeat(2, 1fr); }
   .question-strip li:nth-child(n+3) { margin-top: 18px; }
+  .overview-scope { grid-template-columns: 1fr; }
+  .overview-scope article { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
+  .overview-scope article:last-child { border-bottom: 0; }
+  .overview-directory { grid-template-columns: repeat(2, 1fr); }
+  .overview-directory a, .overview-directory a:nth-child(3n) { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .overview-directory a:nth-child(even) { border-right: 0; }
+  .overview-directory a:nth-last-child(-n+2) { border-bottom: 0; }
+  .overview-boundary { grid-template-columns: 1fr; gap: 12px; }
   .reading-note, .method-section { grid-template-columns: 1fr; gap: 48px; }
   .anatomy-layout { grid-template-columns: 1fr; }
   .anatomy-layout > figure { position: static; }
@@ -944,6 +975,9 @@ footer > a { justify-self: end; color: var(--gold); font: 11px "Noto Sans SC", s
   .abstract-keywords { align-items: flex-start; }
   .terminology-grid { grid-template-columns: 1fr; }
   .terminology-grid article { min-height: 0; }
+  .overview-directory { grid-template-columns: 1fr; }
+  .overview-directory a, .overview-directory a:nth-child(3n), .overview-directory a:nth-child(even), .overview-directory a:nth-last-child(-n+2) { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
+  .overview-directory a:last-child { border-bottom: 0; }
   .method-tool-tabs { display: flex; overflow-x: auto; scrollbar-width: none; }
   .method-tool-tabs::-webkit-scrollbar { display: none; }
   .method-tool-tabs a { flex: 0 0 48vw; border-right: 1px solid var(--line) !important; border-bottom: 0 !important; }

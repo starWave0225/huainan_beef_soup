@@ -29,10 +29,12 @@ test("server-renders the paginated research home and its tab bar", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /一碗汤，如何成为一座城的记忆/);
-  assert.match(html, /核心研究问题/);
-  assert.match(html, /哪些历史有证据，哪些只是好听的故事/);
-  assert.match(html, /四组理论，各管一件事/);
+  assert.match(html, /媒介记忆研究-淮南牛肉汤/);
+  assert.match(html, /淮南牛肉汤，/);
+  assert.match(html, /如何成为一座城的记忆/);
+  assert.match(html, /首页只保留研究入口/);
+  assert.match(html, /日常食物怎样成为城市记忆/);
+  assert.match(html, /首页不负责展开结论/);
   assert.match(html, /研究首页/);
   assert.match(html, /牛肉汤图鉴/);
   assert.match(html, /案例与机制/);
@@ -43,6 +45,7 @@ test("server-renders the paginated research home and its tab bar", async () => {
   assert.match(html, /104项公开来源/);
   assert.equal((html.match(/class="tab-page"/g) ?? []).length, 1);
   assert.match(html, /data-page="overview"/);
+  assert.doesNotMatch(html, /核心研究问题|四组理论，各管一件事|公开数字，先看口径|class="memory-foundations"/);
   assert.doesNotMatch(html, /正文论述底稿|内容分析编码表|class="source-row"/);
   assert.doesNotMatch(html, /Building your site|codex-preview|react-loading-skeleton/);
 });

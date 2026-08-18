@@ -669,14 +669,14 @@ export default function Home() {
       {activeTab === "overview" && <div className="tab-page" data-page="overview">
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">淮南牛肉汤 · 媒介记忆研究</p>
-          <h1>一碗汤，<br />如何成为一座城的记忆？</h1>
+          <p className="eyebrow">媒介记忆研究-淮南牛肉汤</p>
+          <h1>淮南牛肉汤，<br />如何成为一座城的记忆？</h1>
           <p className="dek">
-            有人说它传了两千年，有人记得的是矿区清晨，还有人因为《六姊妹》第一次注意到它。这个网站不急着替谁下结论，而是把故事、证据和传播过程一层层拆开。
+            本研究关注的不是“第一碗汤究竟出现在哪里”，而是传说、考古、日常生活、影视和数字平台怎样共同组织人们对淮南牛肉汤的记忆。
           </p>
           <div className="hero-actions">
-            <a className="primary-action" href="#atlas" onClick={() => openTab("atlas")}>打开牛肉汤图鉴</a>
-            <a className="text-action" href="#draft/intro" onClick={() => { openTab("draft"); setActiveEssayChapter("intro"); }}>阅读论文正文 →</a>
+            <a className="primary-action" href="#draft/intro" onClick={() => { openTab("draft"); setActiveEssayChapter("intro"); }}>进入论文正文</a>
+            <a className="text-action" href="#sources" onClick={() => openTab("sources")}>查看来源资料 →</a>
             <span>104项公开来源 · 8条视频 · 6张开放授权图片</span>
           </div>
         </div>
@@ -693,136 +693,35 @@ export default function Home() {
       <section className="question-strip" aria-label="研究路径">
         <span className="strip-label">研究路径</span>
         <ol>
-          <li><b>01</b> 为什么好记</li>
-          <li><b>02</b> 媒体怎么讲</li>
-          <li><b>03</b> 热度去了哪里</li>
-          <li><b>04</b> 传播丢掉什么</li>
-          <li><b>05</b> 怎样拿材料证明</li>
+          <li><b>01</b> 因何记忆</li>
+          <li><b>02</b> 如何记忆</li>
+          <li><b>03</b> 谁在建构</li>
+          <li><b>04</b> 怎样转化</li>
+          <li><b>05</b> 有何障碍</li>
         </ol>
       </section>
 
-      <section className="reading-note page-section">
-        <div>
-          <p className="section-kicker">阅读说明</p>
-          <h2>先看清：每句话的证据有多硬。</h2>
-        </div>
-        <div className="evidence-legend">
-          <article><span className="badge verified">可核事实</span><p>法规、名录、正式统计、考古报告能够直接支持的陈述。</p></article>
-          <article><span className="badge reported">公开口径</span><p>政府或媒体报道中的行业估计；来源可靠不等于口径可比。</p></article>
-          <article><span className="badge legend">地方传说</span><p>刘安、赵匡胤等故事具有记忆价值，但不当作历史事实。</p></article>
-          <article><span className="badge analysis">研究推断</span><p>由多条材料综合出的解释，明确标注为分析而非原始资料。</p></article>
-        </div>
-      </section>
-
-      <section className="thesis-section page-section" id="thesis">
+      <section className="overview-entry page-section">
         <div className="section-heading">
-          <div><p className="section-kicker">论文要回答什么</p><h2>这篇论文真正要解释的，不只是“它有多火”。</h2></div>
-          <p>下面五个问题分别追问：材料从哪里来、媒体怎么讲、谁在发言、热度去了哪里，以及传播丢掉了什么。</p>
+          <div><p className="section-kicker">首页只保留研究入口</p><h2>先弄清研究什么，再进入对应栏目。</h2></div>
+          <p>理论、案例、数字、方法和参考文献不再全部堆在首页。下面只交代研究对象、分析视角和总体问题，再把不同阅读任务分流到六个栏目。</p>
         </div>
 
-        <div className="central-question">
-          <span>核心研究问题</span>
-          <p>淮南牛肉汤原本是当地人的日常吃食。考古新闻、电视剧、短视频、政府宣传和商业经营，怎样一步步把它讲成“淮南的代表”？不同人为什么愿意相信、转发、打卡和购买？在这个过程中，哪些历史有证据，哪些只是好听的故事，又有哪些普通人的记忆被挤到了一边？</p>
-          <small>这一段可以直接放进绪论。下面五个问题把“大问题”拆成了可查材料、可做访谈的小问题。</small>
+        <div className="overview-scope">
+          <article><span>研究对象</span><h3>淮南牛肉汤</h3><p>研究围绕它的历史叙事、制作与消费实践、媒介形象、城市意义和制度化过程展开。</p></article>
+          <article><span>研究视角</span><h3>媒介记忆</h3><p>关注过去怎样被新闻、影视、短视频、活动和政策选择、改写、传播并再次使用。</p></article>
+          <article><span>核心问题</span><h3>日常食物怎样成为城市记忆</h3><p>追踪“记忆资源—事件激活—跨媒介重构—主体参与—价值转化—制度化”的过程。</p></article>
         </div>
 
-        <div className="research-question-grid">
-          <article><b>RQ1</b><h3>它为什么好记</h3><p>传说、考古、制作技艺和早餐经验分别起了什么作用？哪些能当历史证据，哪些只能说明人们愿意这样讲？</p></article>
-          <article><b>RQ2</b><h3>媒体怎么讲</h3><p>考古报道、电视剧、短视频、新闻、直播和线下活动，分别挑中了哪些画面和故事？</p></article>
-          <article><b>RQ3</b><h3>谁说了算</h3><p>政府、媒体、企业、传承人、门店和食客，对“正宗”有怎样不同的理解？谁的声音最容易被看见？</p></article>
-          <article><b>RQ4</b><h3>热度去了哪里</h3><p>网上关注有没有变成城市认同、游客到访、购买和产业增长？中间需要哪些线下承接？</p></article>
-          <article><b>RQ5</b><h3>传播丢掉了什么</h3><p>追求热度、统一标准和商业规模时，复杂历史、门店差异和普通人的生活记忆会不会被压扁？</p></article>
-        </div>
-
-        <div className="theory-heading">
-          <p className="section-kicker">四组理论，各管一件事</p>
-          <h3>理论不是为了显得高深，而是帮你回答四个具体问题。</h3>
-        </div>
-        <div className="theory-grid">
-          <article>
-            <span>01 · 媒介记忆</span>
-            <h3>媒体为什么不只是传话</h3>
-            <p>媒体会决定什么被反复看见、什么被省略。同一段故事从书本进入电视、新闻和短视频时，会被重新剪裁和解释。学术上把这种跨媒介反复改写叫“再媒介化”<Cite id={31} /><Cite id={35} /><Cite id={39} /><Cite id={40} />。</p>
-            <em>主要用于：第三章分析新闻、影视和短视频</em>
-          </article>
-          <article>
-            <span>02 · 食物记忆</span>
-            <h3>为什么味道会让人想起家</h3>
-            <p>人对食物的记忆不只来自知识，还来自气味、温度、吃法和一起吃饭的人。字幕、弹幕和评论又会把“我记得的味道”变成可以公开交流的家乡记忆<Cite id={32} /><Cite id={33} />。</p>
-            <em>主要用于：第二章日常经验、第四章情感认同</em>
-          </article>
-          <article>
-            <span>03 · 城市品牌</span>
-            <h3>一道菜怎样代表一座城</h3>
-            <p>城市形象不能只靠一句广告。它还要看本地人认不认、管理是否跟得上、外地人实际体验怎样。门店、商品、街区和食客的行为，都在告诉人们“这里是什么样的地方”<Cite id={41} /><Cite id={42} />。</p>
-            <em>主要用于：第四章城市形象、结语建议</em>
-          </article>
-          <article>
-            <span>04 · 活态非遗</span>
-            <h3>怎样保护，而不是把配方冻住</h3>
-            <p>非遗不是只能原样复制的旧物，而是仍有人在学、在做、在改的生活实践。商业化不一定有害，关键要看传承人和相关社区能不能参与决定、得到合理收益，并保留技艺原来的生活环境<Cite id={37} /><Cite id={38} /><Cite id={45} /><Cite id={46} />。</p>
-            <em>主要用于：第五章问题反思、结语保护建议</em>
-          </article>
-        </div>
-
-        <aside className="innovation-callout">
-          <span>这篇论文可以多做一步</span>
-          <p>不要只说媒体让牛肉汤更有名。把整个过程讲清楚：原来有哪些故事和日常经验，什么事件让它突然被看见，媒体挑了哪些符号，不同人怎样争论“正宗”，最后有没有带来认同、到访和消费。每一步都说明证据够不够。</p>
-        </aside>
-      </section>
-
-      <section className="evidence-section page-section" id="evidence">
-        <div className="section-heading">
-          <div><p className="section-kicker">01 · 人们为什么会记住它</p><h2>人们记住它，不只因为一句“历史悠久”。</h2></div>
-          <p>故事让人愿意复述，考古让故事看起来有依据，早餐经验则让本地人能用自己的味觉确认它。</p>
-        </div>
-
-        <div className="memory-foundations">
-          <article className="foundation-card legend-card">
-            <span className="foundation-index">A</span>
-            <span className="badge legend">地方传说</span>
-            <h3>好讲：名人、危机和一碗救命汤</h3>
-            <p>刘安炼丹、赵匡胤困寿春等叙事，将复杂历史压缩为人物、危机与救赎。它们的传播优势来自戏剧性，不来自史料强度。</p>
-            <p className="card-conclusion">它让人觉得：这碗汤很早就属于这里。</p>
-            <a className="source-link" href={sourceById(10).url} target="_blank" rel="noreferrer">查看官方如何讲述这一故事 <span>↗</span></a>
-          </article>
-          <article className="foundation-card artifact-card">
-            <span className="foundation-index">B</span>
-            <span className="badge verified">可核事实</span>
-            <h3>看得见：典籍中的文字和考古器物</h3>
-            <p>《淮南子》确有“屠牛而烹其肉”“煎熬燎炙”<Cite id={29} />；武王墩出土鼎与黄牛等经烹饪动物遗存<Cite id={24} /><Cite id={28} />。</p>
-            <p className="card-conclusion">边界：这些证据支持古代牛肉烹饪，却不能直接证明现代菜品配方。</p>
-            <a className="source-link" href={sourceById(29).url} target="_blank" rel="noreferrer">阅读《淮南子》原文 <span>↗</span></a>
-          </article>
-          <article className="foundation-card everyday-card">
-            <span className="foundation-index">C</span>
-            <span className="badge reported">地方研究</span>
-            <h3>吃得到：矿城清晨和街边早餐</h3>
-            <p>地方政府资料把现代牛肉汤的兴起与回民牛肉技艺、矿区器具条件及改革开放后的屠宰政策变化联系起来<Cite id={21} /><Cite id={30} />。</p>
-            <p className="card-conclusion">热、辣、香和一起吃早餐的经历，让城市记忆不只留在文字里。</p>
-            <a className="source-link" href={sourceById(21).url} target="_blank" rel="noreferrer">查看现代兴起的地方解释 <span>↗</span></a>
-          </article>
-        </div>
-
-        <aside className="critical-callout">
-          <span>关键判断</span>
-          <p>淮南牛肉汤最有研究价值的，不是寻找唯一“第一碗”，而是观察不同年代如何不断为它补写过去。传说给它人物，考古给它物证感，市井生活给它可信的身体经验。</p>
-        </aside>
-      </section>
-
-      <section className="numbers-section page-section">
-        <div className="section-heading light-heading">
-          <div><p className="section-kicker">公开数字，先看口径</p><h2>数字很大，但不一定能直接放在一起比较。</h2></div>
-          <p>这些数字都能找到出处，但各自统计了什么、怎样统计，公开信息并不完整。因此，它们不能简单连成一条增长曲线。</p>
-        </div>
-        <div className="metric-grid">
-          <article><span>2017</span><strong>省级非遗</strong><p>淮南牛肉汤制作技艺进入安徽省第五批省级非遗代表性项目名录。</p><div className="metric-source">制度性确认 <Cite id={18} /></div></article>
-          <article><span>2024</span><strong>≈ 1.5 亿元</strong><p>官方报道中的全年网络销售额；电商企业13家。</p><div className="metric-source">公开口径 <Cite id={8} /></div></article>
-          <article><span>2025 H1</span><strong>195.2 亿元</strong><p>集体商标获批报道披露的上半年全产业链产值，同比增长21%。</p><div className="metric-source">公开口径 <Cite id={3} /></div></article>
-          <article><span>2025 报道</span><strong>&gt; 320 亿元</strong><p>全产业链年产值；相关企业235家。与上半年数字不应直接相加。</p><div className="metric-source">公开口径 <Cite id={6} /></div></article>
-          <article className="target-metric"><span>2027 目标</span><strong>&gt; 500 亿元</strong><p>这是政策目标，不是已经实现的事实。</p><div className="metric-source">规划目标 <Cite id={1} /></div></article>
-        </div>
-        <p className="data-warning"><b>先别急着画增长曲线：</b> 2022年地方文章称全国门店“3万余家”，2025年媒体报道又称“约10万家”。两者都没有公开完整的调查方法，所以不能据此计算门店增长率。它们只能说明，对产业规模的公开说法越来越大。</p>
+        <nav className="overview-directory" aria-label="研究栏目入口">
+          <a href="#atlas" onClick={() => openTab("atlas")}><span>02</span><div><h3>牛肉汤图鉴</h3><p>看实物、吃法、感官和门店空间。</p></div><b>→</b></a>
+          <a href="#mechanism" onClick={() => openTab("mechanism")}><span>03</span><div><h3>案例与机制</h3><p>看考古、影视和平台怎样激活并重构记忆。</p></div><b>→</b></a>
+          <a href="#draft/abstract" onClick={() => { openTab("draft"); setActiveEssayChapter("abstract"); }}><span>04</span><div><h3>论文正文</h3><p>按摘要、绪论、章节和结语阅读全文。</p></div><b>→</b></a>
+          <a href="#methods/sampling" onClick={() => { openTab("methods"); setActiveMethodTool("sampling"); }}><span>05</span><div><h3>研究方法</h3><p>使用抽样、编码、访谈、观察和问卷工具。</p></div><b>→</b></a>
+          <a href="#references" onClick={() => openTab("references")}><span>06</span><div><h3>参考文献</h3><p>核对核心文献、引文路线和统稿规则。</p></div><b>→</b></a>
+          <a href="#sources" onClick={() => openTab("sources")}><span>07</span><div><h3>来源资料</h3><p>回查104项公开材料和原始网页。</p></div><b>→</b></a>
+        </nav>
+        <aside className="overview-boundary"><b>首页不负责展开结论</b><p>理论综述放在绪论，食物与门店材料放在图鉴，传播事件放在案例页，数字与引文回到正文、参考文献和来源档案。首页只回答“这是什么研究、应该从哪里读”。</p></aside>
       </section>
       </div>}
 
